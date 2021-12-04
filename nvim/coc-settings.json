@@ -3,6 +3,10 @@
     "java",
     "javascript",
     "typescript",
-    "python"
+    "python",
+    "c",
+    "json",
+    "html",
+    "css"
   ]
 }
