@@ -4,8 +4,8 @@ set clipboard=unnamedplus
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-set smartindent
-set autoindent
+"set smartindent
+"set autoindent
 set exrc
 set mouse=nic
 set guicursor=
@@ -47,6 +47,7 @@ Plug 'vim-airline/vim-airline'
 "completion
 Plug 'mattn/emmet-vim'
 Plug 'mlaursen/vim-react-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'neovim/nvim-lspconfig'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
