@@ -57,10 +57,10 @@ Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ap/vim-css-color'
-Plug 'kien/rainbow_parentheses.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'cormacrelf/vim-colors-github'
+Plug 'frazrepo/vim-rainbow'
 
 call plug#end()
 
@@ -72,10 +72,7 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 let g:user_emmet_leader_key=','
 
-au VimEnter * RainbowParenthesesToggle
-au VimEnter * RainbowParenthesesLoadRound
-au VimEnter * RainbowParenthesesLoadSquare
-au VimEnter * RainbowParenthesesLoadBraces
+let g:rainbow_active = 1
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
