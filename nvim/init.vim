@@ -2,7 +2,7 @@ let mapleader = ","
 set nocompatible
 set clipboard=unnamedplus
 set tabstop=4 
-set softtabstop=4
+"set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
@@ -40,7 +40,6 @@ Plug 'preservim/nerdcommenter'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-Plug 'stevearc/vim-arduino'
 
 "interface
 Plug 'vim-airline/vim-airline'
@@ -71,9 +70,8 @@ set background=dark
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 
-let g:arduino_dir = '/Applications/Arduino.app/Contents/Java/'
-
 let g:user_emmet_leader_key=','
+
 au VimEnter * RainbowParenthesesToggle
 au VimEnter * RainbowParenthesesLoadRound
 au VimEnter * RainbowParenthesesLoadSquare
@@ -342,11 +340,5 @@ let g:coc_global_extensions = [
   \ ]
 
 nmap <silent> <leader>s :set spell!<CR>
-
-nnoremap <buffer> <leader>av <cmd>ArduinoVerify<CR>
-nnoremap <buffer> <leader>au <cmd>ArduinoUpload<CR>
-nnoremap <buffer> <leader>ad <cmd>ArduinoUploadAndSerial<CR>
-nnoremap <buffer> <leader>ab <cmd>ArduinoChooseBoard<CR>
-nnoremap <buffer> <leader>ap <cmd>ArduinoChooseProgrammer<CR>
 
 lua require'nvim-tree'.setup()
