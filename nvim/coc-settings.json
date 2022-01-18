@@ -1,14 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "java",
-    "javascript",
-    "typescript",
-    "python",
-    "c",
-    "json",
-    "html",
-    "css"
-  ],
-  "prettier.printWidth": 120,
-  "prettier.tabWidth": 4
+    "coc.preferences.formatOnSaveFiletypes": ["*"],
+    "prettier.printWidth": 120,
+    "prettier.tabWidth": 2
 }

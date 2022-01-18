@@ -34,3 +34,4 @@ alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 #colorscript random
 pfetch
 starship init fish | source
+fish_add_path /opt/homebrew/opt/llvm/bin

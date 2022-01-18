@@ -1,16 +1,13 @@
 syntax on
-filetype plugin on
 let mapleader = ","
 set nocompatible
 set clipboard=unnamedplus
 set tabstop=2
-"set softtabstop=4
 set shiftwidth=2
 set expandtab
 set autoindent
 set exrc
 set mouse=nic
-set guicursor=
 set relativenumber
 set nohlsearch
 set hidden
@@ -32,12 +29,9 @@ set updatetime=50
 set shortmess+=c
 
 call plug#begin('~/.vim/plugged')
-
 "tools
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdcommenter'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
@@ -50,20 +44,15 @@ Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'SirVer/ultisnips'
-Plug 'neovim/nvim-lspconfig'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
 
 "themes/colors
-Plug 'morhetz/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ap/vim-css-color'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'cormacrelf/vim-colors-github'
 Plug 'frazrepo/vim-rainbow'
-
 call plug#end()
 
 let g:airline_theme='nord'
@@ -74,7 +63,8 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 let g:user_emmet_leader_key=','
 
-let g:rainbow_active = 1
+"cause bracket pairs conflicts with html :/ 
+au FileType python,c,cpp,objc,objcpp,java,javascript,typescript,css,markdown call rainbow#load()
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
@@ -171,15 +161,6 @@ nnoremap <leader>n :NvimTreeFindFile<CR>
 
 " a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeFolderIcon guibg=blue
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
