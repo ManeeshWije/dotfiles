@@ -36,6 +36,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+Plug 'xuhdev/vim-latex-live-preview'
+Plug 'lervag/vimtex'
 
 "interface
 Plug 'vim-airline/vim-airline'
@@ -53,6 +55,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'ap/vim-css-color'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'frazrepo/vim-rainbow'
+
 call plug#end()
 
 let g:airline_theme='nord'
@@ -64,9 +67,17 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 let g:user_emmet_leader_key=','
 
 "cause bracket pairs conflicts with html :/ 
-au FileType python,c,cpp,objc,objcpp,java,javascript,typescript,css,markdown call rainbow#load()
+au FileType python,c,cpp,objc,objcpp,java,javascript,typescript,css,markdown,tex,go call rainbow#load()
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+autocmd Filetype tex setl updatetime=1
+let g:livepreview_previewer = 'open -a Preview'
+
+let g:tex_flavor='latex'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 inoremap jk <ESC>
 vmap ++ <plug>NERDCommenterToggle
@@ -316,7 +327,14 @@ let g:coc_global_extensions = [
   \ 'coc-git',
   \ 'coc-java',
   \ 'coc-html-css-support',
-  \ 'coc-discord-rpc'
+  \ 'coc-discord-rpc',
+  \ 'coc-xml',
+  \ 'coc-svg',
+  \ 'coc-tailwindcss',
+  \ 'coc-svelte',
+  \ 'coc-sql',
+  \ 'coc-sh',
+  \ 'coc-cmake'
   \ ]
 
 nmap <silent> <leader>s :set spell!<CR>
