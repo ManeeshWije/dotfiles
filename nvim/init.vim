@@ -1,5 +1,6 @@
 syntax on
-let mapleader = ","
+filetype plugin indent on
+let mapeader = ","
 set nocompatible
 set clipboard=unnamedplus
 set tabstop=2
@@ -38,6 +39,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'xuhdev/vim-latex-live-preview'
 Plug 'lervag/vimtex'
+Plug 'iamcco/markdown-preview.nvim'
 
 "interface
 Plug 'vim-airline/vim-airline'
@@ -176,6 +178,7 @@ highlight NvimTreeFolderIcon guibg=blue
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
+" ---------------------- ALL COC STUFF FROM GITHUB-----------------------
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -321,20 +324,19 @@ let g:coc_global_extensions = [
   \ 'coc-markdownlint',
   \ 'coc-pyright',
   \ 'coc-html',
-  \ 'coc-clangd',
   \ 'coc-emmet',
   \ 'coc-eslint',
   \ 'coc-git',
   \ 'coc-java',
   \ 'coc-html-css-support',
   \ 'coc-discord-rpc',
+  \ 'coc-clangd',
   \ 'coc-xml',
   \ 'coc-svg',
   \ 'coc-tailwindcss',
   \ 'coc-svelte',
   \ 'coc-sql',
   \ 'coc-sh',
-  \ 'coc-cmake'
   \ ]
 
 nmap <silent> <leader>s :set spell!<CR>
