@@ -1,6 +1,6 @@
 syntax on
 filetype plugin indent on
-let mapeader = ","
+let mapleader = ","
 set nocompatible
 set clipboard=unnamedplus
 set tabstop=2
@@ -37,8 +37,6 @@ Plug 'preservim/nerdcommenter'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-Plug 'xuhdev/vim-latex-live-preview'
-Plug 'lervag/vimtex'
 Plug 'iamcco/markdown-preview.nvim'
 
 "interface
@@ -51,18 +49,40 @@ Plug 'SirVer/ultisnips'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
+Plug 'github/copilot.vim'
+Plug 'pangloss/vim-javascript'
 
 "themes/colors
-Plug 'arcticicestudio/nord-vim'
 Plug 'ap/vim-css-color'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'frazrepo/vim-rainbow'
-
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 call plug#end()
 
-let g:airline_theme='nord'
-colorscheme nord
+let g:airline_theme='material'
+let g:material_theme_style = 'palenight'
+let g:material_terminal_italics=1
+colorscheme material
 set background=dark
+
+" Fix italics in Vim
+if !has('nvim')
+  let &t_ZH="\e[3m"
+  let &t_ZR="\e[23m"
+endif
+
+" For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
+if (has('nvim'))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+endif
+
+" For Neovim > 0.1.5 and Vim > patch 7.4.1799 - https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162
+" Based on Vim patch 7.4.1770 (`guicolors` option) - https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd
+" https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
+if (has('termguicolors'))
+  set termguicolors
+endif
+
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 
@@ -70,16 +90,9 @@ let g:user_emmet_leader_key=','
 
 "cause bracket pairs conflicts with html :/ 
 au FileType python,c,cpp,objc,objcpp,java,javascript,typescript,css,markdown,tex,go call rainbow#load()
+"let g:rainbow_active = 1
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'open -a Preview'
-
-let g:tex_flavor='latex'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
 
 inoremap jk <ESC>
 vmap ++ <plug>NERDCommenterToggle
@@ -329,7 +342,7 @@ let g:coc_global_extensions = [
   \ 'coc-git',
   \ 'coc-java',
   \ 'coc-html-css-support',
-  \ 'coc-discord-rpc',
+  "\ 'coc-discord-rpc',
   \ 'coc-clangd',
   \ 'coc-xml',
   \ 'coc-svg',
@@ -340,5 +353,4 @@ let g:coc_global_extensions = [
   \ ]
 
 nmap <silent> <leader>s :set spell!<CR>
-
-lua require'nvim-tree'.setup()
+lua require'nvim-tree'.setup {}

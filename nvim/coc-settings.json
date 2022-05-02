@@ -1,5 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes" [
+  "coc.preferences.formatOnSaveFiletypes": [
     "java",
     "javascript",
     "python",
@@ -9,8 +9,8 @@
     "markdown",
     "go",
     "typescript",
-    "json",
-    "tex"
+    "json"
+    //"c"
   ],
   "prettier.printWidth": 120,
   "prettier.tabWidth": 2,
