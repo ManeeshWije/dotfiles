@@ -5,8 +5,9 @@ set nocompatible
 set clipboard=unnamedplus
 set tabstop=2
 set shiftwidth=2
-set expandtab
 set autoindent
+set smartindent
+set cindent
 set exrc
 set mouse=nic
 set relativenumber
@@ -26,171 +27,67 @@ set noshowmode
 set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
 set cmdheight=2
-set updatetime=50
+set updatetime=300
 set shortmess+=c
 
 call plug#begin('~/.vim/plugged')
-"tools
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'preservim/nerdcommenter'
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-Plug 'iamcco/markdown-preview.nvim'
-
-"interface
-Plug 'vim-airline/vim-airline'
-
-"completion
-Plug 'mattn/emmet-vim'
-Plug 'mlaursen/vim-react-snippets'
-Plug 'SirVer/ultisnips'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'sheerun/vim-polyglot'
-Plug 'honza/vim-snippets'
-Plug 'github/copilot.vim'
-Plug 'pangloss/vim-javascript'
-
-"themes/colors
-Plug 'ap/vim-css-color'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'frazrepo/vim-rainbow'
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'preservim/nerdcommenter' " Better comments
+Plug 'nvim-lua/plenary.nvim' " Dependency for fuzzy find
+Plug 'nvim-telescope/telescope.nvim' " Fuzzy find
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " Live server
+Plug 'vim-airline/vim-airline' " status bar
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " completion and bascially everything else
+Plug 'ap/vim-css-color' " See css colours in code
+Plug 'vim-airline/vim-airline-themes' " status bar theme
+Plug 'frazrepo/vim-rainbow' " different colour matching brackets
+Plug 'kaicataldo/material.vim', { 'branch': 'main' } " colorscheme
+"Plug 'github/copilot.vim'
 call plug#end()
 
+" Colour stuff
 let g:airline_theme='material'
 let g:material_theme_style = 'palenight'
 let g:material_terminal_italics=1
 colorscheme material
 set background=dark
 
-" Fix italics in Vim
+" REAL italics for fonts in Vim
 if !has('nvim')
   let &t_ZH="\e[3m"
   let &t_ZR="\e[23m"
 endif
+"
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
 if (has('nvim'))
   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 endif
 
-" For Neovim > 0.1.5 and Vim > patch 7.4.1799 - https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162
-" Based on Vim patch 7.4.1770 (`guicolors` option) - https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd
-" https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
-if (has('termguicolors'))
-  set termguicolors
-endif
-
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 
-let g:user_emmet_leader_key=','
-
-"cause bracket pairs conflicts with html :/ 
+" cause bracket pairs conflicts with html :/ 
 au FileType python,c,cpp,objc,objcpp,java,javascript,typescript,css,markdown,tex,go call rainbow#load()
-"let g:rainbow_active = 1
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 inoremap jk <ESC>
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
 
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
+" clipboard stuff
 noremap <Leader>y "*y
 noremap <Leader>p "*p
 noremap <Leader>Y "+y
 noremap <Leader>P "+p
 
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-"let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
-"let g:nvim_tree_gitignore = 1 "0 by default
-let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
-let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
-"let g:nvim_tree_hide_dotfiles = 1 "0 by default, this option hides files and folders starting with a dot `.`
-let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
-let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
-let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
-let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
-let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
-let g:nvim_tree_disable_window_picker = 1 "0 by default, will disable the window picker.
-let g:nvim_tree_icon_padding = ' ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
-let g:nvim_tree_symlink_arrow = ' >> ' " defaults to ' ➛ '. used as a separator between symlinks' source and target.
-let g:nvim_tree_respect_buf_cwd = 1 "0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
-let g:nvim_tree_create_in_closed_folder = 0 "1 by default, When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when 0, and inside the folder when 1.
-let g:nvim_tree_refresh_wait = 500 "1000 bydefault, control how often the tree can be refreshed, 1000 means the tree can be refresh once per 1000ms.
-let g:nvim_tree_window_picker_exclude = {
-    \   'filetype': [
-    \     'notify',
-    \     'packer',
-    \     'qf'
-    \   ],
-    \   'buftype': [
-    \     'terminal'
-    \   ]
-    \ }
-" Dictionary of buffer option names mapped to a list of option values that
-" indicates to the window picker that the buffer's window should not be
-" selectable.
-let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
-let g:nvim_tree_show_icons = {
-    \ 'git': 1,
-    \ 'folders': 1,
-    \ 'files': 1,
-    \ 'folder_arrows': 1,
-    \ }
-"If 0, do not show the icons for one of 'git' 'folder' and 'files'
-"1 by default, notice that if 'files' is 1, it will only display
-"if nvim-web-devicons is installed and on your runtimepath.
-"if folder is 1, you can also tell folder_arrows 1 to show small arrows next to the folder icons.
-"but this will not work when you set indent_markers (because of UI conflict)
-
-" default will show icon by default if no icon is provided
-" default shows no icon by default
-let g:nvim_tree_icons = {
-    \ 'default': '',
-    \ 'symlink': '',
-    \ 'git': {
-    \   'unstaged': "✗",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "★",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'arrow_open': "",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   }
-    \ }
-
-nnoremap <C-n> :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
-" NvimTreeOpen, NvimTreeClose, NvimTreeFocus and NvimTreeResize are also available if you need them
-
-" a list of groups can be found at `:help nvim_tree_highlight`
-highlight NvimTreeFolderIcon guibg=blue
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
 " ---------------------- ALL COC STUFF FROM GITHUB-----------------------
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -325,7 +222,10 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" coc config
+nmap <Leader>e <Cmd>CocCommand explorer<CR>
+nmap <silent> <leader>s :set spell!<CR>
+
+" coc extensions
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
@@ -342,7 +242,6 @@ let g:coc_global_extensions = [
   \ 'coc-git',
   \ 'coc-java',
   \ 'coc-html-css-support',
-  "\ 'coc-discord-rpc',
   \ 'coc-clangd',
   \ 'coc-xml',
   \ 'coc-svg',
@@ -350,7 +249,9 @@ let g:coc_global_extensions = [
   \ 'coc-svelte',
   \ 'coc-sql',
   \ 'coc-sh',
+	\ 'coc-ltex',
+	\ 'coc-webview',
+	\ 'coc-markdown-preview-enhanced',
+	\ 'coc-explorer',
   \ ]
 
-nmap <silent> <leader>s :set spell!<CR>
-lua require'nvim-tree'.setup {}

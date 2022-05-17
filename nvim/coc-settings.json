@@ -9,8 +9,8 @@
     "markdown",
     "go",
     "typescript",
-    "json"
-    //"c"
+    "json",
+    "c"
   ],
   "prettier.printWidth": 120,
   "prettier.tabWidth": 2,
