@@ -38,13 +38,14 @@ Plug 'preservim/nerdcommenter' " Better comments
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " Live server
 Plug 'ap/vim-css-color' " See css colours in code
 Plug 'frazrepo/vim-rainbow' " different colour matching brackets
-Plug 'kaicataldo/material.vim', { 'branch': 'main' } " colorscheme
 Plug 'github/copilot.vim' " bruh
 Plug 'sheerun/vim-polyglot' " polyglot
 Plug 'itchyny/lightline.vim' " lightline
 Plug 'nvim-lua/plenary.nvim' " dependency for telescope
 Plug 'nvim-telescope/telescope.nvim' " fuzzy find
 Plug 'stevearc/vim-arduino' " arduino
+Plug 'arcticicestudio/nord-vim' " colourscheme
+Plug 'airblade/vim-gitgutter' " git in signcolumn
 call plug#end()
 
 " MISC STUFF THAT DONT DESERVE A SECTION ------------------------------------------------
@@ -114,9 +115,7 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 " COLOURSCHEME STUFF ------------------------------------------------------
-let g:material_theme_style = 'palenight'
-let g:material_terminal_italics=1
-colorscheme material
+colorscheme nord
 set background=dark
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -276,7 +275,6 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-emmet',
   \ 'coc-eslint',
-  \ 'coc-git',
   \ 'coc-java',
   \ 'coc-html-css-support',
   \ 'coc-clangd',
