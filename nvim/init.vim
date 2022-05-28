@@ -37,7 +37,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " Holy grail
 Plug 'preservim/nerdcommenter' " Better comments
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " Live server
 Plug 'ap/vim-css-color' " See css colours in code
-Plug 'frazrepo/vim-rainbow' " different colour matching brackets
 Plug 'github/copilot.vim' " bruh
 Plug 'sheerun/vim-polyglot' " polyglot
 Plug 'itchyny/lightline.vim' " lightline
@@ -59,26 +58,8 @@ command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 autocmd VimLeavePre * :call coc#rpc#kill()
 autocmd VimLeave * if get(g:, 'coc_process_pid', 0) | call system('kill -9 -'.g:coc_process_pid) | endif
 
-" REAL italics for fonts in Vim
-if !has('nvim')
-  let &t_ZH="\e[3m"
-  let &t_ZR="\e[23m"
-endif
-
 " so useful
 inoremap jk <ESC>
-
-" some prettier bug
-let &t_TI = ""
-let &t_TE = ""
-
-" For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
-if (has('nvim'))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-endif
-
-" cause bracket pairs conflicts with html :/ 
-au FileType python,c,cpp,objc,objcpp,java,javascript,typescript,css,markdown,tex,go call rainbow#load()
 
 " ARDUINO STUFF --------------------------------------------------------
 nnoremap <buffer> <leader>aa <cmd>ArduinoAttach<CR>
