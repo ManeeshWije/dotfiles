@@ -38,23 +38,24 @@ require('packer').startup(function()
   use 'arcticicestudio/nord-vim' -- colorscheme
   use 'epilande/vim-react-snippets' -- react snippets
   use 'nvim-lua/popup.nvim' -- popup
-  use 'jremmen/vim-ripgrep' -- ripgrep
+  use 'BurntSushi/ripgrep' -- ripgrep
 end)
 
 require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "lua", "javascript", "bash", "html", "java", "json", "python" },
   highlight = {
     enable = true,
+    additional_vim_regex_highlighting = false
   },
   indent = {
-    enable = true,
-    style = 'space',
-  },
+    enable = true
+  }
 }
 require('lualine').setup{
   options = {theme = 'nord'}
 }
 require('gitsigns').setup()
-require'nvim-tree'.setup()
+require'nvim-tree'.setup{}
 require('nvim-autopairs').setup{}
 
 -- Mappings.
