@@ -7,7 +7,6 @@ source $(brew --prefix nvm)/nvm.sh
 export TERM="xterm-256color"
 export EDITOR='nvim'
 
-alias vim="nvim"
 # git
 alias addup='git add -u'
 alias addall='git add .'

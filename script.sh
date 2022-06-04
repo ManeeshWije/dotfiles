@@ -5,7 +5,7 @@
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/maneeshwijewardhana/.profile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # install everything
-brew install ripgrep fzf bpytop ccls clang-format cmake cmatrix git go heroku htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python speedtest-cli starship tmux tty-clock audacity balenaetcher brave-browser firefox caffeine discord iterm2 microsoft-teams minecraft slack spotify visual-studio-code zoom 
+brew install ripgrep fzf ccls clang-format cmake cmatrix git go heroku htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python speedtest-cli starship tmux tty-clock audacity balenaetcher brave-browser firefox caffeine discord iterm2 microsoft-teams minecraft slack spotify visual-studio-code zoom 
 # vim plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

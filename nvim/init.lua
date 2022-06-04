@@ -30,11 +30,9 @@ require('packer').startup(function()
   use 'kyazdani42/nvim-web-devicons' -- icons
   use 'kyazdani42/nvim-tree.lua' -- file tree
   use 'preservim/nerdcommenter' -- better comments
-  use {'turbio/bracey.vim', run = 'npm install --prefix server'} -- live server
   use 'ap/vim-css-color' -- see css colours
   use 'nvim-lua/plenary.nvim' -- dependency for telescope
   use 'nvim-telescope/telescope.nvim' -- fuzzy find
-  use 'stevearc/vim-arduino' -- arduino
   use 'arcticicestudio/nord-vim' -- colorscheme
   use 'epilande/vim-react-snippets' -- react snippets
   use 'nvim-lua/popup.nvim' -- popup
@@ -133,7 +131,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- setup language servers here
 local lspconfig = require'lspconfig'
-local servers = { 'arduino_language_server', 'bashls', 'clangd', 'cssls', 'dockerls', 'java_language_server', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
+local servers = { 'bashls', 'clangd', 'cssls', 'dockerls', 'java_language_server', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
