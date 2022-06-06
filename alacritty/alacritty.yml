@@ -67,27 +67,18 @@ font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    #family: Iosevka
-    #style: Light
-    family: "FiraCode Nerd Font"
-    # family: "Source Code Pro"
-    style: Retina
+    family: "JetBrainsMono Nerd Font"
+    style: Regular
 
   # The bold font face
   bold:
-    #family: Iosevka
-    family: "FiraCode Nerd Font"
-    # family: "Source Code Pro"
+    family: "JetBrainsMono Nerd Font"
     style: Medium
 
   # The italic font face
   italic:
-    #family: Iosevka
-    # style: "Light Oblique"
-    family: "FiraCode Nerd Font"
+    family: "JetBrainsMono Nerd Font"
     style: "Light Italic"
-    # family: "Source Code Pro"
-    # style: "Medium Italic"
 
   # Point size of the font
   size: 15.0

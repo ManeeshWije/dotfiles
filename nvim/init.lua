@@ -37,6 +37,7 @@ require('packer').startup(function()
   use 'stevearc/vim-arduino' -- arduino
   use 'epilande/vim-react-snippets' -- react snippets
   use 'nvim-lua/popup.nvim' -- popup
+  use {'turbio/bracey.vim', run = 'npm install --prefix server'} -- live server
 end)
 
 require'nvim-treesitter.configs'.setup {
