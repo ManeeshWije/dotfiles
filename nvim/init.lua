@@ -33,8 +33,7 @@ require('packer').startup(function()
   use 'ap/vim-css-color' -- see css colours
   use 'nvim-lua/plenary.nvim' -- dependency for telescope
   use 'nvim-telescope/telescope.nvim' -- fuzzy find
-  use 'kaicataldo/material.vim' -- colorscheme
-  use 'stevearc/vim-arduino' -- arduino
+  use 'arcticicestudio/nord-vim' -- colorscheme
   use 'epilande/vim-react-snippets' -- react snippets
   use 'nvim-lua/popup.nvim' -- popup
   use {'turbio/bracey.vim', run = 'npm install --prefix server'} -- live server
@@ -51,7 +50,7 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 require('lualine').setup{
-  options = {theme = 'material'}
+  options = {theme = 'nord'}
 }
 require('gitsigns').setup()
 require'nvim-tree'.setup{}
@@ -217,9 +216,7 @@ if (has('termguicolors'))
   set termguicolors
 endif
 
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'palenight'
-colorscheme material
+colorscheme nord
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
