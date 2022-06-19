@@ -5,7 +5,7 @@
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/maneeshwijewardhana/.profile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # install everything
-brew install via ripgrep fzf ccls clang-format cmake cmatrix git go heroku htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python speedtest-cli starship tmux tty-clock audacity balenaetcher brave-browser firefox caffeine discord microsoft-teams minecraft slack spotify visual-studio-code zoom alacritty
+brew install via rust-analyzer ripgrep fzf ccls clang-format cmake cmatrix git go heroku htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python speedtest-cli starship tmux tty-clock audacity balenaetcher brave-browser firefox caffeine discord microsoft-teams minecraft slack spotify visual-studio-code zoom alacritty
 
 ssh-keygen -t ed25519 -C "m.mwije1@gmail.com"
 eval "$(ssh-agent -s)"

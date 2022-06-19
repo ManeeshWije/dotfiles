@@ -39,8 +39,8 @@ require('packer').startup(function()
   use {'turbio/bracey.vim', run = 'npm install --prefix server'} -- live server
 end)
 
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "javascript", "bash", "html", "java", "json", "python" },
+require'nvim-treesitter.configs'.setup({
+  ensure_installed = { "c", "lua", "javascript", "bash", "html", "java", "json", "python", "rust", "typescript", "yaml", "go" },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false
@@ -48,13 +48,13 @@ require'nvim-treesitter.configs'.setup {
   indent = {
     enable = true
   }
-}
-require('lualine').setup{
-  options = {theme = 'nord'}
-}
+})
+require('lualine').setup({
+  options = { theme = 'nord' }
+})
 require('gitsigns').setup()
-require'nvim-tree'.setup{}
-require('nvim-autopairs').setup{}
+require'nvim-tree'.setup()
+require('nvim-autopairs').setup()
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -121,6 +121,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'ultisnips' }, -- For ultisnips users.
+    { name = 'cmp_nvim_lsp' }, 
   }, {
     { name = 'buffer' },
   })
@@ -132,7 +133,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- setup language servers here
 local lspconfig = require'lspconfig'
-local servers = { 'bashls', 'clangd', 'cssls', 'dockerls', 'java_language_server', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
+local servers = { 'bashls', 'clangd', 'cssls', 'gopls', 'graphql', 'rust_analyzer', 'dockerls', 'java_language_server', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
