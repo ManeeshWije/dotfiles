@@ -39,8 +39,8 @@ require('packer').startup(function()
   use {'turbio/bracey.vim', run = 'npm install --prefix server'} -- live server
 end)
 
-require'nvim-treesitter.configs'.setup({
-  ensure_installed = { "c", "lua", "javascript", "bash", "html", "java", "json", "python", "rust", "typescript", "yaml", "go" },
+require('nvim-treesitter.configs').setup({
+  ensure_installed = all,
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false
@@ -53,7 +53,7 @@ require('lualine').setup({
   options = { theme = 'nord' }
 })
 require('gitsigns').setup()
-require'nvim-tree'.setup()
+require('nvim-tree').setup()
 require('nvim-autopairs').setup()
 
 -- Mappings.
@@ -94,8 +94,8 @@ cmp.setup({
     end,
   },
   window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -132,29 +132,9 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- setup language servers here
-local lspconfig = require'lspconfig'
-local servers = { 'bashls', 'clangd', 'cssls', 'gopls', 'graphql', 'rust_analyzer', 'dockerls', 'java_language_server', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
-
-lspconfig.tsserver.setup {
-  on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx', 'simple', 'failing'},
-  capabilities = capabilities
-}
-lspconfig.eslint.setup {
-  on_attach = on_attach,
-  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "simple", "failing"},
-  capabilities = capabilities
-}
-lspconfig.emmet_ls.setup {
-  on_attach = on_attach,
-  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "html", "css", "scss"},
-  capabilities = capabilities
-}
-lspconfig.html.setup {
-  on_attach = on_attach,
-  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "html", "css", "scss"},
-  capabilities = capabilities
-}
+local lspconfig = require('lspconfig')
+local servers = { 'vimls', 'bashls', 'clangd', 'cssls', 'gopls', 'graphql', 'rust_analyzer', 'dockerls', 'java_language_server', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
+local servers2 = { 'tsserver', 'eslint', 'emmet_ls', 'html' }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -163,38 +143,51 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+for _, lsp in ipairs(servers2) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescript.jsx', 'typescriptreact', 'html', 'css', 'scss' }
+  }
+end
+
+-- default options 
+local options = {
+  backup = false,                          -- creates a backup file
+  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+  cmdheight = 2,                           -- more space in the neovim command line for displaying messages
+  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+  fileencoding = "utf-8",                  -- the encoding written to a file
+  hlsearch = true,                         -- highlight all matches on previous search pattern
+  mouse = "a",                             -- allow the mouse to be used in neovim
+  showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
+  wildmenu = true,                         -- show menu on the bottom
+  smartcase = true,                        -- smart case
+  smartindent = true,                      -- make indenting smarter again
+  swapfile = false,                        -- creates a swapfile
+  termguicolors = true,                    -- set term gui colors (most terminals support this)
+  undofile = true,                         -- enable persistent undo
+  updatetime = 100,                        -- faster completion (4000ms default)
+  writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+  expandtab = true,                        -- convert tabs to spaces
+  shiftwidth = 2,                          -- the number of spaces inserted for each indentation
+  tabstop = 2,                             -- insert 2 spaces for a tab
+  number = true,                           -- set numbered lines
+  relativenumber = true,                   -- set relative numbered lines
+  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
+  wrap = false,                            -- display lines as one long line
+  scrolloff = 8,                           -- scroll when 8 lines above or below
+  syntax = "on",                           -- syntax highlighting
+}
+
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
+
 vim.cmd([[
-syntax on
-filetype plugin indent on
 let mapleader = ","
-set nocompatible
-set clipboard+=unnamedplus
-set wildmenu
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set autoindent
-set exrc
-set mouse=nic
-set relativenumber
-set nohlsearch
-set hidden
-set noerrorbells
-set nu
-set nowrap
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-set incsearch
-set termguicolors
-set scrolloff=8
-set noshowmode
-set signcolumn=yes
-set cmdheight=2
-set updatetime=100
-set shortmess+=c
+set whichwrap+=<,>,[,],h,l"
+set iskeyword+=-
 
 " Fix italics in Vim
 if !has('nvim')
@@ -210,18 +203,11 @@ if (has('nvim'))
   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 endif
 
-" For Neovim > 0.1.5 and Vim > patch 7.4.1799 - https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162
-" Based on Vim patch 7.4.1770 (`guicolors` option) - https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd
-" https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
-if (has('termguicolors'))
-  set termguicolors
-endif
-
 colorscheme nord
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
-" NERD COMMENTER
+" Nerd Commenter keybinds
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
 " Add spaces after comment delimiters by default
@@ -241,10 +227,12 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
 
+" File tree keybinds
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 
+" Telescope keybinds
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fs <cmd>lua require('telescope.builtin').grep_string()<cr>
