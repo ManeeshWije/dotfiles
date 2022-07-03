@@ -11,6 +11,10 @@ export EDITOR='nvim'
 bindkey ';3D' backward-word
 bindkey ';3C' forward-word
 
+# Search
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
 # git
 alias addup='git add -u'
 alias addall='git add .'
@@ -32,3 +36,5 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 eval "$(starship init zsh)"
+
+alias luamake=/Users/maneeshwijewardhana/lua-language-server/3rd/luamake/luamake
