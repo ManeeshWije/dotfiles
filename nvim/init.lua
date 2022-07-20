@@ -53,7 +53,12 @@ require('lualine').setup({
   options = { theme = 'nord' }
 })
 require('gitsigns').setup()
-require('nvim-tree').setup()
+require('nvim-tree').setup({
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+  },
+})
 require('nvim-autopairs').setup()
 
 -- Mappings.
@@ -238,4 +243,7 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fs <cmd>lua require('telescope.builtin').grep_string()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+" Correct spaces when writing python
+let g:python_recommended_style = 0
 ]])
