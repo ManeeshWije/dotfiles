@@ -1,4 +1,5 @@
 local vim = vim
+vim.g.mapleader = ','
 local execute = vim.api.nvim_command
 local fn = vim.fn
 -- ensure that packer is installed
@@ -138,8 +139,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- setup language servers here
 local lspconfig = require('lspconfig')
-local servers = { 'vimls', 'bashls', 'clangd', 'cssls', 'gopls', 'graphql', 'rust_analyzer', 'dockerls', 'java_language_server', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
-local servers2 = { 'tsserver', 'eslint', 'emmet_ls', 'html' }
+local servers = { 'tsserver', 'eslint', 'emmet_ls', 'html', 'vimls', 'bashls', 'clangd', 'cssls', 'gopls', 'graphql', 'rust_analyzer', 'dockerls', 'java_language_server', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -148,23 +148,15 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-for _, lsp in ipairs(servers2) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescript.jsx', 'typescriptreact', 'html', 'css', 'scss' }
-  }
-end
-
 -- default options 
 local options = {
   backup = false,                          -- creates a backup file
-  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+  clipboard = 'unnamedplus',               -- allows neovim to access the system clipboard
   cmdheight = 2,                           -- more space in the neovim command line for displaying messages
-  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
-  fileencoding = "utf-8",                  -- the encoding written to a file
+  completeopt = { 'menuone', 'noselect' }, -- mostly just for cmp
+  fileencoding = 'utf-8',                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
-  mouse = "a",                             -- allow the mouse to be used in neovim
+  mouse = 'a',                             -- allow the mouse to be used in neovim
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
   wildmenu = true,                         -- show menu on the bottom
   smartcase = true,                        -- smart case
@@ -179,10 +171,10 @@ local options = {
   tabstop = 2,                             -- insert 2 spaces for a tab
   number = true,                           -- set numbered lines
   relativenumber = true,                   -- set relative numbered lines
-  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
+  signcolumn = 'yes',                      -- always show the sign column, otherwise it would shift the text each time
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- scroll when 8 lines above or below
-  syntax = "on",                           -- syntax highlighting
+  syntax = 'on',                           -- syntax highlighting
 }
 
 for k, v in pairs(options) do
@@ -190,7 +182,6 @@ for k, v in pairs(options) do
 end
 
 vim.cmd([[
-let mapleader = ","
 set whichwrap+=<,>,[,],h,l"
 set iskeyword+=-
 

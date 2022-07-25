@@ -7,11 +7,8 @@ source $(brew --prefix nvm)/nvm.sh
 export TERM="xterm-256color"
 export EDITOR='nvim'
 
-# Skip forward/back a word with opt-arrow
-bindkey ';3D' backward-word
-bindkey ';3C' forward-word
 
-# Search
+# Shortcuts
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
