@@ -21,7 +21,7 @@ require('packer').startup(function()
   use 'lewis6991/gitsigns.nvim' -- git sign column 
   use 'windwp/nvim-autopairs' -- auto brackets
   use 'neovim/nvim-lspconfig' -- lsp
-  use 'nvim-treesitter/nvim-treesitter' -- syntax highlighting
+  use {'nvim-treesitter/nvim-treesitter', commit = '8ada8faf2fd5a74cc73090ec856fa88f34cd364b'} -- syntax highlighting
   use 'hrsh7th/cmp-nvim-lsp' -- lsp source for cmp
   use 'hrsh7th/nvim-cmp' -- auto-complete
   use 'SirVer/ultisnips' -- snippet source
