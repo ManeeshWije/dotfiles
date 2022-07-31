@@ -237,4 +237,8 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " Correct spaces when writing python
 let g:python_recommended_style = 0
+
+" Prettier stuff
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_config_present = 1
 ]])
