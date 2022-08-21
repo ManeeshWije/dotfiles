@@ -127,7 +127,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'ultisnips' }, -- For ultisnips users.
-    { name = 'cmp_nvim_lsp' }, 
+    { name = 'cmp_nvim_lsp' },
   }, {
     { name = 'buffer' },
   })
@@ -139,7 +139,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- setup language servers here
 local lspconfig = require('lspconfig')
-local servers = { 'tsserver', 'eslint', 'emmet_ls', 'html', 'vimls', 'bashls', 'clangd', 'cssls', 'gopls', 'graphql', 'rust_analyzer', 'dockerls', 'java_language_server', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
+local servers = { 'sumneko_lua', 'tsserver', 'eslint', 'emmet_ls', 'html', 'vimls', 'bashls', 'clangd', 'cssls', 'gopls', 'graphql', 'rust_analyzer', 'dockerls', 'java_language_server', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
