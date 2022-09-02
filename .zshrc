@@ -7,7 +7,6 @@ source $(brew --prefix nvm)/nvm.sh
 export TERM="xterm-256color"
 export EDITOR='nvim'
 
-
 # Shortcuts
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -35,3 +34,8 @@ alias egrep='egrep --color=auto'
 eval "$(starship init zsh)"
 
 alias luamake=/Users/maneeshwijewardhana/lua-language-server/3rd/luamake/luamake
+
+# Remove autocomplete lag zsh->git
+__git_files () { 
+    _wanted files expl 'local files' _files     
+}
