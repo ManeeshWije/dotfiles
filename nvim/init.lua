@@ -31,7 +31,7 @@ require('packer').startup(function()
   use 'kyazdani42/nvim-web-devicons' -- icons
   use 'kyazdani42/nvim-tree.lua' -- file tree
   use 'preservim/nerdcommenter' -- better comments
-  use 'ap/vim-css-color' -- see css colours
+  use 'ap/vim-css-color' -- css colours
   use 'nvim-lua/plenary.nvim' -- dependency for telescope
   use 'nvim-telescope/telescope.nvim' -- fuzzy find
   use 'arcticicestudio/nord-vim' -- colorscheme
@@ -44,7 +44,7 @@ require('nvim-treesitter.configs').setup({
   ensure_installed = all,
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false
+    additional_vim_regex_highlighting = true
   },
   indent = {
     enable = true
@@ -53,7 +53,9 @@ require('nvim-treesitter.configs').setup({
 require('lualine').setup({
   options = { theme = 'nord' }
 })
-require('gitsigns').setup()
+require('gitsigns').setup({
+  current_line_blame = true
+})
 require('nvim-tree').setup({
   update_focused_file = {
     enable = true,
@@ -63,30 +65,56 @@ require('nvim-tree').setup({
 require('nvim-autopairs').setup()
 
 -- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  local function map(mode, lhs, rhs, opts)
+        opts = vim.tbl_extend('force', {noremap = true, silent = true}, opts or {})
+        vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
+  end
+
+    map('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
+    map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+    map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+    map('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
+
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+    map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+    map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
+    map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+    map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+    map('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
+    map('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
+    map('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
+    map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+    map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+    map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+    map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+    map('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+
+    -- Navigation
+    map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
+    map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
+
+    -- Actions
+    map('n', '<leader>hs', ':Gitsigns stage_hunk<CR>')
+    map('v', '<leader>hs', ':Gitsigns stage_hunk<CR>')
+    map('n', '<leader>hr', ':Gitsigns reset_hunk<CR>')
+    map('v', '<leader>hr', ':Gitsigns reset_hunk<CR>')
+    map('n', '<leader>hS', '<cmd>Gitsigns stage_buffer<CR>')
+    map('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>')
+    map('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>')
+    map('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>')
+    map('n', '<leader>hb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
+    map('n', '<leader>tb', '<cmd>Gitsigns toggle_current_line_blame<CR>')
+    map('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>')
+    map('n', '<leader>hD', '<cmd>lua require"gitsigns".diffthis("~")<CR>')
+    map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>')
+
+    -- Text object
+    map('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+    map('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
 end
 
 -- Setup nvim-cmp.
