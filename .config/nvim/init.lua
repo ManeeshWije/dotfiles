@@ -203,6 +203,7 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- scroll when 8 lines above or below
   syntax = 'on',                           -- syntax highlighting
+  guicursor = ''                           -- cursor block in insert
 }
 
 for k, v in pairs(options) do
