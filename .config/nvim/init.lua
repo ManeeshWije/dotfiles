@@ -190,10 +190,10 @@ local options = {
   wildmenu = true, -- show menu on the bottom
   smartcase = true, -- smart case
   smartindent = true, -- make indenting smarter again
-  swapfile = false, -- creates a swapfile
+  swapfile = false, -- disable swapfile
   termguicolors = true, -- set term gui colors (most terminals support this)
   undofile = true, -- enable persistent undo
-  updatetime = 100, -- faster completion (4000ms default)
+  updatetime = 50, -- faster completion (4000ms default)
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true, -- convert tabs to spaces
   shiftwidth = 2, -- the number of spaces inserted for each indentation
@@ -204,7 +204,8 @@ local options = {
   wrap = false, -- display lines as one long line
   scrolloff = 8, -- scroll when 8 lines above or below
   syntax = 'on', -- syntax highlighting
-  guicursor = '' -- cursor block in insert
+  guicursor = '', -- cursor block in insert
+  cursorline = true, -- highlight the current line
 }
 
 for k, v in pairs(options) do
