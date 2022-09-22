@@ -3,14 +3,14 @@ vim.g.mapleader = ','
 local execute = vim.api.nvim_command
 local fn = vim.fn
 -- ensure that packer is installed
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-    execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-    execute 'packadd packer.nvim'
+  execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+  execute 'packadd packer.nvim'
 end
 vim.cmd('packadd packer.nvim')
-local packer = require'packer'
-local util = require'packer.util'
+local packer = require 'packer'
+local util = require 'packer.util'
 packer.init({
   package_root = util.join_paths(vim.fn.stdpath('data'), 'site', 'pack')
 })
@@ -18,15 +18,15 @@ packer.init({
 local use = require('packer').use
 require('packer').startup(function()
   use 'github/copilot.vim' -- bruh
-  use 'lewis6991/gitsigns.nvim' -- git sign column 
+  use 'lewis6991/gitsigns.nvim' -- git sign column
   use 'windwp/nvim-autopairs' -- auto brackets
   use 'neovim/nvim-lspconfig' -- lsp
-  use {'nvim-treesitter/nvim-treesitter', commit = '8ada8faf2fd5a74cc73090ec856fa88f34cd364b'} -- syntax highlighting
+  use { 'nvim-treesitter/nvim-treesitter', commit = '8ada8faf2fd5a74cc73090ec856fa88f34cd364b' } -- syntax highlighting
   use 'hrsh7th/cmp-nvim-lsp' -- lsp source for cmp
   use 'hrsh7th/nvim-cmp' -- auto-complete
   use 'SirVer/ultisnips' -- snippet source
   use 'quangnguyen30192/cmp-nvim-ultisnips' -- completion source
-  use {'prettier/vim-prettier', run = 'npm install' } -- prettier
+  use { 'prettier/vim-prettier', run = 'npm install' } -- prettier
   use 'nvim-lualine/lualine.nvim' -- status line
   use 'kyazdani42/nvim-web-devicons' -- icons
   use 'kyazdani42/nvim-tree.lua' -- file tree
@@ -37,7 +37,7 @@ require('packer').startup(function()
   use 'arcticicestudio/nord-vim' -- colorscheme
   use 'epilande/vim-react-snippets' -- react snippets
   use 'nvim-lua/popup.nvim' -- popup
-  use {'turbio/bracey.vim', run = 'npm install --prefix server'} -- live server
+  use { 'turbio/bracey.vim', run = 'npm install --prefix server' } -- live server
 end)
 
 require('nvim-treesitter.configs').setup({
@@ -69,56 +69,56 @@ require('nvim-autopairs').setup()
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function map(mode, lhs, rhs, opts)
-        opts = vim.tbl_extend('force', {noremap = true, silent = true}, opts or {})
-        vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
+    opts = vim.tbl_extend('force', { noremap = true, silent = true }, opts or {})
+    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
   end
 
-    map('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
-    map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
-    map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-    map('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
+  map('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
+  map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+  map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+  map('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
 
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
-    map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
-    map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-    map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-    map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
-    map('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
-    map('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
-    map('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
-    map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-    map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-    map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-    map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-    map('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+  map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+  map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
+  map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+  map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+  map('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
+  map('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
+  map('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
+  map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+  map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+  map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+  map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+  map('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 
-    -- Navigation
-    map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
-    map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
+  -- Navigation
+  map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true })
+  map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true })
 
-    -- Actions
-    map('n', '<leader>hs', ':Gitsigns stage_hunk<CR>')
-    map('v', '<leader>hs', ':Gitsigns stage_hunk<CR>')
-    map('n', '<leader>hr', ':Gitsigns reset_hunk<CR>')
-    map('v', '<leader>hr', ':Gitsigns reset_hunk<CR>')
-    map('n', '<leader>hS', '<cmd>Gitsigns stage_buffer<CR>')
-    map('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>')
-    map('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>')
-    map('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>')
-    map('n', '<leader>hb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
-    map('n', '<leader>tb', '<cmd>Gitsigns toggle_current_line_blame<CR>')
-    map('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>')
-    map('n', '<leader>hD', '<cmd>lua require"gitsigns".diffthis("~")<CR>')
-    map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>')
+  -- Actions
+  map('n', '<leader>hs', ':Gitsigns stage_hunk<CR>')
+  map('v', '<leader>hs', ':Gitsigns stage_hunk<CR>')
+  map('n', '<leader>hr', ':Gitsigns reset_hunk<CR>')
+  map('v', '<leader>hr', ':Gitsigns reset_hunk<CR>')
+  map('n', '<leader>hS', '<cmd>Gitsigns stage_buffer<CR>')
+  map('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>')
+  map('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>')
+  map('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>')
+  map('n', '<leader>hb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
+  map('n', '<leader>tb', '<cmd>Gitsigns toggle_current_line_blame<CR>')
+  map('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>')
+  map('n', '<leader>hD', '<cmd>lua require"gitsigns".diffthis("~")<CR>')
+  map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>')
 
-    -- Text object
-    map('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-    map('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+  -- Text object
+  map('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+  map('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
 end
 
 -- Setup nvim-cmp.
-local cmp = require'cmp'
+local cmp = require 'cmp'
 
 cmp.setup({
   snippet = {
@@ -167,7 +167,8 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- setup language servers here
 local lspconfig = require('lspconfig')
-local servers = { 'jdtls', 'sumneko_lua', 'tsserver', 'eslint', 'emmet_ls', 'html', 'vimls', 'bashls', 'clangd', 'cssls', 'gopls', 'graphql', 'rust_analyzer', 'dockerls', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
+local servers = { 'jdtls', 'sumneko_lua', 'tsserver', 'eslint', 'emmet_ls', 'html', 'vimls', 'bashls', 'clangd', 'cssls',
+  'gopls', 'graphql', 'rust_analyzer', 'dockerls', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -176,34 +177,34 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- default options 
+-- default options
 local options = {
-  backup = false,                          -- creates a backup file
-  clipboard = 'unnamedplus',               -- allows neovim to access the system clipboard
-  cmdheight = 2,                           -- more space in the neovim command line for displaying messages
+  backup = false, -- creates a backup file
+  clipboard = 'unnamedplus', -- allows neovim to access the system clipboard
+  cmdheight = 2, -- more space in the neovim command line for displaying messages
   completeopt = { 'menuone', 'noselect' }, -- mostly just for cmp
-  fileencoding = 'utf-8',                  -- the encoding written to a file
-  hlsearch = true,                         -- highlight all matches on previous search pattern
-  mouse = 'a',                             -- allow the mouse to be used in neovim
-  showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
-  wildmenu = true,                         -- show menu on the bottom
-  smartcase = true,                        -- smart case
-  smartindent = true,                      -- make indenting smarter again
-  swapfile = false,                        -- creates a swapfile
-  termguicolors = true,                    -- set term gui colors (most terminals support this)
-  undofile = true,                         -- enable persistent undo
-  updatetime = 100,                        -- faster completion (4000ms default)
-  writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-  expandtab = true,                        -- convert tabs to spaces
-  shiftwidth = 2,                          -- the number of spaces inserted for each indentation
-  tabstop = 2,                             -- insert 2 spaces for a tab
-  number = true,                           -- set numbered lines
-  relativenumber = true,                   -- set relative numbered lines
-  signcolumn = 'yes',                      -- always show the sign column, otherwise it would shift the text each time
-  wrap = false,                            -- display lines as one long line
-  scrolloff = 8,                           -- scroll when 8 lines above or below
-  syntax = 'on',                           -- syntax highlighting
-  guicursor = ''                           -- cursor block in insert
+  fileencoding = 'utf-8', -- the encoding written to a file
+  hlsearch = true, -- highlight all matches on previous search pattern
+  mouse = 'a', -- allow the mouse to be used in neovim
+  showmode = false, -- we don't need to see things like -- INSERT -- anymore
+  wildmenu = true, -- show menu on the bottom
+  smartcase = true, -- smart case
+  smartindent = true, -- make indenting smarter again
+  swapfile = false, -- creates a swapfile
+  termguicolors = true, -- set term gui colors (most terminals support this)
+  undofile = true, -- enable persistent undo
+  updatetime = 100, -- faster completion (4000ms default)
+  writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+  expandtab = true, -- convert tabs to spaces
+  shiftwidth = 2, -- the number of spaces inserted for each indentation
+  tabstop = 2, -- insert 2 spaces for a tab
+  number = true, -- set numbered lines
+  relativenumber = true, -- set relative numbered lines
+  signcolumn = 'yes', -- always show the sign column, otherwise it would shift the text each time
+  wrap = false, -- display lines as one long line
+  scrolloff = 8, -- scroll when 8 lines above or below
+  syntax = 'on', -- syntax highlighting
+  guicursor = '' -- cursor block in insert
 }
 
 for k, v in pairs(options) do
