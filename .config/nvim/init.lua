@@ -167,7 +167,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- setup language servers here
 local lspconfig = require('lspconfig')
-local servers = { 'sumneko_lua', 'tsserver', 'eslint', 'emmet_ls', 'html', 'vimls', 'bashls', 'clangd', 'cssls', 'gopls', 'graphql', 'rust_analyzer', 'dockerls', 'java_language_server', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
+local servers = { 'jdtls', 'sumneko_lua', 'tsserver', 'eslint', 'emmet_ls', 'html', 'vimls', 'bashls', 'clangd', 'cssls', 'gopls', 'graphql', 'rust_analyzer', 'dockerls', 'jsonls', 'ltex', 'pyright', 'sqlls', 'tailwindcss' }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
