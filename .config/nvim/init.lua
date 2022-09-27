@@ -35,7 +35,7 @@ require('packer').startup(function()
   use 'nvim-lua/plenary.nvim' -- dependency for telescope
   use 'nvim-telescope/telescope.nvim' -- fuzzy find
   use 'arcticicestudio/nord-vim' -- colorscheme
-  use 'epilande/vim-react-snippets' -- react snippets
+  use 'mlaursen/vim-react-snippets' -- react snippets
   use 'nvim-lua/popup.nvim' -- popup
   use { 'turbio/bracey.vim', run = 'npm install --prefix server' } -- live server
 end)
