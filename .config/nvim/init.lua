@@ -21,7 +21,7 @@ require('packer').startup(function()
   use 'lewis6991/gitsigns.nvim' -- git sign column
   use 'windwp/nvim-autopairs' -- auto brackets
   use 'neovim/nvim-lspconfig' -- lsp
-  use { 'nvim-treesitter/nvim-treesitter', commit = '8ada8faf2fd5a74cc73090ec856fa88f34cd364b' } -- syntax highlighting
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlighting
   use 'hrsh7th/cmp-nvim-lsp' -- lsp source for cmp
   use 'hrsh7th/nvim-cmp' -- auto-complete
   use 'SirVer/ultisnips' -- snippet source
@@ -42,7 +42,6 @@ require('packer').startup(function()
 end)
 
 require('nvim-treesitter.configs').setup({
-  ensure_installed = all,
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = true
@@ -57,7 +56,7 @@ require('nvim-treesitter.configs').setup({
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     colors = { '#BF616A', '#D08770', '#EBCB8B', '#5E81AC', '#B48EAD' }, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
-  },
+  }
 })
 require('lualine').setup({
   options = { theme = 'nord' }
