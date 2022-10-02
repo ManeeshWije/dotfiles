@@ -99,7 +99,7 @@ local on_attach = function(client, bufnr)
   map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
   map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
   map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-  map('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+  map('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<CR>')
 
   -- Navigation
   map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true })
