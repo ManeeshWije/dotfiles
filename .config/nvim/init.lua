@@ -52,7 +52,7 @@ require('nvim-treesitter.configs').setup({
   rainbow = {
     enable = true,
     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-    extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     colors = { '#BF616A', '#D08770', '#EBCB8B', '#5E81AC', '#B48EAD' }, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
@@ -223,23 +223,10 @@ vim.cmd([[
 set whichwrap+=<,>,[,],h,l"
 set iskeyword+=-
 
-" Fix italics in Vim
-if !has('nvim')
-  let &t_ZH="\e[3m"
-  let &t_ZR="\e[23m"
-endif
-
 " so useful
 inoremap jk <ESC>
 
-" For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
-if (has('nvim'))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-endif
-
 colorscheme nord
-hi! Normal ctermbg=NONE guibg=NONE 
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 " Nerd Commenter keybinds
 " Create default mappings
