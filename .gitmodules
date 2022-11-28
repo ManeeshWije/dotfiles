@@ -1,0 +1,3 @@
+[submodule ".config/microsoft/vscode-node-debug2"]
+	path = .config/microsoft/vscode-node-debug2
+	url = https://github.com/microsoft/vscode-node-debug2.git

@@ -5,7 +5,7 @@
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.profile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # install everything
-brew install tldr rectangle jdtls lua-language-server bear via postman rust-analyzer ripgrep clang-format cmake cmatrix git go htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python speedtest-cli starship tmux tty-clock audacity balenaetcher firefox caffeine discord microsoft-teams minecraft slack spotify visual-studio-code zoom alacritty mvn google-chrome
+brew install google-java-format stylua ninja tldr ltex-ls rectangle jdtls java lua-language-server bear via postman rust-analyzer ripgrep clang-format cmake cmatrix git go htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python speedtest-cli starship tmux tty-clock audacity balenaetcher firefox caffeine discord microsoft-teams minecraft slack spotify visual-studio-code zoom alacritty mvn google-chrome
 
 ssh-keygen -t ed25519 -C "m.mwije1@gmail.com"
 eval "$(ssh-agent -s)"
@@ -18,3 +18,10 @@ npm install -g pyright bash-language-server dockerfile-language-server-nodejs vs
 
 # clone stuff
 git clone https://github.com/ManeeshWije/dotfiles.git
+cd .config
+git clone https://github.com/llvm/llvm-project.git
+
+cd ~ 
+mkdir .virtualenvs
+python3 -m venv ~/.virtualenvs/debugpy
+~/.virtualenvs/debugpy/bin/python -m pip install debugpy

@@ -39,3 +39,4 @@ alias luamake=/Users/maneeshwijewardhana/lua-language-server/3rd/luamake/luamake
 __git_files () { 
     _wanted files expl 'local files' _files     
 }
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
