@@ -11,8 +11,9 @@ end
 dap.adapters.node2 = {
   type = 'executable',
   command = 'node',
-  args = {os.getenv('HOME') .. '/.config/microsoft/vscode-node-debug2/out/src/nodeDebug.js'},
+  args = { os.getenv('HOME') .. '/.config/nvim/microsoft/vscode-node-debug2/out/src/nodeDebug.js' },
 }
+
 dap.configurations.javascript = {
   {
     name = 'Launch',
