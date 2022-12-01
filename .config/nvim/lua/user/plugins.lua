@@ -45,7 +45,7 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 	use("windwp/nvim-autopairs") -- auto brackets
 	use("numToStr/Comment.nvim") -- Easily comment stuff
-	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("JoosepAlviste/nvim-ts-context-commentstring") -- content commenting
 	use({ "turbio/bracey.vim", run = "npm install --prefix server" }) -- live server
 
 	-- interface
@@ -54,6 +54,7 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim") -- status line
 	use("ap/vim-css-color") -- css colours
 	use("lewis6991/gitsigns.nvim") -- git sign column
+  use "lukas-reineke/indent-blankline.nvim" -- show indents
 
 	-- colorscheme
 	use("shaunsingh/nord.nvim")
@@ -77,14 +78,14 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- Diagnostics and formatting
 
 	-- Telescope
-	use("nvim-telescope/telescope.nvim")
+	use("nvim-telescope/telescope.nvim") -- fuzzy find
 
 	-- Treesitter
 	use({
-		"nvim-treesitter/nvim-treesitter",
+		"nvim-treesitter/nvim-treesitter", -- syntax highlight
 		run = ":TSUpdate",
 	})
-	use("p00f/nvim-ts-rainbow")
+	use("p00f/nvim-ts-rainbow") -- bracket pair colorizer
 
 	-- Debugging
 	use("mfussenegger/nvim-dap") -- debug adapter
