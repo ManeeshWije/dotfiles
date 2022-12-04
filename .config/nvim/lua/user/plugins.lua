@@ -92,6 +92,7 @@ return packer.startup(function(use)
 	use("rcarriga/nvim-dap-ui") -- ui for debugging
 	use("mfussenegger/nvim-dap-python") -- python debug
 	use("ravenxrz/DAPInstall.nvim") -- install adapters
+  use 'mfussenegger/nvim-jdtls' -- java stuff
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
