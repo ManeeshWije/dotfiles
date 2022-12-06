@@ -40,6 +40,7 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	-- Utils
+	use("github/copilot.vim") -- bruh
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
@@ -54,7 +55,7 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim") -- status line
 	use("ap/vim-css-color") -- css colours
 	use("lewis6991/gitsigns.nvim") -- git sign column
-  use "lukas-reineke/indent-blankline.nvim" -- show indents
+	use("lukas-reineke/indent-blankline.nvim") -- show indents
 
 	-- colorscheme
 	use("shaunsingh/nord.nvim")
@@ -92,7 +93,7 @@ return packer.startup(function(use)
 	use("rcarriga/nvim-dap-ui") -- ui for debugging
 	use("mfussenegger/nvim-dap-python") -- python debug
 	use("ravenxrz/DAPInstall.nvim") -- install adapters
-  use 'mfussenegger/nvim-jdtls' -- java stuff
+	use("mfussenegger/nvim-jdtls") -- java stuff
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
