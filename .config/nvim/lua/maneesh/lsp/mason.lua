@@ -15,7 +15,9 @@ local servers = {
   "dockerls",
   "sqlls",
   "tailwindcss",
-  "jdtls"
+  "jdtls",
+  "als",
+  "fortls"
 }
 
 local settings = {
