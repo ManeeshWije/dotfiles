@@ -5,7 +5,7 @@
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.profile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # install everything
-brew install gh black google-java-format stylua ninja tldr ltex-ls rectangle jdtls java lua-language-server bear via postman rust-analyzer ripgrep clang-format cmake cmatrix git go htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python speedtest-cli starship tmux tty-clock audacity balenaetcher firefox caffeine discord microsoft-teams minecraft slack spotify visual-studio-code zoom alacritty mvn google-chrome
+brew install gh black google-java-format stylua ninja tldr ltex-ls rectangle jdtls java lua-language-server bear via postman rust-analyzer ripgrep clang-format cmake cmatrix git go htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python speedtest-cli starship tmux tty-clock audacity balenaetcher caffeine discord microsoft-teams minecraft slack spotify visual-studio-code zoom alacritty mvn eloston-chromium
 
 ssh-keygen -t ed25519 -C "m.mwije1@gmail.com"
 eval "$(ssh-agent -s)"
