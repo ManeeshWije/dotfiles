@@ -48,6 +48,12 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- content commenting
 	use({ "turbio/bracey.vim", run = "npm install --prefix server" }) -- live server
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	}) -- md preview
 
 	-- interface
 	use("kyazdani42/nvim-web-devicons") -- file icons
@@ -82,11 +88,8 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope.nvim") -- fuzzy find
 
 	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter", -- syntax highlight
-		run = ":TSUpdate",
-	})
-	use("p00f/nvim-ts-rainbow") -- bracket pair colorizer
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- syntax highlight
+	use("p00f/nvim-ts-rainbow") -- bracket pair colorizer that utilizes treesitter
 
 	-- Debugging
 	use("mfussenegger/nvim-dap") -- debug adapter

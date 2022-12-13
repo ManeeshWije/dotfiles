@@ -17,7 +17,8 @@ local servers = {
   "tailwindcss",
   "jdtls",
   "als",
-  "fortls"
+  "fortls",
+  "ltex"
 }
 
 local settings = {
