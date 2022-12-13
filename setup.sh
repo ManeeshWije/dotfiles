@@ -18,10 +18,6 @@ npm install -g pyright bash-language-server dockerfile-language-server-nodejs vs
 
 # clone stuff
 git clone https://github.com/ManeeshWije/dotfiles.git
-cd .config
-git clone https://github.com/llvm/llvm-project.git
-
-cd ~ 
 mkdir .virtualenvs
 python3 -m venv ~/.virtualenvs/debugpy
 ~/.virtualenvs/debugpy/bin/python -m pip install debugpy
