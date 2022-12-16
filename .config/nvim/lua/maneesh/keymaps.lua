@@ -46,17 +46,18 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
-
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- Center screen
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
 
 -- Terminal --
 -- Better terminal navigation
