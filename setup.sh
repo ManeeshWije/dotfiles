@@ -16,8 +16,6 @@ git config status.showuntrackedfiles no
 # some lsp
 npm install -g pyright bash-language-server dockerfile-language-server-nodejs vscode-langservers-extracted emmet-ls sql-language-server vim-language-server
 
-# clone stuff
-git clone https://github.com/ManeeshWije/dotfiles.git
 mkdir .virtualenvs
 python3 -m venv ~/.virtualenvs/debugpy
 ~/.virtualenvs/debugpy/bin/python -m pip install debugpy
