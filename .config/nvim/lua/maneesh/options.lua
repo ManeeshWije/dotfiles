@@ -39,4 +39,5 @@ vim.opt.shortmess:append "c"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+-- vim.cmd [[let g:python_recommended_style = 0]]
 vim.cmd [[ imap <silent><script><expr> <C-e> copilot#Accept('\<CR>') let g:copilot_no_tab_map = v:true ]]
