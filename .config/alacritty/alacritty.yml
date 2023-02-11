@@ -3,7 +3,7 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty it self.
-# env:
+env:
   # TERM env customization.
   #
   # If this property is not set, alacritty will set it to xterm-256color.
@@ -11,7 +11,7 @@
   # Note that some xterm terminfo databases don't declare support for italics.
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
-  # TERM: xterm-256color-italic
+  TERM: xterm-256color
 
 window:
   # Window dimensions (changes require restart)
@@ -102,116 +102,6 @@ draw_bold_text_with_bright_colors: false
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: true
-
-
-# Project:    Nord Alacritty
-# Version:    0.1.0
-# Repository: https://github.com/arcticicestudio/nord-alacritty
-# License:    MIT
-# References:
-#   https://github.com/alacritty/alacritty
-
-colors:
-  primary:
-    background: '#2e3440'
-    foreground: '#d8dee9'
-    dim_foreground: '#a5abb6'
-  cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
-  vi_mode_cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
-  selection:
-    text: CellForeground
-    background: '#4c566a'
-  search:
-    matches:
-      foreground: CellBackground
-      background: '#88c0d0'
-    footer_bar:
-      background: '#434c5e'
-      foreground: '#d8dee9'
-  normal:
-    black: '#3b4252'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#88c0d0'
-    white: '#e5e9f0'
-  bright:
-    black: '#4c566a'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#8fbcbb'
-    white: '#eceff4'
-  dim:
-    black: '#373e4d'
-    red: '#94545d'
-    green: '#809575'
-    yellow: '#b29e75'
-    blue: '#68809a'
-    magenta: '#8c738c'
-    cyan: '#6d96a5'
-    white: '#aeb3bb'
-
-# # Base16 Material Palenight 256 - alacritty color config
-# # Nate Peterson
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x292d3e'
-#     foreground: '0x959dcb'
-#
-#   # Colors the cursor will use if `custom_cursor_colors` is true
-#   cursor:
-#     text: '0x292d3e'
-#     cursor: '0x959dcb'
-#
-#   # Normal colors
-#   normal:
-#     black:   '0x292d3e'
-#     red:     '0xf07178'
-#     green:   '0xc3e88d'
-#     yellow:  '0xffcb6b'
-#     blue:    '0x82aaff'
-#     magenta: '0xc792ea'
-#     cyan:    '0x89ddff'
-#     white:   '0x959dcb'
-#
-#   # Bright colors
-#   bright:
-#     black:   '0x676e95'
-#     red:     '0xf07178'
-#     green:   '0xc3e88d'
-#     yellow:  '0xffcb6b'
-#     blue:    '0x82aaff'
-#     magenta: '0xc792ea'
-#     cyan:    '0x89ddff'
-#     white:   '0xffffff'
-
-  indexed_colors:
-    - { index: 16, color: '0xf78c6c' }
-    - { index: 17, color: '0xff5370' }
-    - { index: 18, color: '0x444267' }
-    - { index: 19, color: '0x32374d' }
-    - { index: 20, color: '0x8796b0' }
-    - { index: 21, color: '0x959dcb' }
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '0xff00ff' }`
-  #
-  # indexed_colors: []
 
 # Visual Bell
 #
@@ -510,3 +400,6 @@ debug:
     #- --command=tmux
 
 # vim: nospell
+
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml

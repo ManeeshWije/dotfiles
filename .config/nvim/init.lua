@@ -1,15 +1,15 @@
-require "maneesh.options"
-require "maneesh.keymaps"
-require "maneesh.plugins"
-require "maneesh.gitsigns"
-require "maneesh.colorscheme"
-require "maneesh.autopairs"
-require "maneesh.cmp"
-require "maneesh.lsp"
-require "maneesh.telescope"
-require "maneesh.treesitter"
-require "maneesh.comment"
-require "maneesh.nvim-tree"
-require "maneesh.lualine"
-require "maneesh.dap"
-require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+require("maneesh.options")
+require("maneesh.keymaps")
+require("maneesh.plugins")
+require("maneesh.gitsigns")
+require("maneesh.colorscheme")
+require("maneesh.autopairs")
+require("maneesh.cmp")
+require("maneesh.lsp")
+require("maneesh.telescope")
+require("maneesh.treesitter")
+require("maneesh.comment")
+require("maneesh.nvim-tree")
+require("maneesh.lualine")
+require("maneesh.dap")
+require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")

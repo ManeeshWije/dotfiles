@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/maneeshwijewardhana/.local/share/nvim/site/pack/packer/start/bracey.vim",
     url = "https://github.com/turbio/bracey.vim"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/Users/maneeshwijewardhana/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/maneeshwijewardhana/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -153,11 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/maneeshwijewardhana/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["nord.nvim"] = {
-    loaded = true,
-    path = "/Users/maneeshwijewardhana/.local/share/nvim/site/pack/packer/start/nord.nvim",
-    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,

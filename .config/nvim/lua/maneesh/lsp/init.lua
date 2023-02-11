@@ -1,8 +1,8 @@
 local status_ok, _ = pcall(require, "lspconfig")
 if not status_ok then
-  return
+	return
 end
 
-require "maneesh.lsp.mason"
+require("maneesh.lsp.mason")
 require("maneesh.lsp.handlers").setup()
-require "maneesh.lsp.null-ls"
+require("maneesh.lsp.null-ls")

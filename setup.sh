@@ -19,3 +19,8 @@ npm install -g pyright bash-language-server dockerfile-language-server-nodejs vs
 mkdir .virtualenvs
 python3 -m venv ~/.virtualenvs/debugpy
 ~/.virtualenvs/debugpy/bin/python -m pip install debugpy
+
+# tmux manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# colorscheme alacritty
+git clone https://github.com/catppuccin/alacritty.git ~/.config/alacritty/catppuccin
