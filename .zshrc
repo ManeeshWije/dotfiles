@@ -26,17 +26,13 @@ alias stats='git status'  # 'status' is protected name so using 'stats' instead
 alias tag='git tag'
 alias newtag='git tag -a'
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-eval "$(starship init zsh)"
-
-alias luamake=/Users/maneeshwijewardhana/lua-language-server/3rd/luamake/luamake
+alias luamake=/Users/maneesh/lua-language-server/3rd/luamake/luamake
 
 # Remove autocomplete lag zsh->git
 __git_files () { 
     _wanted files expl 'local files' _files     
 }
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH=$PATH:"/Users/maneesh/opt/GNAT/2020/bin" 
+
+eval "$(starship init zsh)"

@@ -63,7 +63,7 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim") -- show indents
 
 	-- colorscheme
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("sainnhe/gruvbox-material")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -88,7 +88,6 @@ return packer.startup(function(use)
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- syntax highlight
-	use("p00f/nvim-ts-rainbow") -- bracket pair colorizer that utilizes treesitter
 
 	-- Debugging
 	use("mfussenegger/nvim-dap") -- debug adapter
@@ -102,4 +101,7 @@ return packer.startup(function(use)
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
+	vim.cmd([[let g:gruvbox_material_background = 'hard']])
+	vim.cmd([[let g:gruvbox_material_better_performance = 1]])
+	vim.cmd([[colorscheme gruvbox-material]])
 end)

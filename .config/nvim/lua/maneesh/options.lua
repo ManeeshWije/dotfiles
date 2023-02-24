@@ -1,5 +1,5 @@
 -- :help options
-vim.opt.backup = false                          -- creates a backup file
+vim.opt.backup = false                          -- does not create a backup file
 vim.opt.syntax = "on"                           -- set syntax colors
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
@@ -26,7 +26,7 @@ vim.opt.tabstop = 4                             -- insert 4 spaces for a tab
 vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.number = true                           -- set numbered lines
 vim.opt.relativenumber = true                   -- set relative numbered lines
-vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
+vim.opt.numberwidth = 2                         -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 vim.opt.wrap = false                            -- display lines as one long line
 vim.opt.scrolloff = 8                           -- is one of my fav
@@ -39,5 +39,3 @@ vim.opt.shortmess:append "c"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
--- vim.cmd [[let g:python_recommended_style = 0]]
-vim.cmd [[ imap <silent><script><expr> <C-e> copilot#Accept('\<CR>') let g:copilot_no_tab_map = v:true ]]

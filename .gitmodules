@@ -1,6 +1,6 @@
-[submodule ".config/nvim/.config/nvim/microsoft/vscode-node-debug2"]
-	path = .config/nvim/.config/nvim/microsoft/vscode-node-debug2
+[submodule ".config/nvim/microsoft/vscode-node-debug2"]
+	path = ~/.config/nvim/microsoft/vscode-node-debug2
 	url = https://github.com/microsoft/vscode-node-debug2.git
-[submodule ".config/alacritty/catppuccin"]
-	path = .config/alacritty/catppuccin
-	url = https://github.com/catppuccin/alacritty.git
+[submodule ".config/nvim/pack/github/start/copilot.vim"]
+	path = .config/nvim/pack/github/start/copilot.vim
+	url = https://github.com/github/copilot.vim.git
