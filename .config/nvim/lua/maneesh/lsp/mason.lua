@@ -16,8 +16,6 @@ local servers = {
 	"sqlls",
 	"tailwindcss",
 	"jdtls",
-	"als",
-	"fortls",
 	"ltex",
 }
 
