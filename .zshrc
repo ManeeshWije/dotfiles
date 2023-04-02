@@ -33,6 +33,5 @@ __git_files () {
     _wanted files expl 'local files' _files     
 }
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export PATH=$PATH:"/Users/maneesh/opt/GNAT/2020/bin" 
 
 eval "$(starship init zsh)"
