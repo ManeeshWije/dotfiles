@@ -22,6 +22,9 @@ window:
     columns: 100
     lines: 85
 
+  # Background opacity
+  opacity: 0.95
+
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is not scaled by
@@ -99,6 +102,9 @@ font:
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: false
 
+colors:
+  transparent_background_colors: true
+
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: true
@@ -129,9 +135,6 @@ bell:
   animation: EaseOutExpo
   color: '0xffffff'
   duration: 0
-
-# Background opacity
-window.opacity: 1.0
 
 # Key bindings
 #
