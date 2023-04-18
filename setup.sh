@@ -8,6 +8,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # install everything
 brew tap homebrew/cask-fonts
 brew install font-iosevka-nerd-font mactex pandoc qlmarkdown flycut gh black flake8 google-java-format stylua ninja tldr ltex-ls rectangle jdtls java lua-language-server bear via postman rust-analyzer ripgrep clang-format cmake git go htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python speedtest-cli starship tmux audacity balenaetcher caffeine discord microsoft-teams minecraft slack spotify visual-studio-code zoom alacritty mvn google-chrome
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 ssh-keygen -t ed25519 -C "m.mwije1@gmail.com"
 eval "$(ssh-agent -s)"
