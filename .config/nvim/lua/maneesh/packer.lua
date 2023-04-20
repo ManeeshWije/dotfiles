@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
             { 'rafamadriz/friendly-snippets' },
         }
     }
-	use("jose-elias-alvarez/null-ls.nvim")
+    use("jose-elias-alvarez/null-ls.nvim")
     use("github/copilot.vim")
     use("lewis6991/gitsigns.nvim")
     use("lukas-reineke/indent-blankline.nvim")
@@ -50,6 +50,10 @@ return require('packer').startup(function(use)
             vim.fn["mkdp#util#install"]()
         end,
     })
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
     vim.cmd([[let g:gruvbox_material_background = 'hard']])
     vim.cmd([[colorscheme gruvbox-material]])
 end)
