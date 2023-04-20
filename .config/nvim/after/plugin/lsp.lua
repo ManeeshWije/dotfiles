@@ -60,7 +60,7 @@ end)
 lsp.setup()
 
 vim.diagnostic.config({
-    virtual_text = false
+    virtual_text = true
 })
 
 local null_ls = require('null-ls')
