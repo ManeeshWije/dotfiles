@@ -23,7 +23,7 @@ window:
     lines: 85
 
   # Background opacity
-  opacity: 0.90
+  opacity: 1
 
   # Window padding (changes require restart)
   #
