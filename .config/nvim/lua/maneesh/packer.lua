@@ -55,5 +55,6 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     vim.cmd([[let g:gruvbox_material_background = 'hard']])
+    vim.cmd([[let g:gruvbox_material_diagnostic_virtual_text = 'colored']])
     vim.cmd([[colorscheme gruvbox-material]])
 end)
