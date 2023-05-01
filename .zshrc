@@ -19,7 +19,7 @@ alias checkout='git checkout'
 alias clone='git clone'
 alias commit='git commit -m'
 alias fetch='git fetch'
-alias merge-'git merge'
+alias merge='git merge'
 alias pull='git pull origin'
 alias push='git push origin'
 alias stats='git status'  # 'status' is protected name so using 'stats' instead
