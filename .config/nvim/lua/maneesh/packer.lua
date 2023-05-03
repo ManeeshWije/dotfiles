@@ -15,6 +15,8 @@ return require('packer').startup(function(use)
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
+    use('nvim-tree/nvim-web-devicons')
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -37,23 +39,40 @@ return require('packer').startup(function(use)
             { 'rafamadriz/friendly-snippets' },
         }
     }
+
     use("jose-elias-alvarez/null-ls.nvim")
+
     use("github/copilot.vim")
+
     use("lewis6991/gitsigns.nvim")
+
     use("lukas-reineke/indent-blankline.nvim")
+
     use("windwp/nvim-autopairs")
+
     use("numToStr/Comment.nvim")
+
     use({ "turbio/bracey.vim", run = "npm install --prefix server" })
+
     use({
         "iamcco/markdown-preview.nvim",
         run = function()
             vim.fn["mkdp#util#install"]()
         end,
     })
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        }
+    }
+
     vim.cmd([[let g:gruvbox_material_background = 'hard']])
     vim.cmd([[let g:gruvbox_material_diagnostic_virtual_text = 'colored']])
     vim.cmd([[colorscheme gruvbox-material]])
