@@ -34,5 +34,5 @@ vim.opt.syntax = "on"
 vim.opt.conceallevel = 0
 vim.opt.fileencoding = "utf-8"
 vim.opt.mouse = "a"
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.showmode = false
