@@ -55,6 +55,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("n", "<leader>qf", function() vim.diagnostic.setqflist() end, opts)
 end)
 
 lsp.setup()
@@ -70,7 +71,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
     debug = false,
     sources = {
-        formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote", "--tab-width", "4" } }),
+        formatting.prettier.with({ extra_args = { "--tab-width", "4" } }),
         formatting.black.with({ extra_args = { "--fast" } }),
         formatting.google_java_format,
         formatting.clang_format,

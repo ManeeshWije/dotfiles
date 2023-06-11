@@ -27,7 +27,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 
 vim.opt.clipboard = "unnamedplus"
-vim.opt.cmdheight = 2
+vim.opt.cmdheight = 1
 vim.opt.completeopt = { "menuone", "noselect" }
 
 vim.opt.syntax = "on"
@@ -35,3 +35,4 @@ vim.opt.conceallevel = 0
 vim.opt.fileencoding = "utf-8"
 vim.opt.mouse = "a"
 vim.opt.cursorline = true
+vim.opt.showmode = false
