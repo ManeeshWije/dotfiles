@@ -57,4 +57,5 @@ alt - p : yabai -m window --focus stack.prev
 # ctrl + alt - l : window=$(yabai -m query --windows --window | jq -r '.id') && yabai -m window east --stack $window || (yabai -m window $window --toggle float && yabai -m window $window --toggle float)
 
 # applications
-ctrl + alt - return : open -a "Alacritty" -n
+shift + alt - return : open -a "Alacritty" -n
+shift + alt - s : open -a "Safari" -n
