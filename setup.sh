@@ -7,7 +7,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # install everything
 brew tap homebrew/cask-fonts
-brew install font-iosevka-nerd-font mactex pandoc qlmarkdown maccy gh black flake8 google-java-format stylua ninja tldr ltex-ls yabai skhd jdtls java lua-language-server bear via postman rust-analyzer ripgrep clang-format cmake git go htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python speedtest-cli starship tmux audacity balenaetcher caffeine discord microsoft-teams minecraft slack spotify visual-studio-code zoom alacritty mvn google-chrome
+brew install font-iosevka-nerd-font mactex pandoc qlmarkdown maccy gh black flake8 google-java-format stylua ninja tldr ltex-ls yabai skhd jdtls java lua-language-server bear via postman rust-analyzer ripgrep clang-format cmake git go htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python speedtest-cli starship tmux audacity balenaetcher caffeine discord microsoft-teams minecraft slack spotify visual-studio-code zoom alacritty mvn firefox 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
