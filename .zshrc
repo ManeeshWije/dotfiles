@@ -6,6 +6,7 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 export TERM="xterm-256color"
 export EDITOR='nvim'
+export VISUAL="nvim"
 
 # Shortcuts
 bindkey -v
