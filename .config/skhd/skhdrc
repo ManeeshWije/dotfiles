@@ -15,6 +15,9 @@ shift + alt - l : yabai -m window --warp east
 # fast focus desktop
 # enabled in Sys Pref > Keyboard > Shortcuts > Mission Control > Switch To Desktop X
 
+# balance size of windows
+shift + alt - 0 : yabai -m space --balance
+
 # send window to desktop and follow focus
 # shift + cmd - z : yabai -m window --space next; yabai -m space --focus next
 shift + alt - 1 : yabai -m window --space  1; yabai -m space --focus 1
