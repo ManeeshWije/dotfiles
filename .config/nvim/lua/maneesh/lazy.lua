@@ -92,6 +92,8 @@ local plugins = {
     "windwp/nvim-autopairs",
 
     "numToStr/Comment.nvim",
+
+    "christoomey/vim-tmux-navigator"
 }
 
 local opts = {}
