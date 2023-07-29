@@ -1,0 +1,77 @@
+V "GNAT Lib v2020"
+A -gnatwa
+A -Wall
+P ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_IO
+RV NO_LOCAL_ALLOCATORS
+RV NO_RECURSION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+
+U polylinkedlist%b	polylinkedlist.adb	bb7eb60c NE OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+U polylinkedlist%s	polylinkedlist.ads	76c25b14 EE NE OO PK
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D polylinkedlist.ads	20230306190330 76c25b14 polylinkedlist%s
+D polylinkedlist.adb	20230306190350 63483875 polylinkedlist%b
+D system.ads		20200819050647 085b6ffb system%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+G a e
+G c Z s b [addpolynode polylinkedlist 17 15 none]
+G c Z s b [deletepolynode polylinkedlist 21 15 none]
+G c Z s s [polynodeIP polylinkedlist 11 10 none]
+X 1 ada.ads
+16K9*Ada 20e8 11|6r6 6r23
+X 6 a-textio.ads
+57K13*Text_IO 727e16 11|6w10 6r27
+264U14*New_Line 11|31s25 32s25 49s17 50s17
+465U14*Put 11|30s25 48s17
+X 10 polylinkedlist.ads
+6K9*Polylinkedlist 23l5 23e19 11|8b14 70l5 70t19
+8R10*polyNode 9r32 11c10 15e15 11|46r29
+9P10*polyNodePtr(8R10) 14r17 19r30 21r49 11|12r30 14r20 15r20 60r49 61r20
+. 62r20
+12i9*power{integer} 11|23r25
+13i9*coeff{integer} 11|27m30 27r48
+14p9*next{9P10} 11|35m64 41r34 54m26 65r34
+17U15*addPolyNode 18>9 18>39 18>56 19=9 11|10b15 35s21 57l9 57t20
+18i9 power{integer} 11|11b9 23r33 35r34 46r39
+18i39 coeff{integer} 11|11b39 27r56 29r24 35r41 46r46 47r16
+18b56 update{boolean} 11|11b59 25r20
+19p9 newPolyNode{9P10} 11|12b9 18r21 52m17
+21U15*deletePolyNode 21=31 11|60b15 69l9 69t23
+21p31 headNode{9P10} 11|60b31 61r35 68m9
+X 11 polylinkedlist.adb
+14p9 currNode{10|9P10} 18m9 22r15 23r16 27r21 27r39 35r55 40r25 41m13 41r25
+. 46m13 52r32 54r34
+15p9 prevNode{10|9P10} 19m9 40m13 51r19 54r17
+16b9 found{boolean} 24m17 44r16
+61p9 currNode{10|9P10} 64r15 65r25 66m13
+62p9 nextNode{10|9P10} 65m13 66r25
+

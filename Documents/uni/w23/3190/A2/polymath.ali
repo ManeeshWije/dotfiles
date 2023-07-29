@@ -1,0 +1,141 @@
+V "GNAT Lib v2020"
+A -gnatwa
+A -Wall
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+
+U polymath%b		polymath.adb		37f35624 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W polylink%s		polylink.adb		polylink.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.exp_int%s	s-expint.adb		s-expint.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+
+U polymath%s		polymath.ads		f6159208 EE NE OO PK
+W polylinkedlist%s	polylinkedlist.adb	polylinkedlist.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-inteio.ads		20200819050642 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-tiinio.ads		20200819050643 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D polylink.ads		20230306190435 ac097127 polylink%s
+D polylinkedlist.ads	20230306190330 76c25b14 polylinkedlist%s
+D polymath.ads		20230306190252 80d7c91c polymath%s
+D polymath.adb		20230306190231 4392b2d6 polymath%b
+D system.ads		20200819050647 085b6ffb system%s
+D s-conca2.ads		20200819050645 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-expint.ads		20200819050645 192336fc system.exp_int%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-imgint.ads		20200819050645 02dbe0c2 system.img_int%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+G a e
+G c Z s b [addpoly polymath 9 15 none]
+G c Z s b [subpoly polymath 11 15 none]
+G c Z s b [multpoly polymath 15 15 none]
+G c Z s b [evalpoly polymath 17 15 none]
+G c Z s b [issame polymath 19 14 none]
+G r c none [addpoly polymath 9 15 none] [addpolynode polylinkedlist 17 15 none]
+G r c none [addpoly polymath 9 15 none] [sortpoly polylink 18 15 none]
+G r c none [addpoly polymath 9 15 none] [writepoly polylink 12 15 none]
+G r c none [subpoly polymath 11 15 none] [addpolynode polylinkedlist 17 15 none]
+G r c none [subpoly polymath 11 15 none] [sortpoly polylink 18 15 none]
+G r c none [subpoly polymath 11 15 none] [writepoly polylink 12 15 none]
+G r c none [multpoly polymath 15 15 none] [addpolynode polylinkedlist 17 15 none]
+G r c none [multpoly polymath 15 15 none] [sortpoly polylink 18 15 none]
+G r c none [multpoly polymath 15 15 none] [writepoly polylink 12 15 none]
+X 1 ada.ads
+16K9*Ada 20e8 15|7r6 7r31 8r6 8r31
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[8|46] 15|8w10 8r35
+X 7 a-textio.ads
+57K13*Text_IO 727e16 15|7w10 7r35
+264U14*New_Line 15|20s13 21s13 76s13 77s13 82s17 122s21 123s21 138s13 139s13
+. 173s13 174s13 183s21 184s21 200s21 201s21 207s21 208s21 224s21 225s21 229s17
+. 230s17
+465U14*Put 15|19s13 75s13 81s17 121s21 137s13 172s13 177s13 182s21 190s21
+. 199s21 206s21 214s21 223s21 228s17
+X 8 a-tiinio.ads
+59U14*Get 15|178s13[3|18] 191s21[3|18] 215s21[3|18]
+X 12 polylink.ads
+8K9*Polylink 19e13 15|9w6 9r31
+12U15*writePOLY 15|61s13 160s13
+18U15*sortPOLY 15|60s13 159s13
+X 13 polylinkedlist.ads
+6K9*Polylinkedlist 23e19 14|6w6 6r26
+9P10*polyNodePtr(8R10) 14|9r38 9r66 12r27 12r59 15r39 15r67 17r39 17r67 20r20
+. 20r45 15|12r38 12r66 14r21 15r21 16r21 66r27 66r59 69r26 70r26 71r26 72r26
+. 129r39 129r67 131r21 132r21 133r21 164r39 164r67 167r20 237r20 237r45 239r21
+. 240r21
+12i9*power{integer} 15|29r29 29r47 31r34 36r32 36r50 38r34 43r35 50r39 55r40
+. 151r34 151r52 195r55 219r55 248r25 248r44
+13i9*coeff{integer} 15|31r50 31r68 38r50 43r52 50r55 55r57 92m35 92r54 102m40
+. 102r64 108m34 108r52 117m39 117r62 152r34 152r52 195r73 219r73 249r25 249r44
+14p9*next{9P10} 15|33r43 34r44 39r42 44r44 51r38 56r40 93r54 103r64 109r52
+. 118r62 153r44 155r38 196r46 220r46 253r35 254r36
+17U15*addPolyNode 15|30s21 37s21 42s21 50s17 55s17 150s21
+X 14 polymath.ads
+8K9*Polymath 21l5 21e13 15|11b14 267l5 267t13
+9U15*addpoly 9>24 9>51 15|12b15 63l9 63t16 97s21 112s21
+9p24 headNode{13|9P10} 15|12b24 18r12 24r26
+9p51 headNode2{13|9P10} 15|12b51 18r31 25r26
+11U15*subpoly 12=9 12=40 13>9 15|65b15 127l9 127t16
+12p9 headNode{13|9P10} 15|66b9 71r41 74r12 80r24 85r30 97r30 112r30 113m21
+12p40 headNode2{13|9P10} 15|66b40 72r41 74r31 80r34 86r30 97r40 98m21 112r40
+13i9 index{integer} 15|67b9 89r20 105r23
+15U15*multpoly 15>25 15>52 15|129b15 162l9 162t17
+15p25 headNode{13|9P10} 15|129b25 136r12 142r25
+15p52 headNode2{13|9P10} 15|129b52 136r31 148r30
+17U15*evalpoly 17>25 17>52 15|164b15 233l9 233t17
+17p25 headNode{13|9P10} 15|164b25 171r12 181r20 187r33
+17p52 headNode2{13|9P10} 15|164b52 171r32 205r20 211r33
+19V14*isSame{boolean} 20>9 20>33 15|80s16 236b14 266l9 266t15
+20p9 headNode{13|9P10} 15|237b9 243r22
+20p33 headNode2{13|9P10} 15|237b33 244r22
+X 15 polymath.adb
+14p9 tempNode{13|9P10} 24m13 28r19 29r20 31r25 31r41 33m21 33r34 36r23 38r25
+. 38r41 39m21 39r33 49r19 50r30 50r46 51m17 51r29
+15p9 tempNode2{13|9P10} 25m13 28r40 29r37 31r58 34m21 34r34 36r40 43r25 43r42
+. 44m21 44r34 54r19 55r30 55r47 56m17 56r30
+16p9 newNode{13|9P10} 32m32 32r32 38m64 38r64 43m66 43r66 50m69 50r69 55m71
+. 55r71 60r23 61r24
+69p9 tempNode{13|9P10} 85m17 107r27 108r25 108r43 109m25 109r43
+70p9 tempNode2{13|9P10} 86m17 91r27 92r25 92r44 93m25 93r44
+71p9 finalTempNode{13|9P10} 113r33 116r27 117r25 117r48 118m25 118r48
+72p9 finalTempNode2{13|9P10} 98r34 101r27 102r25 102r49 103m25 103r49
+131p9 tempNode{13|9P10} 142m13 147r19 151r25 152r25 155m17 155r29
+132p9 tempNode2{13|9P10} 148m17 149r23 151r42 152r42 153m21 153r34
+133p9 newNode{13|9P10} 143m13 152m65 152r65 159r23 160r24
+166i9 choice{integer} 178m18 180r16 204r19
+167p9 tempNode{13|9P10} 187m21 194r27 195r46 195r64 196m25 196r37 211m21
+. 218r27 219r46 219r64 220m25 220r37
+168i9 xVal{integer} 191m26 195r40 215m26 219r40
+169i9 res{integer} 188m21 195m25 195r32 199r53 212m21 219m25 219r32 223r53
+239p9 tempNode{13|9P10} 243m9 247r15 248r16 249r16 253m13 253r26 258r13 259r13
+240p9 tempNode2{13|9P10} 244m9 247r36 248r34 249r34 254m13 254r26 258r33
+. 259r34
+

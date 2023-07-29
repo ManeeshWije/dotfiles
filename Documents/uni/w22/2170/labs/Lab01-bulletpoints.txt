@@ -1,0 +1,27 @@
+﻿URL’s and Bullet Points for Inspiration 
+
+
+https://www.reddit.com/
+* Simple card layout to view home feed with small action buttons at the bottom of each to perform different tasks
+* Create a post box switches to a new interface that holds all tools and options for the user to use (uses a lot of whitespace to not confuse the user as well)
+https://twitter.com/home
+* Spaced out sidebar (left side) to access different interfaces that also shows the user which interface they are currently on using bold text
+* Important action buttons are distinguished properly using colour and size such as the “Tweet” button
+https://www.yelp.ca/toronto
+* The filters tab allows for a more customizable and user-friendly interface
+* And clean and simple design which uses colour to emphasize and draw the user's attention to crud functionality.
+https://www.linkedin.com/feed/
+* Clean profile card on the right side provides information on the most important statistics about the current state of your profile.
+* Footer being placed on the side allowing for a cleaner UI integrated with infinite scrolling.
+
+
+
+
+Name: Maneesh Wijewardhana
+Email: mkandage@uoguelph.ca
+Student ID: 1125828
+
+
+Name: Patrick Quijano
+Email: pquijano@uoguelph.ca
+Student ID: 1134190

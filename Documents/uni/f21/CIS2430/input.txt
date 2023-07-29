@@ -1,0 +1,3 @@
+CompSci 4 85.4 Song 1 Guelph Smith
+Psych 2 92.1 Brown
+Biology 1 75.0 Wineberg 0 McGill MacDonald

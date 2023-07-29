@@ -1,0 +1,768 @@
+A. Al-Azraki
+A. Aliabadi
+A. Ashari
+A. Bailey, M. Moussa, L. Antonie, K. Nadeem
+A. Bardelcik
+A. Barysevich
+A. Bendall
+A. Berg
+A. Binns
+A. Boecker
+A. Bonifacio
+A. Bradford
+A. Breen
+A. Buchholz
+A. Butchart
+A. Chowdhury
+A. Clark
+A. Crerar
+A. Davies
+A. Dehghantanha
+A. Desmond
+A. Dimiski
+A. Duncan
+A. Dutta
+A. Elsayed
+A. Eltaggaz
+A. Freundlich
+A. Gadsden
+A. Gezerlis
+A. Gordon
+A. Grant
+A. Hamilton-Wright
+A. Heyland
+A. Ionescu
+A. Ivanov
+A. Kani
+A. Kempf
+A. Ker
+A. Komeili
+A. Langridge
+A. Lauzon
+A. MacDougall
+A. Mahmood
+A. Marangoni
+A. Marratto
+A. McDougall
+A. Mutsaers
+A. Newman
+A. Ogg, A. Bersenas, A. Defarges
+A. Ogg, S. Blois, A. Defarges
+A. Papadopoulos
+A. Paras
+A. Payrow Shabani
+A. Pegoraro
+A. Philip
+A. Prescod
+A. Robinson
+A. Sadanand
+A. Schwan
+A. Sharma
+A. Shoveller
+A. Simpson
+A. Singh
+A. Smith, S. Jacobs
+A. Sneyd
+A. Sparks
+A. Stokes
+A. Storrey
+A. Viloria-Petit
+A. Weersink
+A. Wilson
+A. Woods
+A. Wroblewski
+A. Young
+A. Zdaniuk
+A. Zolfaghari
+B. Aharonson
+B. Ball
+B. Budd
+B. Carroll
+B. DeVries
+B. Deaton
+B. Gharabaghi
+B. Hanna
+B. Husband
+B. Lillie, K. Bland
+B. Mallard, J. ZZZGeddes-Mcalister
+B. McKenzie
+B. Meng
+B. Micallef
+B. Morrongiello-Gottlieb
+B. Ni Chonaill
+B. Robinson
+B. Stewart
+B. Stewart, S. Hall
+B. Walpole
+B. Winters
+C. Baresich
+C. Bauman
+C. Bryant
+C. Bush
+C. Carney
+C. Carstairs
+C. Caruso, D. Norris
+C. Cooper
+C. Fiacconi
+C. Gillard
+C. Giroux
+C. Gregor
+C. Hendry
+C. Ho
+C. Johnson
+C. Kato
+C. Kerr
+C. Khoury
+C. Khursigara
+C. Kingsbury
+C. Kinnunen
+C. Leung
+C. Lubrin
+C. McKittrick
+C. Mikel
+C. Murrant
+C. Osborne
+C. Schultz-Nielsen
+C. Shaw
+C. Simha
+C. Smylitopoulos
+C. Spence
+C. Tatham
+C. Thomson
+C. Trueman
+C. Wagner Riddle, E. Krayenhoff
+C. Yule
+C. Zavitz
+D. Ashlock
+D. Behnke-Cook
+D. Bienzle
+D. Brand
+D. Bruce
+D. Calvert
+D. Cartwright
+D. Core, K. Tallon
+D. Cornelio
+D. Dedrick
+D. Dietrich
+D. Duhan
+D. Dyck
+D. El Khoury
+D. Fischlin
+D. Flatla
+D. Gillis
+D. Goff
+D. Green
+D. Grunspan
+D. Guyadeen
+D. Hills
+D. Hooker, C. Gillard
+D. Hooker, M. Eskandari
+D. Huyben
+D. Jiang
+D. Kraus, D. Muecher
+D. Kribs
+D. Lee
+D. Li
+D. Matovic
+D. Meegan
+D. Mercer
+D. Mutch
+D. Nikitenko
+D. O'Flaherty
+D. O'Quinn
+D. Odartey-Wellington
+D. Pincivero
+D. Powell
+D. Rezania
+D. Robinson
+D. Robinson, P. Sikkema
+D. Rose
+D. Senkl
+D. Soldatov
+D. Stacey
+D. Stanley
+D. Steinke
+D. Stienstra
+D. Thomas
+D. Tulpan
+D. White
+D. Wolyn, E. Lee, A. Robinson, A. Canovas
+D. Wolyn, I. Rajcan
+D. Young
+E. Adomait
+E. Altinkas
+E. Arnaud
+E. Boulding
+E. Chang
+E. Choleris
+E. Clancy
+E. Cominetti
+E. Finnis
+E. Gonzales
+E. Guzman
+E. Jackson
+E. Kiarie
+E. Koning
+E. Krayenhoff, G. Ali
+E. Kurucz
+E. Lee, A. Robinson, M. Raizada
+E. Lyons
+E. McGeough
+E. Moore
+E. Nelson
+E. Newby-Clark, G. Simpson
+E. Nicholas
+E. Nicol
+E. Nost
+E. Parmley
+E. Pensini
+E. Poisson
+E. Ray Yol
+E. Robinson
+E. Rock
+E. Tetrault
+E. Ukwatta
+E. Vincent
+E. Wijekoon
+F. Arndt
+F. Arroyas
+F. Defersha
+F. Khamis
+F. Kolapo
+F. Laberge
+F. Liu
+F. Moola
+F. Schenkel
+F. Song
+F. Tapon
+F. Tardif
+F. Tardif, K. Jordan
+F. Zarrinkalam
+G. Bedecarrats
+G. Bozzo
+G. Campbell
+G. Cullen
+G. Golmohammadi
+G. Grewal
+G. Hailu
+G. Holloway
+G. Kay
+G. Klages
+G. Mason
+G. Morozova
+G. Otis
+G. Senkal Yilmaz
+G. Simms
+G. Trenbeth
+G. Umphrey
+G. Yovanovich
+H. Agyei Asiamah
+H. Choi
+H. Eberl
+H. Gill
+H. Golightly
+H. Hambly Odame
+H. Jordan
+H. Khan
+H. Kunze
+H. Li
+H. Maherali
+H. Marmurek
+H. Spring
+H. Thille
+H. Tran
+H. Warwick
+H. Yu
+I. Duncan
+I. Joye
+I. Mandell
+I. Moore, S. Dougherty
+I. Moore, T. Ross
+I. Mundel, C. Rice
+I. Spears
+I. Tetlow, T. Akhtar
+J. Ackerman
+J. Amegashie
+J. Atkinson
+J. Ball, D. Siegel
+J. Beaton
+J. Beeler-Marfisi
+J. Belford
+J. Bohorquez
+J. Cairnie
+J. Campbell
+J. Caswell
+J. Cline
+J. Cockburn
+J. Diez
+J. Duhamel
+J. Dutcher
+J. Dwyer
+J. Ferguson
+J. Fraser
+J. Fryxell
+J. Goordial
+J. Gruman
+J. Gruson-Wood
+J. Hamilton
+J. Harley
+J. Hayton
+J. Hoult
+J. Howard
+J. Hristov
+J. Jacobson-Konefall
+J. Jory
+J. Khokhar
+J. Kissick
+J. Lalonde
+J. Lange
+J. Lauzon
+J. Leschiutta
+J. Levison
+J. Liang
+J. Lindsay
+J. Lumsden
+J. Lundy
+J. Mathur
+J. McWhirter
+J. Monk
+J. Munn
+J. Murray
+J. Nuno-Ledesma
+J. O'Meara
+J. Oliver
+J. Palsetia
+J. Pazzano
+J. Popp
+J. Roberts
+J. Robinson
+J. Russon
+J. Saha
+J. Satyre
+J. Sawada
+J. Schacker
+J. Schmidt, A. Young
+J. Shea-Carter
+J. Simmons
+J. Simpson
+J. Simpson, M. Van Beek
+J. Smith
+J. Spence
+J. Srbely
+J. St-Pierre
+J. Struthers
+J. Subramanian
+J. Sulik
+J. Thompson
+J. Tishinsky
+J. Uniacke, J. ZZZGeddes-Mcalister
+J. Vale, C. Farrow
+J. Varghese
+J. Walsh
+J. Wan
+J. Wang
+J. Weese
+J. Wilcox
+J. Wilson
+J. Wolstenholme
+J. Yen
+J. Zettel, J. Burr
+J. Zhou
+J. Zhu
+J. van Der Zalm
+K. Annen
+K. Bolton
+K. Bryant-Adams
+K. Cottenie
+K. Coupland
+K. Dorter
+K. Englert
+K. Freedman
+K. Gagne
+K. Ghandi
+K. Glauser
+K. Harvey
+K. Hennig
+K. Herder
+K. Houle
+K. Jagoda
+K. James
+K. Jordan
+K. Keener
+K. Kozzi
+K. Mac Donald
+K. MacDonald
+K. Maier
+K. Marczenko
+K. Martin
+K. McLachlan
+K. McLeod
+K. Merkies
+K. Novak
+K. O'Doherty
+K. Patterson
+K. Pauls
+K. Pauls, B. Grodzinski, A. Robinson
+K. Preuss
+K. Puddister
+K. Racine
+K. Rodenburg
+K. Schneider
+K. Spence
+K. Squires
+K. Stafford
+K. Stuttaford
+K. Sutherland
+K. Tallon
+K. Tallon, K. Krysak
+K. Thomas-Francois
+K. Thomassin
+K. Warriner
+K. Wendling
+K. Wood
+K. Yankulov
+L. Antonie
+L. Ashbourne
+L. Brown
+L. Castellani
+L. Cellarier
+L. Chen
+L. Chiasson
+L. Cunningham
+L. Deacon
+L. Deeth
+L. Duizer
+L. Favetta
+L. Fiksenbaum
+L. Flanigan
+L. Forbes
+L. Foti
+L. Genik
+L. Goodridge
+L. Grogan
+L. Hill
+L. Huber
+L. Hunter
+L. Jadeski
+L. Jones, A. Schwan
+L. Jones, F. Auzanneau
+L. Jones, R. Reed
+L. Kowalchuk
+L. Lei
+L. Lim
+L. Lukens
+L. Mahood
+L. Malloy-Weir
+L. Manwell
+L. Niel
+L. Qashu
+L. Ritter, P. Sibley, R. Manderville
+L. Sneyd
+L. Son Hing
+L. Tang
+L. Townsend
+L. Trick
+L. Vallis
+L. Vallis, S. Brown
+L. Van Eerd
+M. Abou El Nasr
+M. Baker, J. Uniacke
+M. Bakri-Kassem, M. Steffler
+M. Beach, J. Campbell
+M. Beach, T. Ross
+M. Bowring
+M. Carver
+M. Cojocaru
+M. Dawson
+M. De Coste
+M. De Roover
+M. Demers
+M. Do
+M. Edwards
+M. Elleray
+M. Emes
+M. Fan
+M. Fenske
+M. Ferguson
+M. Fortier
+M. Gagnon
+M. Gladstone
+M. Goldenberg
+M. Habash
+M. Harding
+M. Harvey
+M. Hassan
+M. Hassan, A. Elsayed
+M. Holland
+M. Holland, K. May
+M. Holmes
+M. Horgan
+M. Hoy
+M. Irvine
+M. Kalischuk
+M. Kasioumi
+M. Kimber, S. Vahidi
+M. Lever
+M. Li
+M. Lumley
+M. Marcone
+M. Massa
+M. May
+M. McAfee, K. Harvey
+M. McCaig
+M. McCarthy
+M. McDonald, B. Micallef, J. Nasielski
+M. Meyer
+M. Monteiro
+M. Morton
+M. Morton, L. Levac
+M. Moussa
+M. Neely
+M. Nica
+M. Oblak
+M. Perreault
+M. Plesca
+M. Preyde
+M. Purchase
+M. Raizada
+M. Siddiqua
+M. Steele
+M. Van Beek
+M. Vickaryous
+M. Wassaykeesic
+M. Wineberg
+M. Wrathall
+M. Wright
+M. Yaghini
+M. Zaman
+M. Zanoni
+M. Zuzinjak
+N. Afshordi
+N. Akhtar
+N. Al-Aidroos
+N. Amoroso
+N. Bass
+N. Bower-Martin
+N. Bruce
+N. Brunet
+N. Daggupati
+N. Dubeski
+N. Evans
+N. Fatouros
+N. Gradojevic
+N. Gray
+N. Kruger
+N. MacLusky
+N. Mccallum
+N. Mohan
+N. Ricker
+N. Rooney
+N. Smith
+N. Thevathasan
+N. Thevathasan, J. Longstaffe
+N. Thevathasan, Y. Zheng
+O. Berke
+P. Anglin
+P. Barclay
+P. Barrett
+P. Bartlewski
+P. Garrett
+P. Ghattas
+P. Goddard
+P. Goodwin
+P. Hausdorf
+P. Kim
+P. Kuling
+P. Lassou
+P. Luimes
+P. Martin
+P. Mayer
+P. Parnaby
+P. Salmon
+P. Saxena
+P. Spachos
+P. Wu
+R. Ali
+R. Baker
+R. Beausaert
+R. Bergeron
+R. Briggs
+R. Bruce
+R. Burga
+R. Chaturvedi
+R. Clemmer
+R. Clemmer, C. Farrow
+R. Corry
+R. Corry, R. Robinson
+R. Dara
+R. Foster
+R. Gellert
+R. Hackett
+R. Hanner
+R. Hawkins
+R. Heck
+R. Holtermans
+R. Karunagoda
+R. Knight
+R. Lu, J. Vessey
+R. Manderville
+R. McKitrick
+R. McLean
+R. Milhausen
+R. Moorehead
+R. Mullen, J. Vessey
+R. Muresan
+R. Murison
+R. Neustifter
+R. Pereira
+R. Reid, T. Burnett
+R. Santos
+R. Sarker
+R. Sarmazian
+R. Shapiro
+R. Stansfield
+R. Tschanz
+R. Valliere
+R. Wickham
+R. Wood
+R. Zytner
+R. deLaat
+S. Adamowicz
+S. Adekola
+S. Afesorgbor
+S. Alderman
+S. Areibi
+S. Bassie
+S. Bassie, C. Hebblethwaite
+S. Bassie, V. Chitraichamy
+S. Bose
+S. Brandon
+S. Brown
+S. Carter
+S. Carther
+S. Chang
+S. Ciotti
+S. Clarke
+S. Clarke, S. Kavanaugh
+S. Cox
+S. Day
+S. Dhaliwal
+S. Dobson
+S. Dougherty
+S. Douglas
+S. Duchesne
+S. Dusowoth
+S. Dye
+S. Dys
+S. Epp
+S. Ferreira
+S. Gilbert
+S. Glasauer
+S. Gregori
+S. Haerri
+S. Hamann
+S. Hancock
+S. Henighan
+S. Henson
+S. Howells
+S. Hunt
+S. Jacobs, D. Gillis
+S. Jordan
+S. Kawano
+S. Kelly
+S. Kremer
+S. Kremer, J. ZZZGeddes-Mcalister, D. Steinke
+S. Lepage
+S. Liinamaa
+S. Linquist
+S. Loewen
+S. Longboat
+S. Mahmud
+S. Maitland
+S. Martone
+S. McRoberts
+S. Mcewen
+S. Mishra
+S. Moussa
+S. Parmegiani
+S. Raheb, S. Fonfara
+S. Rechico
+S. Roth
+S. Safdar
+S. Sanders
+S. Sarapura-Escobar
+S. Schorno
+S. Seah
+S. Sharif
+S. Sharp
+S. Singer
+S. Smith
+S. Somogyi
+S. Stempski
+S. Tasnim
+S. Weeden, B. Reid
+S. Wick
+S. Wong
+S. Yang
+S. Yi
+T. Abraham
+T. Akhtar
+T. Berto
+T. Burnett
+T. Chenier
+T. DeVries
+T. Dewhirst
+T. Dhar
+T. Einmann
+T. Graham
+T. Gregory, C. Carstairs
+T. Hourie
+T. Hsiang
+T. Hsiang, C. Sopher
+T. Islam
+T. Kukkonen
+T. Lee
+T. Littlewood
+T. Mark
+T. Mau
+T. McIlwraith
+T. O'Sullivan
+T. Poehlman
+T. Russo
+T. Saleh
+T. Sasso
+T. Small
+T. Steffens
+T. Stengos
+T. Widowski
+T. Widowski, D. Haley
+T. van Rhijn
+TBA  TBA
+V. Gulewitsch
+V. Kanetkar
+V. Ladizhansky
+W. Ahmed
+W. Ahmed, Y. Selima
+W. Balka
+W. Bettger
+W. Cormack
+W. Gabryelski
+W. Jo
+W. Keenleyside
+W. Lindinger
+W. Murray
+W. O'Grady
+W. Pearson
+W. Tam
+W. Yang
+W. Zhang
+X. Lei
+X. Lin
+X. Qin
+X. Wang
+Y. Lee
+Y. Lin
+Y. Sun
+Y. Yakubu
+Z. Bhojani
+Z. Feng

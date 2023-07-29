@@ -1,0 +1,22 @@
+ 1                                        checksum yF: 1
+ 2                                     checksum Quick: 1
+ 3                                      caesar pontus: 1
+ 4                                      caesar brutus: 1
+ 5                                    char2bits abcde: 1
+ 6                                    char2bits 01234: 1
+ 7                                     bits2str abcde: 1
+ 8                                     bits2str 01234: 1
+ 9                                  ushort2bits 32767: 1
+10                                  ushort2bits 32768: 1
+11                                   short2bits 32767: 1
+12                                      short2bits -1: 1
+13                                  bits2short -32767: 1
+14                                  bits2short -32768: 1
+15                                       spff 0.15625: 0
+16                                       spff -0.3125: 0
+17                                    makefile exists: 1
+18                           correct makefile options: 1
+19                                  code has comments: 1
+20                                   code is indented: 1
+========================================================
+Total:                                             18/20

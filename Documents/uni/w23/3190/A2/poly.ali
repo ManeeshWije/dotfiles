@@ -1,0 +1,93 @@
+V "GNAT Lib v2020"
+M P W=b
+A -gnatwa
+A -Wall
+P ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_DEFAULT_INITIALIZATION
+
+U poly%b		poly.adb		1e177c5f NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W polylink%s		polylink.adb		polylink.ali
+W polylinkedlist%s	polylinkedlist.adb	polylinkedlist.ali
+W polymath%s		polymath.adb		polymath.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-inteio.ads		20200819050642 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-tiinio.ads		20200819050643 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D poly.adb		20230306190526 f814dcdd poly%b
+D polylink.ads		20230306190435 ac097127 polylink%s
+D polylinkedlist.ads	20230306190330 76c25b14 polylinkedlist%s
+D polymath.ads		20230306190252 80d7c91c polymath%s
+D system.ads		20200819050647 085b6ffb system%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [poly standard 13 11 none]
+G r c none [poly standard 13 11 none] [readpoly polylink 9 15 none]
+G r c none [poly standard 13 11 none] [writepolymain polylink 14 15 none]
+G r c none [poly standard 13 11 none] [addpoly polymath 9 15 none]
+G r c none [poly standard 13 11 none] [subpoly polymath 11 15 none]
+G r c none [poly standard 13 11 none] [multpoly polymath 15 15 none]
+G r c none [poly standard 13 11 none] [evalpoly polymath 17 15 none]
+X 1 ada.ads
+16K9*Ada 20e8 12|6r6 6r31 7r6 7r31 8r6 60r18
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[8|46] 12|7w10 7r35
+X 4 a-ioexce.ads
+18K13*IO_Exceptions 30e22 12|8w10 60r22
+27X4*Data_Error 12|60r36
+X 7 a-textio.ads
+57K13*Text_IO 727e16 12|6w10 6r35
+264U14*New_Line 12|56s21 57s21 63s17 64s17
+273U14*Skip_Line 12|62s17
+465U14*Put 12|39s21 45s21
+508U14*Put_Line 12|22s9 23s9 24s9 25s9 26s9 27s9 28s9 29s9 30s9 55s21 61s17
+X 8 a-tiinio.ads
+59U14*Get 12|33s13[3|18] 40s21[3|18] 46s21[3|18]
+X 12 poly.adb
+13U11*Poly 13b11 67l5 67t9
+14i5 choice{integer} 33m18 35r18
+15p5 headNode{14|9P10} 37m31 37r31 41r36 43r30 47m30 47r30 49r31 51r31
+16p5 headNode2{14|9P10} 37m41 37r41 41r46 43r40 47m40 47r40 49r41 51r41
+17i5 writeIndex{integer} 40m26 41r57
+18i5 subIndex{integer} 46m26 47r51
+X 13 polylink.ads
+8K9*Polylink 12|10w6 10r31 13|19e13
+9U15*readPOLY 12|37s21
+14U15*writePOLYmain 12|41s21
+X 14 polylinkedlist.ads
+6K9*Polylinkedlist 12|9w6 9r31 14|23e19
+9P10*polyNodePtr(8R10) 12|15r18 16r18
+X 15 polymath.ads
+8K9*Polymath 12|11w6 11r31 15|21e13
+9U15*addpoly 12|43s21
+11U15*subpoly 12|47s21
+15U15*multpoly 12|49s21
+17U15*evalpoly 12|51s21
+
