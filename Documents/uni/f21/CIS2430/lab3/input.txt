@@ -1,3 +1,0 @@
-CompSci 4 85.4 Song 1 Guelph
-Psych 2 92.1
-Biology 1 75.0 Cornell 0 McGill
