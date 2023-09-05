@@ -71,7 +71,8 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
     debug = false,
     sources = {
-        formatting.prettier.with({ extra_args = { "--tab-width", "4" } }),
+        formatting.prettier.with({
+            extra_args = { "--tab-width", "4", "--print-width", "120", "--trailing-comma", "none" } }),
         formatting.black.with({ extra_args = { "--fast" } }),
         formatting.google_java_format,
         formatting.clang_format,
