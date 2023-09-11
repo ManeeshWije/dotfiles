@@ -16,8 +16,8 @@ ssh-add -K ~/.ssh/id_ed25519
 
 git config status.showuntrackedfiles no
 
-# some lsp
-npm install -g pyright bash-language-server dockerfile-language-server-nodejs vscode-langservers-extracted emmet-ls sql-language-server vim-language-server
+# some lsp and tools
+npm install -g pyright bash-language-server dockerfile-language-server-nodejs vscode-langservers-extracted emmet-ls sql-language-server vim-language-server @mermaid-js/mermaid-cli md-to-pdf
 
 yabai --start-service
 skhd --start-service
