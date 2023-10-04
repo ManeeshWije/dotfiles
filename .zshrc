@@ -36,3 +36,10 @@ __git_files () {
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/maneesh/.bun/_bun" ] && source "/Users/maneesh/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
