@@ -51,9 +51,9 @@ local plugins = {
     },
 
     {
-        "nvim-telescope/telescope.nvim",
-        version = "0.1.0",
-        dependencies = { { "nvim-lua/plenary.nvim" } }
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.4',
+        dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
     {
@@ -75,10 +75,9 @@ local plugins = {
         }
     },
 
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-
-    { "turbio/bracey.vim",               build = "npm install --prefix server" },
-
+    { "nvim-treesitter/nvim-treesitter",     build = ":TSUpdate" },
+    { "turbio/bracey.vim",                   build = "npm install --prefix server" },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl",                         opts = {} },
     "nvim-tree/nvim-web-devicons",
 
     "jose-elias-alvarez/null-ls.nvim",
@@ -86,8 +85,6 @@ local plugins = {
     "github/copilot.vim",
 
     "lewis6991/gitsigns.nvim",
-
-    "lukas-reineke/indent-blankline.nvim",
 
     "windwp/nvim-autopairs",
 
