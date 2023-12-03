@@ -27,28 +27,22 @@ local plugins = {
 
     },
 
-    {
-        "VonHeikemen/lsp-zero.nvim",
-        branch = 'v1.x',
-        dependencies = {
-            -- LSP Support
-            { "neovim/nvim-lspconfig" },
-            { "williamboman/mason.nvim" },
-            { "williamboman/mason-lspconfig.nvim" },
+    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
 
-            -- Autocompletion
-            { "hrsh7th/nvim-cmp" },
-            { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-path" },
-            { "saadparwaiz1/cmp_luasnip" },
-            { "hrsh7th/cmp-nvim-lsp" },
-            { "hrsh7th/cmp-nvim-lua" },
+    -- LSP Support
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
+    { 'neovim/nvim-lspconfig' },
 
-            --Snippets
-            { "L3MON4D3/LuaSnip" },
-            { "rafamadriz/friendly-snippets" },
-        }
-    },
+    -- Autocompletion
+    { 'hrsh7th/nvim-cmp' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-path' },
+    { 'saadparwaiz1/cmp_luasnip' },
+    { 'hrsh7th/cmp-nvim-lua' },
+    { 'L3MON4D3/LuaSnip' },
+    { 'rafamadriz/friendly-snippets' },
 
     {
         'nvim-telescope/telescope.nvim',
@@ -95,7 +89,4 @@ local plugins = {
 }
 
 local opts = {}
-
 require("lazy").setup(plugins, opts)
-require("luasnip.loaders.from_vscode").lazy_load()
-require("luasnip.loaders.from_snipmate").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets" }
