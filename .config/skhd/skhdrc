@@ -79,4 +79,3 @@ alt - e : yabai -m window --toggle split
 
 # applications
 shift + alt - return : open -a "Alacritty" -n
-shift + alt - s : open -a "Safari" -n
