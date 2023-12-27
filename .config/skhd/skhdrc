@@ -15,6 +15,10 @@ shift + alt - l : yabai -m window --warp east
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
 
+# rotate clockwise and counter-clockwise
+alt - r : yabai -m space --rotate 90
+shift + alt - r : yabai -m space --rotate 270
+
 # send window to desktop and follow focus
 # shift + cmd - z : yabai -m window --space next; yabai -m space --focus next
 shift + alt - 1 : yabai -m window --space  1; yabai -m space --focus 1
@@ -50,7 +54,6 @@ shift + cmd - w : yabai -m window --resize top:0:20
 ctrl + alt - h : yabai -m window --insert west
 
 # toggle window zoom
-alt - d : yabai -m window --toggle zoom-parent
 alt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window split type
