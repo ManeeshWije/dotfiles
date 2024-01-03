@@ -1,4 +1,4 @@
-import = ["/Users/maneesh/.config/alacritty/gruvbox.toml"]
+import = ["~/.config/alacritty/gruvbox.toml"]
 live_config_reload = true
 
 [bell]
