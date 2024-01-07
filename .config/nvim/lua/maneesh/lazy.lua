@@ -16,7 +16,7 @@ vim.g.mapleader = ","
 local plugins = {
     {
         "sainnhe/gruvbox-material",
-        lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+        lazy = false,    -- make sure we load this during startup
         priority = 1000, -- make sure to load this before all the other start plugins
     },
 
@@ -74,11 +74,23 @@ local plugins = {
 
     "lewis6991/gitsigns.nvim",
 
-    "windwp/nvim-autopairs",
+    "cohama/lexima.vim",
 
     "numToStr/Comment.nvim",
 
-    "christoomey/vim-tmux-navigator"
+    "christoomey/vim-tmux-navigator",
+
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {},
+    },
+
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    }
 }
 
 local opts = {}
