@@ -31,7 +31,7 @@ require('mason-lspconfig').setup({
         "ltex",
         "lua_ls",
         "phpactor",
-        "pyright",
+        "pylsp",
         "rust_analyzer",
         "sqlls",
         "tailwindcss",
