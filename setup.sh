@@ -8,7 +8,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # install dev stuff
 brew tap homebrew/cask-fonts
 brew install tree font-iosevka-nerd-font pandoc qlmarkdown maccy gh black flake8 google-java-format stylua ninja tldr ltex-ls koekeishiya/formulae/yabai koekeishiya/formulae/skhd jdtls java lua-language-server bear postman rust-analyzer ripgrep clang-format cmake git go htop llvm lua mongosh ncdu neofetch neovim node nvm pfetch python tmux caffeine alacritty php starship
-brew install --cask MonitorControl flux
 
 ssh-keygen -t ed25519 -C "m.mwije1@gmail.com"
 eval "$(ssh-agent -s)"
