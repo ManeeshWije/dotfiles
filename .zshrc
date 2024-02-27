@@ -9,7 +9,7 @@ export EDITOR='nvim'
 export VISUAL="nvim"
 export HISTSIZE=10000
 export SAVEHIST=10000
-export KEYTIMEOUT=1
+# export KEYTIMEOUT=1
 
 # Shortcuts
 bindkey -v
@@ -46,3 +46,4 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(starship init zsh)"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
