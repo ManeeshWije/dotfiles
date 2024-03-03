@@ -22,4 +22,5 @@ yabai --start-service
 skhd --start-service
 
 # optionally install other apps
+# brew install --cask docker
 # brew install mactex via audacity balenaetcher discord microsoft-teams minecraft slack spotify visual-studio-code mvn firefox lunar-client speedtest-cli zoom
