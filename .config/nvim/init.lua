@@ -456,7 +456,7 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagn
 vim.keymap.set("n", "<leader>fe", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
-vim.keymap.set("n", "<leader>ud", "<cmd>Telescope undo<cr>")
+vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
 
 vim.keymap.set("n", "<leader>p", function()
     require("conform").format()
