@@ -9,7 +9,6 @@ export EDITOR='nvim'
 export VISUAL="nvim"
 export HISTSIZE=10000
 export SAVEHIST=10000
-# export KEYTIMEOUT=1
 
 # Shortcuts
 bindkey -v
@@ -32,10 +31,6 @@ alias newtag='git tag -a'
 
 alias luamake=/Users/maneesh/lua-language-server/3rd/luamake/luamake
 
-# Remove autocomplete lag zsh->git
-__git_files () { 
-    _wanted files expl 'local files' _files     
-}
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # bun completions
