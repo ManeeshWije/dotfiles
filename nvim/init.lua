@@ -43,8 +43,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-
     { "numToStr/Comment.nvim", opts = {} },
 
     { -- Adds git related signs to the gutter, as well as utilities for managing changes
@@ -225,16 +223,16 @@ require("lazy").setup({
             formatters_by_ft = {
                 lua = { "stylua" },
                 python = { "isort", "black" },
-                javascript = { "prettier" },
-                typescript = { "prettier" },
-                javascriptreact = { "prettier" },
-                typescriptreact = { "prettier" },
+                javascript = { "prettierd" },
+                typescript = { "prettierd" },
+                javascriptreact = { "prettierd" },
+                typescriptreact = { "prettierd" },
                 java = { "google-java-format" },
                 go = { "gofmt", "goimports" },
                 rust = { "rustfmt" },
                 php = { "php-cs-fixer" },
                 c = { "clang-format" },
-                markdown = { "prettier" },
+                markdown = { "prettierd" },
             },
         },
     },
