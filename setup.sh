@@ -19,6 +19,8 @@ npm install -g pyright bash-language-server dockerfile-language-server-nodejs vs
 yabai --start-service
 skhd --start-service
 
+echo "git config --global core.fsmonitor true" >> ~/.gitconfig
+
 # optionally install other apps
 # brew install --cask docker
 # brew install mactex via audacity balenaetcher discord microsoft-teams slack spotify visual-studio-code mvn firefox speedtest-cli zoom
