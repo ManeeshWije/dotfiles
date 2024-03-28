@@ -1,6 +1,7 @@
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 compinit
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
@@ -43,4 +44,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 
-eval "$(starship init zsh)"
+autoload -U promptinit; promptinit
+prompt pure
