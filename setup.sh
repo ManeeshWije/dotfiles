@@ -14,9 +14,6 @@ ssh-keygen -t ed25519 -C "m.mwije1@gmail.com"
 eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/id_ed25519
 
-# some lsp and tools
-npm install -g pyright bash-language-server dockerfile-language-server-nodejs vscode-langservers-extracted emmet-ls sql-language-server vim-language-server typescript typescript-language-server
-
 yabai --start-service
 skhd --start-service
 
