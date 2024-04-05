@@ -232,7 +232,7 @@ require("lazy").setup({
                 rust = { "rustfmt" },
                 php = { "php-cs-fixer" },
                 c = { "clang-format" },
-                markdown = { "prettierd" },
+                markdown = { "prettier" },
             },
         },
     },
