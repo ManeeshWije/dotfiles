@@ -233,6 +233,7 @@ require("lazy").setup({
                 php = { "php-cs-fixer" },
                 c = { "clang-format" },
                 markdown = { "prettier" },
+                sql = { "sql-formatter" },
             },
         },
     },
@@ -286,6 +287,7 @@ require("lazy").setup({
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
                     { name = "path" },
+                    { name = "vim-dadbod-completion" },
                 },
                 window = {
                     completion = {
@@ -338,9 +340,6 @@ require("lazy").setup({
 
     -- Navigate between tmux and vim easier
     "christoomey/vim-tmux-navigator",
-
-    -- ya yeet
-    "github/copilot.vim",
 
     { -- Show diagnostics
         "folke/trouble.nvim",
@@ -438,6 +437,27 @@ require("lazy").setup({
                 show_end = false,
             },
         },
+    },
+
+    { -- SQL interface
+        "tpope/vim-dadbod",
+    },
+
+    { -- DB UI
+        "kristijanhusak/vim-dadbod-ui",
+        dependencies = {
+            { "tpope/vim-dadbod", lazy = true },
+            { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+        },
+        cmd = {
+            "DBUI",
+            "DBUIToggle",
+            "DBUIAddConnection",
+            "DBUIFindBuffer",
+        },
+        init = function()
+            vim.g.db_ui_use_nerd_fonts = 1
+        end,
     },
 })
 
