@@ -14,6 +14,8 @@ export SAVEHIST=10000
 # Shortcuts
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+bindkey '^H' backward-delete-char
+bindkey '^?' backward-delete-char
 
 # git
 alias addup='git add -u'
