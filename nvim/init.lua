@@ -348,6 +348,18 @@ require("lazy").setup({
         end,
     },
 
+    { -- QOL improvements
+        "echasnovski/mini.nvim",
+        config = function()
+            require("mini.ai").setup({ n_lines = 500 })
+            require("mini.surround").setup()
+            require("mini.statusline").setup()
+            MiniStatusline.section_location = function()
+                return "%2l:%-2v"
+            end
+        end,
+    },
+
     { -- Highlight, edit, and navigate code
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
