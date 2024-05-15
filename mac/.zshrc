@@ -16,6 +16,7 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey '^H' backward-delete-char
 bindkey '^?' backward-delete-char
+bindkey -s ^f "tmux-sessionizer\n"
 
 # git
 alias addup='git add -u'
@@ -43,8 +44,8 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/:/Users/maneesh/Library/Python/3.11/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/maneesh/.config/scripts/"
+
 
 autoload -U promptinit; promptinit
 prompt pure
