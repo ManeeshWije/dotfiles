@@ -10,10 +10,22 @@ export EDITOR='nvim'
 export VISUAL="nvim"
 export HISTSIZE=10000
 export SAVEHIST=10000
+export HISTDUPE=erase
+
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
 
 # Shortcuts
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 bindkey '^H' backward-delete-char
 bindkey '^?' backward-delete-char
 bindkey -s ^f "tmux-sessionizer\n"
