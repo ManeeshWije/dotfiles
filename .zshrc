@@ -1,10 +1,13 @@
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 compinit
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
+
+# if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    fpath+=("$(brew --prefix)/share/zsh/site-functions")
+fi
 
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
 export TERM="xterm-256color"
 export EDITOR='nvim'
 export VISUAL="nvim"
@@ -45,18 +48,14 @@ alias stats='git status'  # 'status' is protected name so using 'stats' instead
 alias tag='git tag'
 alias newtag='git tag -a'
 
-alias luamake=/Users/maneesh/lua-language-server/3rd/luamake/luamake
 
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-
-# bun completions
-[ -s "/Users/maneesh/.bun/_bun" ] && source "/Users/maneesh/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/:/Users/maneesh/Library/Python/3.11/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/maneesh/.config/scripts/"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+    export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/:/Users/maneesh/Library/Python/3.11/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/maneesh/.config/scripts/"
+    # bun
+    export BUN_INSTALL="$HOME/.bun"
+    export PATH="$BUN_INSTALL/bin:$PATH"
+fi
 
 
 autoload -U promptinit; promptinit
