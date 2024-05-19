@@ -48,6 +48,8 @@ alias stats='git status'  # 'status' is protected name so using 'stats' instead
 alias tag='git tag'
 alias newtag='git tag -a'
 
+alias st='syncthing'
+
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
