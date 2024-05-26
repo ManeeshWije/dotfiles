@@ -23,7 +23,6 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-
 # Shortcuts
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -31,7 +30,6 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^H' backward-delete-char
 bindkey '^?' backward-delete-char
-bindkey -s ^f "tmux-sessionizer\n"
 
 # git
 alias addup='git add -u'
@@ -49,7 +47,9 @@ alias tag='git tag'
 alias newtag='git tag -a'
 
 alias st='syncthing'
-
+alias r='ranger'
+alias sd="cd ~ && cd \$(find * -type d | fzf)"
+alias ls='ls --color=auto'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
@@ -61,4 +61,5 @@ fi
 
 
 autoload -U promptinit; promptinit
+
 prompt pure
