@@ -14,5 +14,6 @@ config.cursor_blink_ease_out = 'Constant'
 config.keys = {
   { key = 'l', mods = 'SUPER', action = wezterm.action.ShowLauncher },
 }
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 return config
