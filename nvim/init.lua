@@ -374,15 +374,6 @@ require("lazy").setup({
         end,
     },
 
-    -- Navigate between tmux and vim easier
-    "christoomey/vim-tmux-navigator",
-
-    { -- Show diagnostics
-        "folke/trouble.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        opts = {},
-    },
-
     { -- Jump to project files
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
@@ -518,25 +509,6 @@ vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
 
 vim.keymap.set("n", "<leader>p", function()
     require("conform").format()
-end)
-
-vim.keymap.set("n", "<leader>xx", function()
-    require("trouble").toggle()
-end)
-vim.keymap.set("n", "<leader>xw", function()
-    require("trouble").toggle("workspace_diagnostics")
-end)
-vim.keymap.set("n", "<leader>xd", function()
-    require("trouble").toggle("document_diagnostics")
-end)
-vim.keymap.set("n", "<leader>xq", function()
-    require("trouble").toggle("quickfix")
-end)
-vim.keymap.set("n", "<leader>xl", function()
-    require("trouble").toggle("loclist")
-end)
-vim.keymap.set("n", "gR", function()
-    require("trouble").toggle("lsp_references")
 end)
 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
