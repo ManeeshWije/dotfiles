@@ -15,5 +15,6 @@ config.keys = {
   { key = 'l', mods = 'SUPER', action = wezterm.action.ShowLauncher },
 }
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
+config.tab_bar_at_bottom = true
 
 return config
