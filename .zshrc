@@ -47,7 +47,6 @@ alias tag='git tag'
 alias newtag='git tag -a'
 
 alias st='syncthing'
-alias r='ranger'
 alias sd="cd ~ && cd \$(find * -type d | fzf)"
 alias ls='ls --color=auto'
 
@@ -58,6 +57,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export BUN_INSTALL="$HOME/.bun"
     export PATH="$BUN_INSTALL/bin:$PATH"
 fi
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 
 autoload -U promptinit; promptinit
