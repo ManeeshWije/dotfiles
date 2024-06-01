@@ -47,8 +47,9 @@ alias tag='git tag'
 alias newtag='git tag -a'
 
 alias st='syncthing'
-alias sd="cd ~ && cd \$(find * -type d | fzf)"
-alias ls='ls --color=auto'
+alias sd="cd ~ && cd \$(fd --type d | fzf)"
+alias ls='eza --long --header --icons --git'
+alias 'ls -a'='eza --long --all --header --icons --git'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
@@ -67,6 +68,80 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+
+function __zoxide_pwd() {
+    \builtin pwd -L
+}
+
+function __zoxide_cd() {
+    \builtin cd -- "$@"
+}
+
+function __zoxide_hook() {
+    \command zoxide add -- "$(__zoxide_pwd)"
+}
+
+if [[ ${precmd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]] && [[ ${chpwd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]]; then
+    chpwd_functions+=(__zoxide_hook)
+fi
+
+function __zoxide_z() {
+    if [[ "$#" -eq 0 ]]; then
+        __zoxide_cd ~
+    elif [[ "$#" -eq 1 ]] && { [[ -d "$1" ]] || [[ "$1" = '-' ]] || [[ "$1" =~ ^[-+][0-9]$ ]]; }; then
+        __zoxide_cd "$1"
+    else
+        \builtin local result
+        result="$(\command zoxide query --exclude "$(__zoxide_pwd)" -- "$@")" && __zoxide_cd "${result}"
+    fi
+}
+
+function __zoxide_zi() {
+    \builtin local result
+    result="$(\command zoxide query --interactive -- "$@")" && __zoxide_cd "${result}"
+}
+
+function cd() {
+    __zoxide_z "$@"
+}
+
+function cdi() {
+    __zoxide_zi "$@"
+}
+
+if [[ -o zle ]]; then
+    __zoxide_result=''
+
+    function __zoxide_z_complete() {
+        [[ "${#words[@]}" -eq "${CURRENT}" ]] || return 0
+
+        if [[ "${#words[@]}" -eq 2 ]]; then
+            _files -/
+        elif [[ "${words[-1]}" == '' ]]; then
+            __zoxide_result="$(\command zoxide query --exclude "$(__zoxide_pwd || \builtin true)" --interactive -- ${words[2,-1]})" || __zoxide_result=''
+
+            \builtin bindkey '\e[0n' '__zoxide_z_complete_helper'
+            \builtin printf '\e[5n'
+        fi
+
+        return 0
+    }
+
+    function __zoxide_z_complete_helper() {
+        if [[ -n "${__zoxide_result}" ]]; then
+            BUFFER="cd ${(q-)__zoxide_result}"
+            \builtin zle reset-prompt
+            \builtin zle accept-line
+        else
+            \builtin zle reset-prompt
+        fi
+    }
+    \builtin zle -N __zoxide_z_complete_helper
+
+    [[ "${+functions[compdef]}" -ne 0 ]] && \compdef __zoxide_z_complete cd
+fi
+
+eval "$(zoxide init zsh)"
 
 autoload -U promptinit; promptinit
 

@@ -7,7 +7,14 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # install dev stuff
 brew tap homebrew/cask-fonts
-brew install yazi mpv fd ffmpegthumbnailer unar jq poppler zoxide fzf bat tree pass pure font-iosevka-nerd-font pandoc qlmarkdown maccy gh black flake8 google-java-format stylua ninja tldr ltex-ls koekeishiya/formulae/yabai koekeishiya/formulae/skhd jdtls java lua-language-server bear postman rust-analyzer ripgrep clang-format cmake git go btop llvm lua ncdu neovim node nvm pfetch python wezterm php
+# core utils stuff
+brew install bat eza fd sd ripgrep tokei zoxide fzf jq btop ncdu
+# programming
+brew install git bear postman wezterm neovim pure font-iosevka-nerd-font gh koekeishiya/formulae/yabai koekeishiya/formulae/skhd
+# language stuff
+brew install ltex-ls jdtls java lua-language-server rust-analyzer clang-format cmake go llvm lua node nvm python php flake8 stylua ninja google-java-format black
+# tools
+brew install yazi mpv ffmpegthumnailer unar poppler pass pandoc qlmarkdown maccy tldr macchina syncthing
 brew install --cask karabiner-elements
 
 ssh-keygen -t ed25519 -C "m.mwije1@proton.me"
