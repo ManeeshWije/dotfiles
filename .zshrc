@@ -50,6 +50,7 @@ alias st='syncthing'
 alias sd="cd ~ && cd \$(fd --type d | fzf)"
 alias ls='eza --long --header --icons --git'
 alias 'ls -a'='eza --long --all --header --icons --git'
+alias yy='yazi'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
@@ -58,16 +59,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export BUN_INSTALL="$HOME/.bun"
     export PATH="$BUN_INSTALL/bin:$PATH"
 fi
-
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
 
 function __zoxide_pwd() {
     \builtin pwd -L
