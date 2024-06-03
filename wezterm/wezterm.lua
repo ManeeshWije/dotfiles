@@ -2,6 +2,14 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
 
+local sessionizer = wezterm.plugin.require("https://github.com/ElCapitanSponge/sessionizer.wezterm")
+
+local projects = {
+    "~",
+    "~/projects",
+    "~/documents",
+}
+
 config.font = wezterm.font("Iosevka Nerd Font")
 config.font_size = 15
 config.color_scheme = "GruvboxDarkHard"
@@ -33,5 +41,8 @@ config.keys = {
 	-- Lastly, workspace
 	{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 }
+
+sessionizer.set_projects(projects)
+sessionizer.configure(config)
 
 return config
