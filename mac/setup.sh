@@ -10,12 +10,12 @@ brew tap homebrew/cask-fonts
 # core utils stuff
 brew install bat eza fd sd ripgrep tokei zoxide fzf jq btop ncdu
 # programming
-brew install git bear postman wezterm neovim pure font-iosevka-nerd-font gh koekeishiya/formulae/yabai koekeishiya/formulae/skhd
+brew install git bear postman wezterm neovim pure font-iosevka-nerd-font gh
 # language stuff
 brew install ltex-ls jdtls java lua-language-server rust-analyzer clang-format cmake go llvm lua node nvm python php flake8 stylua ninja google-java-format black
 # tools
 brew install yazi mpv ffmpegthumnailer unar poppler pass pandoc qlmarkdown maccy tldr macchina syncthing
-brew install --cask karabiner-elements
+brew install --cask karabiner-elements nikitabobko/tap/aerospace
 
 ssh-keygen -t ed25519 -C "m.mwije1@proton.me"
 eval "$(ssh-agent -s)"
