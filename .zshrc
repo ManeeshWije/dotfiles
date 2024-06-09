@@ -51,6 +51,7 @@ alias sd="cd ~ && cd \$(fd --type d | fzf)"
 alias ls='eza --long --header --icons --git'
 alias 'ls -a'='eza --long --all --header --icons --git'
 alias yy='yazi'
+alias cat='bat'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
@@ -137,3 +138,10 @@ eval "$(zoxide init zsh)"
 autoload -U promptinit; promptinit
 
 prompt pure
+
+# bun completions
+[ -s "/home/maneesh/.bun/_bun" ] && source "/home/maneesh/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
