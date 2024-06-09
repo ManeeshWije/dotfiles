@@ -38,21 +38,6 @@ config.keys = {
 	{ key = "o", mods = "LEADER", action = act.RotatePanes("Clockwise") },
 
 	{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
-
-	{ key = "t", mods = "CTRL", action = act.SpawnTab("CurrentPaneDomain") },
-	{ key = "w", mods = "CTRL", action = act.CloseCurrentTab({ confirm = true }) },
-	{ key = "1", mods = "CTRL", action = act.ActivateTab(0) },
-	{ key = "2", mods = "CTRL", action = act.ActivateTab(1) },
-	{ key = "3", mods = "CTRL", action = act.ActivateTab(2) },
-	{ key = "4", mods = "CTRL", action = act.ActivateTab(3) },
-	{ key = "5", mods = "CTRL", action = act.ActivateTab(4) },
-	{ key = "6", mods = "CTRL", action = act.ActivateTab(5) },
-	{ key = "7", mods = "CTRL", action = act.ActivateTab(6) },
-	{ key = "8", mods = "CTRL", action = act.ActivateTab(7) },
-	{ key = "9", mods = "CTRL", action = act.ActivateTab(-1) },
-
-	{ key = "c", mods = "CTRL", action = act.CopyTo("Clipboard") },
-	{ key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
 }
 
 sessionizer.set_projects(projects)
