@@ -5,7 +5,13 @@
   
   "modules-left":   ["hyprland/workspaces", "wlr/taskbar"],
   "modules-center": [],
-  "modules-right":  ["tray", "battery", "pulseaudio", "clock#date", "clock#time"],
+  "modules-right":  ["tray", "battery", "backlight", "pulseaudio", "clock#date", "clock#time"],
+
+  "backlight": {
+      "device": "intel_backlight",
+      "format": "{percent}% {icon}",
+      "format-icons": ["", ""]
+  },
 
   "battery": {
       "bat": "BAT0",
@@ -22,7 +28,7 @@
   "wlr/taskbar": {
 	"format": "{icon}",
 	"icon-size": 15,
-	"icon-theme": "Gruvbox Plus Dark",
+	"icon-theme": "Gruvbox-Plus-Dark",
 	"tooltip-format": "{title}",
 	"on-click": "activate",
 	"on-click-middle": "close",

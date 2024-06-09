@@ -54,6 +54,8 @@ tooltip {
 #pulseaudio,
 #workspaces,
 #battery,
+#backlight,
+#power-profiles-daemon,
 #tray {
   background: #32302f;
   padding: 0 0.6em;
