@@ -2,7 +2,6 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 compinit
 
-# if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 if [[ "$OSTYPE" == "darwin"* ]]; then
     fpath+=("$(brew --prefix)/share/zsh/site-functions")
 fi
@@ -56,10 +55,17 @@ alias cat='bat'
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
     export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/:/Users/maneesh/Library/Python/3.11/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/maneesh/.config/scripts/"
-    # bun
-    export BUN_INSTALL="$HOME/.bun"
-    export PATH="$BUN_INSTALL/bin:$PATH"
 fi
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # bun completions
+    [ -s "/home/maneesh/.bun/_bun" ] && source "/home/maneesh/.bun/_bun"
+fi
+
 
 function __zoxide_pwd() {
     \builtin pwd -L
@@ -138,10 +144,3 @@ eval "$(zoxide init zsh)"
 autoload -U promptinit; promptinit
 
 prompt pure
-
-# bun completions
-[ -s "/home/maneesh/.bun/_bun" ] && source "/home/maneesh/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
