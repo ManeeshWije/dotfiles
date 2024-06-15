@@ -402,56 +402,6 @@ require("lazy").setup({
         ft = { "markdown" },
     },
 
-    { -- File Explorer
-        "nvim-tree/nvim-tree.lua",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        config = function()
-            local HEIGHT_RATIO = 0.8
-            local WIDTH_RATIO = 0.5
-            require("nvim-tree").setup({
-                sort_by = "case_sensitive",
-                view = {
-                    float = {
-                        enable = true,
-                        open_win_config = function()
-                            local screen_w = vim.opt.columns:get()
-                            local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
-                            local window_w = screen_w * WIDTH_RATIO
-                            local window_h = screen_h * HEIGHT_RATIO
-                            local window_w_int = math.floor(window_w)
-                            local window_h_int = math.floor(window_h)
-                            local center_x = (screen_w - window_w) / 2
-                            local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
-                            return {
-                                border = "rounded",
-                                relative = "editor",
-                                row = center_y,
-                                col = center_x,
-                                width = window_w_int,
-                                height = window_h_int,
-                            }
-                        end,
-                    },
-                    width = function()
-                        return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
-                    end,
-                },
-                renderer = {
-                    group_empty = true,
-                },
-                filters = {
-                    dotfiles = false,
-                },
-                update_focused_file = {
-                    enable = true,
-                    update_root = true,
-                },
-            })
-        end,
-    },
-
     { -- Indentation
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
@@ -486,6 +436,16 @@ require("lazy").setup({
             vim.g.db_ui_use_nerd_fonts = 1
         end,
     },
+
+    { -- Access yazi
+        "rolv-apneseth/tfm.nvim",
+        config = function()
+            vim.api.nvim_set_keymap("n", "<leader>e", "", {
+                noremap = true,
+                callback = require("tfm").open,
+            })
+        end,
+    },
 })
 
 -- Keymaps for certain plugins and settings
@@ -505,18 +465,16 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagn
 vim.keymap.set("n", "<leader>fe", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
-vim.keymap.set('n', '<C-H>', '<C-W>h')
-vim.keymap.set('n', '<C-J>', '<C-W>j')
-vim.keymap.set('n', '<C-K>', '<C-W>k')
-vim.keymap.set('n', '<C-L>', '<C-W>l')
+vim.keymap.set("n", "<C-H>", "<C-W>h")
+vim.keymap.set("n", "<C-J>", "<C-W>j")
+vim.keymap.set("n", "<C-K>", "<C-W>k")
+vim.keymap.set("n", "<C-L>", "<C-W>l")
 
 vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
 
 vim.keymap.set("n", "<leader>p", function()
     require("conform").format()
 end)
-
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
 
 local harpoon = require("harpoon")
 harpoon:setup({})
