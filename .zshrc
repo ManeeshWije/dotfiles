@@ -51,6 +51,8 @@ alias ls='eza --long --header --icons --git'
 alias 'ls -a'='eza --long --all --header --icons --git'
 alias yy='yazi'
 alias cat='bat'
+alias paccache='sudo pacman -Scc && yay -Scc'
+alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
@@ -138,6 +140,8 @@ if [[ -o zle ]]; then
 
     [[ "${+functions[compdef]}" -ne 0 ]] && \compdef __zoxide_z_complete cd
 fi
+
+. "$HOME/.cargo/env"
 
 eval "$(zoxide init zsh)"
 
