@@ -3,9 +3,17 @@
   "position": "top", 
   "height": 32,
   
-  "modules-left":   ["hyprland/workspaces", "wlr/taskbar"],
-  "modules-center": [],
-  "modules-right":  ["tray", "battery", "backlight", "pulseaudio", "clock#date", "clock#time"],
+  "modules-left":   ["hyprland/workspaces"],
+  "modules-center": ["wlr/taskbar"],
+  "modules-right":  ["tray", "idle_inhibitor", "battery", "backlight", "pulseaudio", "clock#date", "clock#time"],
+
+  "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+          "activated": "",
+          "deactivated": ""
+      }
+  },
 
   "backlight": {
       "device": "intel_backlight",
@@ -68,8 +76,8 @@
 
   "clock#time": {
     "interval": 1,
-    "format": "{:%H:%M} ",
-    "tooltip": false
+    "format": "{:%H:%M:%S} ",
+    "tooltip": true
   },
 
   "clock#date": {

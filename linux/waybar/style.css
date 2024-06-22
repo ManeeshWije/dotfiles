@@ -56,10 +56,11 @@ tooltip {
 #battery,
 #backlight,
 #power-profiles-daemon,
+#idle_inhibitor,
 #tray {
   background: #32302f;
   padding: 0 0.6em;
-  margin-right: 4px;
+  margin-right: 5px;
   margin-left: 4px;
   margin-top: 4px;
   margin-bottom: 4px;
