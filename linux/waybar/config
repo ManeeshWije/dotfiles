@@ -4,7 +4,7 @@
   "height": 32,
   
   "modules-left":   ["hyprland/workspaces"],
-  "modules-center": ["wlr/taskbar"],
+  "modules-center": ["hyprland/window"],
   "modules-right":  ["tray", "idle_inhibitor", "battery", "backlight", "pulseaudio", "clock#date", "clock#time"],
 
   "idle_inhibitor": {
@@ -35,6 +35,7 @@
 
   "wlr/taskbar": {
 	"format": "{icon}",
+    "all-outputs": true,
 	"icon-size": 15,
 	"icon-theme": "Gruvbox-Plus-Dark",
 	"tooltip-format": "{title}",
@@ -43,6 +44,10 @@
     "on-click-right": "minimize-raise",
 	"app_ids-mapping": {
 	}
+  },
+
+  "hyprland/window": {
+      "format": "{initialTitle}"
   },
 
   "hyprland/workspaces": {
