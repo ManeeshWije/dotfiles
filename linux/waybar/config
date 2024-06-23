@@ -47,7 +47,8 @@
   },
 
   "hyprland/window": {
-      "format": "{initialTitle}"
+      "format": "{title}",
+      "max-length": 60
   },
 
   "hyprland/workspaces": {
