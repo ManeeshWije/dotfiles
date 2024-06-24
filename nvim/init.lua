@@ -191,6 +191,7 @@ require("lazy").setup({
             capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
             local servers = {
+                htmx = {},
                 clangd = {},
                 gopls = {},
                 pyright = {},
@@ -268,6 +269,7 @@ require("lazy").setup({
                 c = { "clang-format" },
                 markdown = { "prettier" },
                 sql = { "sql-formatter" },
+                html = { "prettier" },
             },
         },
     },
