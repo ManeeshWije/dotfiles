@@ -192,6 +192,7 @@ require("lazy").setup({
 
             local servers = {
                 htmx = {},
+                jinja_lsp = {},
                 clangd = {},
                 gopls = {},
                 pyright = {},
