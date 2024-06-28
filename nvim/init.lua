@@ -303,6 +303,7 @@ require("lazy").setup({
             local cmp = require("cmp")
             local luasnip = require("luasnip")
             luasnip.config.setup({})
+            luasnip.filetype_extend("handlebars", { "html" })
 
             cmp.setup({
                 snippet = {
