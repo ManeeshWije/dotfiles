@@ -10,13 +10,13 @@ export NVM_DIR=~/.nvm
 export TERM="xterm-256color"
 export EDITOR='nvim'
 export VISUAL="nvim"
+export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
-export HISTDUPE=erase
 
 setopt appendhistory
 setopt sharehistory
-setopt hist_ignore_space
+setopt incappendhistory
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
