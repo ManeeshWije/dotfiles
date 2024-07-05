@@ -27,14 +27,6 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking (copying) text",
-    group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-})
-
 -- Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -314,6 +306,8 @@ require("lazy").setup({
                 mapping = cmp.mapping.preset.insert({
                     ["<C-n>"] = cmp.mapping.select_next_item(),
                     ["<C-p>"] = cmp.mapping.select_prev_item(),
+                    ["<C-j>"] = cmp.mapping.scroll_docs(4),
+                    ["<C-k>"] = cmp.mapping.scroll_docs(-4),
                     ["<CR>"] = cmp.mapping.confirm({ select = false }),
                     ["<C-Space>"] = cmp.mapping.complete({}),
                     ["<C-l>"] = cmp.mapping(function()
@@ -334,6 +328,7 @@ require("lazy").setup({
                     { name = "vim-dadbod-completion" },
                 },
                 window = {
+                    documentation = cmp.config.window.bordered(),
                     completion = {
                         winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat",
                         border = "rounded",
@@ -344,16 +339,7 @@ require("lazy").setup({
     },
 
     { -- Theme
-        "sainnhe/gruvbox-material",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd([[let g:gruvbox_material_background = "hard"]])
-            vim.cmd([[let g:gruvbox_material_float_style = "dim"]])
-            vim.cmd([[let g:gruvbox_material_diagnostic_virtual_text = "colored"]])
-            vim.cmd([[let g:gruvbox_material_transparent_background = 1]])
-            vim.cmd.colorscheme("gruvbox-material")
-        end,
+        "luisiacc/gruvbox-baby",
     },
 
     { -- QOL improvements
@@ -512,3 +498,7 @@ end)
 local hooks = require("ibl.hooks")
 hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
 hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
+
+vim.g.gruvbox_baby_transparent_mode = 1
+vim.g.gruvbox_baby_background_color = "dark"
+vim.cmd.colorscheme("gruvbox-baby")
