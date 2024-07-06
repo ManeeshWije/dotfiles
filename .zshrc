@@ -50,7 +50,7 @@ alias sd="cd ~ && cd \$(fd --type d | fzf)"
 alias ls='eza --long --header --icons --git'
 alias 'ls -a'='eza --long --all --header --icons --git'
 alias yy='yazi'
-alias cat='bat'
+alias cat='bat --plain'
 alias paccache='sudo pacman -Scc && yay -Scc'
 alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
 
