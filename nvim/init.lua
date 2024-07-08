@@ -78,6 +78,10 @@ require("lazy").setup({
         },
         config = function()
             require("telescope").setup({
+                defaults = {
+                    layout_strategy = "horizontal",
+                    layout_config = { width = 0.90 },
+                },
                 extensions = {
                     ["ui-select"] = {
                         require("telescope.themes").get_dropdown(),
@@ -404,8 +408,7 @@ require("lazy").setup({
                 char = "▏",
             },
             scope = {
-                show_start = false,
-                show_end = false,
+                enabled = false,
             },
         },
     },
@@ -473,7 +476,7 @@ end)
 local harpoon = require("harpoon")
 harpoon:setup({})
 vim.keymap.set("n", "<leader>a", function()
-    harpoon:list():append()
+    harpoon:list():add()
 end)
 vim.keymap.set("n", "<C-e>", function()
     harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -493,11 +496,6 @@ end)
 vim.keymap.set("n", "<leader>5", function()
     harpoon:list():select(5)
 end)
-
--- disable indentation on the first level
-local hooks = require("ibl.hooks")
-hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
-hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
 
 vim.g.gruvbox_baby_transparent_mode = 1
 vim.g.gruvbox_baby_background_color = "dark"
