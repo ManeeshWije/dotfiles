@@ -80,7 +80,7 @@ require("lazy").setup({
             require("telescope").setup({
                 defaults = {
                     layout_strategy = "horizontal",
-                    layout_config = { width = 0.90 },
+                    layout_config = { preview_width = 0.6, width = 0.95 },
                 },
                 extensions = {
                     ["ui-select"] = {
@@ -342,8 +342,12 @@ require("lazy").setup({
         end,
     },
 
-    { -- Theme
-        "luisiacc/gruvbox-baby",
+    {
+        "f4z3r/gruvbox-material.nvim",
+        name = "gruvbox-material",
+        lazy = false,
+        priority = 1000,
+        opts = {},
     },
 
     { -- QOL improvements
@@ -406,9 +410,6 @@ require("lazy").setup({
         opts = {
             indent = {
                 char = "▏",
-            },
-            scope = {
-                enabled = false,
             },
         },
     },
@@ -497,6 +498,23 @@ vim.keymap.set("n", "<leader>5", function()
     harpoon:list():select(5)
 end)
 
-vim.g.gruvbox_baby_transparent_mode = 1
-vim.g.gruvbox_baby_background_color = "dark"
-vim.cmd.colorscheme("gruvbox-baby")
+require("gruvbox-material").setup({
+    italics = true,
+    contrast = "hard",
+    comments = {
+        italics = true,
+    },
+    background = {
+        transparent = true,
+    },
+    float = {
+        force_background = false,
+        background_color = nil,
+    },
+    signs = {
+        highlight = true,
+    },
+    customize = nil,
+})
+
+require("ibl").setup()
