@@ -27,6 +27,14 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
+
 -- Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -80,7 +88,7 @@ require("lazy").setup({
             require("telescope").setup({
                 defaults = {
                     layout_strategy = "horizontal",
-                    layout_config = { preview_width = 0.6, width = 0.95 },
+                    layout_config = { width = 0.99 },
                 },
                 extensions = {
                     ["ui-select"] = {
