@@ -1,0 +1,10 @@
+window {
+    margin: 5px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#inner-box {
+    padding: 5px;
+} 
+
