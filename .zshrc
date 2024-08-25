@@ -62,6 +62,7 @@ fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.config/scripts:$PATH"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # bun completions
