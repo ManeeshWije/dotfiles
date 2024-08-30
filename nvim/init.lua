@@ -258,7 +258,7 @@ require("lazy").setup({
     { -- Autoformat
         "stevearc/conform.nvim",
         opts = {
-            notify_on_error = false,
+            notify_on_error = true,
             formatters_by_ft = {
                 lua = { "stylua" },
                 python = { "isort", "black" },
@@ -274,6 +274,7 @@ require("lazy").setup({
                 markdown = { "prettier" },
                 sql = { "sql-formatter" },
                 html = { "prettier" },
+                handlebars = { "prettier" },
             },
         },
     },
