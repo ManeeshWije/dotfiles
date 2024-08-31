@@ -19,15 +19,16 @@ set hist_find_no_dups
 
 bind -m vi-insert "\C-l":clear-screen
 
-TERM="xterm-256color"
-EDITOR='nvim'
-VISUAL="nvim"
-HISTFILE=~/.bash_history
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILESIZE=2000
-HISTTIMEFORMAT="%F %T "
-HISTCONTROL=ignoredups
+export TERM="xterm-256color"
+export BROWSER='firefox'
+export EDITOR='nvim'
+export VISUAL="nvim"
+export HISTFILE=~/.bash_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILESIZE=2000
+export HISTTIMEFORMAT="%F %T "
+export HISTCONTROL=ignoredups
 
 
 # git
@@ -48,7 +49,8 @@ alias newtag='git tag -a'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias st='syncthing'
-alias sd="cd ~ && cd \$(find -type d | fzf)"
+alias sd="cd \$(find $HOME -type d | fzf)"
+alias sf="xdg-open \$(find $HOME -type f | fzf)"
 alias yy='yazi'
 alias paccache='sudo pacman -Scc && yay -Scc'
 alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
