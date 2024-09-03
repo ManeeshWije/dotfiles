@@ -209,7 +209,7 @@ require("lazy").setup({
                 html = {},
                 jdtls = {},
                 jsonls = {},
-                ltex = {},
+                harper_ls = {},
                 phpactor = {},
                 sqlls = {},
                 tailwindcss = {},
