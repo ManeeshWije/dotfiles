@@ -1,3 +1,5 @@
+[ -z "$PS1" ] && return
+
 blk='\[\033[01;30m\]'   # Black
 red='\[\033[01;31m\]'   # Red
 grn='\[\033[01;32m\]'   # Green
@@ -54,6 +56,8 @@ alias sf="xdg-open \$(find $HOME -type f | fzf)"
 alias yy='yazi'
 alias paccache='sudo pacman -Scc && yay -Scc'
 alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
+alias o="xdg-open"
+alias z="zathura"
 
 PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$PATH"
 
