@@ -53,7 +53,7 @@ alias grep='grep --color=auto'
 alias st='syncthing'
 alias sd="cd \$(find $HOME -type d | fzf)"
 alias sf="xdg-open \$(find $HOME -type f | fzf)"
-alias yy='yazi'
+alias y='yazi'
 alias paccache='sudo pacman -Scc && yay -Scc'
 alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
 alias o="xdg-open"
