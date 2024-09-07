@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+rsync -ah --progress --exclude '.bun' --exclude '.cache' --exclude '.cargo' /home/maneesh /run/media/maneesh/SanDisk/
