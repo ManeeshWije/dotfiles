@@ -8,4 +8,4 @@ sudo rsync -avzhP --update --delete \
     --exclude '.mozilla' \
     --exclude 'node_modules' \
     --exclude 'target' \
-    /home/maneesh /run/media/maneesh/922ec537-c264-4968-b692-f1d72a6666a0/
+    /home/maneesh /run/media/maneesh/396910cf-72e0-4054-84d9-724da760e9ba/
