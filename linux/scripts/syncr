@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 sudo rsync -azvP --delete \
+    --exclude '**/*[cC][aA][cC][hH][eE]*' \
     --exclude '.bun' \
     --exclude '.cache' \
     --exclude '.cargo' \
     --exclude '.mozilla' \
     --exclude 'node_modules' \
     --exclude 'target' \
-    /home/maneesh /run/media/maneesh/922ec537-c264-4968-b692-f1d72a6666a0/ \
+    /home/maneesh /run/media/maneesh/922ec537-c264-4968-b692-f1d72a6666a0/
