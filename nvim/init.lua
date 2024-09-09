@@ -200,7 +200,7 @@ require("lazy").setup({
                 gopls = {},
                 pyright = {},
                 rust_analyzer = {},
-                tsserver = {},
+                ts_ls = {},
                 bashls = {},
                 cssls = {},
                 dockerls = {},
