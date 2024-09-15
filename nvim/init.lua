@@ -196,6 +196,7 @@ require("lazy").setup({
 
             local servers = {
                 htmx = {},
+                ltex = {},
                 clangd = {},
                 gopls = {},
                 pyright = {},
@@ -209,7 +210,6 @@ require("lazy").setup({
                 html = {},
                 jdtls = {},
                 jsonls = {},
-                harper_ls = {},
                 phpactor = {},
                 sqlls = {},
                 tailwindcss = {},
