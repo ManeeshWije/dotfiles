@@ -3,6 +3,7 @@
 sudo rsync -avzhP --update --delete \
     --exclude '**/*[cC][aA][cC][hH][eE]*' \
     --exclude '.bun' \
+    --exclude '.docker' \
     --exclude '.cache' \
     --exclude '.cargo' \
     --exclude '.mozilla' \
