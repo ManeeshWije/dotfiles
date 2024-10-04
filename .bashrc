@@ -31,7 +31,7 @@ export SAVEHIST=10000
 export HISTFILESIZE=2000
 export HISTTIMEFORMAT="%F %T "
 export HISTCONTROL=ignoredups
-
+export GOPATH=$HOME/go
 
 # git
 alias addup='git add -u'
@@ -58,8 +58,9 @@ alias paccache='sudo pacman -Scc && yay -Scc'
 alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
 alias o="xdg-open"
 alias z="zathura"
+alias air='$(go env GOPATH)/bin/air'
 
-PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$PATH"
+PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$PATH:$GOPATH/bin"
 
 function git_branch() {
     if [ -d .git ] ; then

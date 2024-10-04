@@ -8,7 +8,7 @@ local projects = {
 	"~",
 	"~/projects",
 	"~/Documents",
-	"~/Documents/uni",
+	"~/Documents/uni/*",
 }
 
 config.font = wezterm.font("Iosevka Nerd Font")
@@ -20,6 +20,7 @@ config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.tab_bar_at_bottom = true
+config.scrollback_lines = 3500
 
 config.leader = { key = "`", timeout_milliseconds = 1000 }
 config.keys = {
