@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-cd ~
-ifuse iPhone
-sudo rsync -ah --progress ~/iPhone/DCIM/100APPLE/* ~/Media/
+ifuse ~/iPhone
+rsync -ah --progress ~/iPhone/DCIM/100APPLE/* ~/Media/
