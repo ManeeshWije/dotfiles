@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo rsync -avzhP --update --delete \
+rsync -avzhP --update --delete \
     --exclude '**/*[cC][aA][cC][hH][eE]*' \
     --exclude '.bun' \
     --exclude '.docker' \
