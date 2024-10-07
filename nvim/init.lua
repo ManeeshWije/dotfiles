@@ -266,6 +266,13 @@ require("lazy").setup({
                 handlers = {
                     function(server_name)
                         local server = servers[server_name] or {}
+                        -- Check if the server is clangd and set offsetEncoding accordingly
+                        if server_name == "clangd" then
+                            -- Set the offsetEncoding to 'utf-16'
+                            server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, {
+                                offsetEncoding = { "utf-16" },
+                            })
+                        end
                         require("lspconfig")[server_name].setup({
                             cmd = server.cmd,
                             settings = server.settings,
