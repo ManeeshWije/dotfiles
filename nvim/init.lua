@@ -195,6 +195,7 @@ require("lazy").setup({
             capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
             local servers = {
+                texlab = {},
                 htmx = {},
                 ltex = {},
                 clangd = {},
@@ -376,7 +377,36 @@ require("lazy").setup({
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = "all",
+                ensure_installed = {
+                    "c",
+                    "go",
+                    "bash",
+                    "dockerfile",
+                    "html",
+                    "latex",
+                    "lua",
+                    "vim",
+                    "vimdoc",
+                    "query",
+                    "markdown",
+                    "markdown_inline",
+                    "javascript",
+                    "typescript",
+                    "java",
+                    "json",
+                    "mermaid",
+                    "nginx",
+                    "php",
+                    "python",
+                    "rust",
+                    "sql",
+                    "templ",
+                    "terraform",
+                    "tsx",
+                    "toml",
+                    "xml",
+                    "yaml",
+                },
                 auto_install = true,
                 sync_install = false,
                 highlight = { enable = true },
@@ -453,6 +483,21 @@ require("lazy").setup({
             })
         end,
     },
+
+    {
+        "ryleelyman/latex.nvim",
+        config = function()
+            require("latex").setup()
+        end,
+    },
+
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
+    },
 })
 
 -- Keymaps for certain plugins and settings
@@ -527,3 +572,13 @@ require("gruvbox-material").setup({
 })
 
 require("ibl").setup()
+
+require("render-markdown").setup({
+    latex = { enabled = false },
+    win_options = {
+        conceallevel = { rendered = 2 },
+    },
+    render_modes = true,
+})
+
+vim.api.nvim_set_hl(0, "Conceal", { bg = "none", fg = "none" })
