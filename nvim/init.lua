@@ -195,9 +195,31 @@ require("lazy").setup({
             capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
             local servers = {
-                texlab = {},
                 htmx = {},
-                ltex = {},
+                harper_ls = {
+                    settings = {
+                        ["harper-ls"] = {
+                            linters = {
+                                spell_check = true,
+                                spelled_numbers = false,
+                                an_a = true,
+                                sentence_capitalization = false,
+                                unclosed_quotes = true,
+                                wrong_quotes = false,
+                                long_sentences = true,
+                                repeated_words = true,
+                                spaces = true,
+                                matcher = true,
+                                correct_number_suffix = true,
+                                number_suffix_capitalization = true,
+                                multiple_sequential_pronouns = true,
+                                linking_verbs = false,
+                                avoid_curses = true,
+                                terminating_conjunctions = true,
+                            },
+                        },
+                    },
+                },
                 clangd = {},
                 gopls = {},
                 pyright = {},
@@ -352,7 +374,7 @@ require("lazy").setup({
         end,
     },
 
-    {
+    { -- Colourscheme
         "f4z3r/gruvbox-material.nvim",
         name = "gruvbox-material",
         lazy = false,
@@ -484,14 +506,14 @@ require("lazy").setup({
         end,
     },
 
-    {
+    { -- Render latex in markdown
         "ryleelyman/latex.nvim",
         config = function()
             require("latex").setup()
         end,
     },
 
-    {
+    { -- Render markdown straight in the editor
         "MeanderingProgrammer/render-markdown.nvim",
         dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
         ---@module 'render-markdown'
