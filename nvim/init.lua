@@ -406,36 +406,7 @@ require("lazy").setup({
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = {
-                    "c",
-                    "go",
-                    "bash",
-                    "dockerfile",
-                    "html",
-                    "latex",
-                    "lua",
-                    "vim",
-                    "vimdoc",
-                    "query",
-                    "markdown",
-                    "markdown_inline",
-                    "javascript",
-                    "typescript",
-                    "java",
-                    "json",
-                    "mermaid",
-                    "nginx",
-                    "php",
-                    "python",
-                    "rust",
-                    "sql",
-                    "templ",
-                    "terraform",
-                    "tsx",
-                    "toml",
-                    "xml",
-                    "yaml",
-                },
+                ensure_installed = "all",
                 auto_install = true,
                 sync_install = false,
                 highlight = { enable = true },
@@ -512,21 +483,6 @@ require("lazy").setup({
             })
         end,
     },
-
-    { -- Render latex in markdown
-        "ryleelyman/latex.nvim",
-        config = function()
-            require("latex").setup()
-        end,
-    },
-
-    { -- Render markdown straight in the editor
-        "MeanderingProgrammer/render-markdown.nvim",
-        dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
-        ---@module 'render-markdown'
-        ---@type render.md.UserConfig
-        opts = {},
-    },
 })
 
 -- Keymaps for certain plugins and settings
@@ -601,13 +557,3 @@ require("gruvbox-material").setup({
 })
 
 require("ibl").setup()
-
-require("render-markdown").setup({
-    latex = { enabled = false },
-    win_options = {
-        conceallevel = { rendered = 2 },
-    },
-    render_modes = true,
-})
-
-vim.api.nvim_set_hl(0, "Conceal", { bg = "none", fg = "none" })
