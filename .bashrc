@@ -54,6 +54,7 @@ alias st='syncthing'
 alias sd="cd \$(find $HOME -type d | fzf)"
 alias sf="xdg-open \$(find $HOME -type f | fzf)"
 alias y='yazi'
+alias pacupdate='sudo pacman -Syu && yay -Syu'
 alias paccache='sudo pacman -Scc && yay -Scc'
 alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
 alias o="xdg-open"
