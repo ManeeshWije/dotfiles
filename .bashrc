@@ -51,8 +51,8 @@ alias newtag='git tag -a'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias st='syncthing'
-alias sd="cd \$(find $HOME -type d | fzf)"
-alias sf="xdg-open \$(find $HOME -type f | fzf)"
+alias sd='cd "$(find "$HOME" -type d | fzf || echo "$PWD")"'
+alias sf='file=$(find "$HOME" -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
 alias y='yazi'
 alias pacupdate='sudo pacman -Syu && yay -Syu'
 alias paccache='sudo pacman -Scc && yay -Scc'
