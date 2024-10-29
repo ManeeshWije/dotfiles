@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+sudo cp /etc/tlp.conf ~/dotfiles/linux/
+
+cp -r ~/.config/nvim \
+    ~/.config/wezterm \
+    ~/.config/yazi \
+    ~/dotfiles/
+
+cp -r ~/.config/hypr \
+    ~/.config/waybar \
+    ~/.config/wofi \
+    ~/.config/dunst \
+    ~/.config/swappy \
+    ~/.config/pcmanfm \
+    ~/.config/scripts \
+    ~/.config/zathura \
+    ~/.config/wireplumber \
+    ~/.config/fontconfig \
+    ~/dotfiles/linux/
