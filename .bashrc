@@ -1,5 +1,7 @@
 [ -z "$PS1" ] && return
 
+eval "$(fzf --bash)"
+
 blk='\[\033[01;30m\]'   # Black
 red='\[\033[01;31m\]'   # Red
 grn='\[\033[01;32m\]'   # Green
@@ -72,5 +74,4 @@ function git_branch() {
 function bash_prompt(){
     PS1='${debian_chroot:+($debian_chroot)}'${blu}'$(git_branch)'${pur}' \W'${grn}' \$ '${clr}
 }
-
 bash_prompt
