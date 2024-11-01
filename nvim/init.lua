@@ -30,16 +30,16 @@ vim.opt.wrap = false
 vim.api.nvim_create_augroup("vimStartup", { clear = true })
 
 vim.api.nvim_create_autocmd("BufReadPost", {
-  group = "vimStartup",
-  callback = function()
-    local last_position = vim.fn.line([['"]])
-    local last_line = vim.fn.line("$")
-    local filetype = vim.bo.filetype
+    group = "vimStartup",
+    callback = function()
+        local last_position = vim.fn.line([['"]])
+        local last_line = vim.fn.line("$")
+        local filetype = vim.bo.filetype
 
-    if last_position >= 1 and last_position <= last_line and not filetype:match("commit") then
-      vim.cmd("normal! g`\"")
-    end
-  end
+        if last_position >= 1 and last_position <= last_line and not filetype:match("commit") then
+            vim.cmd('normal! g`"')
+        end
+    end,
 })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
