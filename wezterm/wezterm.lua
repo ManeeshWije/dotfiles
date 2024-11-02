@@ -21,13 +21,8 @@ config.cursor_blink_ease_out = "Constant"
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.tab_bar_at_bottom = true
 config.scrollback_lines = 3500
-config.use_fancy_tab_bar = false
-
-config.colors = {
-    tab_bar = {
-        background = '#1B1B1B'
-    }
-}
+config.use_fancy_tab_bar = true
+config.window_background_opacity = 0.7
 
 config.leader = { key = "`", timeout_milliseconds = 1000 }
 config.keys = {
@@ -47,7 +42,7 @@ config.keys = {
 
 	{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 
-    { key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
+	{ key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 	{ key = "w", mods = "LEADER", action = act.CloseCurrentTab({ confirm = true }) },
 	{ key = "1", mods = "LEADER", action = act.ActivateTab(0) },
 	{ key = "2", mods = "LEADER", action = act.ActivateTab(1) },
