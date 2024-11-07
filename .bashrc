@@ -34,6 +34,7 @@ export HISTFILESIZE=2000
 export HISTTIMEFORMAT="%F %T "
 export HISTCONTROL=ignoredups
 export GOPATH=$HOME/go
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
 
 # git
 alias addup='git add -u'
