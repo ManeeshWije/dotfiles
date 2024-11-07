@@ -20,9 +20,15 @@ config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.tab_bar_at_bottom = true
-config.scrollback_lines = 3500
+config.scrollback_lines = 10000
 config.use_fancy_tab_bar = true
 config.window_background_opacity = 0.7
+
+config.window_frame = {
+  font = wezterm.font { family = 'Iosevka Nerd Font', weight = 'Bold' },
+  font_size = 12.0,
+  active_titlebar_bg = '#1D2021',
+}
 
 config.leader = { key = "`", timeout_milliseconds = 1000 }
 config.keys = {
