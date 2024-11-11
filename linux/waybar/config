@@ -16,7 +16,7 @@
   },
 
   "mpris": {
-      "interval": 3,
+      "interval": 1,
       "format": " {title} ",
       "format-paused": " {title} {status_icon} ",
       "on-click": "playerctl play-pause",
