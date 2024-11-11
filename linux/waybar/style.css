@@ -57,6 +57,7 @@ tooltip {
 #backlight,
 #power-profiles-daemon,
 #idle_inhibitor,
+#mpris,
 #tray {
   background: #32302f;
   padding: 0 0.6em;
