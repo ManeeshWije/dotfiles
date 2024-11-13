@@ -5,6 +5,7 @@ sudo cp /etc/tlp.conf ~/dotfiles/linux/
 cp -r ~/.config/nvim \
     ~/.config/wezterm \
     ~/.config/yazi \
+    ~/.config/ncspot \
     ~/.bashrc \
     ~/.zshrc \
     ~/dotfiles/
