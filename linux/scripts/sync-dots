@@ -10,10 +10,11 @@ cp -r ~/.config/nvim \
     ~/.zshrc \
     ~/dotfiles/
 
-cp -r ~/.config/hypr \
+cp -r ~/.config/sway \
+    ~/.config/swaylock \
+    ~/.config/swaync \
     ~/.config/waybar \
     ~/.config/wofi \
-    ~/.config/dunst \
     ~/.config/swappy \
     ~/.config/pcmanfm \
     ~/.config/scripts \

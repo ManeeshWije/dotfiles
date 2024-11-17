@@ -35,6 +35,8 @@ export HISTTIMEFORMAT="%F %T "
 export HISTCONTROL=ignoredups
 export GOPATH=$HOME/go
 export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=sway
 
 # git
 alias addup='git add -u'

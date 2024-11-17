@@ -58,6 +58,8 @@ tooltip {
 #power-profiles-daemon,
 #idle_inhibitor,
 #mpris,
+#mode,
+#custom-notification,
 #tray {
   background: #32302f;
   padding: 0 0.6em;
@@ -115,4 +117,8 @@ tooltip {
   border-radius: 6px;
   background: #4e635b;
   color: #ebdbb2;
+}
+
+#custom-notification {
+  font-family: "Iosevka Nerd Font";
 }

@@ -22,7 +22,7 @@ config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.tab_bar_at_bottom = true
 config.scrollback_lines = 10000
 config.use_fancy_tab_bar = true
-config.window_background_opacity = 0.7
+config.window_background_opacity = 0.8
 
 config.window_frame = {
   font = wezterm.font { family = 'Iosevka Nerd Font', weight = 'Bold' },
