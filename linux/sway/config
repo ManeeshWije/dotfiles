@@ -57,7 +57,7 @@ input "type:keyboard" {
 ### Key bindings
 # Basics:
     # Start a terminal
-    bindsym $mod+t exec $term start --always-new-process
+    bindsym $mod+t exec $term start
 
     # Kill focused window
     bindsym $mod+q kill
