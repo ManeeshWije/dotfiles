@@ -29,27 +29,25 @@ exec swayidle -w \
 
 ### Useful Daemons
 exec nm-applet &
-exec syncthing
+exec syncthing &
 exec swaync
 exec wl-paste --type text --watch cliphist store #Stores only text data
 exec wl-paste --type image --watch cliphist store #Stores only image data
-exec /usr/lib/polkit-kde-authentication-agent-1
 
 ### Auto-tiling script
-exec_always autotiling
+# exec_always autotiling
 
 ### Input configuration
-#
-input "1267:32:Elan_Touchpad" {
-  dwt enabled
-  tap enabled
-  natural_scroll enabled
-  middle_emulation enabled
-}
-
-input "type:keyboard" {
+input type:keyboard {
     xkb_layout us
     xkb_options ctrl:nocaps
+}
+
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
 }
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -216,21 +214,27 @@ bar {
 
 ### Styling
   # Gaps
-  gaps inner 5
-  gaps outer 5
+  gaps inner 3
+  gaps outer 3
 
   # Borders
-  default_border pixel 3
+  default_border pixel 2
   default_floating_border none
-  font pango:monospace 0.001
-  titlebar_padding 1
-  titlebar_border_thickness 0
+  hide_edge_borders --i3 none
 
-### Colors
-  # Class                   Border      BG          Text        Indicator   Child border
-  client.focused            #c5c8c6bf   #1d1f21bb   #ffffff     #fffffff2   #c5c8c6bf
-  client.unfocused          #1d1f2166   #1d1f2188   #ffffff     #000000ee   #1d1f2166
-  client.focused_inactive   #c5c8c644   #1d1f2199   #ffffff     #ffffff88   #c5c8c644
-  client.background         #1d1f21f2
+set $color_normal_white  #a89984
+set $color_bright_white  #ebdbb2
+set $color_normal_gray   #282828
+set $color_bright_gray   #3c3836
+set $color_bright_yellow #d79921
+set $color_normal_black  #1d2021
+set $color_unused        #ff0000
+
+# Colors                  border                 background             text                   indicator            child_border
+client.focused            $color_bright_white    $color_bright_gray     $color_bright_white    $color_bright_white  $color_bright_white
+client.focused_inactive   $color_bright_gray     $color_bright_gray     $color_bright_white    $color_bright_gray   $color_normal_black
+client.unfocused          $color_normal_black    $color_normal_gray     $color_normal_white    $color_normal_gray   $color_normal_black
+client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
+client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
 include /etc/sway/config.d/*
