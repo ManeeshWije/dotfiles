@@ -7,10 +7,9 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+
 set $term wezterm
-# Your preferred application launcher
-set $menu wofi
+set $menu rofi -show drun
 
 ### Output configuration
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -31,11 +30,8 @@ exec swayidle -w \
 exec nm-applet &
 exec syncthing &
 exec swaync
-exec wl-paste --type text --watch cliphist store #Stores only text data
-exec wl-paste --type image --watch cliphist store #Stores only image data
-
-### Auto-tiling script
-# exec_always autotiling
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
 
 ### Input configuration
 input type:keyboard {
@@ -55,14 +51,14 @@ input type:touchpad {
 ### Key bindings
 # Basics:
     # Start a terminal
-    bindsym $mod+t exec $term start
+    bindsym $mod+t exec $term start --always-new-process
 
     # Kill focused window
     bindsym $mod+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+Shift+d exec cliphist list | wofi --dmenu | cliphist decode | wl-copy
+    bindsym $mod+Shift+d exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -214,8 +210,8 @@ bar {
 
 ### Styling
   # Gaps
-  gaps inner 3
-  gaps outer 3
+  gaps inner 5
+  gaps outer 5
 
   # Borders
   default_border pixel 2

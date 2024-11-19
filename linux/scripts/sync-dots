@@ -7,14 +7,13 @@ cp -r ~/.config/nvim \
     ~/.config/yazi \
     ~/.config/ncspot \
     ~/.bashrc \
-    ~/.zshrc \
     ~/dotfiles/
 
 cp -r ~/.config/sway \
     ~/.config/swaylock \
     ~/.config/swaync \
     ~/.config/waybar \
-    ~/.config/wofi \
+    ~/.config/rofi \
     ~/.config/swappy \
     ~/.config/pcmanfm \
     ~/.config/scripts \
