@@ -25,9 +25,9 @@ config.use_fancy_tab_bar = true
 config.window_background_opacity = 0.8
 
 config.window_frame = {
-  font = wezterm.font { family = 'Iosevka Nerd Font', weight = 'Bold' },
-  font_size = 12.0,
-  active_titlebar_bg = '#1D2021',
+	font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" }),
+	font_size = 12.0,
+	active_titlebar_bg = "#1D2021",
 }
 
 config.leader = { key = "`", timeout_milliseconds = 1000 }
