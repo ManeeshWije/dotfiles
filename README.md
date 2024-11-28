@@ -8,7 +8,7 @@
   - Wezterm
   - Neovim
   - Yazi
-  - Wofi
+  - Rofi
   - and many more...
 
 # Screenshots
