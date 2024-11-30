@@ -227,7 +227,7 @@ set $color_normal_black  #1d2021
 set $color_unused        #ff0000
 
 # Colors                  border                 background             text                   indicator            child_border
-client.focused            $color_bright_white    $color_bright_gray     $color_bright_white    $color_bright_white  $color_bright_white
+client.focused            $color_bright_white    $color_bright_gray     $color_bright_white    $color_bright_yellow $color_bright_white
 client.focused_inactive   $color_bright_gray     $color_bright_gray     $color_bright_white    $color_bright_gray   $color_normal_black
 client.unfocused          $color_normal_black    $color_normal_gray     $color_normal_white    $color_normal_gray   $color_normal_black
 client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused

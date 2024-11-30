@@ -28,6 +28,7 @@ config.window_frame = {
 	font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" }),
 	font_size = 12.0,
 	active_titlebar_bg = "#1D2021",
+	inactive_titlebar_bg = "#1D2021",
 }
 
 config.leader = { key = "`", timeout_milliseconds = 1000 }
