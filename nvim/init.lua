@@ -490,7 +490,7 @@ vim.keymap.set("n", "<C-L>", "<C-W>l")
 vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
 
 vim.keymap.set("n", "<leader>p", function()
-    require("conform").format()
+    require("conform").format({ async = true, lsp_fallback = true })
 end)
 
 local harpoon = require("harpoon")

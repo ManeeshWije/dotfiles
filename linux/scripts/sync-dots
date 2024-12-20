@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-sudo cp /etc/tlp.conf ~/dotfiles/linux/
-
 cp -r ~/.config/nvim \
     ~/.config/wezterm \
     ~/.config/yazi \
