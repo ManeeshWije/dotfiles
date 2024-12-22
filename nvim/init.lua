@@ -59,8 +59,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "numToStr/Comment.nvim", opts = {} },
-
     { -- Adds git related signs to the gutter, as well as utilities for managing changes
         "lewis6991/gitsigns.nvim",
         opts = {
@@ -118,40 +116,6 @@ require("lazy").setup({
             pcall(require("telescope").load_extension, "ui-select")
 
             local builtin = require("telescope.builtin")
-            local action_state = require("telescope.actions.state")
-            local actions = require("telescope.actions")
-
-            local buffer_searcher
-            buffer_searcher = function()
-                builtin.buffers({
-                    sort_mru = true,
-                    ignore_current_buffer = false,
-                    show_all_buffers = false,
-                    attach_mappings = function(prompt_bufnr, map)
-                        local refresh_buffer_searcher = function()
-                            actions.close(prompt_bufnr)
-                            vim.schedule(buffer_searcher)
-                        end
-                        local delete_buf = function()
-                            local selection = action_state.get_selected_entry()
-                            vim.api.nvim_buf_delete(selection.bufnr, { force = true })
-                            refresh_buffer_searcher()
-                        end
-                        local delete_multiple_buf = function()
-                            local picker = action_state.get_current_picker(prompt_bufnr)
-                            local selection = picker:get_multi_selection()
-                            for _, entry in ipairs(selection) do
-                                vim.api.nvim_buf_delete(entry.bufnr, { force = true })
-                            end
-                            refresh_buffer_searcher()
-                        end
-                        map("n", "dd", delete_buf)
-                        map("n", "<C-d>", delete_multiple_buf)
-                        map("i", "<C-d>", delete_multiple_buf)
-                        return true
-                    end,
-                })
-            end
 
             vim.keymap.set("n", "<leader>fh", builtin.help_tags)
             vim.keymap.set("n", "<leader>fk", builtin.keymaps)
@@ -159,20 +123,27 @@ require("lazy").setup({
             vim.keymap.set("n", "<leader>fw", builtin.grep_string)
             vim.keymap.set("n", "<leader>fg", builtin.live_grep)
             vim.keymap.set("n", "<leader>fd", builtin.diagnostics)
-            vim.keymap.set("n", "<leader>fb", buffer_searcher, {})
+            vim.keymap.set("n", "<leader>fb", builtin.buffers)
         end,
     },
 
     { -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
         dependencies = {
+            "saghen/blink.cmp",
             "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-            "WhoIsSethDaniel/mason-tool-installer.nvim",
-
             { "j-hui/fidget.nvim", opts = {} },
+            {
+                "folke/lazydev.nvim",
+                opts = {
+                    library = {
+                        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+                    },
+                },
+            },
         },
         config = function()
+            require("mason").setup()
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
                 callback = function(event)
@@ -206,8 +177,7 @@ require("lazy").setup({
                 end,
             })
 
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+            local lspconfig = require("lspconfig")
 
             local servers = {
                 templ = {},
@@ -230,50 +200,12 @@ require("lazy").setup({
                 tailwindcss = {},
                 vimls = {},
                 yamlls = {},
-                lua_ls = {
-                    settings = {
-                        Lua = {
-                            runtime = { version = "LuaJIT" },
-                            workspace = {
-                                checkThirdParty = false,
-                                library = {
-                                    "${3rd}/luv/library",
-                                    unpack(vim.api.nvim_get_runtime_file("", true)),
-                                },
-                            },
-                        },
-                    },
-                },
+                lua_ls = {},
             }
-
-            require("mason").setup()
-            local ensure_installed = vim.tbl_keys(servers or {})
-            vim.list_extend(ensure_installed, {
-                "stylua",
-            })
-
-            require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-
-            require("mason-lspconfig").setup({
-                handlers = {
-                    function(server_name)
-                        local server = servers[server_name] or {}
-                        -- Check if the server is clangd and set offsetEncoding accordingly
-                        if server_name == "clangd" then
-                            -- Set the offsetEncoding to 'utf-16'
-                            server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, {
-                                offsetEncoding = { "utf-16" },
-                            })
-                        end
-                        require("lspconfig")[server_name].setup({
-                            cmd = server.cmd,
-                            settings = server.settings,
-                            filetypes = server.filetypes,
-                            capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {}),
-                        })
-                    end,
-                },
-            })
+            for server, _ in pairs(servers) do
+                local capabilities = require("blink.cmp").get_lsp_capabilities()
+                lspconfig[server].setup({ capabilities = capabilities })
+            end
         end,
     },
 
@@ -302,75 +234,58 @@ require("lazy").setup({
     },
 
     { -- Autocompletion
-        "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
+        "saghen/blink.cmp",
         dependencies = {
-            {
-                "L3MON4D3/LuaSnip",
-                build = (function()
-                    if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
-                        return
+            "rafamadriz/friendly-snippets",
+            { "L3MON4D3/LuaSnip", version = "v2.*" },
+        },
+        version = "*",
+        opts = {
+            snippets = {
+                expand = function(snippet)
+                    require("luasnip").lsp_expand(snippet)
+                end,
+                active = function(filter)
+                    if filter and filter.direction then
+                        return require("luasnip").jumpable(filter.direction)
                     end
-                    return "make install_jsregexp"
-                end)(),
-                dependencies = {
-                    {
-                        "rafamadriz/friendly-snippets",
-                        config = function()
-                            require("luasnip.loaders.from_vscode").lazy_load()
-                        end,
+                    return require("luasnip").in_snippet()
+                end,
+                jump = function(direction)
+                    require("luasnip").jump(direction)
+                end,
+            },
+            appearance = {
+                use_nvim_cmp_as_default = true,
+                nerd_font_variant = "mono",
+            },
+            completion = {
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 0,
+                },
+            },
+            keymap = {
+                preset = "default",
+                ["<c-k>"] = { "scroll_documentation_up", "fallback" },
+                ["<c-j>"] = { "scroll_documentation_down", "fallback" },
+            },
+            signature = { enabled = true },
+            sources = {
+                default = { "lsp", "path", "snippets", "luasnip", "buffer", "dadbod" },
+                cmdline = {},
+                providers = {
+                    dadbod = {
+                        name = "dadbod",
+                        module = "vim_dadbod_completion.blink",
                     },
                 },
             },
-            "saadparwaiz1/cmp_luasnip",
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-path",
         },
-        config = function()
-            local cmp = require("cmp")
-            local luasnip = require("luasnip")
-            luasnip.config.setup({})
-            luasnip.filetype_extend("handlebars", { "html" })
+    },
 
-            cmp.setup({
-                snippet = {
-                    expand = function(args)
-                        luasnip.lsp_expand(args.body)
-                    end,
-                },
-                mapping = cmp.mapping.preset.insert({
-                    ["<C-n>"] = cmp.mapping.select_next_item(),
-                    ["<C-p>"] = cmp.mapping.select_prev_item(),
-                    ["<C-j>"] = cmp.mapping.scroll_docs(4),
-                    ["<C-k>"] = cmp.mapping.scroll_docs(-4),
-                    ["<CR>"] = cmp.mapping.confirm({ select = false }),
-                    ["<C-Space>"] = cmp.mapping.complete({}),
-                    ["<C-l>"] = cmp.mapping(function()
-                        if luasnip.expand_or_locally_jumpable() then
-                            luasnip.expand_or_jump()
-                        end
-                    end, { "i", "s" }),
-                    ["<C-h>"] = cmp.mapping(function()
-                        if luasnip.locally_jumpable(-1) then
-                            luasnip.jump(-1)
-                        end
-                    end, { "i", "s" }),
-                }),
-                sources = {
-                    { name = "nvim_lsp" },
-                    { name = "luasnip" },
-                    { name = "path" },
-                    { name = "vim-dadbod-completion" },
-                },
-                window = {
-                    documentation = cmp.config.window.bordered(),
-                    completion = {
-                        winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat",
-                        border = "rounded",
-                    },
-                },
-            })
-        end,
+    { -- Install LSP's
+        "williamboman/mason.nvim",
     },
 
     { -- Colourscheme
@@ -403,14 +318,7 @@ require("lazy").setup({
     },
 
     { -- Auto Pairs
-        "windwp/nvim-autopairs",
-        dependencies = { "hrsh7th/nvim-cmp" },
-        config = function()
-            require("nvim-autopairs").setup({})
-            local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-            local cmp = require("cmp")
-            cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-        end,
+        "cohama/lexima.vim",
     },
 
     { -- Markdown Preview
