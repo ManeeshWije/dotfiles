@@ -9,6 +9,8 @@ set $up k
 set $right l
 
 set $term wezterm
+set $browser brave
+set $filemanager pcmanfm
 set $menu rofi -show drun
 
 ### Output configuration
@@ -54,6 +56,8 @@ input type:touchpad {
 # Basics:
     # Start a terminal
     bindsym $mod+t exec $term start --always-new-process
+    bindsym $mod+i exec $browser
+    bindsym $mod+m exec $filemanager
 
     # Kill focused window
     bindsym $mod+q kill
