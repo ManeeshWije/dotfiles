@@ -114,16 +114,6 @@ require("lazy").setup({
 
             pcall(require("telescope").load_extension, "fzf")
             pcall(require("telescope").load_extension, "ui-select")
-
-            local builtin = require("telescope.builtin")
-
-            vim.keymap.set("n", "<leader>fh", builtin.help_tags)
-            vim.keymap.set("n", "<leader>fk", builtin.keymaps)
-            vim.keymap.set("n", "<leader>ff", builtin.find_files)
-            vim.keymap.set("n", "<leader>fw", builtin.grep_string)
-            vim.keymap.set("n", "<leader>fg", builtin.live_grep)
-            vim.keymap.set("n", "<leader>fd", builtin.diagnostics)
-            vim.keymap.set("n", "<leader>fb", builtin.buffers)
         end,
     },
 
@@ -198,8 +188,6 @@ require("lazy").setup({
                 phpactor = {},
                 sqlls = {},
                 tailwindcss = {},
-                vimls = {},
-                yamlls = {},
                 lua_ls = {},
             }
             for server, _ in pairs(servers) do
@@ -421,6 +409,16 @@ require("lazy").setup({
 })
 
 -- Keymaps for certain plugins and settings
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>fh", builtin.help_tags)
+vim.keymap.set("n", "<leader>fk", builtin.keymaps)
+vim.keymap.set("n", "<leader>ff", builtin.find_files)
+vim.keymap.set("n", "<leader>fw", builtin.grep_string)
+vim.keymap.set("n", "<leader>fg", builtin.live_grep)
+vim.keymap.set("n", "<leader>fd", builtin.diagnostics)
+vim.keymap.set("n", "<leader>fb", builtin.buffers)
+vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
+
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<S-l>", ":bnext<CR>")
@@ -442,10 +440,12 @@ vim.keymap.set("n", "<C-J>", "<C-W>j")
 vim.keymap.set("n", "<C-K>", "<C-W>k")
 vim.keymap.set("n", "<C-L>", "<C-W>l")
 
-vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
-
 vim.keymap.set("n", "<leader>p", function()
     require("conform").format({ async = true, lsp_fallback = true })
+end)
+
+vim.keymap.set("n", "<leader>e", function()
+    require("tfm").open({})
 end)
 
 local harpoon = require("harpoon")
@@ -456,39 +456,20 @@ end)
 vim.keymap.set("n", "<C-e>", function()
     harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
-vim.keymap.set("n", "<leader>1", function()
-    harpoon:list():select(1)
-end)
-vim.keymap.set("n", "<leader>2", function()
-    harpoon:list():select(2)
-end)
-vim.keymap.set("n", "<leader>3", function()
-    harpoon:list():select(3)
-end)
-vim.keymap.set("n", "<leader>4", function()
-    harpoon:list():select(4)
-end)
-vim.keymap.set("n", "<leader>5", function()
-    harpoon:list():select(5)
-end)
+for i = 1, 5 do
+    vim.keymap.set("n", "<leader>" .. i, function()
+        harpoon:list():select(i)
+    end)
+end
 
 require("gruvbox-material").setup({
-    italics = true,
     contrast = "hard",
-    comments = {
-        italics = true,
-    },
     background = {
         transparent = true,
-    },
-    float = {
-        force_background = false,
-        background_color = nil,
     },
     signs = {
         highlight = false,
     },
-    customize = nil,
 })
 
 require("ibl").setup()
