@@ -58,7 +58,6 @@ alias grep='grep --color=auto'
 alias st='syncthing'
 alias sd='cd "$(find "$HOME" -type d | fzf || echo "$PWD")"'
 alias sf='file=$(find "$HOME" -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
-alias y='yazi'
 alias pacupdate='sudo pacman -Syu && yay -Syu'
 alias paccache='sudo pacman -Scc && yay -Scc'
 alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
@@ -67,6 +66,15 @@ alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 
 PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$PATH:$GOPATH/bin"
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 function git_branch() {
     if [ -d .git ] ; then

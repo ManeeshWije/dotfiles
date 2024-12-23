@@ -31,6 +31,7 @@ exec swayidle -w \
 ### Useful Daemons
 exec nm-applet &
 exec syncthing &
+exec gammastep &
 exec swaync
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store

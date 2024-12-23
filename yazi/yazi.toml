@@ -1,6 +1,7 @@
 [manager]
 show_hidden = true
 ratio = [1, 2, 5]
+sort_by = "mtime"
 
 [[plugin.prepend_fetchers]]
 id   = "git"
