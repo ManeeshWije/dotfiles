@@ -260,7 +260,14 @@ require("lazy").setup({
                 nerd_font_variant = "mono",
             },
             completion = {
+                menu = {
+                    border = "single",
+                    winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
+                },
                 documentation = {
+                    window = {
+                        border = "single",
+                    },
                     auto_show = true,
                     auto_show_delay_ms = 0,
                 },
@@ -270,14 +277,54 @@ require("lazy").setup({
                 ["<c-k>"] = { "scroll_documentation_up", "fallback" },
                 ["<c-j>"] = { "scroll_documentation_down", "fallback" },
             },
-            signature = { enabled = true },
             sources = {
                 default = { "lsp", "path", "snippets", "luasnip", "buffer", "dadbod" },
                 cmdline = {},
                 providers = {
+                    lsp = {
+                        name = "lsp",
+                        enabled = true,
+                        module = "blink.cmp.sources.lsp",
+                        fallbacks = { "snippets", "luasnip", "buffer" },
+                        score_offset = 90,
+                    },
+                    luasnip = {
+                        name = "luasnip",
+                        enabled = true,
+                        module = "blink.cmp.sources.luasnip",
+                        min_keyword_length = 2,
+                        fallbacks = { "snippets" },
+                        score_offset = 85,
+                    },
+                    path = {
+                        name = "path",
+                        module = "blink.cmp.sources.path",
+                        score_offset = 3,
+                        fallbacks = { "snippets", "luasnip", "buffer" },
+                        opts = {
+                            trailing_slash = false,
+                            label_trailing_slash = true,
+                            get_cwd = function(context)
+                                return vim.fn.expand(("#%d:p:h"):format(context.bufnr))
+                            end,
+                            show_hidden_files_by_default = true,
+                        },
+                    },
+                    buffer = {
+                        name = "buffer",
+                        module = "blink.cmp.sources.buffer",
+                        min_keyword_length = 2,
+                    },
+                    snippets = {
+                        name = "snippets",
+                        enabled = true,
+                        module = "blink.cmp.sources.snippets",
+                        score_offset = 80,
+                    },
                     dadbod = {
                         name = "dadbod",
                         module = "vim_dadbod_completion.blink",
+                        score_offset = 85,
                     },
                 },
             },
