@@ -243,10 +243,6 @@ require("lazy").setup({
                     require("luasnip").jump(direction)
                 end,
             },
-            appearance = {
-                use_nvim_cmp_as_default = true,
-                nerd_font_variant = "mono",
-            },
             completion = {
                 menu = {
                     border = "single",
@@ -259,6 +255,12 @@ require("lazy").setup({
                     auto_show = true,
                     auto_show_delay_ms = 0,
                 },
+            },
+            signature = {
+                window = {
+                    border = "single",
+                },
+                enabled = true,
             },
             keymap = {
                 preset = "default",
@@ -353,7 +355,9 @@ require("lazy").setup({
     },
 
     { -- Auto Pairs
-        "cohama/lexima.vim",
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = true,
     },
 
     { -- Markdown Preview

@@ -18,5 +18,4 @@ cp -r ~/.config/sway \
     ~/.config/zathura \
     ~/.config/wireplumber \
     ~/.config/fontconfig \
-    ~/.config/gammastep \
     ~/dotfiles/linux/

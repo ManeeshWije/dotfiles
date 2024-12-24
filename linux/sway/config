@@ -31,7 +31,7 @@ exec swayidle -w \
 ### Useful Daemons
 exec nm-applet &
 exec syncthing &
-exec gammastep &
+exec wlsunset -l 43.6 -L -79.3 &
 exec swaync
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
