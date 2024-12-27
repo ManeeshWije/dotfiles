@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
 cp -r ~/.config/nvim \
-    ~/.config/wezterm \
+    ~/.config/ghostty \
+    ~/.tmux.conf \
     ~/.config/yazi \
     ~/.config/ncspot \
     ~/.bashrc \
