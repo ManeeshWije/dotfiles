@@ -1,15 +1,16 @@
 # Dotfiles
 
-- Includes daily Arch setup and MacOS
 - Programs in my daily workflow:
   - Arch Linux
   - Bash
   - Sway
-  - Wezterm
+  - Waybar
+  - Ghostty
   - Neovim
+  - Tmux
   - Yazi
   - Rofi
-  - and many more...
+  - Custom scripts
 
 # Screenshots
 
