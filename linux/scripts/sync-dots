@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 
 sudo cp -r /etc/udev/rules.d \
+    /etc/systemd/system/unplug.service \
+    /etc/systemd/system/plug.service \
     ~/dotfiles/linux/
 
 cp -r ~/.config/nvim \
