@@ -17,8 +17,8 @@
 
   "mpris": {
       "interval": 1,
-      "format": " {title} ",
-      "format-paused": " {title} {status_icon} ",
+      "format": "{dynamic}",
+      "format-paused": " {dynamic} {status_icon} ",
       "on-click": "playerctl play-pause",
       "on-click-right": "playerctl next",
       "scroll-step": 5.0,
@@ -28,7 +28,7 @@
           "playing": "🎶",
           "stopped": ""
       },
-      "max-length": 30
+      "max-length": 20
   },
 
   "idle_inhibitor": {
