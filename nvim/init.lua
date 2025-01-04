@@ -476,3 +476,9 @@ require("gruvbox-material").setup({
 })
 
 require("ibl").setup()
+
+vim.filetype.add({
+    extension = {
+        hbs = "html",
+    },
+})
