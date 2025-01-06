@@ -17,7 +17,7 @@ cp -r ~/.config/sway \
     ~/.config/swaylock \
     ~/.config/swaync \
     ~/.config/waybar \
-    ~/.config/rofi \
+    ~/.config/tofi \
     ~/.config/swappy \
     ~/.config/pcmanfm \
     ~/.config/scripts \

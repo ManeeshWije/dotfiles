@@ -1,8 +1,0 @@
-configuration {
- modi: "window,drun,ssh,combi";
- font: "Iosevka Nerd Font 12";
- combi-modi: "window,drun,ssh";
- show-icons: true;
- }
-
-@theme "~/.config/rofi/gruvbox-material.rasi"

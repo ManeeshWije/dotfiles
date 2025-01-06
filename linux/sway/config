@@ -11,7 +11,6 @@ set $right l
 set $term ghostty
 set $browser brave
 set $filemanager pcmanfm
-set $menu rofi -show drun
 
 ### Output configuration
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -64,8 +63,8 @@ input type:touchpad {
     bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
-    bindsym $mod+Shift+d exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+    bindsym $mod+d exec tofi-drun | xargs swaymsg exec --
+    bindsym $mod+Shift+d exec cliphist list | tofi | cliphist decode | wl-copy
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

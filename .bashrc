@@ -64,17 +64,9 @@ alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
 alias o="xdg-open"
 alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
+alias y="yazi"
 
 PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$PATH:$GOPATH/bin"
-
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
 
 function git_branch() {
     if [ -d .git ] ; then

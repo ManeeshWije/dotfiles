@@ -1,0 +1,43 @@
+terminal = ghostty
+
+multi-instance = false
+
+width = 100%
+
+height = 100%
+
+border-width = 0
+
+outline-width = 0
+
+padding-left = 35% 
+
+padding-top = 35%
+
+result-spacing = 25
+
+num-results = 5
+
+font = Iosevka Nerd Font
+
+background-color = #282828D9 
+
+text-color = #ebdbb2i0
+
+selection-color = #7c6f64
+
+fuzzy-match = true
+
+drun-launch = false
+
+font-size = 16
+
+text-cursor = true
+
+history = true
+
+auto-accept-single = false
+
+prompt-text = "> "
+
+multi-instance = false
