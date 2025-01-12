@@ -12,6 +12,7 @@ cursor-style = block
 cursor-style-blink = true
 shell-integration-features = no-cursor
 shell-integration = bash
+mouse-hide-while-typing = true
 
 keybind = super+c=copy_to_clipboard
 keybind = super+v=paste_from_clipboard

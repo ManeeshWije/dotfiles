@@ -1,6 +1,0 @@
-[Unit]
-Description=Balanced Mode on Plug
-
-[Service]
-User=root
-ExecStart=/home/maneesh/.config/scripts/powersave 1

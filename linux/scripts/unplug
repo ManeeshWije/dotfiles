@@ -1,9 +1,0 @@
-#!/usr/bin/bash
-
-if [[ $(/usr/bin/id -u) -ne 0 ]]; then
-    echo "Not running as root"
-    exit
-fi
-
-tuned-adm profile laptop-battery-powersave
-powertop --auto-tune

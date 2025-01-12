@@ -1,6 +1,0 @@
-[Unit]
-Description=Powersave on Unplug
-
-[Service]
-User=root
-ExecStart=/home/maneesh/.config/scripts/powersave 0

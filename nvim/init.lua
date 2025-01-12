@@ -25,6 +25,11 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
+vim.filetype.add({
+    extension = {
+        hbs = "html",
+    },
+})
 
 vim.api.nvim_create_augroup("vimStartup", { clear = true })
 
@@ -119,7 +124,6 @@ require("lazy").setup({
     { -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
         dependencies = {
-            "saghen/blink.cmp",
             "williamboman/mason.nvim",
             { "j-hui/fidget.nvim", opts = {} },
             {
@@ -165,9 +169,8 @@ require("lazy").setup({
                     end
                 end,
             })
-
-            local lspconfig = require("lspconfig")
-
+	    local capabilities = vim.lsp.protocol.make_client_capabilities()
+	    capabilities.textDocument.completion.completionItem.snippetSupport = true
             local servers = {
                 templ = {},
                 htmx = {},
@@ -190,8 +193,7 @@ require("lazy").setup({
                 lua_ls = {},
             }
             for server, _ in pairs(servers) do
-                local capabilities = require("blink.cmp").get_lsp_capabilities()
-                lspconfig[server].setup({ capabilities = capabilities })
+                require("lspconfig")[server].setup({ capabilities = capabilities })
             end
         end,
     },
@@ -229,6 +231,7 @@ require("lazy").setup({
         version = "*",
         opts = {
             snippets = {
+                preset = "luasnip",
                 expand = function(snippet)
                     require("luasnip").lsp_expand(snippet)
                 end,
@@ -267,23 +270,15 @@ require("lazy").setup({
                 ["<c-j>"] = { "scroll_documentation_down", "fallback" },
             },
             sources = {
-                default = { "lsp", "path", "snippets", "luasnip", "buffer", "dadbod" },
+                default = { "lsp", "path", "snippets", "buffer", "dadbod" },
                 cmdline = {},
                 providers = {
                     lsp = {
                         name = "lsp",
                         enabled = true,
                         module = "blink.cmp.sources.lsp",
-                        fallbacks = { "snippets", "luasnip", "buffer" },
+                        fallbacks = { "snippets", "buffer" },
                         score_offset = 90,
-                    },
-                    luasnip = {
-                        name = "luasnip",
-                        enabled = true,
-                        module = "blink.cmp.sources.luasnip",
-                        min_keyword_length = 2,
-                        fallbacks = { "snippets" },
-                        score_offset = 85,
                     },
                     path = {
                         name = "path",
@@ -409,6 +404,16 @@ require("lazy").setup({
             })
         end,
     },
+
+    {
+        "nvim-flutter/flutter-tools.nvim",
+        lazy = false,
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "stevearc/dressing.nvim", -- optional for vim.ui.select
+        },
+        config = true,
+    },
 })
 
 -- Keymaps for certain plugins and settings
@@ -474,11 +479,5 @@ require("gruvbox-material").setup({
         highlight = false,
     },
 })
-
 require("ibl").setup()
-
-vim.filetype.add({
-    extension = {
-        hbs = "html",
-    },
-})
+require("flutter-tools").setup({}) -- use defaults

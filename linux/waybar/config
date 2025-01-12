@@ -8,7 +8,19 @@
   
   "modules-left":   ["sway/workspaces", "sway/mode", "mpris", "custom/cava"],
   "modules-center": ["sway/window"],
-  "modules-right":  ["tray", "idle_inhibitor", "battery", "backlight", "pulseaudio", "clock#date", "clock#time", "custom/notification"],
+  "modules-right":  ["tray", "idle_inhibitor", "power-profiles-daemon", "battery", "backlight", "pulseaudio", "clock#date", "clock#time", "custom/notification"],
+
+  "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+          "default": "",
+          "performance": "",
+          "balanced": "",
+          "power-saver": ""
+      }
+  },
 
   "custom/cava": {
       "exec": "~/.config/scripts/waybarCava",
