@@ -37,7 +37,6 @@ export GOPATH=$HOME/go
 export MANPAGER="nvim +Man!"
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
-export CHROME_EXECUTABLE=/usr/bin/brave
 
 # git
 alias addup='git add -u'
@@ -67,7 +66,7 @@ alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
 
-PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$PATH:$GOPATH/bin:$HOME/projects/flutter/flutter/bin"
+PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$PATH:$GOPATH/bin:"
 
 function git_branch() {
     if [ -d .git ] ; then

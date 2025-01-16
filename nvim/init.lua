@@ -135,43 +135,8 @@ require("lazy").setup({
                 },
             },
         },
-        config = function()
-            require("mason").setup()
-            vim.api.nvim_create_autocmd("LspAttach", {
-                group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
-                callback = function(event)
-                    local map = function(keys, func, desc)
-                        vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
-                    end
-
-                    map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-                    map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-                    map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-                    map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-                    map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-                    map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-                    map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-                    map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-                    map("K", vim.lsp.buf.hover, "Hover Documentation")
-                    map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-
-                    local client = vim.lsp.get_client_by_id(event.data.client_id)
-                    if client and client.server_capabilities.documentHighlightProvider then
-                        vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-                            buffer = event.buf,
-                            callback = vim.lsp.buf.document_highlight,
-                        })
-
-                        vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-                            buffer = event.buf,
-                            callback = vim.lsp.buf.clear_references,
-                        })
-                    end
-                end,
-            })
-	    local capabilities = vim.lsp.protocol.make_client_capabilities()
-	    capabilities.textDocument.completion.completionItem.snippetSupport = true
-            local servers = {
+        opts = {
+            servers = {
                 templ = {},
                 htmx = {},
                 clangd = {},
@@ -191,10 +156,56 @@ require("lazy").setup({
                 sqlls = {},
                 tailwindcss = {},
                 lua_ls = {},
-            }
-            for server, _ in pairs(servers) do
-                require("lspconfig")[server].setup({ capabilities = capabilities })
+                omnisharp = {},
+            },
+        },
+        config = function(_, opts)
+            require("mason").setup()
+            for server, config in pairs(opts.servers) do
+                config.capabilities = vim.lsp.protocol.make_client_capabilities()
+                require("lspconfig")[server].setup(config)
             end
+            vim.api.nvim_create_autocmd("LspAttach", {
+                group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
+                callback = function(event)
+                    local client = vim.lsp.get_client_by_id(event.data.client_id)
+                    local map = function(keys, func, desc)
+                        vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+                    end
+
+                    map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+                    map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+                    map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+                    map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
+                    map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+                    map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+                    map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+                    map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+                    map("K", vim.lsp.buf.hover, "Hover Documentation")
+                    map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+
+                    -- OmniSharp-specific keybindings
+                    if client.name == "omnisharp" then
+                        local omnisharp_ext = require("omnisharp_extended")
+                        map("gd", omnisharp_ext.telescope_lsp_definition, "[G]oto [D]efinition (OmniSharp)")
+                        map("gr", omnisharp_ext.telescope_lsp_references, "[G]oto [R]eferences (OmniSharp)")
+                        map("gI", omnisharp_ext.telescope_lsp_implementation, "[G]oto [I]mplementation (OmniSharp)")
+                        map("<leader>D", omnisharp_ext.telescope_lsp_type_definition, "Type [D]efinition (OmniSharp)")
+                    end
+
+                    if client and client.server_capabilities.documentHighlightProvider then
+                        vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+                            buffer = event.buf,
+                            callback = vim.lsp.buf.document_highlight,
+                        })
+
+                        vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+                            buffer = event.buf,
+                            callback = vim.lsp.buf.clear_references,
+                        })
+                    end
+                end,
+            })
         end,
     },
 
@@ -406,13 +417,7 @@ require("lazy").setup({
     },
 
     {
-        "nvim-flutter/flutter-tools.nvim",
-        lazy = false,
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "stevearc/dressing.nvim", -- optional for vim.ui.select
-        },
-        config = true,
+        "Hoffs/omnisharp-extended-lsp.nvim",
     },
 })
 
@@ -438,10 +443,14 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+vim.keymap.set("n", "[d", function()
+    vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "Go to previous [D]iagnostic message" })
+
+vim.keymap.set("n", "]d", function()
+    vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>fe", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 vim.keymap.set("n", "<C-H>", "<C-W>h")
 vim.keymap.set("n", "<C-J>", "<C-W>j")
@@ -453,7 +462,7 @@ vim.keymap.set("n", "<leader>p", function()
 end)
 
 vim.keymap.set("n", "<leader>e", function()
-    require("tfm").open({})
+    require("tfm").open()
 end)
 
 local harpoon = require("harpoon")
@@ -480,4 +489,7 @@ require("gruvbox-material").setup({
     },
 })
 require("ibl").setup()
-require("flutter-tools").setup({}) -- use defaults
+
+require("lspconfig").omnisharp.setup({
+    cmd = { "dotnet", "/home/maneesh/Downloads/omnisharp-linux-x64-net6.0/OmniSharp.dll" },
+})
