@@ -111,21 +111,11 @@ require("lazy").setup({
                 group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
                 callback = function(event)
                     local client = vim.lsp.get_client_by_id(event.data.client_id)
-                    local map = function(keys, func, desc)
-                        vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
-                    end
-
-                    map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-                    map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-                    map("K", vim.lsp.buf.hover, "Hover Documentation")
-                    map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-
                     if client and client.server_capabilities.documentHighlightProvider then
                         vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
                             buffer = event.buf,
                             callback = vim.lsp.buf.document_highlight,
                         })
-
                         vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
                             buffer = event.buf,
                             callback = vim.lsp.buf.clear_references,
@@ -314,6 +304,7 @@ require("lazy").setup({
             { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files", },
             { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files", },
             { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent", },
+            { "<leader>fu", function() Snacks.picker.undo() end, desc = "Undo", },
             -- git
             { "<leader>gc", function() Snacks.picker.git_log() end, desc = "Git Log" },
             { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
@@ -324,15 +315,19 @@ require("lazy").setup({
             { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep", },
             { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" }, },
             -- search
-            { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics", },
+            { "<leader>sd", function() Snacks.picker.diagnostics_buffer() end, desc = "Diagnostics Buffer", },
+            { "<leader>sD", function() Snacks.picker.diagnostics() end, desc = "Diagnostics", },
             { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages", },
             { "<leader>sm", function() Snacks.picker.man() end, desc = "Man Pages", },
             -- LSP
             { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition", },
+            { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration", },
             { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References", },
             { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation", },
             { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition", },
             { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols", },
+            -- Misc
+            { "<leader>sp", function() Snacks.picker.spelling() end, desc = "Spelling", },
         },
     },
 })
@@ -351,6 +346,10 @@ vim.keymap.set("n", "<C-H>", "<C-W>h")
 vim.keymap.set("n", "<C-J>", "<C-W>j")
 vim.keymap.set("n", "<C-K>", "<C-W>k")
 vim.keymap.set("n", "<C-L>", "<C-W>l")
+vim.keymap.set("n", "<leader>fe", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
 
 vim.keymap.set("n", "<leader>p", function()
     require("conform").format({ async = true, lsp_fallback = true })
