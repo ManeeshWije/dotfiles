@@ -1,7 +1,6 @@
 ### Variables
-#
-# Alt key
 set $mod Mod1
+set $ctrl Ctrl
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -66,12 +65,12 @@ input type:touchpad {
     bindsym $mod+d exec tofi-drun | xargs swaymsg exec --
     bindsym $mod+Shift+d exec cliphist list | tofi | cliphist decode | wl-copy
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
+    # Drag floating windows by holding down $ctrl and left mouse button.
+    # Resize them with right mouse button + $ctrl.
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    floating_modifier $mod normal
+    floating_modifier $ctrl normal
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
