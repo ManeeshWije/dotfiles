@@ -63,64 +63,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { -- Adds git related signs to the gutter, as well as utilities for managing changes
-        "lewis6991/gitsigns.nvim",
-        opts = {
-            signs = {
-                add = { text = "+" },
-                change = { text = "~" },
-                delete = { text = "_" },
-                topdelete = { text = "‾" },
-                changedelete = { text = "~" },
-            },
-            current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
-            current_line_blame_opts = {
-                virt_text = true,
-                virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
-                delay = 1000,
-                ignore_whitespace = false,
-            },
-            current_line_blame_formatter = "<author>, <author_time:%R> - <summary>",
-        },
-    },
-
-    { -- fuzzy find
-        "nvim-telescope/telescope.nvim",
-        event = "VeryLazy",
-        branch = "0.1.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            {
-                "nvim-telescope/telescope-fzf-native.nvim",
-                build = "make",
-                cond = function()
-                    return vim.fn.executable("make") == 1
-                end,
-            },
-            { "nvim-telescope/telescope-ui-select.nvim" },
-            { "nvim-tree/nvim-web-devicons" },
-            { "debugloop/telescope-undo.nvim" },
-        },
-        config = function()
-            require("telescope").setup({
-                defaults = {
-                    layout_strategy = "horizontal",
-                    layout_config = { width = 0.99 },
-                },
-                extensions = {
-                    ["ui-select"] = {
-                        require("telescope.themes").get_dropdown(),
-                    },
-                    undo = {},
-                },
-                require("telescope").load_extension("undo"),
-            })
-
-            pcall(require("telescope").load_extension, "fzf")
-            pcall(require("telescope").load_extension, "ui-select")
-        end,
-    },
-
     { -- LSP Configuration & Plugins
         "neovim/nvim-lspconfig",
         dependencies = {
@@ -156,7 +98,7 @@ require("lazy").setup({
                 sqlls = {},
                 tailwindcss = {},
                 lua_ls = {},
-                omnisharp = {},
+                csharp_ls = {},
             },
         },
         config = function(_, opts)
@@ -173,25 +115,10 @@ require("lazy").setup({
                         vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
                     end
 
-                    map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-                    map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-                    map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-                    map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-                    map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-                    map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
                     map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
                     map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
                     map("K", vim.lsp.buf.hover, "Hover Documentation")
                     map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-
-                    -- OmniSharp-specific keybindings
-                    if client.name == "omnisharp" then
-                        local omnisharp_ext = require("omnisharp_extended")
-                        map("gd", omnisharp_ext.telescope_lsp_definition, "[G]oto [D]efinition (OmniSharp)")
-                        map("gr", omnisharp_ext.telescope_lsp_references, "[G]oto [R]eferences (OmniSharp)")
-                        map("gI", omnisharp_ext.telescope_lsp_implementation, "[G]oto [I]mplementation (OmniSharp)")
-                        map("<leader>D", omnisharp_ext.telescope_lsp_type_definition, "Type [D]efinition (OmniSharp)")
-                    end
 
                     if client and client.server_capabilities.documentHighlightProvider then
                         vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -236,26 +163,17 @@ require("lazy").setup({
     { -- Autocompletion
         "saghen/blink.cmp",
         dependencies = {
-            "rafamadriz/friendly-snippets",
-            { "L3MON4D3/LuaSnip", version = "v2.*" },
+            "L3MON4D3/LuaSnip",
+            version = "v2.*",
+            dependencies = {
+                "rafamadriz/friendly-snippets",
+                config = function()
+                    require("luasnip.loaders.from_vscode").lazy_load()
+                end,
+            },
         },
         version = "*",
         opts = {
-            snippets = {
-                preset = "luasnip",
-                expand = function(snippet)
-                    require("luasnip").lsp_expand(snippet)
-                end,
-                active = function(filter)
-                    if filter and filter.direction then
-                        return require("luasnip").jumpable(filter.direction)
-                    end
-                    return require("luasnip").in_snippet()
-                end,
-                jump = function(direction)
-                    require("luasnip").jump(direction)
-                end,
-            },
             completion = {
                 menu = {
                     border = "single",
@@ -266,7 +184,7 @@ require("lazy").setup({
                         border = "single",
                     },
                     auto_show = true,
-                    auto_show_delay_ms = 0,
+                    auto_show_delay_ms = 50,
                 },
             },
             signature = {
@@ -284,38 +202,6 @@ require("lazy").setup({
                 default = { "lsp", "path", "snippets", "buffer", "dadbod" },
                 cmdline = {},
                 providers = {
-                    lsp = {
-                        name = "lsp",
-                        enabled = true,
-                        module = "blink.cmp.sources.lsp",
-                        fallbacks = { "snippets", "buffer" },
-                        score_offset = 90,
-                    },
-                    path = {
-                        name = "path",
-                        module = "blink.cmp.sources.path",
-                        score_offset = 3,
-                        fallbacks = { "snippets", "luasnip", "buffer" },
-                        opts = {
-                            trailing_slash = false,
-                            label_trailing_slash = true,
-                            get_cwd = function(context)
-                                return vim.fn.expand(("#%d:p:h"):format(context.bufnr))
-                            end,
-                            show_hidden_files_by_default = true,
-                        },
-                    },
-                    buffer = {
-                        name = "buffer",
-                        module = "blink.cmp.sources.buffer",
-                        min_keyword_length = 2,
-                    },
-                    snippets = {
-                        name = "snippets",
-                        enabled = true,
-                        module = "blink.cmp.sources.snippets",
-                        score_offset = 80,
-                    },
                     dadbod = {
                         name = "dadbod",
                         module = "vim_dadbod_completion.blink",
@@ -375,16 +261,6 @@ require("lazy").setup({
         ft = { "markdown" },
     },
 
-    { -- Indentation
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        opts = {
-            indent = {
-                char = "▏",
-            },
-        },
-    },
-
     { -- SQL interface
         "tpope/vim-dadbod",
     },
@@ -416,21 +292,50 @@ require("lazy").setup({
         end,
     },
 
-    {
-        "Hoffs/omnisharp-extended-lsp.nvim",
+    { -- QOL
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        ---@type snacks.Config
+        opts = {
+            bigfile = { enabled = true },
+            indent = { enabled = true },
+            input = { enabled = true },
+            notifier = { enabled = true },
+            quickfile = { enabled = true },
+            words = { enabled = true },
+            picker = { enabled = true },
+            git = { enabled = true },
+            gitbrowse = { enabled = true },
+        },
+        keys = {
+            -- find
+            { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers", },
+            { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files", },
+            { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files", },
+            { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent", },
+            -- git
+            { "<leader>gc", function() Snacks.picker.git_log() end, desc = "Git Log" },
+            { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
+            { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
+            { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
+            -- Grep
+            { "<leader>sb", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers", },
+            { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep", },
+            { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" }, },
+            -- search
+            { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics", },
+            { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages", },
+            { "<leader>sm", function() Snacks.picker.man() end, desc = "Man Pages", },
+            -- LSP
+            { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition", },
+            { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References", },
+            { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation", },
+            { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition", },
+            { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols", },
+        },
     },
 })
-
--- Keymaps for certain plugins and settings
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>fh", builtin.help_tags)
-vim.keymap.set("n", "<leader>fk", builtin.keymaps)
-vim.keymap.set("n", "<leader>ff", builtin.find_files)
-vim.keymap.set("n", "<leader>fw", builtin.grep_string)
-vim.keymap.set("n", "<leader>fg", builtin.live_grep)
-vim.keymap.set("n", "<leader>fd", builtin.diagnostics)
-vim.keymap.set("n", "<leader>fb", builtin.buffers)
-vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
 
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -442,16 +347,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
-vim.keymap.set("n", "[d", function()
-    vim.diagnostic.jump({ count = -1, float = true })
-end, { desc = "Go to previous [D]iagnostic message" })
-
-vim.keymap.set("n", "]d", function()
-    vim.diagnostic.jump({ count = 1, float = true })
-end, { desc = "Go to next [D]iagnostic message" })
-vim.keymap.set("n", "<leader>fe", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
-
 vim.keymap.set("n", "<C-H>", "<C-W>h")
 vim.keymap.set("n", "<C-J>", "<C-W>j")
 vim.keymap.set("n", "<C-K>", "<C-W>k")
@@ -487,9 +382,4 @@ require("gruvbox-material").setup({
     signs = {
         highlight = false,
     },
-})
-require("ibl").setup()
-
-require("lspconfig").omnisharp.setup({
-    cmd = { "dotnet", "/home/maneesh/Downloads/omnisharp-linux-x64-net6.0/OmniSharp.dll" },
 })
