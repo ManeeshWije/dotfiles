@@ -298,11 +298,19 @@ require("lazy").setup({
             git = { enabled = true },
             gitbrowse = { enabled = true },
         },
+        config = function()
+            function Snacks_git_file_root()
+                require('snacks.picker').git_files({
+                    cwd = vim.fs.root(".", ".git"),
+                    args = { "-c", "core.quotepath=false", "ls-files", "--exclude-standard", "--cached", "--others", "--full-name", ":/" }
+                })
+            end
+        end,
         keys = {
             -- find
             { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers", },
-            { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files", },
-            { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files", },
+            { "<leader>ff", function() Snacks.picker.files({ ignored = true }) end, desc = "Find Files", },
+            { "<leader>fg", function() Snacks_git_file_root() end, desc = "Find Git Files", },
             { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent", },
             { "<leader>fu", function() Snacks.picker.undo() end, desc = "Undo", },
             -- git
