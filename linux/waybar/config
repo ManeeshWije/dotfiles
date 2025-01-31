@@ -23,7 +23,7 @@
   },
 
   "custom/cava": {
-      "exec": "~/.config/scripts/waybarCava",
+      "exec": "~/.config/scripts/waybar_cava",
       "format": "{}",
   },
 
