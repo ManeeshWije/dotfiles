@@ -65,12 +65,12 @@ input type:touchpad {
     bindsym $mod+d exec tofi-drun | xargs swaymsg exec --
     bindsym $mod+Shift+d exec cliphist list | tofi | cliphist decode | wl-copy
 
-    # Drag floating windows by holding down $ctrl and left mouse button.
-    # Resize them with right mouse button + $ctrl.
+    # Drag floating windows by holding down super and left mouse button.
+    # Resize them with right mouse button + super.
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    floating_modifier $ctrl normal
+    floating_modifier Super normal
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload

@@ -287,30 +287,30 @@ require("lazy").setup({
         priority = 1000,
         lazy = false,
         ---@type snacks.Config
-        opts = {
-            bigfile = { enabled = true },
-            indent = { enabled = true },
-            input = { enabled = true },
-            notifier = { enabled = true },
-            quickfile = { enabled = true },
-            words = { enabled = true },
-            picker = { enabled = true },
-            git = { enabled = true },
-            gitbrowse = { enabled = true },
-        },
         config = function()
-            function Snacks_git_file_root()
-                require('snacks.picker').git_files({
-                    cwd = vim.fs.root(".", ".git"),
-                    args = { "-c", "core.quotepath=false", "ls-files", "--exclude-standard", "--cached", "--others", "--full-name", ":/" }
-                })
-            end
+            require('snacks').setup({
+                picker = {
+                    formatters = {
+                        file = {
+                            truncate = 100,
+                        },
+                    },
+                },
+                bigfile = { enabled = true },
+                indent = { enabled = true },
+                input = { enabled = true },
+                notifier = { enabled = true },
+                quickfile = { enabled = true },
+                words = { enabled = true },
+                git = { enabled = true },
+                gitbrowse = { enabled = true },
+            })
         end,
         keys = {
             -- find
             { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers", },
             { "<leader>ff", function() Snacks.picker.files({ ignored = true }) end, desc = "Find Files", },
-            { "<leader>fg", function() Snacks_git_file_root() end, desc = "Find Git Files", },
+            { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files", },
             { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent", },
             { "<leader>fu", function() Snacks.picker.undo() end, desc = "Undo", },
             -- git
