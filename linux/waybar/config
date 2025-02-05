@@ -6,7 +6,7 @@
   "passthrough": false,
   "ipc": true,
   
-  "modules-left":   ["sway/workspaces", "sway/mode", "mpris", "custom/cava"],
+  "modules-left":   ["sway/workspaces", "sway/mode", "mpris"],
   "modules-center": ["sway/window"],
   "modules-right":  ["tray", "idle_inhibitor", "power-profiles-daemon", "battery", "backlight", "pulseaudio", "clock#date", "clock#time", "custom/notification"],
 

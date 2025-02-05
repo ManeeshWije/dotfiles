@@ -83,7 +83,15 @@ require("lazy").setup({
                 htmx = {},
                 clangd = {},
                 gopls = {},
-                pyright = {},
+                basedpyright = {
+                    settings = {
+                        basedpyright = {
+                            analysis = {
+                                typeCheckingMode = "standard",
+                            },
+                        },
+                    },
+                },
                 rust_analyzer = {},
                 ts_ls = {},
                 bashls = {},
@@ -288,7 +296,7 @@ require("lazy").setup({
         lazy = false,
         ---@type snacks.Config
         config = function()
-            require('snacks').setup({
+            require("snacks").setup({
                 picker = {
                     formatters = {
                         file = {
@@ -314,10 +322,10 @@ require("lazy").setup({
             { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent", },
             { "<leader>fu", function() Snacks.picker.undo() end, desc = "Undo", },
             -- git
-            { "<leader>gc", function() Snacks.picker.git_log() end, desc = "Git Log" },
-            { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
-            { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
-            { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
+            { "<leader>gc", function() Snacks.picker.git_log() end, desc = "Git Log", },
+            { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status", },
+            { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" }, },
+            { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line", },
             -- Grep
             { "<leader>sb", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers", },
             { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep", },

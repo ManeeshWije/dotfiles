@@ -8,7 +8,7 @@ set $up k
 set $right l
 
 set $term ghostty
-set $browser firefox-developer-edition
+set $browser firefox
 set $filemanager pcmanfm
 
 ### Output configuration
