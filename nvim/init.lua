@@ -214,12 +214,8 @@ require("lazy").setup({
         "williamboman/mason.nvim",
     },
 
-    { -- Colourscheme
-        "f4z3r/gruvbox-material.nvim",
-        name = "gruvbox-material",
-        lazy = false,
-        priority = 1000,
-        opts = {},
+    {
+        "RRethy/base16-nvim"
     },
 
     { -- Highlight, edit, and navigate code
@@ -371,10 +367,6 @@ vim.keymap.set("n", "<leader>p", function()
     require("conform").format({ async = true, lsp_fallback = true })
 end)
 
-vim.keymap.set("n", "<leader>e", function()
-    require("tfm").open()
-end)
-
 local harpoon = require("harpoon")
 harpoon:setup({})
 vim.keymap.set("n", "<leader>a", function()
@@ -389,12 +381,4 @@ for i = 1, 5 do
     end)
 end
 
-require("gruvbox-material").setup({
-    contrast = "hard",
-    background = {
-        transparent = true,
-    },
-    signs = {
-        highlight = false,
-    },
-})
+vim.cmd('colorscheme base16-black-metal-gorgoroth')

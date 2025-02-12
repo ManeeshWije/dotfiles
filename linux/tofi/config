@@ -20,11 +20,11 @@ num-results = 5
 
 font = Iosevka Nerd Font
 
-background-color = #282828D9 
+background-color = #000000D9 
 
-text-color = #ebdbb2i0
+text-color = #c1c1c1i0
 
-selection-color = #7c6f64
+selection-color = #333333
 
 fuzzy-match = true
 

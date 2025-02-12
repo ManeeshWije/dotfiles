@@ -13,30 +13,21 @@ wht='\[\033[01;37m\]'   # White
 clr='\[\033[00m\]'      # Reset
 
 set -o vi
-set appendhistory
-set sharehistory
-set incappendhistory
-set hist_ignore_all_dups
-set hist_save_no_dups
-set hist_ignore_dups
-set hist_find_no_dups
-
+shopt -s histappend
 bind -m vi-insert "\C-l":clear-screen
+unset HISTFILESIZE
 
 export TERM="xterm-256color"
 export BROWSER='firefox'
 export EDITOR='nvim'
 export VISUAL="nvim"
-export HISTFILE=~/.bash_history
-export HISTSIZE=10000
-export SAVEHIST=10000
-export HISTFILESIZE=2000
-export HISTTIMEFORMAT="%F %T "
-export HISTCONTROL=ignoredups
 export GOPATH=$HOME/go
 export MANPAGER="nvim +Man!"
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
+export PROMPT_COMMAND="history -a; history -n"
+export HISTSIZE=2000
+export HISTTIMEFORMAT='%F %T '
 
 # git
 alias addup='git add -u'
@@ -66,7 +57,7 @@ alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
 
-PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$PATH:$GOPATH/bin:"
+PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$GOPATH/bin:$HOME/.dotnet/tools:$PATH"
 
 function git_branch() {
     if [ -d .git ] ; then
@@ -75,6 +66,7 @@ function git_branch() {
 }
 
 function bash_prompt(){
-    PS1='${debian_chroot:+($debian_chroot)}'${blu}'$(git_branch)'${pur}' \W'${grn}' \$ '${clr}
+    PS1='${debian_chroot:+($debian_chroot)}'${blu}'$(git_branch)'${wht}' \W'${grn}' \$ '${clr}
 }
+
 bash_prompt
