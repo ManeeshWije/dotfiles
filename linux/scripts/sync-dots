@@ -23,4 +23,6 @@ cp -r ~/.config/sway \
     ~/.config/zathura \
     ~/.config/wireplumber \
     ~/.config/fontconfig \
+    ~/.themes \
+    ~/.icons \
     ~/dotfiles/linux/

@@ -291,25 +291,18 @@ require("lazy").setup({
         priority = 1000,
         lazy = false,
         ---@type snacks.Config
-        config = function()
-            require("snacks").setup({
-                picker = {
-                    formatters = {
-                        file = {
-                            truncate = 100,
-                        },
-                    },
-                },
-                bigfile = { enabled = true },
-                indent = { enabled = true },
-                input = { enabled = true },
-                notifier = { enabled = true },
-                quickfile = { enabled = true },
-                words = { enabled = true },
-                git = { enabled = true },
-                gitbrowse = { enabled = true },
-            })
-        end,
+        opts = {
+            picker = { enabled = true },
+            bigfile = { enabled = true },
+            indent = { enabled = true },
+            image = { enabled = true },
+            input = { enabled = true },
+            notifier = { enabled = true },
+            quickfile = { enabled = true },
+            words = { enabled = true },
+            git = { enabled = true },
+            gitbrowse = { enabled = true },
+        },
         keys = {
             -- find
             { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers", },
