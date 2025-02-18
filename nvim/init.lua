@@ -107,6 +107,7 @@ require("lazy").setup({
                 tailwindcss = {},
                 lua_ls = {},
                 csharp_ls = {},
+                helm_ls = {},
             },
         },
         config = function(_, opts)
@@ -196,9 +197,11 @@ require("lazy").setup({
                 ["<c-k>"] = { "scroll_documentation_up", "fallback" },
                 ["<c-j>"] = { "scroll_documentation_down", "fallback" },
             },
+            cmdline = {
+                enabled = false
+            },
             sources = {
                 default = { "lsp", "path", "snippets", "buffer", "dadbod" },
-                cmdline = {},
                 providers = {
                     dadbod = {
                         name = "dadbod",

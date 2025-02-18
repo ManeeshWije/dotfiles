@@ -1,4 +1,5 @@
 [ -z "$PS1" ] && return
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 eval "$(fzf --bash)"
 
@@ -21,10 +22,11 @@ export TERM="xterm-256color"
 export BROWSER='firefox'
 export EDITOR='nvim'
 export VISUAL="nvim"
-export GOPATH=$HOME/go
 export MANPAGER="nvim +Man!"
+export GOPATH=$HOME/go
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
+export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:$HOME/.cache:$HOME/.local/share/flatpak/exports/share
 export PROMPT_COMMAND="history -a; history -n"
 export HISTSIZE=2000
 export HISTTIMEFORMAT='%F %T '
@@ -49,15 +51,15 @@ alias grep='grep --color=auto'
 alias st='syncthing'
 alias sd='cd "$(find "$HOME" -maxdepth 7 -type d | fzf || echo "$PWD")"'
 alias sf='file=$(find "$HOME" -maxdepth 7 -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
-alias pacupdate='sudo pacman -Syu && yay -Syu'
-alias paccache='sudo pacman -Scc && yay -Scc'
-alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
+alias aptupdate='sudo apt update && sudo apt upgrade'
+alias aptdelete='sudo apt autoremove'
+alias aptcache='sudo apt-get clean'
 alias o="xdg-open"
 alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
 
-PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$GOPATH/bin:$HOME/.dotnet/tools:$PATH"
+PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$PATH"
 
 function git_branch() {
     if [ -d .git ] ; then
@@ -70,3 +72,4 @@ function bash_prompt(){
 }
 
 bash_prompt
+. "$HOME/.cargo/env"

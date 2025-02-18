@@ -1,7 +1,7 @@
 # Dotfiles
 
 - Programs in my daily workflow:
-  - Arch Linux
+  - **Currently** Debian Trixie
   - Bash
   - Sway
   - Waybar
@@ -9,11 +9,14 @@
   - Neovim
   - Tmux
   - Yazi
-  - Rofi
+  - Tofi
   - Custom scripts
+
+and the most simple colourscheme which is base-16-black-metal-gorgoroth
 
 # Screenshots
 
-![](./swappy-20241227-041030.png)
-![](./swappy-20241227-041146.png)
-![](./swappy-20241227-041214.png)
+![](./swappy-20250217-203934.png)
+![](./swappy-20250217-204155.png)
+![](./swappy-20250217-204216.png)
+![](./swappy-20250217-204232.png)
