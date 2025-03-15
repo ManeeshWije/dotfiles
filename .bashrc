@@ -14,9 +14,12 @@ wht='\[\033[01;37m\]'   # White
 clr='\[\033[00m\]'      # Reset
 
 set -o vi
+export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=100000
+export HISTFILESIZE=100000
 shopt -s histappend
 bind -m vi-insert "\C-l":clear-screen
-unset HISTFILESIZE
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 export TERM="xterm-256color"
 export BROWSER='firefox'
@@ -27,9 +30,6 @@ export GOPATH=$HOME/go
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
 export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:$HOME/.cache:$HOME/.local/share/flatpak/exports/share
-export PROMPT_COMMAND="history -a; history -n"
-export HISTSIZE=2000
-export HISTTIMEFORMAT='%F %T '
 
 # git
 alias addup='git add -u'
@@ -58,6 +58,7 @@ alias o="xdg-open"
 alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
+alias k="kubectl"
 
 PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$PATH"
 

@@ -314,7 +314,7 @@ require("lazy").setup({
             { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent", },
             { "<leader>fu", function() Snacks.picker.undo() end, desc = "Undo", },
             -- git
-            { "<leader>gc", function() Snacks.picker.git_log() end, desc = "Git Log", },
+            { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log", },
             { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status", },
             { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" }, },
             { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line", },

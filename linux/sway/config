@@ -8,7 +8,7 @@ set $up k
 set $right l
 
 set $term ghostty
-set $browser flatpak run org.mozilla.firefox
+set $browser flatpak run com.brave.Browser
 set $filemanager pcmanfm
 
 include /etc/sway/config-vars.d/*
