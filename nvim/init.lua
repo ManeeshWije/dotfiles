@@ -217,7 +217,7 @@ require("lazy").setup({
         "williamboman/mason.nvim",
     },
 
-    {
+    { -- Colourscheme
         "RRethy/base16-nvim"
     },
 
@@ -287,6 +287,10 @@ require("lazy").setup({
                 callback = require("tfm").open,
             })
         end,
+    },
+
+    {  -- Surround
+        'echasnovski/mini.surround', version = false
     },
 
     { -- QOL
