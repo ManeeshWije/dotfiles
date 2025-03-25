@@ -74,3 +74,4 @@ function bash_prompt(){
 
 bash_prompt
 . "$HOME/.cargo/env"
+complete -o default -F __start_kubectl k
