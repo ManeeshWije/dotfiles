@@ -51,7 +51,7 @@ alias grep='grep --color=auto'
 alias st='syncthing'
 alias sd='cd "$(find "$HOME" -maxdepth 7 -type d | fzf || echo "$PWD")"'
 alias sf='file=$(find "$HOME" -maxdepth 7 -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
-alias aptupdate='sudo apt update && sudo apt upgrade'
+alias aptupdate='sudo apt update && sudo apt upgrade && flatpak update && yazi_install && ghostty_install'
 alias aptdelete='sudo apt autoremove'
 alias aptcache='sudo apt-get clean'
 alias o="xdg-open"
@@ -60,7 +60,7 @@ alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
 alias k="kubectl"
 
-PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$PATH"
+PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$HOME/.local/bin:$PATH"
 
 function git_branch() {
     if [ -d .git ] ; then

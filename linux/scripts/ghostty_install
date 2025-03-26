@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Install dependencies
+sudo apt update
+sudo apt install -y libgtk-4-dev libadwaita-1-dev git blueprint-compiler gettext gcc-multilib
+
+# Install Zig 0.14 (if not installed or outdated)
+if ! command -v zig &>/dev/null || [[ $(zig version) != "0.14"* ]]; then
+    echo "Installing Zig 0.14..."
+    ZIG_URL="https://ziglang.org/download/0.14.0/zig-linux-x86_64-0.14.0.tar.xz"
+    wget "$ZIG_URL" -O zig.tar.xz
+    tar -xf zig.tar.xz
+    sudo mv zig-linux-x86_64-0.14.0 /opt/zig-0.14
+    sudo ln -sf /opt/zig-0.14/zig /usr/local/bin/zig
+    rm zig.tar.xz
+else
+    echo "Zig 0.14 is already installed."
+fi
+
+# Clone or update Ghostty repository
+if [ -d "$HOME/ghostty" ]; then
+    echo "Updating Ghostty repository..."
+    cd "$HOME/ghostty"
+    git pull
+else
+    echo "Cloning Ghostty repository..."
+    git clone https://github.com/ghostty-org/ghostty "$HOME/ghostty"
+    cd "$HOME/ghostty"
+fi
+
+# Build Ghostty
+zig build -p $HOME/.local -Doptimize=ReleaseFast
+
+# Add ~/.local/bin to PATH if not already included
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+echo "Ghostty installation complete!"
