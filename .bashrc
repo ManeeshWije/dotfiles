@@ -29,7 +29,7 @@ export MANPAGER="nvim +Man!"
 export GOPATH=$HOME/go
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
-export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:$HOME/.cache:$HOME/.local/share/flatpak/exports/share
+export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:$HOME/.cache
 
 # git
 alias addup='git add -u'
@@ -51,7 +51,7 @@ alias grep='grep --color=auto'
 alias st='syncthing'
 alias sd='cd "$(find "$HOME" -maxdepth 7 -type d | fzf || echo "$PWD")"'
 alias sf='file=$(find "$HOME" -maxdepth 7 -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
-alias aptupdate='sudo apt update && sudo apt upgrade && flatpak update && yazi_install && ghostty_install'
+alias aptupdate='sudo apt update && sudo apt upgrade && yazi_install && ghostty_install'
 alias aptdelete='sudo apt autoremove'
 alias aptcache='sudo apt-get clean'
 alias o="xdg-open"
@@ -73,5 +73,5 @@ function bash_prompt(){
 }
 
 bash_prompt
-. "$HOME/.cargo/env"
 complete -o default -F __start_kubectl k
+. "$HOME/.cargo/env"

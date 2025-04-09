@@ -4,13 +4,6 @@
 OUTPUT_FILE="installed_packages.md"
 
 # List all installed Debian packages
-echo "# Debian Packages" > "$OUTPUT_FILE"
 dpkg --get-selections | awk '{print $1}' >> "$OUTPUT_FILE"
-
 echo "" >> "$OUTPUT_FILE"
-echo "# Flatpak Packages" >> "$OUTPUT_FILE"
-
-# List all installed Flatpak packages
-flatpak list --app --columns=application >> "$OUTPUT_FILE"
-
 echo "Package list saved to $OUTPUT_FILE"

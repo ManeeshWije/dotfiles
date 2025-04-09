@@ -25,11 +25,6 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
-vim.filetype.add({
-    extension = {
-        hbs = "html",
-    },
-})
 
 vim.api.nvim_create_augroup("vimStartup", { clear = true })
 
@@ -79,8 +74,6 @@ require("lazy").setup({
         },
         opts = {
             servers = {
-                templ = {},
-                htmx = {},
                 clangd = {},
                 gopls = {},
                 basedpyright = {
@@ -154,7 +147,6 @@ require("lazy").setup({
                 markdown = { "prettier" },
                 sql = { "sql-formatter" },
                 html = { "prettier" },
-                handlebars = { "prettier" },
             },
         },
     },
