@@ -30,6 +30,7 @@ export GOPATH=$HOME/go
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
 export XDG_DATA_DIRS=/usr/local/share/:/usr/share/:$HOME/.cache
+export KUBECONFIG=~/.kube/config
 
 # git
 alias addup='git add -u'
@@ -60,7 +61,7 @@ alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
 alias k="kubectl"
 
-PATH="$HOME/.bun/bin:$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$HOME/.local/bin:$PATH"
+PATH="$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$HOME/.local/bin:$PATH"
 
 function git_branch() {
     if [ -d .git ] ; then
@@ -74,4 +75,7 @@ function bash_prompt(){
 
 bash_prompt
 complete -o default -F __start_kubectl k
-. "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
