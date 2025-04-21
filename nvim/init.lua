@@ -27,7 +27,6 @@ vim.opt.termguicolors = true
 vim.opt.wrap = false
 
 vim.api.nvim_create_augroup("vimStartup", { clear = true })
-
 vim.api.nvim_create_autocmd("BufReadPost", {
     group = "vimStartup",
     callback = function()
@@ -40,7 +39,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         end
     end,
 })
-
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking (copying) text",
     group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
@@ -374,3 +372,7 @@ for i = 1, 5 do
 end
 
 vim.cmd('colorscheme base16-black-metal-gorgoroth')
+
+vim.diagnostic.config({
+    float = { border = "single" },
+})
