@@ -8,7 +8,7 @@ set $up k
 set $right l
 
 set $term ghostty
-set $browser brave-browser-nightly
+set $browser firefox
 set $filemanager pcmanfm
 
 include /etc/sway/config-vars.d/*
