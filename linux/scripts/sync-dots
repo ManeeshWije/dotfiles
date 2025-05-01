@@ -5,8 +5,7 @@ sudo cp -r /etc/udev/rules.d \
     ~/dotfiles/linux/
 
 cp -r ~/.config/nvim \
-    ~/.config/ghostty \
-    ~/.tmux.conf \
+    ~/.config/wezterm \
     ~/.config/yazi \
     ~/.config/ncspot \
     ~/.bashrc \

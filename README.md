@@ -5,9 +5,8 @@
   - Bash
   - Sway
   - Waybar
-  - Ghostty
+  - Wezterm
   - Neovim
-  - Tmux
   - Yazi
   - Tofi
   - Custom scripts

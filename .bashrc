@@ -22,7 +22,7 @@ bind -m vi-insert "\C-l":clear-screen
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 export TERM="xterm-256color"
-export BROWSER='firefox'
+export BROWSER='brave-browser'
 export EDITOR='nvim'
 export VISUAL="nvim"
 export MANPAGER="nvim +Man!"
@@ -52,7 +52,7 @@ alias grep='grep --color=auto'
 alias st='syncthing'
 alias sd='cd "$(find "$HOME" -maxdepth 7 -type d | fzf || echo "$PWD")"'
 alias sf='file=$(find "$HOME" -maxdepth 7 -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
-alias aptupdate='sudo apt update && sudo apt upgrade && yazi_install && ghostty_install'
+alias aptupdate='sudo apt update && sudo apt upgrade && yazi_install'
 alias aptdelete='sudo apt autoremove'
 alias aptcache='sudo apt-get clean'
 alias o="xdg-open"
