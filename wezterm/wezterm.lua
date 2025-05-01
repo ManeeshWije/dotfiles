@@ -13,14 +13,22 @@ local projects = {
 
 config.font = wezterm.font("Iosevka Nerd Font")
 config.font_size = 15
-config.color_scheme = 'Black Metal (Gorgoroth) (base16)'
+config.color_scheme = "Black Metal (Gorgoroth) (base16)"
 config.default_cursor_style = "BlinkingBlock"
 config.animation_fps = 1
 config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.tab_bar_at_bottom = true
-config.scrollback_lines = 3500
+config.scrollback_lines = 10000
+config.use_fancy_tab_bar = true
+
+config.window_frame = {
+	font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" }),
+	font_size = 12.0,
+	active_titlebar_bg = "#000000",
+	inactive_titlebar_bg = "#000000",
+}
 
 config.leader = { key = "`", timeout_milliseconds = 1000 }
 config.keys = {
@@ -40,7 +48,7 @@ config.keys = {
 
 	{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 
-    { key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
+	{ key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 	{ key = "w", mods = "LEADER", action = act.CloseCurrentTab({ confirm = true }) },
 	{ key = "1", mods = "LEADER", action = act.ActivateTab(0) },
 	{ key = "2", mods = "LEADER", action = act.ActivateTab(1) },
