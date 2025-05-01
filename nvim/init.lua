@@ -97,7 +97,6 @@ require("lazy").setup({
                 sqlls = {},
                 tailwindcss = {},
                 lua_ls = {},
-                csharp_ls = {},
                 helm_ls = {},
             },
         },
