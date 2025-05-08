@@ -13,7 +13,8 @@
                                             "^org\\.mozilla\\.firefox",
                                             "^com\\.microsoft\\.edgemac",
                                             "^com\\.apple\\.Safari",
-                                            "^com\\.brave\\.Browser"
+                                            "^com\\.brave\\.Browser",
+                                            "^com\\.tinyspeck\\.slackmacgap"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
