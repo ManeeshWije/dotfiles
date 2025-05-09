@@ -1,9 +1,12 @@
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
-autoload -Uz compinit
-compinit
+autoload -Uz compinit; compinit
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     fpath+=("$(brew --prefix)/share/zsh/site-functions")
+fi
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    fpath+=($HOME/pure)
 fi
 
 export NVM_DIR=~/.nvm
@@ -16,7 +19,6 @@ export SAVEHIST=10000
 
 setopt appendhistory
 setopt sharehistory
-setopt incappendhistory
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
@@ -36,7 +38,7 @@ alias addall='git add .'
 alias branch='git branch'
 alias checkout='git checkout'
 alias clone='git clone'
-alias commit='git commit -m'
+alias commit='git commit'
 alias fetch='git fetch'
 alias merge='git merge'
 alias pull='git pull origin'
@@ -45,28 +47,36 @@ alias stats='git status'  # 'status' is protected name so using 'stats' instead
 alias tag='git tag'
 alias newtag='git tag -a'
 
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 alias st='syncthing'
-alias sd="cd ~ && cd \$(find --type d | fzf)"
-alias yy='yazi'
-alias paccache='sudo pacman -Scc && yay -Scc'
-alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
+alias sd='cd "$(find "$HOME" -maxdepth 7 -type d | fzf || echo "$PWD")"'
+alias sf='file=$(find "$HOME" -maxdepth 7 -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
+alias aptupdate='sudo apt update && sudo apt upgrade && yazi_install'
+alias aptdelete='sudo apt autoremove'
+alias aptcache='sudo apt-get clean'
+alias o="xdg-open"
+alias z="zathura"
+alias air='$(go env GOPATH)/bin/air'
+alias y="yazi"
+alias k="kubectl"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
     export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/:/Users/maneesh/Library/Python/3.11/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/maneesh/.config/scripts/"
 fi
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$HOME/.config/scripts:$PATH"
-
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    # bun completions
-    [ -s "/home/maneesh/.bun/_bun" ] && source "/home/maneesh/.bun/_bun"
+    export PATH="$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$HOME/.local/bin:$PATH"
 fi
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 . "$HOME/.cargo/env"
 
-autoload -U promptinit; promptinit
+source <(fzf --zsh)
+source <(kubectl completion zsh)
 
+autoload -U promptinit; promptinit
+zstyle :prompt:pure:git:stash show yes
 prompt pure
