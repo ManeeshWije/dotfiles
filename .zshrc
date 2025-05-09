@@ -9,7 +9,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     fpath+=($HOME/pure)
 fi
 
-export NVM_DIR=~/.nvm
 export TERM="xterm-256color"
 export EDITOR='nvim'
 export VISUAL="nvim"
