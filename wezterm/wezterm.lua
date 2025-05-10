@@ -24,10 +24,10 @@ config.tab_bar_at_bottom = true
 config.scrollback_lines = 10000
 config.use_fancy_tab_bar = true
 config.window_padding = {
-  left = 2,
-  right = 2,
-  top = 2,
-  bottom = 2,
+  left = 4,
+  right = 4,
+  top = 4,
+  bottom = 4,
 }
 
 config.window_frame = {
