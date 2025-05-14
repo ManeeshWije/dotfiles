@@ -14,7 +14,8 @@
                                             "^com\\.microsoft\\.edgemac",
                                             "^com\\.apple\\.Safari",
                                             "^com\\.brave\\.Browser",
-                                            "^com\\.tinyspeck\\.slackmacgap"
+                                            "^com\\.tinyspeck\\.slackmacgap",
+                                            "^com\\.linear"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
