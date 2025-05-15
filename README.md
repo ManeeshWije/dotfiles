@@ -2,16 +2,16 @@
 
 - Programs in my daily workflow:
   - **Currently** Debian Trixie
-  - Bash
-  - Sway
-  - Waybar
-  - Wezterm
-  - Neovim
-  - Yazi
-  - Tofi
-  - Custom scripts
+  - zsh
+  - sway
+  - waybar
+  - wezterm
+  - neovim
+  - yazi
+  - tofi
+  - custom scripts
 
-and the most simple colourscheme which is base-16-black-metal-gorgoroth
+- Theme: base-16-black-metal-gorgoroth
 
 # Screenshots
 
