@@ -24,18 +24,18 @@ config.tab_bar_at_bottom = true
 config.scrollback_lines = 10000
 config.use_fancy_tab_bar = true
 config.window_padding = {
-  left = 4,
-  right = 4,
-  top = 4,
-  bottom = 4,
+  left = 2,
+  right = 2,
+  top = 2,
+  bottom = 2,
 }
-
 config.window_frame = {
   font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" }),
   font_size = 12.0,
   active_titlebar_bg = "#000000",
   inactive_titlebar_bg = "#000000",
 }
+config.window_decorations = "RESIZE"
 
 config.leader = { key = "`", timeout_milliseconds = 1000 }
 config.keys = {
