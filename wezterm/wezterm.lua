@@ -13,7 +13,7 @@ local projects = {
 }
 
 config.font = wezterm.font("Iosevka Nerd Font")
-config.font_size = 15
+config.font_size = 12
 config.color_scheme = "Black Metal (Gorgoroth) (base16)"
 config.default_cursor_style = "BlinkingBlock"
 config.animation_fps = 1
