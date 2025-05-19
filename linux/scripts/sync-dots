@@ -8,7 +8,7 @@ cp -r ~/.config/nvim \
     ~/.config/wezterm \
     ~/.config/yazi \
     ~/.config/ncspot \
-    ~/.bashrc \
+    ~/.zshrc \
     ~/dotfiles/
 
 cp -r ~/.config/sway \
@@ -21,7 +21,6 @@ cp -r ~/.config/sway \
     ~/.config/scripts \
     ~/.config/zathura \
     ~/.config/wireplumber \
-    ~/.config/fontconfig \
     ~/.themes \
     ~/.icons \
     ~/dotfiles/linux/

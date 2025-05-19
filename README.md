@@ -1,7 +1,7 @@
 # Dotfiles
 
 - Programs in my daily workflow:
-  - **Currently** Debian Trixie
+  - arch linux
   - zsh
   - sway
   - waybar
@@ -15,7 +15,7 @@
 
 # Screenshots
 
-![](./swappy-20250217-203934.png)
-![](./swappy-20250217-204155.png)
-![](./swappy-20250217-204216.png)
-![](./swappy-20250217-204232.png)
+![](./swappy-20250519-143853.png)
+![](./swappy-20250519-144123.png)
+![](./swappy-20250519-144135.png)
+![](./swappy-20250519-144153.png)

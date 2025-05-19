@@ -51,9 +51,9 @@ alias grep='grep --color=auto'
 alias st='syncthing'
 alias sd='cd "$(find "$HOME" -maxdepth 7 -type d | fzf || echo "$PWD")"'
 alias sf='file=$(find "$HOME" -maxdepth 7 -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
-alias aptupdate='sudo apt update && sudo apt upgrade && yazi_install'
-alias aptdelete='sudo apt autoremove'
-alias aptcache='sudo apt-get clean'
+alias pacupdate='sudo pacman -Syu && yay -Syu'
+alias paccache='sudo pacman -Scc && yay -Scc'
+alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
 alias o="xdg-open"
 alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'

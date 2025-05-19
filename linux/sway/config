@@ -8,7 +8,7 @@ set $up k
 set $right l
 
 set $term wezterm
-set $browser brave-browser
+set $browser brave
 set $filemanager pcmanfm
 
 include /etc/sway/config-vars.d/*
