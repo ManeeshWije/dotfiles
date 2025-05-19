@@ -332,6 +332,13 @@ require("lazy").setup({
             { "<leader>sp", function() Snacks.picker.spelling() end, desc = "Spelling", },
         },
     },
+
+    {
+      "supermaven-inc/supermaven-nvim",
+      config = function()
+        require("supermaven-nvim").setup({})
+      end,
+    }
 })
 
 vim.keymap.set("i", "jk", "<Esc>")
