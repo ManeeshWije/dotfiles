@@ -25,7 +25,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
-vim.opt.previewheight = 20
+vim.opt.previewheight = 25
 
 vim.api.nvim_create_augroup("vimStartup", { clear = true })
 vim.api.nvim_create_autocmd("BufReadPost", {
