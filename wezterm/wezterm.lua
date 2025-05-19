@@ -37,7 +37,7 @@ config.window_frame = {
     inactive_titlebar_bg = "#000000",
 }
 
-config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
+config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 }
 config.keys = {
     { key = "l",         mods = "SUPER",        action = wezterm.action.ShowLauncher },
 
