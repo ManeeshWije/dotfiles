@@ -29,6 +29,7 @@ config.window_padding = {
     top = 4,
     bottom = 4,
 }
+config.window_decorations = "RESIZE"
 
 config.window_frame = {
     font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" }),
