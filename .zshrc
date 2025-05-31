@@ -5,10 +5,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     fpath+=("$(brew --prefix)/share/zsh/site-functions")
 fi
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    fpath+=($HOME/pure)
-fi
-
 export TERM="xterm-256color"
 export EDITOR='nvim'
 export VISUAL="nvim"
@@ -76,6 +72,4 @@ export NVM_DIR="$HOME/.nvm"
 source <(fzf --zsh)
 source <(kubectl completion zsh)
 
-autoload -U promptinit; promptinit
-zstyle :prompt:pure:git:stash show yes
-prompt pure
+eval "$(starship init zsh)"
