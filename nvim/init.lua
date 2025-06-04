@@ -26,6 +26,18 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.previewheight = 25
+vim.opt.fillchars = { fold = " " }
+vim.opt.foldmethod = "indent"
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
+vim.g.markdown_folding = 1
+vim.cmd ([[
+augroup remember_folds
+  autocmd!
+  au BufWinLeave ?* mkview 1
+  au BufWinEnter ?* silent! loadview 1
+augroup END
+]])
 
 vim.api.nvim_create_augroup("vimStartup", { clear = true })
 vim.api.nvim_create_autocmd("BufReadPost", {
