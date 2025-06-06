@@ -155,8 +155,14 @@ require("lazy").setup({
                 php = { "php-cs-fixer" },
                 c = { "clang-format" },
                 markdown = { "prettier" },
-                sql = { "sql-formatter" },
+                sql = { "sql_formatter" },
                 html = { "prettier" },
+            },
+            formatters = {
+                sql_formatter = {
+                    command = "sql-formatter",
+                    args = { "--language", "postgresql" },
+                },
             },
         },
     },
