@@ -59,6 +59,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "copilot-*",
+    callback = function()
+        vim.keymap.set("n", "<C-L>", "<C-W>l", { noremap = true, silent = true, buffer = true })
+        vim.keymap.set("n", "<C-C>", function()
+            require("CopilotChat").reset()
+        end, { desc = "CopilotChat - Reset chat" })
+    end,
+})
 
 -- Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -351,12 +360,15 @@ require("lazy").setup({
         },
     },
 
-    {
-      "supermaven-inc/supermaven-nvim",
-      config = function()
-        require("supermaven-nvim").setup({})
-      end,
-    }
+    { -- AI
+        "CopilotC-Nvim/CopilotChat.nvim",
+        dependencies = {
+            { "github/copilot.vim" },
+            { "nvim-lua/plenary.nvim", branch = "master" },
+        },
+        build = "make tiktoken", -- Only on MacOS or Linux
+        opts = {}
+    },
 })
 
 vim.keymap.set("i", "jk", "<Esc>")
@@ -379,10 +391,20 @@ vim.keymap.set("n", "<leader>fp", function() vim.diagnostic.jump({ count = -1 })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
-
 vim.keymap.set("n", "<leader>p", function()
     require("conform").format({ async = true, lsp_fallback = true })
 end)
+vim.keymap.set('n', '<leader>ccq', function()
+  local input = vim.fn.input("Quick Chat: ")
+  if input ~= "" then
+    require("CopilotChat").ask(input, {
+      selection = require("CopilotChat.select").buffer
+    })
+  end
+end, { desc = "CopilotChat - Quick chat" })
+vim.keymap.set('n', '<leader>cc', function()
+  require("CopilotChat").open({})
+end, { desc = "CopilotChat - Open chat" })
 
 local harpoon = require("harpoon")
 harpoon:setup({})
@@ -398,8 +420,9 @@ for i = 1, 5 do
     end)
 end
 
-vim.cmd('colorscheme base16-black-metal-gorgoroth')
-
 vim.diagnostic.config({
     float = { border = "single" },
 })
+
+vim.cmd('colorscheme base16-black-metal-gorgoroth')
+
