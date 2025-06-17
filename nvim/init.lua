@@ -31,7 +31,7 @@ vim.opt.foldmethod = "indent"
 vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 vim.g.markdown_folding = 1
-vim.cmd ([[
+vim.cmd([[
 augroup remember_folds
   autocmd!
   au BufWinLeave ?* mkview 1
@@ -193,7 +193,8 @@ require("lazy").setup({
             completion = {
                 menu = {
                     border = "single",
-                    winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
+                    winhighlight =
+                    "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
                 },
                 documentation = {
                     window = {
@@ -282,7 +283,7 @@ require("lazy").setup({
     { -- DB UI
         "kristijanhusak/vim-dadbod-ui",
         dependencies = {
-            { "tpope/vim-dadbod", lazy = true },
+            { "tpope/vim-dadbod",                     lazy = true },
             { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
         },
         cmd = {
@@ -306,7 +307,7 @@ require("lazy").setup({
         end,
     },
 
-    {  -- Surround
+    { -- Surround
         'echasnovski/mini.surround', version = false
     },
 
@@ -329,34 +330,34 @@ require("lazy").setup({
         },
         keys = {
             -- find
-            { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers", },
+            { "<leader>fb", function() Snacks.picker.buffers() end,                 desc = "Buffers", },
             { "<leader>ff", function() Snacks.picker.files({ ignored = true }) end, desc = "Find Files", },
-            { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files", },
-            { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent", },
-            { "<leader>fu", function() Snacks.picker.undo() end, desc = "Undo", },
+            { "<leader>fg", function() Snacks.picker.git_files() end,               desc = "Find Git Files", },
+            { "<leader>fr", function() Snacks.picker.recent() end,                  desc = "Recent", },
+            { "<leader>fu", function() Snacks.picker.undo() end,                    desc = "Undo", },
             -- git
-            { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log", },
-            { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status", },
-            { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" }, },
-            { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line", },
+            { "<leader>gl", function() Snacks.picker.git_log() end,                 desc = "Git Log", },
+            { "<leader>gs", function() Snacks.picker.git_status() end,              desc = "Git Status", },
+            { "<leader>gB", function() Snacks.gitbrowse() end,                      desc = "Git Browse",               mode = { "n", "v" }, },
+            { "<leader>gb", function() Snacks.git.blame_line() end,                 desc = "Git Blame Line", },
             -- Grep
-            { "<leader>sb", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers", },
-            { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep", },
-            { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" }, },
+            { "<leader>sb", function() Snacks.picker.grep_buffers() end,            desc = "Grep Open Buffers", },
+            { "<leader>sg", function() Snacks.picker.grep() end,                    desc = "Grep", },
+            { "<leader>sw", function() Snacks.picker.grep_word() end,               desc = "Visual selection or word", mode = { "n", "x" }, },
             -- search
-            { "<leader>sd", function() Snacks.picker.diagnostics_buffer() end, desc = "Diagnostics Buffer", },
-            { "<leader>sD", function() Snacks.picker.diagnostics() end, desc = "Diagnostics", },
-            { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages", },
-            { "<leader>sm", function() Snacks.picker.man() end, desc = "Man Pages", },
+            { "<leader>sd", function() Snacks.picker.diagnostics_buffer() end,      desc = "Diagnostics Buffer", },
+            { "<leader>sD", function() Snacks.picker.diagnostics() end,             desc = "Diagnostics", },
+            { "<leader>sh", function() Snacks.picker.help() end,                    desc = "Help Pages", },
+            { "<leader>sm", function() Snacks.picker.man() end,                     desc = "Man Pages", },
             -- LSP
-            { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition", },
-            { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration", },
-            { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References", },
-            { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation", },
-            { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition", },
-            { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols", },
+            { "gd",         function() Snacks.picker.lsp_definitions() end,         desc = "Goto Definition", },
+            { "gD",         function() Snacks.picker.lsp_declarations() end,        desc = "Goto Declaration", },
+            { "gr",         function() Snacks.picker.lsp_references() end,          nowait = true,                     desc = "References", },
+            { "gI",         function() Snacks.picker.lsp_implementations() end,     desc = "Goto Implementation", },
+            { "gy",         function() Snacks.picker.lsp_type_definitions() end,    desc = "Goto T[y]pe Definition", },
+            { "<leader>ss", function() Snacks.picker.lsp_symbols() end,             desc = "LSP Symbols", },
             -- Misc
-            { "<leader>sp", function() Snacks.picker.spelling() end, desc = "Spelling", },
+            { "<leader>sp", function() Snacks.picker.spelling() end,                desc = "Spelling", },
         },
     },
 
@@ -367,7 +368,7 @@ require("lazy").setup({
             { "nvim-lua/plenary.nvim", branch = "master" },
         },
         build = "make tiktoken", -- Only on MacOS or Linux
-        opts = {}
+        opts = {},
     },
 })
 
@@ -395,15 +396,18 @@ vim.keymap.set("n", "<leader>p", function()
     require("conform").format({ async = true, lsp_fallback = true })
 end)
 vim.keymap.set('n', '<leader>ccq', function()
-  local input = vim.fn.input("Quick Chat: ")
-  if input ~= "" then
-    require("CopilotChat").ask(input, {
-      selection = require("CopilotChat.select").buffer
-    })
-  end
+    local input = vim.fn.input("Quick Chat: ")
+    if input ~= "" then
+        require("CopilotChat").ask(input, {
+            selection = require("CopilotChat.select").buffer,
+            model = "claude-3.7-sonnet"
+        })
+    end
 end, { desc = "CopilotChat - Quick chat" })
 vim.keymap.set('n', '<leader>cc', function()
-  require("CopilotChat").open({})
+    require("CopilotChat").open({
+        model = "claude-3.7-sonnet"
+    })
 end, { desc = "CopilotChat - Open chat" })
 
 local harpoon = require("harpoon")
@@ -425,4 +429,3 @@ vim.diagnostic.config({
 })
 
 vim.cmd('colorscheme base16-black-metal-gorgoroth')
-
