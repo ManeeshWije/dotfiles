@@ -400,13 +400,13 @@ vim.keymap.set('n', '<leader>ccq', function()
     if input ~= "" then
         require("CopilotChat").ask(input, {
             selection = require("CopilotChat.select").buffer,
-            model = "claude-3.7-sonnet"
+            model = "claude-sonnet-4"
         })
     end
 end, { desc = "CopilotChat - Quick chat" })
 vim.keymap.set('n', '<leader>cc', function()
     require("CopilotChat").open({
-        model = "claude-3.7-sonnet"
+        model = "claude-sonnet-4"
     })
 end, { desc = "CopilotChat - Open chat" })
 
