@@ -253,6 +253,15 @@ require("lazy").setup({
         end,
     },
 
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        config = function()
+            require("treesitter-context").setup({
+                enable = true,
+            })
+        end,
+    },
+
     { -- Jump to project files
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
