@@ -63,9 +63,11 @@ vim.api.nvim_create_autocmd("BufEnter", {
     pattern = "copilot-*",
     callback = function()
         vim.keymap.set("n", "<C-L>", "<C-W>l", { noremap = true, silent = true, buffer = true })
+        vim.keymap.set("i", "<C-L>", "<C-\\><C-N><C-W>l", { noremap = true, silent = true, buffer = true })
         vim.keymap.set("n", "<C-C>", function()
             require("CopilotChat").reset()
         end, { desc = "CopilotChat - Reset chat" })
+        vim.keymap.set('i', '<S-Tab>', 'copilot#Accept("<Tab>")', { silent = true, expr = true })
     end,
 })
 
