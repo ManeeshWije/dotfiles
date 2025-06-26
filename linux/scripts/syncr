@@ -10,4 +10,4 @@ rsync -avzhP --update --delete \
     --exclude 'node_modules' \
     --exclude 'target' \
     --exclude 'Unity' \
-    /home/maneesh /media/veracrypt1/
+    /home/maneesh /run/media/veracrypt1/
