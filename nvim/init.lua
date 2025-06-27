@@ -420,6 +420,7 @@ vim.keymap.set('n', '<leader>cc', function()
         model = "claude-sonnet-4"
     })
 end, { desc = "CopilotChat - Open chat" })
+vim.keymap.set('v', '<leader>cv', '<Cmd>CopilotChat<CR>', { desc = "CopilotChat - Open chat with visual selection" })
 
 local harpoon = require("harpoon")
 harpoon:setup({})
