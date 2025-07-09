@@ -12,7 +12,7 @@ local projects = {
     "~/workspace",
 }
 
-config.font = wezterm.font("Iosevka Nerd Font")
+config.font = wezterm.font("IosevkaTerm Nerd Font")
 config.font_size = 12
 config.color_scheme = "Black Metal (Gorgoroth) (base16)"
 config.default_cursor_style = "BlinkingBlock"
@@ -29,6 +29,7 @@ config.window_padding = {
     top = 4,
     bottom = 4,
 }
+config.window_decorations = "RESIZE"
 
 config.window_frame = {
     font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" }),
@@ -42,7 +43,7 @@ config.keys = {
     { key = "l",         mods = "SUPER",        action = wezterm.action.ShowLauncher },
 
     { key = "-",         mods = "LEADER",       action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-    { key = "\\",        mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    { key = "\\",        mods = "LEADER",       action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
     { key = "h",         mods = "LEADER",       action = act.ActivatePaneDirection("Left") },
     { key = "j",         mods = "LEADER",       action = act.ActivatePaneDirection("Down") },
     { key = "k",         mods = "LEADER",       action = act.ActivatePaneDirection("Up") },
