@@ -21,8 +21,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("gr", vim.lsp.buf.references, "Goto References")
         map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
         map("<leader>rn", vim.lsp.buf.rename, "Rename all references")
-        map("<leader>p", vim.lsp.buf.format, "Format")
         map("<leader>v", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Goto Definition in Vertical Split")
+        map("<leader>p", function() require("conform").format({ async = true, lsp_fallback = true }) end, "Format Document")
         map("<leader>fn", function() vim.diagnostic.jump({ count = 1 }) end, "Next Diagnostic")
         map("<leader>fp", function() vim.diagnostic.jump({ count = -1 }) end, "Previous Diagnostic")
 
