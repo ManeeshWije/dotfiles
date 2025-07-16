@@ -1,3 +1,3 @@
 return {
-    "Morozzzko/git_browse.nvim"
+    "ManeeshWije/git_browse.nvim"
 }
