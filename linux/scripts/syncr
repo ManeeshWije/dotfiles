@@ -12,4 +12,5 @@ sudo rsync -avzhP --update --delete \
     --exclude 'node_modules' \
     --exclude 'target' \
     --exclude 'Unity' \
+    --exclude '.local' \
     /home/maneesh /run/media/veracrypt1/
