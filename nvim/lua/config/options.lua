@@ -32,3 +32,4 @@ vim.opt.foldlevel = 99
 vim.opt.list = false
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.g.markdown_folding = 1
+vim.opt.winborder = "single"

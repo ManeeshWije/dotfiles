@@ -15,6 +15,7 @@ vim.lsp.enable({
     "eslint",
     "tailwindcss",
     "jdtls",
+    "emmet_ls",
 })
 
 vim.diagnostic.config({
