@@ -1,3 +1,4 @@
 nvim/lazy-lock.json
+yazi/*.private
 ncspot/userstate.cbor
 60-rp2040.rules
