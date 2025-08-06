@@ -4,7 +4,7 @@ sudo cp -r /etc/udev/rules.d \
     /etc/systemd/system/unplug.service \
     ~/dotfiles/linux/
 
-cp -r ~/.config/nvim \
+sudo cp -r ~/.config/nvim \
     ~/.config/wezterm \
     ~/.config/yazi \
     ~/.config/ncspot \
