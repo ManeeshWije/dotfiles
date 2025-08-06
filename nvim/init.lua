@@ -31,6 +31,8 @@ vim.o.foldlevel = 99
 vim.o.list = false
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.g.markdown_folding = 1
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 -- Plugins
 vim.pack.add({
@@ -193,6 +195,8 @@ vim.keymap.set("n", "<C-H>", "<C-W>h")
 vim.keymap.set("n", "<C-J>", "<C-W>j")
 vim.keymap.set("n", "<C-K>", "<C-W>k")
 vim.keymap.set("n", "<C-L>", "<C-W>l")
+vim.keymap.set("n", "<C-W>v", ":vnew<CR>")
+vim.keymap.set("n", "<C-W>w", ":vsplit<CR>")
 vim.keymap.set("n", "q", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
 vim.keymap.set("n", "fe", vim.diagnostic.open_float, { desc =  "Open Diagnostic Float" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
