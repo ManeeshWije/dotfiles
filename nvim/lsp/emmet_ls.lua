@@ -1,3 +1,11 @@
+---@brief
+---
+--- https://github.com/aca/emmet-ls
+---
+--- Package can be installed via `npm`:
+--- ```sh
+--- npm install -g emmet-ls
+--- ```
 return {
   cmd = { 'emmet-ls', '--stdio' },
   filetypes = {
