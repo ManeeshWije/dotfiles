@@ -233,6 +233,7 @@ end, { desc = "CopilotChat - Open chat" })
 vim.keymap.set('v', '<leader>cv', '<Cmd>CopilotChat<CR>', { desc = "CopilotChat - Open chat with visual selection" })
 
 -- Autocommands
+-- remember last cursor position
 vim.api.nvim_create_augroup("vimStartup", { clear = true })
 vim.api.nvim_create_autocmd("BufReadPost", {
     group = "vimStartup",
@@ -247,6 +248,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
+-- copilot window keymaps
 vim.api.nvim_create_autocmd("BufEnter", {
     pattern = "copilot-*",
     callback = function()
@@ -259,6 +261,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end,
 })
 
+-- remember folds
 vim.api.nvim_create_augroup("remember_folds", { clear = true })
 vim.api.nvim_create_autocmd("BufWinLeave", {
     group = "remember_folds",
@@ -271,6 +274,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
     command = "silent! loadview 1",
 })
 
+-- enable autocompletion for LSP
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
