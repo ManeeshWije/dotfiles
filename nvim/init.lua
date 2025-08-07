@@ -201,7 +201,7 @@ vim.keymap.set("n", "q", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
 vim.keymap.set("n", "<leader>p", function() require("conform").format({ async = true, lsp_fallback = true }) end,
     { desc = "Format Document" })
 vim.keymap.set("i", "<C-space>", vim.lsp.completion.get, { desc = "trigger autocompletion" })
-vim.keymap.set("n", "<leader>tt", function()
+vim.keymap.set({ "n", "t" }, "<leader>tt", function()
     vim.cmd.term()
     vim.cmd("startinsert")
 end)
