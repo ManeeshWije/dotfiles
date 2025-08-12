@@ -45,8 +45,6 @@ vim.pack.add({
     { src = "https://github.com/rolv-apneseth/tfm.nvim" },
     { src = "https://github.com/iamcco/markdown-preview.nvim" },
     { src = "https://github.com/stevearc/conform.nvim" },
-    { src = "https://github.com/CopilotC-Nvim/CopilotChat.nvim" },
-    { src = "https://github.com/github/copilot.vim" },
     { src = "https://github.com/tpope/vim-dadbod" },
     { src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
     { src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
@@ -56,7 +54,6 @@ vim.cmd(":hi statusline guibg=NONE")
 vim.cmd("set completeopt+=noselect")
 
 -- Setup plugins
-require "CopilotChat".setup()
 require "fzf-lua".setup({
     keymap = {
         builtin = {
@@ -214,24 +211,6 @@ vim.keymap.set("n", "<leader>st", function()
 end)
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
-vim.keymap.set('n', '<leader>cq', function()
-    local input = vim.fn.input("Quick Chat: ")
-    if input ~= "" then
-        require("CopilotChat").ask(input, {
-            selection = require("CopilotChat.select").buffer,
-            model = "claude-sonnet-4"
-        })
-    end
-end, { desc = "CopilotChat - Quick chat" })
-
-vim.keymap.set('n', '<leader>cc', function()
-    require("CopilotChat").open({
-        model = "claude-sonnet-4"
-    })
-end, { desc = "CopilotChat - Open chat" })
-
-vim.keymap.set('v', '<leader>cv', '<Cmd>CopilotChat<CR>', { desc = "CopilotChat - Open chat with visual selection" })
-
 -- Autocommands
 -- remember last cursor position
 vim.api.nvim_create_augroup("vimStartup", { clear = true })
@@ -245,19 +224,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         if last_position >= 1 and last_position <= last_line and not filetype:match("commit") then
             vim.cmd('normal! g`"')
         end
-    end,
-})
-
--- copilot window keymaps
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = "copilot-*",
-    callback = function()
-        vim.keymap.set("n", "<C-L>", "<C-W>l", { noremap = true, silent = true, buffer = true })
-        vim.keymap.set("i", "<C-L>", "<C-\\><C-N><C-W>l", { noremap = true, silent = true, buffer = true })
-        vim.keymap.set("n", "<C-C>", function()
-            require("CopilotChat").reset()
-        end, { desc = "CopilotChat - Reset chat" })
-        vim.keymap.set('i', '<S-Tab>', 'copilot#Accept("<Tab>")', { silent = true, expr = true })
     end,
 })
 
