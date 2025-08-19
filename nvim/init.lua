@@ -195,6 +195,7 @@ vim.keymap.set("n", "<C-L>", "<C-W>l")
 vim.keymap.set("n", "<C-W>v", ":vnew<CR>")
 vim.keymap.set("n", "<C-W>w", ":vsplit<CR>")
 vim.keymap.set("n", "q", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
+vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close current buffer" })
 vim.keymap.set("n", "<leader>p", function() require("conform").format({ async = true, lsp_fallback = true }) end,
     { desc = "Format Document" })
 vim.keymap.set("i", "<C-space>", vim.lsp.completion.get, { desc = "trigger autocompletion" })
