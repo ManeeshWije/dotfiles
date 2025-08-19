@@ -55,6 +55,7 @@ alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
 alias k="kubectl"
+alias todo='nvim "$HOME/Documents/personal-notes/todo.md"'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
