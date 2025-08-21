@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+sudo rsync -ah --progress /run/media/maneesh/3334-6235/DCIM/100KFZ45/* ~/Media/
