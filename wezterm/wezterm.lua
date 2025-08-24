@@ -39,45 +39,15 @@ config.window_frame = {
 }
 
 config.keys = {
-    -- Launcher & copy mode
-    { key = "l",         mods = "ALT",       action = wezterm.action.ShowLauncher },
-    { key = "[",         mods = "ALT",       action = act.ActivateCopyMode },
+    { key = "l",         mods = "SUPER", action = act.ShowLauncher },
+    { key = "[",         mods = "SUPER", action = act.ActivateCopyMode },
 
-    -- Scroll
-    { key = "UpArrow",   mods = "SHIFT",     action = act.ScrollByLine(-1) },
-    { key = "DownArrow", mods = "SHIFT",     action = act.ScrollByLine(1) },
-    { key = "PageUp",    mods = "NONE",      action = act.ScrollByPage(-1) },
-    { key = "PageDown",  mods = "NONE",      action = act.ScrollByPage(1) },
+    { key = "UpArrow",   mods = "SHIFT", action = act.ScrollByLine(-1) },
+    { key = "DownArrow", mods = "SHIFT", action = act.ScrollByLine(1) },
+    { key = "PageUp",    mods = "NONE",  action = act.ScrollByPage(-1) },
+    { key = "PageDown",  mods = "NONE",  action = act.ScrollByPage(1) },
 
-    -- Sessionizer
-    { key = "s",         mods = "ALT",       action = sessionizer.switch_workspace() },
-
-    -- Tabs
-    { key = "t",         mods = "ALT",       action = act.SpawnTab("CurrentPaneDomain") },       -- new tab
-    { key = "w",         mods = "ALT",       action = act.CloseCurrentTab({ confirm = true }) }, -- close tab
-    { key = "Tab",       mods = "ALT",       action = act.ActivateTabRelative(1) },              -- next tab
-    { key = "Tab",       mods = "ALT|SHIFT", action = act.ActivateTabRelative(-1) },             -- prev tab
-    { key = "1",         mods = "ALT",       action = act.ActivateTab(0) },
-    { key = "2",         mods = "ALT",       action = act.ActivateTab(1) },
-    { key = "3",         mods = "ALT",       action = act.ActivateTab(2) },
-    { key = "4",         mods = "ALT",       action = act.ActivateTab(3) },
-    { key = "5",         mods = "ALT",       action = act.ActivateTab(4) },
-    { key = "6",         mods = "ALT",       action = act.ActivateTab(5) },
-    { key = "7",         mods = "ALT",       action = act.ActivateTab(6) },
-    { key = "8",         mods = "ALT",       action = act.ActivateTab(7) },
-    { key = "9",         mods = "ALT",       action = act.ActivateTab(-1) }, -- last tab
-
-    -- Panes
-    { key = "\\",        mods = "ALT",       action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-    { key = "-",        mods = "ALT",       action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-    { key = "h",         mods = "ALT",       action = act.ActivatePaneDirection("Left") },
-    { key = "j",         mods = "ALT",       action = act.ActivatePaneDirection("Down") },
-    { key = "k",         mods = "ALT",       action = act.ActivatePaneDirection("Up") },
-    { key = "l",         mods = "ALT",       action = act.ActivatePaneDirection("Right") },
-    { key = "q",         mods = "ALT",       action = act.CloseCurrentPane({ confirm = true }) },
-
-    -- Reload config
-    { key = "r",         mods = "ALT|SHIFT", action = act.ReloadConfiguration },
+    { key = "s",         mods = "SUPER", action = sessionizer.switch_workspace() },
 }
 
 sessionizer.set_projects(projects)
