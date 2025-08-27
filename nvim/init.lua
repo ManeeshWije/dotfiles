@@ -145,7 +145,6 @@ vim.lsp.enable({
     "dockerls",
     "yamlls",
     "rust_analyzer",
-    "sqlls",
     "eslint",
     "tailwindcss",
     "jdtls",
@@ -198,7 +197,15 @@ vim.keymap.set("n", "q", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
 vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close current buffer" })
 vim.keymap.set("n", "<leader>p", function() require("conform").format({ async = true, lsp_fallback = true }) end,
     { desc = "Format Document" })
-vim.keymap.set("i", "<C-space>", vim.lsp.completion.get, { desc = "trigger autocompletion" })
+vim.keymap.set("i", "<C-space>", function()
+  if vim.bo.omnifunc ~= "" then
+    -- If omnifunc is set (like in SQL files), use omni-completion
+    return "<C-x><C-o>"
+  else
+    -- Otherwise use LSP completion
+    return vim.lsp.completion.get()
+  end
+end, { expr = true, desc = "Smart completion" })
 vim.keymap.set({ "n", "t" }, "<leader>tt", function()
     vim.cmd.term()
     vim.cmd("startinsert")
@@ -259,4 +266,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
         end
     end,
+})
+
+-- vim dadbod config
+vim.g.db_ui_use_omni = 1
+vim.g.db_ui_connections_json = vim.fn.expand("~/.local/share/db_ui/connections.json")
+vim.g.db_completion_enabled = 1
+vim.g.omni_sql_no_default_maps = 1
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {"sql", "mysql", "plsql"},
+  callback = function()
+    vim.bo.omnifunc = "vim_dadbod_completion#omni"
+    vim.bo.completefunc = "vim_dadbod_completion#omni"
+    vim.bo.commentstring = "-- %s"
+  end,
+})
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "dbui",
+  callback = function()
+    vim.bo.buflisted = false
+  end,
 })
