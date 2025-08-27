@@ -210,7 +210,17 @@ vim.keymap.set("n", "<leader>st", function()
     vim.api.nvim_win_set_height(0, 10)
     vim.cmd("startinsert")
 end)
+vim.keymap.set("n", "<leader>vt", function()
+    vim.cmd.vnew()
+    vim.cmd.term()
+    vim.cmd.wincmd("L")
+    vim.cmd("startinsert")
+end)
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
+vim.keymap.set("t", "<C-H>", "<C-\\><C-N><C-w>h")
+vim.keymap.set("t", "<C-J>", "<C-\\><C-N><C-w>j")
+vim.keymap.set("t", "<C-K>", "<C-\\><C-N><C-w>k")
+vim.keymap.set("t", "<C-L>", "<C-\\><C-N><C-w>l")
 
 -- Autocommands
 -- remember last cursor position
