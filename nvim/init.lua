@@ -48,12 +48,22 @@ vim.pack.add({
     { src = "https://github.com/tpope/vim-dadbod" },
     { src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
     { src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
+    { src = "https://github.com/f-person/auto-dark-mode.nvim" },
 })
-vim.cmd('colorscheme base16-black-metal-gorgoroth')
 vim.cmd(":hi statusline guibg=NONE")
 vim.cmd("set completeopt+=noselect")
 
 -- Setup plugins
+require "auto-dark-mode".setup({
+    set_dark_mode = function()
+        vim.cmd('colorscheme base16-black-metal-gorgoroth')
+    end,
+    set_light_mode = function()
+        vim.cmd('colorscheme base16-ayu-light')
+    end,
+    update_interval = 3000,
+    fallback = "dark"
+})
 require "fzf-lua".setup({
     keymap = {
         builtin = {
@@ -198,13 +208,13 @@ vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close current buffer" })
 vim.keymap.set("n", "<leader>p", function() require("conform").format({ async = true, lsp_fallback = true }) end,
     { desc = "Format Document" })
 vim.keymap.set("i", "<C-space>", function()
-  if vim.bo.omnifunc ~= "" then
-    -- If omnifunc is set (like in SQL files), use omni-completion
-    return "<C-x><C-o>"
-  else
-    -- Otherwise use LSP completion
-    return vim.lsp.completion.get()
-  end
+    if vim.bo.omnifunc ~= "" then
+        -- If omnifunc is set (like in SQL files), use omni-completion
+        return "<C-x><C-o>"
+    else
+        -- Otherwise use LSP completion
+        return vim.lsp.completion.get()
+    end
 end, { expr = true, desc = "Smart completion" })
 vim.keymap.set({ "n", "t" }, "<leader>tt", function()
     vim.cmd.term()
@@ -274,16 +284,16 @@ vim.g.db_ui_connections_json = vim.fn.expand("~/.local/share/db_ui/connections.j
 vim.g.db_completion_enabled = 1
 vim.g.omni_sql_no_default_maps = 1
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = {"sql", "mysql", "plsql"},
-  callback = function()
-    vim.bo.omnifunc = "vim_dadbod_completion#omni"
-    vim.bo.completefunc = "vim_dadbod_completion#omni"
-    vim.bo.commentstring = "-- %s"
-  end,
+    pattern = { "sql", "mysql", "plsql" },
+    callback = function()
+        vim.bo.omnifunc = "vim_dadbod_completion#omni"
+        vim.bo.completefunc = "vim_dadbod_completion#omni"
+        vim.bo.commentstring = "-- %s"
+    end,
 })
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "dbui",
-  callback = function()
-    vim.bo.buflisted = false
-  end,
+    pattern = "dbui",
+    callback = function()
+        vim.bo.buflisted = false
+    end,
 })

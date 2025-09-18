@@ -12,9 +12,24 @@ local projects = {
     "~/workspace",
 }
 
+local function get_appearance()
+    if wezterm.gui then
+        return wezterm.gui.get_appearance()
+    end
+    return 'Dark'
+end
+
+local function scheme_for_appearance(appearance)
+    if appearance:find 'Dark' then
+        return 'Black Metal (Gorgoroth) (base16)'
+    else
+        return 'Ayu Light (Gogh)'
+    end
+end
+
 config.font = wezterm.font("IosevkaTerm Nerd Font")
 config.font_size = 12
-config.color_scheme = "Black Metal (Gorgoroth) (base16)"
+config.color_scheme = scheme_for_appearance(get_appearance())
 config.default_cursor_style = "BlinkingBlock"
 config.animation_fps = 1
 config.cursor_blink_ease_in = "Constant"
