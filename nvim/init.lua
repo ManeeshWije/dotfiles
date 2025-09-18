@@ -297,3 +297,46 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.bo.buflisted = false
     end,
 })
+
+-- Set up compilers for all configured languages
+local compiler_configs = {
+    typescript = {
+        patterns = { "typescript", "typescriptreact" },
+        makeprg = "yarn run tsc --noEmit --pretty false",
+        errorformat = {
+            "%f(%l\\,%c): error TS%n: %m",
+            "%f(%l\\,%c): warning TS%n: %m",
+            "%-G%.%#"
+        }
+    },
+    rust = {
+        patterns = { "rust" },
+        makeprg = "cargo check --message-format=short",
+        errorformat = {
+            "%f:%l:%c: %t%*[^:]: %m",
+            "%f:%l:%c: %t%*[^:] %m",
+            "%-G%.%#"
+        }
+    },
+}
+
+for _, config in pairs(compiler_configs) do
+    vim.api.nvim_create_autocmd("FileType", {
+        pattern = config.patterns,
+        callback = function()
+            vim.opt_local.makeprg = config.makeprg
+            vim.opt_local.errorformat = config.errorformat
+        end,
+        desc = "Set up compiler for " .. table.concat(config.patterns, ", ")
+    })
+end
+
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+    pattern = "make",
+    callback = function()
+        if #vim.fn.getqflist() > 0 then
+            vim.cmd("copen")
+        end
+    end,
+    desc = "Auto-open quickfix list after make if there are errors"
+})
