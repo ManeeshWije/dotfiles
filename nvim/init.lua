@@ -49,11 +49,14 @@ vim.pack.add({
     { src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
     { src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
     { src = "https://github.com/f-person/auto-dark-mode.nvim" },
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
+    { src = "https://github.com/folke/sidekick.nvim" },
+    { src = "https://github.com/neovim/nvim-lspconfig" }
 })
 vim.cmd(":hi statusline guibg=NONE")
 vim.cmd("set completeopt+=noselect")
 
--- Setup plugins
+-- Setup plugins via require
 require "auto-dark-mode".setup({
     set_dark_mode = function()
         vim.cmd('colorscheme base16-black-metal-gorgoroth')
@@ -141,6 +144,11 @@ require "conform".setup({
         },
     },
 })
+require("sidekick").setup({
+    opts = {
+        nes = { enabled = false },
+    }
+})
 
 vim.lsp.enable({
     "gopls",
@@ -162,11 +170,8 @@ vim.lsp.enable({
 })
 
 -- Keymaps
+-- fzf
 local fzf = require("fzf-lua")
-vim.keymap.set("n", "<leader>e", "", {
-    noremap = true,
-    callback = require("tfm").open,
-})
 vim.keymap.set("n", "<leader>ff", fzf.files, { noremap = true, silent = true })                -- File find
 vim.keymap.set("n", "<leader>fg", fzf.git_files, { noremap = true, silent = true })            -- Git file find
 vim.keymap.set("n", "<leader>fb", fzf.buffers, { noremap = true, silent = true })              -- Find buffer
@@ -176,6 +181,7 @@ vim.keymap.set("n", "<leader>sp", fzf.spell_suggest, { noremap = true, silent = 
 vim.keymap.set("n", "<leader>fh", fzf.help_tags, { noremap = true, silent = true })            -- Help tags
 vim.keymap.set("n", "<leader>df", fzf.diagnostics_document, { noremap = true, silent = true }) -- Document Diagnostics
 
+-- qol
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<S-l>", ":bnext<CR>")
@@ -196,6 +202,14 @@ vim.keymap.set("n", "q", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
 vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close current buffer" })
 vim.keymap.set("n", "<leader>p", function() require("conform").format({ async = true, lsp_fallback = true }) end,
     { desc = "Format Document" })
+
+-- file manager
+vim.keymap.set("n", "<leader>e", "", {
+    noremap = true,
+    callback = require("tfm").open,
+})
+
+-- manual autocomplete
 vim.keymap.set("i", "<C-space>", function()
     if vim.bo.omnifunc ~= "" then
         -- If omnifunc is set (like in SQL files), use omni-completion
@@ -205,6 +219,8 @@ vim.keymap.set("i", "<C-space>", function()
         return vim.lsp.completion.get()
     end
 end, { expr = true, desc = "Smart completion" })
+
+-- built in terminal
 vim.keymap.set({ "n", "t" }, "<leader>tt", function()
     vim.cmd.term()
     vim.cmd("startinsert")
@@ -227,6 +243,14 @@ vim.keymap.set("t", "<C-H>", "<C-\\><C-N><C-w>h")
 vim.keymap.set("t", "<C-J>", "<C-\\><C-N><C-w>j")
 vim.keymap.set("t", "<C-K>", "<C-\\><C-N><C-w>k")
 vim.keymap.set("t", "<C-L>", "<C-\\><C-N><C-w>l")
+
+-- opencode
+vim.keymap.set({ "n", "x" }, "<leader>oc", function()
+    require("sidekick.cli").toggle({ focus = true, name = "opencode" })
+end)
+vim.keymap.set("v", "<leader>ov", function()
+    require("sidekick.cli").send({ msg = "{selection}", name = "opencode" })
+end)
 
 -- Autocommands
 -- remember last cursor position
