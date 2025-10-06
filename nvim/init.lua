@@ -56,6 +56,30 @@ vim.pack.add({
 vim.cmd(":hi statusline guibg=NONE")
 vim.cmd("set completeopt+=noselect")
 
+local all_levels = {
+    vim.diagnostic.severity.ERROR,
+    vim.diagnostic.severity.WARN,
+    vim.diagnostic.severity.HINT,
+    vim.diagnostic.severity.INFO,
+}
+
+vim.diagnostic.config({
+    severity_sort = true,
+    signs = {
+        severity = all_levels,
+    },
+    underline = {
+        severity = all_levels,
+    },
+    virtual_text = {
+        severity = all_levels,
+    },
+    virtual_lines = false,
+    float = {
+        severity = all_levels,
+    },
+})
+
 -- Setup plugins via require
 require "auto-dark-mode".setup({
     set_dark_mode = function()
