@@ -6,7 +6,7 @@ local sessionizer = wezterm.plugin.require("https://github.com/ElCapitanSponge/s
 
 local projects = {
     "~",
-    "~/projects",
+    "~/projects/*",
     "~/Documents",
     "~/Documents/uni/*",
     "~/workspace",

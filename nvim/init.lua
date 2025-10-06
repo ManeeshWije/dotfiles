@@ -171,19 +171,8 @@ vim.keymap.set("n", "<leader>ff", fzf.files, { noremap = true, silent = true }) 
 vim.keymap.set("n", "<leader>fg", fzf.git_files, { noremap = true, silent = true })            -- Git file find
 vim.keymap.set("n", "<leader>fb", fzf.buffers, { noremap = true, silent = true })              -- Find buffer
 vim.keymap.set("n", "<leader>sg", fzf.live_grep, { noremap = true, silent = true })            -- Grep string
-
-vim.keymap.set("n", "<leader>gs", fzf.git_status, { noremap = true, silent = true })           -- git status
-vim.keymap.set("n", "<leader>gd", fzf.git_diff, { noremap = true, silent = true })             -- git diff {ref}
-vim.keymap.set("n", "<leader>gc", fzf.git_commits, { noremap = true, silent = true })          -- git commits (project)
-vim.keymap.set("n", "<leader>gb", fzf.git_bcommits, { noremap = true, silent = true })         -- git commits (buffer)
-vim.keymap.set("n", "<leader>gB", fzf.git_blame, { noremap = true, silent = true })            -- git blame (buffer)
-vim.keymap.set("n", "<leader>gr", fzf.git_branches, { noremap = true, silent = true })         -- git branches
-vim.keymap.set("n", "<leader>gt", fzf.git_tags, { noremap = true, silent = true })             -- git tags
-vim.keymap.set("n", "<leader>gS", fzf.git_stash, { noremap = true, silent = true })            -- git stash
-
 vim.keymap.set("n", "<leader>sm", fzf.spellcheck, { noremap = true, silent = true })           -- Misspelled words
 vim.keymap.set("n", "<leader>sp", fzf.spell_suggest, { noremap = true, silent = true })        -- Suggestions for word under cursor
-
 vim.keymap.set("n", "<leader>fh", fzf.help_tags, { noremap = true, silent = true })            -- Help tags
 vim.keymap.set("n", "<leader>df", fzf.diagnostics_document, { noremap = true, silent = true }) -- Document Diagnostics
 
@@ -339,4 +328,14 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
         end
     end,
     desc = "Auto-open quickfix list after make if there are errors"
+})
+
+-- when we switch back to a terminal window, start in insert mode
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "*",
+    callback = function()
+        if vim.bo.buftype == "terminal" then
+            vim.cmd("startinsert")
+        end
+    end,
 })
