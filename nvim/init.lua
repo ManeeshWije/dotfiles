@@ -65,6 +65,7 @@ local all_levels = {
 
 vim.diagnostic.config({
     severity_sort = true,
+    virtual_lines = false,
     signs = {
         severity = all_levels,
     },
@@ -74,7 +75,6 @@ vim.diagnostic.config({
     virtual_text = {
         severity = all_levels,
     },
-    virtual_lines = false,
     float = {
         severity = all_levels,
     },
