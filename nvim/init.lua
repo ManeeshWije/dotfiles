@@ -169,9 +169,14 @@ require "conform".setup({
     },
 })
 require("sidekick").setup({
-    opts = {
-        nes = { enabled = false },
-    }
+    nes = { enabled = false },
+    cli = {
+        win = {
+            keys = {
+                prompt = { "<c-r>", "prompt" },
+            },
+        },
+    },
 })
 
 vim.lsp.enable({
