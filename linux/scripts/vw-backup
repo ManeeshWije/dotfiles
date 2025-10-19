@@ -1,0 +1,33 @@
+#!/bin/bash
+set -euo pipefail
+
+K8S_NAMESPACE="utils"
+POD_NAME=$(kubectl get pods -n utils -o jsonpath='{.items[*].metadata.name}' | tr ' ' '\n' | grep vaultwarden)
+BACKUP_PATH="config"
+LOCAL_BACKUP_DIR="${HOME}/Documents/long-term/vw-backup"
+LOCAL_RETENTION_DAYS=7
+
+echo "[INFO] Running Vaultwarden backup inside pod..."
+kubectl exec -n ${K8S_NAMESPACE} ${POD_NAME} -- /vaultwarden backup
+
+echo "[INFO] Copying backup to local machine..."
+mkdir -p ${LOCAL_BACKUP_DIR}
+kubectl cp -n ${K8S_NAMESPACE} ${POD_NAME}:${BACKUP_PATH} -c main ${LOCAL_BACKUP_DIR}
+
+echo "[INFO] Deleting local backups older than ${LOCAL_RETENTION_DAYS} days based on filename..."
+
+# Compute cutoff date in YYYYMMDD format
+CUTOFF_DATE=$(date -d "-${LOCAL_RETENTION_DAYS} days" +%Y%m%d)
+
+# Loop through backup files
+for file in "${LOCAL_BACKUP_DIR}"/db_*.sqlite3; do
+    # Extract YYYYMMDD from filename: db_YYYYMMDD_HHMMSS.sqlite3
+    filename=$(basename "$file")
+    filedate=${filename:3:8}  # chars 3-10
+    if [[ "$filedate" -lt "$CUTOFF_DATE" ]]; then
+        echo "[INFO] Deleting old backup: $file"
+        rm -v "$file"
+    fi
+done
+
+echo "[SUCCESS] Vaultwarden backup and cleanup completed!"
