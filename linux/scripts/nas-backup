@@ -6,9 +6,9 @@ NAS_HOST="pinas"
 RCLONE_REMOTE="aws-backups:gargantua-bucket"
 
 FOLDERS=(
-  "/gargantua/Media"
-  "/gargantua/Documents"
-  "/gargantua/screenshots"
+  "/gargantua/endurance"
+  "/gargantua/shows"
+  "/gargantua/movies"
 )
 
 for folder in "${FOLDERS[@]}"; do
