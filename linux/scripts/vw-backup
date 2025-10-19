@@ -1,11 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
+# usually lives on pc crontab
+
 K8S_NAMESPACE="utils"
 POD_NAME=$(kubectl get pods -n utils -o jsonpath='{.items[*].metadata.name}' | tr ' ' '\n' | grep vaultwarden)
 BACKUP_PATH="config"
 LOCAL_BACKUP_DIR="${HOME}/Documents/long-term/vw-backup"
-LOCAL_RETENTION_DAYS=7
+LOCAL_RETENTION_DAYS=3
 
 echo "[INFO] Running Vaultwarden backup inside pod..."
 kubectl exec -n ${K8S_NAMESPACE} ${POD_NAME} -- /vaultwarden backup

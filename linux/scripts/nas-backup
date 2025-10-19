@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-NAS_USER="maneesh"
-NAS_HOST="pinas"
+# usually lives on nas as a cronjob
+
 RCLONE_REMOTE="aws-backups:gargantua-bucket"
 
 FOLDERS=(
@@ -16,12 +16,11 @@ for folder in "${FOLDERS[@]}"; do
 
   echo "🔁 Syncing ${folder} → ${RCLONE_REMOTE}/${folder_name}/"
 
-  ssh "${NAS_USER}@${NAS_HOST}" \
-    "rclone sync '${folder}' '${RCLONE_REMOTE}/${folder_name}/' \
+  rclone sync "$folder" "${RCLONE_REMOTE}/${folder_name}/" \
      --s3-storage-class INTELLIGENT_TIERING \
      --transfers=4 \
      --checkers=8 \
-     --delete-after"
+     --delete-after
 done
 
 echo "✅ All folders synced successfully!"

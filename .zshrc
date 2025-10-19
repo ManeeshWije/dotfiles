@@ -7,11 +7,12 @@ fi
 
 export TERM="xterm-256color"
 export EDITOR='nvim'
+export SYSTEMD_EDITOR='nvim'
 export VISUAL="nvim"
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
-
+   
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_all_dups
