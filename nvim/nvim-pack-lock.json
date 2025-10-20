@@ -4,14 +4,16 @@
     "base16-nvim": [],
     "conform.nvim": [],
     "fzf-lua": {
-      "rev": "d45ce94"
+      "rev": "c102a4e"
     },
     "git_browse.nvim": [],
     "markdown-preview.nvim": [],
     "nvim-lspconfig": [],
     "nvim-treesitter": [],
     "nvim-treesitter-context": [],
-    "nvim-treesitter-textobjects": [],
+    "nvim-treesitter-textobjects": {
+      "rev": "a9742cb"
+    },
     "plenary.nvim": [],
     "sidekick.nvim": {
       "rev": "eb8bd50"
