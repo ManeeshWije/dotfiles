@@ -21,7 +21,9 @@ for folder in "${FOLDERS[@]}"; do
      --s3-storage-class INTELLIGENT_TIERING \
      --transfers=4 \
      --checkers=8 \
-     --delete-after
+     --delete-after \
+     --copy-links \
+     --keep-dirlinks
 done
 
 echo "✅ All folders synced successfully!"
