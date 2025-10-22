@@ -7,6 +7,7 @@ RCLONE_REMOTE="aws-backups:gargantua-bucket"
 
 FOLDERS=(
   "/gargantua/endurance"
+  "/gargantua/books-library"
   "/gargantua/pimaster"
   "/gargantua/shows"
   "/gargantua/movies"
