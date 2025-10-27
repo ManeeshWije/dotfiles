@@ -5,6 +5,7 @@
                 "rules": [
                     {
                         "description": "Map Control to Command in all applications",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": { "key_code": "left_control" },
