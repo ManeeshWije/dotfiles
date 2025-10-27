@@ -4,16 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Map Control to Command in all applications",
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "left_control" },
-                                "to": [{ "key_code": "left_command" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Browsers",
                         "manipulators": [
                             {
@@ -25,9 +15,7 @@
                                             "^com\\.apple\\.Safari",
                                             "^com\\.brave\\.Browser",
                                             "^com\\.tinyspeck\\.slackmacgap",
-                                            "^com\\.linear",
-                                            "^com\\*\\*",
-                                            "^com\\*"
+                                            "^com\\.linear"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
