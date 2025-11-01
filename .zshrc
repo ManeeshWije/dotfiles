@@ -1,10 +1,6 @@
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit; compinit
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    fpath+=("$(brew --prefix)/share/zsh/site-functions")
-fi
-
 export TERM="xterm-256color"
 export EDITOR='nvim'
 export SYSTEMD_EDITOR='nvim'
@@ -12,6 +8,8 @@ export VISUAL="nvim"
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
    
 setopt appendhistory
 setopt sharehistory
@@ -59,17 +57,17 @@ alias k="kubectl"
 alias todo='nvim "$HOME/Documents/personal-notes/todo.md"'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+    fpath+=("$(brew --prefix)/share/zsh/site-functions")
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
     export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/:/Users/maneesh/Library/Python/3.11/bin:/opt/homebrew/opt/postgresql@15/bin:/Users/maneesh/.config/scripts/"
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    export PATH="$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$HOME/.local/bin:$PATH"
+    export PATH="$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$HOME/.local/bin:$PATH:$HOME/go/bin"
 fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-. "$HOME/.cargo/env"
 
 source <(fzf --zsh)
 source <(kubectl completion zsh)

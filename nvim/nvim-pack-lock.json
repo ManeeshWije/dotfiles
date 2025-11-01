@@ -2,25 +2,33 @@
   "plugins": {
     "auto-dark-mode.nvim": [],
     "base16-nvim": [],
-    "conform.nvim": [],
+    "conform.nvim": {
+      "rev": "9fd3d5e"
+    },
     "fzf-lua": {
-      "rev": "c102a4e"
+      "rev": "a8458b7"
     },
     "git_browse.nvim": [],
     "markdown-preview.nvim": [],
-    "nvim-lspconfig": [],
+    "nvim-lspconfig": {
+      "rev": "a89bfcf"
+    },
     "nvim-treesitter": [],
-    "nvim-treesitter-context": [],
+    "nvim-treesitter-context": {
+      "rev": "ec308c7"
+    },
     "nvim-treesitter-textobjects": {
-      "rev": "a9742cb"
+      "rev": "5ca4aaa"
     },
     "plenary.nvim": [],
     "sidekick.nvim": {
-      "rev": "eb8bd50"
+      "rev": "c2bdf8c"
     },
     "tfm.nvim": [],
     "vim-dadbod": [],
     "vim-dadbod-completion": [],
-    "vim-dadbod-ui": []
+    "vim-dadbod-ui": {
+      "rev": "236179f"
+    }
   }
 }
