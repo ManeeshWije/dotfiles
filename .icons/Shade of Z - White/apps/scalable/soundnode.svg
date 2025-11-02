@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1"
+   id="svg54"
+   sodipodi:docname="soundnode.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs58" />
+  <sodipodi:namedview
+     id="namedview56"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.859375"
+     inkscape:cx="32.077764"
+     inkscape:cy="38.221142"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g672" />
+  <g
+     id="g672"
+     style="fill:#29292a"
+     transform="matrix(1.7236042,0,0,1.637979,-22.340603,-19.348474)">
+    <path
+       style="color:#000000;opacity:1;fill:#ffffff;-inkscape-stroke:none"
+       d="m 41.378906,15.087891 -17.90625,7.373046 -0.113281,0.257813 -7.226563,16.515625 11.712891,8.519531 13.703125,-3.162109 5.195313,-16.626953 z m -0.757812,1.824218 4.634765,11.123047 -4.804687,15.373047 -12.296875,2.837891 -10.28711,-7.480469 6.660157,-15.226563 z"
+       id="path6" />
+    <g
+       id="g63"
+       style="fill:#ffffff">
+      <path
+         style="color:#000000;opacity:1;fill:#ffffff;-inkscape-stroke:none"
+         d="m 40.335937,15.779297 -7,21 1.328125,0.441406 7,-21 z"
+         id="path8" />
+      <path
+         style="color:#000000;opacity:1;fill:#ffffff;-inkscape-stroke:none"
+         d="m 24.570312,22.59375 -1.140625,0.8125 10,14 1.140625,-0.8125 z"
+         id="path10" />
+      <path
+         style="color:#000000;opacity:1;fill:#ffffff;-inkscape-stroke:none"
+         d="m 33.917969,36.304687 -17,2 0.164062,1.390625 17,-2 z"
+         id="path12" />
+      <path
+         style="color:#000000;opacity:1;fill:#ffffff;-inkscape-stroke:none"
+         d="m 34.494141,36.505859 -0.988282,0.988282 7,7 0.988282,-0.988282 z"
+         id="path14" />
+      <path
+         style="color:#000000;opacity:1;fill:#ffffff;-inkscape-stroke:none"
+         d="m 33.400391,36.640625 -6,10 1.199218,0.71875 6,-10 z"
+         id="path16" />
+      <path
+         style="color:#000000;opacity:1;fill:#ffffff;-inkscape-stroke:none"
+         d="m 45.580078,27.439453 -12,9 0.839844,1.121094 12,-9 z"
+         id="path18" />
+    </g>
+    <g
+       id="g50"
+       style="fill:#ffffff">
+      <path
+         style="color:#000000;fill:#ffffff;-inkscape-stroke:none"
+         d="m 44,16 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z"
+         id="circle36" />
+      <path
+         style="color:#000000;fill:#ffffff;-inkscape-stroke:none"
+         d="m 49,28 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z"
+         id="circle38" />
+      <path
+         style="color:#000000;fill:#ffffff;-inkscape-stroke:none"
+         d="m 44,44 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z"
+         id="circle40" />
+      <path
+         style="color:#000000;fill:#ffffff;-inkscape-stroke:none"
+         d="m 31,47 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z"
+         id="circle42" />
+      <path
+         style="color:#000000;fill:#ffffff;-inkscape-stroke:none"
+         d="m 20,39 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z"
+         id="circle44" />
+      <path
+         style="color:#000000;fill:#ffffff;-inkscape-stroke:none"
+         d="m 27,23 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z"
+         id="circle46" />
+      <path
+         style="color:#000000;fill:#ffffff;-inkscape-stroke:none"
+         d="m 37,37 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z"
+         id="circle48" />
+    </g>
+  </g>
+</svg>

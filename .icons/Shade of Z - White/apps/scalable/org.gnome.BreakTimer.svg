@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   id="svg32"
+   sodipodi:docname="org.gnome.BreakTimer.svg"
+   inkscape:version="1.1 (1:1.1+202106031931+af4d65493e)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs36">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect683"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath679">
+      <path
+         id="path681"
+         style="display:none;fill:#9499b2"
+         d="m 31,6 c -0.554,0 -1,0.39025 -1,0.875 v 5.25 C 30,12.60975 30.446,13 31,13 h 2 c 0.554,0 1,-0.39025 1,-0.875 V 6.875 C 34,6.39025 33.554,6 33,6 Z m 1,10 A 16,16 0 0 0 16,32 16,16 0 0 0 32,48 16,16 0 0 0 48,32 16,16 0 0 0 32,16 Z M 6.875,30 C 6.39025,30 6,30.446 6,31 v 2 c 0,0.554 0.39025,1 0.875,1 h 5.25 C 12.60975,34 13,33.554 13,33 v -2 c 0,-0.554 -0.39025,-1 -0.875,-1 z m 45,0 C 51.39025,30 51,30.446 51,31 v 2 c 0,0.554 0.39025,1 0.875,1 h 5.25 C 57.60975,34 58,33.554 58,33 v -2 c 0,-0.554 -0.39025,-1 -0.875,-1 z M 31,51 c -0.554,0 -1,0.39025 -1,0.875 v 5.25 C 30,57.60975 30.446,58 31,58 h 2 c 0.554,0 1,-0.39025 1,-0.875 v -5.25 C 34,51.39025 33.554,51 33,51 Z" />
+      <path
+         id="lpe_path-effect683"
+         style="fill:#9499b2"
+         class="powerclip"
+         d="M -1,-1 H 65 V 65 H -1 Z m 32,7 c -0.554,0 -1,0.39025 -1,0.875 v 5.25 C 30,12.60975 30.446,13 31,13 h 2 c 0.554,0 1,-0.39025 1,-0.875 V 6.875 C 34,6.39025 33.554,6 33,6 Z m 1,10 A 16,16 0 0 0 16,32 16,16 0 0 0 32,48 16,16 0 0 0 48,32 16,16 0 0 0 32,16 Z M 6.875,30 C 6.39025,30 6,30.446 6,31 v 2 c 0,0.554 0.39025,1 0.875,1 h 5.25 C 12.60975,34 13,33.554 13,33 v -2 c 0,-0.554 -0.39025,-1 -0.875,-1 z m 45,0 C 51.39025,30 51,30.446 51,31 v 2 c 0,0.554 0.39025,1 0.875,1 h 5.25 C 57.60975,34 58,33.554 58,33 v -2 c 0,-0.554 -0.39025,-1 -0.875,-1 z M 31,51 c -0.554,0 -1,0.39025 -1,0.875 v 5.25 C 30,57.60975 30.446,58 31,58 h 2 c 0.554,0 1,-0.39025 1,-0.875 v -5.25 C 34,51.39025 33.554,51 33,51 Z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview34"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.859375"
+     inkscape:cx="32.077764"
+     inkscape:cy="32"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg32" />
+  <g
+     id="g13"
+     style="fill:#ffffff">
+    <path
+       style="fill:#ffffff"
+       d="M 32,4 A 28,28 0 0 0 4,32 28,28 0 0 0 32,60 28,28 0 0 0 60,32 28,28 0 0 0 32,4 Z"
+       id="path4"
+       clip-path="url(#clipPath679)"
+       inkscape:path-effect="#path-effect683"
+       inkscape:original-d="M 32,4 A 28,28 0 0 0 4,32 28,28 0 0 0 32,60 28,28 0 0 0 60,32 28,28 0 0 0 32,4 Z" />
+    <rect
+       style="fill:#ffffff;stroke-width:1.50049"
+       width="9.1162033"
+       height="38.52792"
+       x="40.103115"
+       y="-22.729824"
+       rx="4.5581017"
+       ry="4.281045"
+       transform="matrix(0.87652389,0.48135836,-0.51887607,0.85484947,0,0)"
+       id="rect12" />
+  </g>
+</svg>

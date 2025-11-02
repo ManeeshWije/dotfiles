@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   id="svg42"
+   sodipodi:docname="GPU_Viewer.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs46">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect33"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath25">
+      <g
+         id="g31"
+         style="display:none">
+        <circle
+           style="opacity:0.85;fill:#ffffff"
+           cx="22.5"
+           cy="31.5"
+           r="10.5"
+           id="circle27"
+           d="M 33,31.5 A 10.5,10.5 0 0 1 22.5,42 10.5,10.5 0 0 1 12,31.5 10.5,10.5 0 0 1 22.5,21 10.5,10.5 0 0 1 33,31.5 Z" />
+        <circle
+           style="opacity:0.85;fill:#ffffff"
+           cx="46.5"
+           cy="31.5"
+           r="8.5"
+           id="circle29"
+           d="M 55,31.5 A 8.5,8.5 0 0 1 46.5,40 8.5,8.5 0 0 1 38,31.5 8.5,8.5 0 0 1 46.5,23 8.5,8.5 0 0 1 55,31.5 Z" />
+      </g>
+      <path
+         id="lpe_path-effect33"
+         class="powerclip"
+         d="M 0,10 H 67 V 53 H 0 Z M 33,31.5 A 10.5,10.5 0 0 0 22.5,21 10.5,10.5 0 0 0 12,31.5 10.5,10.5 0 0 0 22.5,42 10.5,10.5 0 0 0 33,31.5 Z m 22,0 A 8.5,8.5 0 0 0 46.5,23 8.5,8.5 0 0 0 38,31.5 8.5,8.5 0 0 0 46.5,40 8.5,8.5 0 0 0 55,31.5 Z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview44"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.859375"
+     inkscape:cx="32.077764"
+     inkscape:cy="32"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg42" />
+  <path
+     style="fill:#ffffff"
+     width="57"
+     height="33"
+     x="5"
+     y="15"
+     rx="5.4289999"
+     ry="5.5"
+     id="rect4"
+     clip-path="url(#clipPath25)"
+     inkscape:path-effect="#path-effect33"
+     d="M 10.429,15 H 56.571 C 59.578666,15 62,17.453 62,20.5 v 22 C 62,45.547 59.578666,48 56.571,48 H 10.429 C 7.421334,48 5,45.547 5,42.5 v -22 C 5,17.453 7.421334,15 10.429,15 Z"
+     sodipodi:type="rect" />
+  <rect
+     style="fill:#ffffff"
+     width="3"
+     height="17"
+     x="21"
+     y="23"
+     id="rect14" />
+  <rect
+     style="fill:#ffffff"
+     width="5"
+     height="7"
+     x="16"
+     y="47"
+     id="rect16" />
+  <rect
+     style="fill:#ffffff"
+     width="3"
+     height="13"
+     x="45"
+     y="25"
+     id="rect18" />
+  <rect
+     style="fill:#ffffff"
+     width="8"
+     height="45"
+     x="2"
+     y="9"
+     rx="4"
+     ry="4.219"
+     id="rect20" />
+  <rect
+     style="fill:#ffffff"
+     width="3"
+     height="17"
+     x="30"
+     y="-31"
+     transform="rotate(90)"
+     id="rect22" />
+  <rect
+     style="fill:#ffffff"
+     width="3"
+     height="17"
+     x="4.86"
+     y="-46.68"
+     transform="rotate(135)"
+     id="rect24" />
+  <rect
+     style="fill:#ffffff"
+     width="3"
+     height="17"
+     x="36.68"
+     y="-14.86"
+     transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+     id="rect26" />
+  <circle
+     style="fill:#ffffff"
+     cx="22.5"
+     cy="31.5"
+     r="4.5"
+     id="circle28" />
+  <rect
+     style="fill:#ffffff"
+     width="3"
+     height="13"
+     x="30"
+     y="-53"
+     transform="rotate(90)"
+     id="rect30" />
+  <rect
+     style="fill:#ffffff"
+     width="3"
+     height="13"
+     x="-12.11"
+     y="-61.65"
+     transform="rotate(135)"
+     id="rect32" />
+  <rect
+     style="fill:#ffffff"
+     width="3"
+     height="13"
+     x="53.65"
+     y="4.11"
+     transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"
+     id="rect34" />
+  <rect
+     style="fill:#ffffff"
+     width="5"
+     height="7"
+     x="24"
+     y="47"
+     id="rect36" />
+  <rect
+     style="fill:#ffffff"
+     width="5"
+     height="7"
+     x="32"
+     y="47"
+     id="rect38" />
+</svg>

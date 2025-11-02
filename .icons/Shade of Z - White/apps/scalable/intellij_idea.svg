@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1"
+   id="svg28"
+   sodipodi:docname="intellij_idea.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g
+     id="g30"
+     style="stroke:#ffffff">
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round"
+       d="M 18.000487,46 H 34.000486"
+       id="path18" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:3.99999976;stroke-linecap:round"
+       d="M 18.000485,33.999716 H 26.00048 M 18.000485,17.999711 H 26.00048 M 22.000486,33.999716 V 17.999711"
+       id="path22" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:round"
+       d="m 34.000488,31.99971 v 2.000006 h 1.999998 c 7.831664,-0.230098 5.998382,-13.775978 6,-16.000005"
+       id="path26" />
+  </g>
+  <defs
+     id="defs32">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect23"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath19">
+      <rect
+         style="display:none;opacity:1;fill:#ececec"
+         width="40"
+         height="40"
+         x="12"
+         y="12"
+         id="rect21" />
+      <path
+         id="lpe_path-effect23"
+         style="opacity:1;fill:#ececec"
+         class="powerclip"
+         d="M -3.5469623,-4.4909076 H 67.794375 V 68.181887 H -3.5469623 Z M 12,12 V 52 H 52 V 12 Z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview30"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="7.984375"
+     inkscape:cx="32"
+     inkscape:cy="32"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg28" />
+  <g
+     id="g17"
+     clip-path="url(#clipPath19)"
+     inkscape:path-effect="#path-effect23"
+     style="fill:#ffffff">
+    <path
+       style="fill:#ffffff"
+       d="M 29.892581,2.1707068 4.9428942,5.713748 C 3.4071024,5.9318419 2.3462842,7.3438148 2.564378,8.8796066 L 6.1074193,33.829293 33.829293,29.892581 Z"
+       id="path4"
+       inkscape:original-d="M 29.892581,2.1707068 4.9428942,5.713748 C 3.4071024,5.9318419 2.3462842,7.3438148 2.564378,8.8796066 L 6.1074193,33.829293 33.829293,29.892581 Z" />
+    <path
+       style="fill:#ffffff"
+       d="m 36.722708,0.50909241 24.09138,7.39225379 c 1.482958,0.4550343 2.310492,2.0152233 1.855458,3.4981818 l -7.392254,24.09138 -26.7682,-8.213616 z"
+       id="path6"
+       inkscape:original-d="m 36.722708,0.50909241 24.09138,7.39225379 c 1.482958,0.4550343 2.310492,2.0152233 1.855458,3.4981818 l -7.392254,24.09138 -26.7682,-8.213616 z" />
+    <path
+       style="fill:#ffffff"
+       d="M 27.837823,63.181887 3.5200838,56.572229 C 2.0231918,56.165368 1.1456581,54.632743 1.5525193,53.135852 L 8.1621775,28.818113 35.181887,36.162177 Z"
+       id="path8"
+       inkscape:original-d="M 27.837823,63.181887 3.5200838,56.572229 C 2.0231918,56.165368 1.1456581,54.632743 1.5525193,53.135852 L 8.1621775,28.818113 35.181887,36.162177 Z" />
+    <path
+       style="fill:#ffffff"
+       d="m 33.739588,61.546134 25.025891,-2.957149 c 1.540483,-0.182029 2.634112,-1.568745 2.452083,-3.109227 l -2.95715,-25.025892 -27.806546,3.285722 z"
+       id="path10"
+       inkscape:original-d="m 33.739588,61.546134 25.025891,-2.957149 c 1.540483,-0.182029 2.634112,-1.568745 2.452083,-3.109227 l -2.95715,-25.025892 -27.806546,3.285722 z" />
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg7"
+   sodipodi:docname="battery-good-charging.svg"
+   inkscape:version="1.1 (1:1.1+rc+202105240936+c4e8f9ed74)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1717"
+     inkscape:window-height="878"
+     id="namedview9"
+     showgrid="false"
+     inkscape:zoom="18.230097"
+     inkscape:cx="8.1184428"
+     inkscape:cy="8.8041221"
+     inkscape:window-x="96"
+     inkscape:window-y="118"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg7"
+     inkscape:pagecheckerboard="0" />
+  <defs
+     id="defs3">
+    <style
+       id="current-color-scheme"
+       type="text/css">
+   .ColorScheme-Text { color:#444444; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+  </defs>
+  <g
+     id="g29"
+     style="fill:#ffffff">
+    <path
+       style="fill:#ffffff"
+       class="ColorScheme-Text"
+       d="M 1,1 C 0,1 0,2 0,2 V 12 C 0,13 1,13 1,13 H 6 C 6,13 5,13 5,14 V 15 H 11 V 14 C 11,13 10,13 10,13 H 15 C 16,13 16,12 16,12 V 2 C 16,2 16,1 15,1 Z M 2,3 H 14 V 11 H 2 Z"
+       id="path5" />
+    <path
+       id="use89"
+       d="M 7.4709155,4.4416491 C 7.5367578,4.1230576 7.8001279,3.8911836 8.0415502,3.8911836 h 0.6584246 c 0.2414224,0 0.35116,0.231874 0.2633698,0.5215597 L 8.443291,6.0024195 h 0.9437418 c 0.4828452,0 0.6145292,0.4059365 0.3072645,0.869685 L 7.5861408,10.128943 C 7.4325081,10.360817 7.3447181,10.331912 7.4105605,10.013321 L 7.7838975,7.5104442 H 7.0157352 c -0.2414223,0 -0.3731072,-0.2318735 -0.3072648,-0.5504652 z"
+       style="fill:#ffffff;stroke-width:0.262817" />
+  </g>
+</svg>

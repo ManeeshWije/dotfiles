@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="128"
+   width="128"
+   version="1.1"
+   viewBox="0 0 128 128"
+   id="svg13"
+   sodipodi:docname="distributor-logo-ubuntu-budgie.svg"
+   inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs17" />
+  <sodipodi:namedview
+     id="namedview15"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="6.4296875"
+     inkscape:cx="64.155529"
+     inkscape:cy="101.17132"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg13" />
+  <title
+     id="title2">budgie-remix Logo</title>
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>budgie-remix Logo</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>HEXcube and Joshua &quot;Foggalong&quot; Fogg</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
+        <dc:source>Budgie Logo by Yuri Henrique</dc:source>
+        <dc:description>'Work in Progress' Ubuntu Budgie Logo</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     id="budgie"
+     fill="#fff"
+     d="m 92,77 c -7.392,0 -13.664,5.4565 -15.5,12.5 -0.55025,1.434 -0.9427,2.0166 -1.5,3 -0.72535,1.2642 -1.79,2.8692 -3.7898,4.3152 -1.7708,0.998 -2.8821,1.2958 -5.21,1.1848 -1.6022,-0.24126 -1.9877,-0.49967 -3,-1 -1.5695,-1.284 -1.8084,-1.7077 -3,-4 0.17011,2.4476 0.02335,3.1542 1,7.5 2.598,8.48 12.213,15.5 23,15.5 7.996,0 14.777,-3.3562 18.948,-8.4785 1.5252,-1.8733 2.6736,-3.3514 3.7894,-5.935 1.015,-2.354 1.262,-4.898 1.263,-7.59 0,-9.138 -7.164,-17 -16,-17 z"
+     style="fill:#ffffff" />
+  <use
+     xlink:href="#budgie"
+     transform="matrix(-0.5,0.86603,-0.86603,-0.5,163.42,33.64576)"
+     height="100%"
+     width="100%"
+     y="0"
+     x="0"
+     id="use9"
+     style="fill:#ffffff" />
+  <use
+     xlink:href="#budgie"
+     transform="matrix(-0.5,-0.86603,0.86603,-0.5,52.574,158.34824)"
+     height="100%"
+     width="100%"
+     y="0"
+     x="0"
+     id="use11"
+     style="fill:#ffffff" />
+</svg>

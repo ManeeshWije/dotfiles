@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1"
+   id="svg16"
+   sodipodi:docname="doublecmd.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs20">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect21"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath12">
+      <g
+         id="g19"
+         style="display:none">
+        <path
+           style="opacity:0.85;fill:#ffffff"
+           d="m 2,13.428571 v 3.157143 c 0,0 0,1.428572 1.4444444,1.428572 H 7.7777778 C 15.755223,18.014286 22,24.110218 22,32 22,39.889782 14,46.085714 7.7777778,46.085714 H 6.3333332 3.4444444 C 2,46.085714 2,47.514286 2,47.514286 v 3.057142 C 2,50.571428 2,52 3.4444444,52 H 7.7777778 C 18.946202,52 28,43.045694 28,32 28,20.954306 18.946202,12 7.7777778,12 H 3.4444444 C 2,12 2,13.428571 2,13.428571 Z"
+           id="path15" />
+        <path
+           style="opacity:0.85;fill:#ffffff"
+           d="m 62,13.428571 v 3.157143 c 0,0 0,1.428572 -1.444444,1.428572 H 56.222222 C 48.244776,18.014286 42,24.110218 42,32 c 0,7.889782 8,14.085714 14.222222,14.085714 h 1.444444 2.88889 C 62,46.085714 62,47.514286 62,47.514286 v 3.057142 C 62,50.571428 62,52 60.555556,52 H 56.222222 C 45.053798,52 36,43.045694 36,32 36,20.954306 45.053798,12 56.222222,12 h 4.333334 C 62,12 62,13.428571 62,13.428571 Z"
+           id="path17" />
+      </g>
+      <path
+         id="lpe_path-effect21"
+         class="powerclip"
+         d="M -1,-1 H 65 V 65 H -1 Z m 3,14.428571 v 3.157143 c 0,0 0,1.428572 1.4444444,1.428572 H 7.7777778 C 15.755223,18.014286 22,24.110218 22,32 22,39.889782 14,46.085714 7.7777778,46.085714 H 6.3333332 3.4444444 C 2,46.085714 2,47.514286 2,47.514286 v 3.057142 C 2,50.571428 2,52 3.4444444,52 H 7.7777778 C 18.946202,52 28,43.045694 28,32 28,20.954306 18.946202,12 7.7777778,12 H 3.4444444 C 2,12 2,13.428571 2,13.428571 Z m 60,0 C 62,13.428571 62,12 60.555556,12 H 56.222222 C 45.053798,12 36,20.954306 36,32 c 0,11.045694 9.053798,20 20.222222,20 h 4.333334 C 62,52 62,50.571428 62,50.571428 v -3.057142 c 0,0 0,-1.428572 -1.444444,-1.428572 h -2.88889 -1.444444 C 50,46.085714 42,39.889782 42,32 42,24.110218 48.244776,18.014286 56.222222,18.014286 h 4.333334 C 62,18.014286 62,16.585714 62,16.585714 Z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview18"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.859375"
+     inkscape:cx="32.077764"
+     inkscape:cy="25.778858"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg16" />
+  <path
+     style="fill:#ffffff"
+     width="56"
+     height="56"
+     x="4"
+     y="4"
+     rx="16.799999"
+     ry="16.799999"
+     id="rect4"
+     clip-path="url(#clipPath12)"
+     inkscape:path-effect="#path-effect21"
+     d="M 20.799999,4 H 43.200001 C 52.5072,4 60,11.4928 60,20.799999 V 43.200001 C 60,52.5072 52.5072,60 43.200001,60 H 20.799999 C 11.4928,60 4,52.5072 4,43.200001 V 20.799999 C 4,11.4928 11.4928,4 20.799999,4 Z"
+     sodipodi:type="rect" />
+</svg>

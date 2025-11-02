@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1"
+   id="svg68"
+   sodipodi:docname="com.bitwig.BitwigStudio.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata74">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs72">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect55"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath22">
+      <g
+         style="display:none;opacity:0.85;fill:#ffffff"
+         id="g53">
+        <circle
+           cx="20"
+           cy="24"
+           r="3"
+           id="circle24"
+           d="m 23,24 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="28"
+           cy="24"
+           r="3"
+           id="circle26"
+           d="m 31,24 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="36"
+           cy="24"
+           r="3"
+           id="circle28"
+           d="m 39,24 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="44"
+           cy="24"
+           r="3"
+           id="circle30"
+           d="m 47,24 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="12"
+           cy="32"
+           r="3"
+           id="circle32"
+           d="m 15,32 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="20"
+           cy="32"
+           r="3"
+           id="circle34"
+           d="m 23,32 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="28"
+           cy="32"
+           r="3"
+           id="circle36"
+           d="m 31,32 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="36"
+           cy="32"
+           r="3"
+           id="circle39"
+           d="m 39,32 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="44"
+           cy="32"
+           r="3"
+           id="circle41"
+           d="m 47,32 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="52"
+           cy="32"
+           r="3"
+           id="circle43"
+           d="m 55,32 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="12"
+           cy="40"
+           r="3"
+           id="circle45"
+           d="m 15,40 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="20"
+           cy="40"
+           r="3"
+           id="circle47"
+           d="m 23,40 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="44"
+           cy="40"
+           r="3"
+           id="circle49"
+           d="m 47,40 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+        <circle
+           cx="52"
+           cy="40"
+           r="3"
+           id="circle51"
+           d="m 55,40 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" />
+      </g>
+      <path
+         id="lpe_path-effect55"
+         style="opacity:0.85;fill:#ffffff"
+         class="powerclip"
+         d="M -1,-1 H 65 V 65 H -1 Z m 24,25 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m 8,0 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m 8,0 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m 8,0 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m -32,8 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m 8,0 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m 8,0 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m 8,0 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m 8,0 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m 8,0 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m -40,8 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m 8,0 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m 24,0 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z m 8,0 a 3,3 0 0 0 -3,-3 3,3 0 0 0 -3,3 3,3 0 0 0 3,3 3,3 0 0 0 3,-3 z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     id="namedview70"
+     showgrid="false"
+     inkscape:zoom="12.890625"
+     inkscape:cx="32"
+     inkscape:cy="32"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg68"
+     inkscape:document-rotation="0"
+     inkscape:pagecheckerboard="0" />
+  <path
+     style="fill:#ffffff"
+     width="56"
+     height="56"
+     x="4"
+     y="4"
+     rx="28"
+     ry="28"
+     id="rect4"
+     clip-path="url(#clipPath22)"
+     inkscape:path-effect="#path-effect55"
+     d="M 32,4 C 47.512,4 60,16.488 60,32 60,47.512 47.512,60 32,60 16.488,60 4,47.512 4,32 4,16.488 16.488,4 32,4 Z"
+     sodipodi:type="rect" />
+</svg>

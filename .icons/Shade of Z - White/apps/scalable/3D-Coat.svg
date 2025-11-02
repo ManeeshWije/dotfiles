@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="64"
+   width="64"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="3D-Coat.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs16">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect11"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7">
+      <path
+         style="display:none;opacity:0.85;fill:#ffffff;stroke-width:1.07922"
+         d="m 21.270774,21.248293 c -2.153753,0 -2.153753,2.163126 -2.153753,2.163126 v 2.163127 c 0,0 0,6.489382 -5.384381,6.489382 -3.193479,0 -4.472849,-2.274205 -5.0015851,-4.13191 A 23.691278,23.794397 0 0 0 8.3482593,32.063928 23.691278,23.794397 0 0 0 32.039537,55.858325 23.691278,23.794397 0 0 0 55.730814,32.063928 23.691278,23.794397 0 0 0 55.099831,26.738495 c -1.513501,0.37938 -1.52277,2.080742 -1.52277,2.080742 v 7.570944 c 0,0 0,2.163128 -2.153752,2.163128 -2.153752,0 -2.153752,-2.163128 -2.153752,-2.163128 V 29.9008 c 0,0 0,-2.163126 -2.153754,-2.163126 -2.153752,0 -2.153752,2.163126 -2.153752,2.163126 v 8.652509 c 0,0 0,3.24469 -4.307504,3.24469 -4.307506,0 -4.307506,-4.326253 -4.307506,-4.326253 v -11.8972 c 0,0 0,-4.326253 -4.307504,-4.326253 -4.307506,0 -4.307506,4.326253 -4.307506,4.326253 v 18.386581 c 0,0 0,2.163126 -2.153752,2.163126 -2.153752,0 -2.153752,-2.163126 -2.153752,-2.163126 V 23.411419 c 0,0 0,-2.163126 -2.153753,-2.163126 z"
+         id="path9" />
+      <path
+         id="lpe_path-effect11"
+         style="opacity:0.85;fill:#ffffff;stroke-width:1.07922"
+         class="powerclip"
+         d="M -3.112999,-3.2198524 H 67.19207 V 67.347706 H -3.112999 Z M 21.270774,21.248293 c -2.153753,0 -2.153753,2.163126 -2.153753,2.163126 v 2.163127 c 0,0 0,6.489382 -5.384381,6.489382 -3.193479,0 -4.472849,-2.274205 -5.0015851,-4.13191 A 23.691278,23.794397 0 0 0 8.3482593,32.063928 23.691278,23.794397 0 0 0 32.039537,55.858325 23.691278,23.794397 0 0 0 55.730814,32.063928 23.691278,23.794397 0 0 0 55.099831,26.738495 c -1.513501,0.37938 -1.52277,2.080742 -1.52277,2.080742 v 7.570944 c 0,0 0,2.163128 -2.153752,2.163128 -2.153752,0 -2.153752,-2.163128 -2.153752,-2.163128 V 29.9008 c 0,0 0,-2.163126 -2.153754,-2.163126 -2.153752,0 -2.153752,2.163126 -2.153752,2.163126 v 8.652509 c 0,0 0,3.24469 -4.307504,3.24469 -4.307506,0 -4.307506,-4.326253 -4.307506,-4.326253 v -11.8972 c 0,0 0,-4.326253 -4.307504,-4.326253 -4.307506,0 -4.307506,4.326253 -4.307506,4.326253 v 18.386581 c 0,0 0,2.163126 -2.153752,2.163126 -2.153752,0 -2.153752,-2.163126 -2.153752,-2.163126 V 23.411419 c 0,0 0,-2.163126 -2.153753,-2.163126 z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="7.984375"
+     inkscape:cx="32.125245"
+     inkscape:cy="26.238748"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <path
+     style="fill:#ffffff;stroke-width:1.07922"
+     id="circle4"
+     clip-path="url(#clipPath7)"
+     inkscape:path-effect="#path-effect11"
+     sodipodi:type="arc"
+     sodipodi:cx="32.039536"
+     sodipodi:cy="32.063927"
+     sodipodi:rx="30.152534"
+     sodipodi:ry="30.283779"
+     d="M 62.19207,32.063927 A 30.152534,30.283779 0 0 1 32.039536,62.347706 30.152534,30.283779 0 0 1 1.887001,32.063927 30.152534,30.283779 0 0 1 32.039536,1.7801476 30.152534,30.283779 0 0 1 62.19207,32.063927 Z" />
+</svg>

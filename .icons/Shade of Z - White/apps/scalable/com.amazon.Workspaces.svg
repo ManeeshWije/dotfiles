@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   id="svg26"
+   sodipodi:docname="com.amazon.Workspaces.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs30" />
+  <sodipodi:namedview
+     id="namedview28"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.859375"
+     inkscape:cx="32.038882"
+     inkscape:cy="25.778858"
+     inkscape:window-width="1459"
+     inkscape:window-height="738"
+     inkscape:window-x="234"
+     inkscape:window-y="103"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg26" />
+  <path
+     style="fill:#ffffff"
+     d="M 6,13.919158 12.008648,17.482245 23.89,9.97362 18.315135,6.731919 Z"
+     id="path16" />
+  <path
+     style="fill:#ffffff"
+     d="M 6,28.136904 11.991352,31.7 v -14.217755 -0.0173 L 6,13.919158 Z"
+     id="path18" />
+  <path
+     style="fill:#ffffff"
+     d="M 11.991352,31.7 6,13.919158 v 14.217746 z"
+     id="path20" />
+  <path
+     d="m 39.842394,15.772467 -15.644966,9.526995 v 16.93688 l 15.644966,9.526995 15.644964,-9.526995 v -16.93688 z"
+     fill="url(#i)"
+     stroke="url(#g)"
+     stroke-width="12.6089"
+     id="path34"
+     style="fill:#ffffff;stroke:#ffffff" />
+</svg>
