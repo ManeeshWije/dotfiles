@@ -1,5 +1,9 @@
 #!/usr/bin/bash
 
+cd $HOME/dotfiles
+
+dconf dump / > dconf_backup.txt
+
 sudo cp -r ~/.config/nvim \
     ~/.config/wezterm \
     ~/.config/yazi \

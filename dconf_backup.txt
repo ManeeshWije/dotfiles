@@ -1,0 +1,395 @@
+[ca/desrt/dconf-editor]
+saved-pathbar-path='/org/gnome/desktop/wm/keybindings/move-to-workspace-7'
+saved-view='/org/gnome/desktop/wm/keybindings/move-to-workspace-7'
+show-warning=false
+window-height=500
+window-is-maximized=false
+window-width=540
+
+[com/belmoussaoui/Authenticator]
+is-maximized=false
+keyrings-migrated=true
+window-height=1032
+window-width=1059
+
+[com/github/johnfactotum/Foliate/window]
+default-height=508
+default-width=406
+
+[de/haeckerfelix/Shortwave]
+library-sorting='name'
+library-sorting-type='ascending'
+playback-volume=1.0
+recording-mode='decide'
+recording-track-directory='/home/maneesh/Music'
+window-height=508
+window-width=406
+
+[org/gnome/Extensions]
+window-height=508
+window-maximized=false
+window-width=944
+
+[org/gnome/Weather]
+locations=[<(uint32 2, <('Toronto', 'CYTZ', true, [(0.76154532446909495, -1.3857914260834978)], [(0.76212711252195475, -1.3860823201099277)])>)>]
+window-height=494
+window-maximized=false
+window-width=439
+
+[org/gnome/control-center]
+last-panel='keyboard'
+window-state=(944, 1032, false)
+
+[org/gnome/deja-dup]
+backend='google'
+prompt-check='2025-11-01T18:28:37.137735Z'
+
+[org/gnome/desktop/app-folders]
+folder-children=['System', 'Utilities', 'YaST', 'Pardus']
+
+[org/gnome/desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/System]
+apps=['nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'im-config.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.gnome.SystemMonitor.desktop']
+name='X-GNOME-Shell-System.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Loupe.desktop']
+name='X-GNOME-Shell-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/maneesh/.local/share/backgrounds/2025-11-01-16-17-48-deb.png'
+picture-uri-dark='file:///home/maneesh/.local/share/backgrounds/2025-11-01-16-17-48-deb.png'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/datetime]
+automatic-timezone=true
+
+[org/gnome/desktop/input-sources]
+show-all-sources=true
+sources=[('xkb', 'us')]
+xkb-options=['ctrl:nocaps']
+
+[org/gnome/desktop/interface]
+accent-color='slate'
+clock-show-seconds=true
+clock-show-weekday=true
+color-scheme='prefer-dark'
+enable-animations=true
+font-hinting='slight'
+font-name='Cantarell 11'
+gtk-theme='adwaita-dark-amoled-master'
+icon-theme='Shade of Z - White'
+monospace-font-name='IosevkaTerm Nerd Font 11'
+show-battery-percentage=true
+
+[org/gnome/desktop/notifications]
+application-children=['gnome-printers-panel', 'org-gnome-tweaks', 'org-gnome-terminal-preferences', 'org-gnome-extensions', 'org-gnome-software', 'brave-browser', 'gnome-power-panel']
+show-in-lock-screen=false
+
+[org/gnome/desktop/notifications/application/brave-browser]
+application-id='brave-browser.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-printers-panel]
+application-id='gnome-printers-panel.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-extensions]
+application-id='org.gnome.Extensions.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-software]
+application-id='org.gnome.Software.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-terminal-preferences]
+application-id='org.gnome.Terminal.Preferences.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-tweaks]
+application-id='org.gnome.tweaks.desktop'
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/maneesh/.local/share/backgrounds/2025-11-01-16-17-48-deb.png'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/search-providers]
+sort-order=['org.gnome.Settings.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Nautilus.desktop']
+
+[org/gnome/desktop/wm/keybindings]
+begin-move=['<Super>e']
+begin-resize=['<Super>r']
+close=['<Super>q']
+minimize=@as []
+move-to-workspace-1=['<Shift><Super>1']
+move-to-workspace-2=['<Shift><Super>2']
+move-to-workspace-3=['<Shift><Super>3']
+move-to-workspace-4=['<Shift><Super>4']
+move-to-workspace-5=['<Shift><Super>5']
+move-to-workspace-6=['<Shift><Super>6']
+move-to-workspace-7=['<Shift><Super>7']
+move-to-workspace-8=['<Shift><Super>8']
+move-to-workspace-9=['<Shift><Super>9']
+switch-input-source=@as []
+switch-input-source-backward=@as []
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+toggle-maximized=['<Super>f']
+unmaximize=['<Super>Down', '<Alt>F5']
+
+[org/gnome/desktop/wm/preferences]
+auto-raise=false
+focus-mode='mouse'
+mouse-button-modifier='<Super>'
+num-workspaces=10
+resize-with-right-button=true
+
+[org/gnome/evolution-data-server]
+migrated=true
+
+[org/gnome/file-roller/listing]
+list-mode='as-folder'
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-height=508
+window-width=406
+
+[org/gnome/gitlab/somas/Apostrophe]
+hemingway-mode=false
+open-file-path='/'
+preview-active=false
+preview-mode='full-width'
+spellcheck=true
+toolbar-active=false
+
+[org/gnome/mutter]
+dynamic-workspaces=false
+edge-tiling=true
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=['<Super>h']
+toggle-tiled-right=['<Super>l']
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='list-view'
+migrated-gtk-settings=true
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+initial-size=(1059, 1032)
+initial-size-file-chooser=(890, 550)
+
+[org/gnome/portal/filechooser/org.chromium.Chromium]
+last-folder-path='/home/maneesh/Downloads'
+
+[org/gnome/portal/filechooser/org.gnome.Settings]
+last-folder-path='/home/maneesh/Pictures'
+
+[org/gnome/settings-daemon/plugins/color]
+night-light-enabled=true
+night-light-last-coordinates=(43.515719694584632, -79.882900000000006)
+night-light-schedule-automatic=false
+night-light-temperature=uint32 1700
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+home=['<Super>m']
+screensaver=@as []
+search=['<Super>d']
+www=['<Super>i']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>t'
+command='wezterm'
+name='terminal'
+
+[org/gnome/shell]
+disabled-extensions=['dash-to-dock@micxgx.gmail.com', 'Shortcuts@kyle.aims.ac.za', 'vertical-workspaces@G-dH.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'tiling-assistant@leleat-on-github', 'tilingshell@ferrarodomenico.com']
+enabled-extensions=['just-perfection-desktop@just-perfection', 'middleclickclose@paolo.tranquilli.gmail.com', 'no-overview@fthx', 'noannoyance-fork@vrba.dev', 'hibernate-status@dromi', 'disable-workspace-switcher@jbradaric.me', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com']
+favorite-apps=@as []
+welcome-dialog-last-shown-version='48.4'
+
+[org/gnome/shell/extensions/just-perfection]
+accessibility-menu=true
+background-menu=true
+controls-manager-spacing-size=0
+dash=true
+dash-icon-size=0
+double-super-to-appgrid=true
+max-displayed-search-results=0
+osd=true
+panel=true
+panel-in-overview=true
+ripple-box=true
+search=true
+show-apps-button=true
+startup-status=1
+support-notifier-showed-version=34
+support-notifier-type=0
+theme=false
+window-demands-attention-focus=false
+window-picker-icon=true
+window-preview-caption=true
+window-preview-close-button=true
+workspace=true
+workspace-background-corner-size=0
+workspace-popup=true
+workspaces-in-app-grid=true
+
+[org/gnome/shell/extensions/shortcuts]
+shortcuts-file='/usr/share/gnome-shell/extensions/Shortcuts@kyle.aims.ac.za/shortcuts.json'
+
+[org/gnome/shell/extensions/tiling-assistant]
+activate-layout0=@as []
+activate-layout1=@as []
+activate-layout2=@as []
+activate-layout3=@as []
+auto-tile=@as []
+center-window=@as []
+debugging-free-rects=@as []
+debugging-show-tiled-rects=@as []
+default-move-mode=0
+dynamic-keybinding-behavior=1
+enable-advanced-experimental-features=false
+enable-raise-tile-group=false
+enable-tiling-popup=false
+focus-hint=1
+focus-hint-color='rgb(111,131,150)'
+import-layout-examples=false
+last-version-installed=51
+maximize-with-gap=true
+restore-window=['<Super>Down']
+search-popup-layout=@as []
+show-layout-panel-indicator=true
+tile-bottom-half=['<Super>j']
+tile-bottom-half-ignore-ta=@as []
+tile-bottomleft-quarter=['<Super>KP_1']
+tile-bottomleft-quarter-ignore-ta=@as []
+tile-bottomright-quarter=['<Super>KP_3']
+tile-bottomright-quarter-ignore-ta=@as []
+tile-edit-mode=@as []
+tile-left-half=['<Super>h']
+tile-left-half-ignore-ta=@as []
+tile-maximize=['<Super>f']
+tile-maximize-horizontally=@as []
+tile-maximize-vertically=@as []
+tile-right-half=['<Super>l']
+tile-right-half-ignore-ta=@as []
+tile-top-half=['<Super>k']
+tile-top-half-ignore-ta=@as []
+tile-topleft-quarter=['<Super>KP_7']
+tile-topleft-quarter-ignore-ta=@as []
+tile-topright-quarter=['<Super>KP_9']
+tile-topright-quarter-ignore-ta=@as []
+tiling-popup-all-workspace=false
+toggle-always-on-top=@as []
+toggle-tiling-popup=@as []
+
+[org/gnome/shell/extensions/tilingshell]
+cycle-layouts=['<Super>e']
+edge-tiling-offset=uint32 1
+enable-autotiling=true
+enable-tiling-system-windows-suggestions=false
+enable-window-border=true
+enable-wraparound-focus=true
+focus-window-down=['<Super>j']
+focus-window-left=['<Super>h']
+focus-window-right=['<Super>l']
+focus-window-up=['<Super>k']
+last-version-name-installed='17.0'
+layouts-json='[{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[1]},{"x":0.5,"y":0,"width":0.5000000000000002,"height":0.5,"groups":[2,1]},{"x":0.5,"y":0.5,"width":0.5000000000000002,"height":0.5000000000000004,"groups":[2,1]}]}]'
+move-window-center=['<Super>c']
+move-window-down=['<Shift><Super>j']
+move-window-left=['<Shift><Super>h']
+move-window-right=['<Shift><Super>l']
+move-window-up=['<Shift><Super>k']
+overridden-settings='{}'
+selected-layouts=[['Layout 4'], ['Layout 4'], ['Layout 4'], ['Layout 4'], ['Layout 4'], ['Layout 4'], ['Layout 4'], ['Layout 4'], ['Layout 4'], ['Layout 4']]
+show-indicator=true
+snap-assistant-animation-time=uint32 0
+tile-preview-animation-time=uint32 0
+tiling-system-activation-key=['2']
+tiling-system-deactivation-key=['1']
+top-edge-maximize=true
+untile-window=['<Super>space']
+window-border-color='rgb(255,255,255)'
+window-border-width=uint32 1
+
+[org/gnome/shell/keybindings]
+focus-active-notification=@as []
+screenshot-window=@as []
+show-screen-recording-ui=['<Shift><Super>r']
+show-screenshot-ui=['<Shift><Super>s']
+switch-to-application-1=@as []
+switch-to-application-2=@as []
+switch-to-application-3=@as []
+switch-to-application-4=@as []
+toggle-message-tray=@as []
+toggle-quick-settings=@as []
+
+[org/gnome/shell/weather]
+automatic-location=true
+locations=[<(uint32 2, <('Toronto', 'CYTZ', true, [(0.76154532446909495, -1.3857914260834978)], [(0.76212711252195475, -1.3860823201099277)])>)>]
+
+[org/gnome/shell/world-clocks]
+locations=@av []
+
+[org/gnome/software]
+check-timestamp=int64 1762018944
+first-run=false
+flatpak-purge-timestamp=int64 1762050388
+
+[org/gnome/system/location]
+enabled=true
+
+[org/gnome/terminal/legacy/keybindings]
+close-tab='<Primary>w'
+new-tab='<Primary>t'
+new-window='<Primary>n'
+switch-to-tab-1='<Primary>1'
+switch-to-tab-10='<Primary>0'
+switch-to-tab-2='<Primary>2'
+switch-to-tab-3='<Primary>3'
+switch-to-tab-4='<Primary>4'
+switch-to-tab-5='<Primary>5'
+switch-to-tab-6='<Primary>6'
+switch-to-tab-7='<Primary>7'
+switch-to-tab-8='<Primary>8'
+switch-to-tab-9='<Primary>9'
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=false
+font='Iosevka Term 12'
+use-system-font=true
+
+[org/gtk/gtk4/settings/color-chooser]
+custom-colors=[(0.92549020051956177, 0.36862745881080627, 0.36862745881080627, 1.0)]
+selected-color=(true, 1.0, 1.0, 1.0, 1.0)
+
+[org/gtk/gtk4/settings/file-chooser]
+show-hidden=true
+sort-directories-first=false
