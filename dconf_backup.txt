@@ -148,6 +148,7 @@ move-to-workspace-6=['<Shift><Super>6']
 move-to-workspace-7=['<Shift><Super>7']
 move-to-workspace-8=['<Shift><Super>8']
 move-to-workspace-9=['<Shift><Super>9']
+raise-or-lower=['<Super>k']
 switch-input-source=@as []
 switch-input-source-backward=@as []
 switch-to-workspace-1=['<Super>1']
@@ -209,9 +210,15 @@ last-folder-path='/home/maneesh/Downloads'
 [org/gnome/portal/filechooser/org.gnome.Settings]
 last-folder-path='/home/maneesh/Pictures'
 
+[org/gnome/power-manager]
+info-history-type='charge'
+info-last-device='/org/freedesktop/UPower/devices/battery_BAT0'
+info-page-number=2
+info-stats-type='discharge-accuracy'
+
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
-night-light-last-coordinates=(43.515719694584632, -79.882900000000006)
+night-light-last-coordinates=(43.511531238896204, -79.882900000000006)
 night-light-schedule-automatic=false
 night-light-temperature=uint32 1700
 
@@ -229,9 +236,15 @@ name='terminal'
 
 [org/gnome/shell]
 disabled-extensions=['dash-to-dock@micxgx.gmail.com', 'Shortcuts@kyle.aims.ac.za', 'vertical-workspaces@G-dH.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'tiling-assistant@leleat-on-github', 'tilingshell@ferrarodomenico.com']
-enabled-extensions=['just-perfection-desktop@just-perfection', 'middleclickclose@paolo.tranquilli.gmail.com', 'no-overview@fthx', 'noannoyance-fork@vrba.dev', 'hibernate-status@dromi', 'disable-workspace-switcher@jbradaric.me', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['just-perfection-desktop@just-perfection', 'middleclickclose@paolo.tranquilli.gmail.com', 'no-overview@fthx', 'noannoyance-fork@vrba.dev', 'hibernate-status@dromi', 'disable-workspace-switcher@jbradaric.me', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'focus-window@chris.al', 'highlight-focus@pimsnel.com']
 favorite-apps=@as []
+last-selected-power-profile='power-saver'
 welcome-dialog-last-shown-version='48.4'
+
+[org/gnome/shell/extensions/highlight-focus]
+border-color='#ffffff'
+disable-hiding=false
+keybinding-highlight-now=['<Super>l']
 
 [org/gnome/shell/extensions/just-perfection]
 accessibility-menu=true
@@ -387,7 +400,7 @@ font='Iosevka Term 12'
 use-system-font=true
 
 [org/gtk/gtk4/settings/color-chooser]
-custom-colors=[(0.92549020051956177, 0.36862745881080627, 0.36862745881080627, 1.0)]
+custom-colors=[(0.75, 0.25, 0.25, 1.0), (0.92549020051956177, 0.36862745881080627, 0.36862745881080627, 1.0)]
 selected-color=(true, 1.0, 1.0, 1.0, 1.0)
 
 [org/gtk/gtk4/settings/file-chooser]
