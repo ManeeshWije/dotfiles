@@ -50,7 +50,6 @@ alias aptupdate='sudo apt update && sudo apt upgrade && yazi-install && nvim-ins
 alias aptdelete='sudo apt autoremove'
 alias aptcache='sudo apt-get clean'
 alias o="xdg-open"
-alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
 alias k="kubectl"
