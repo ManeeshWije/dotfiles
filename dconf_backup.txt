@@ -37,7 +37,7 @@ window-maximized=false
 window-width=439
 
 [org/gnome/control-center]
-last-panel='keyboard'
+last-panel='wellbeing'
 window-state=(944, 1032, false)
 
 [org/gnome/deja-dup]
@@ -75,6 +75,14 @@ picture-uri-dark='file:///home/maneesh/.local/share/backgrounds/2025-11-01-16-17
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
+[org/gnome/desktop/break-reminders/eyesight]
+play-sound=true
+
+[org/gnome/desktop/break-reminders/movement]
+duration-seconds=uint32 300
+interval-seconds=uint32 1800
+play-sound=true
+
 [org/gnome/desktop/datetime]
 automatic-timezone=true
 
@@ -89,6 +97,7 @@ clock-show-seconds=true
 clock-show-weekday=true
 color-scheme='prefer-dark'
 enable-animations=true
+enable-hot-corners=false
 font-hinting='slight'
 font-name='Cantarell 11'
 gtk-theme='adwaita-dark-amoled-master'
@@ -134,6 +143,10 @@ secondary-color='#000000000000'
 [org/gnome/desktop/search-providers]
 sort-order=['org.gnome.Settings.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Nautilus.desktop']
 
+[org/gnome/desktop/sound]
+event-sounds=true
+theme-name='__custom'
+
 [org/gnome/desktop/wm/keybindings]
 begin-move=['<Super>e']
 begin-resize=['<Super>r']
@@ -162,8 +175,21 @@ unmaximize=['<Super>Down', '<Alt>F5']
 auto-raise=false
 focus-mode='mouse'
 mouse-button-modifier='<Super>'
-num-workspaces=10
+num-workspaces=9
 resize-with-right-button=true
+
+[org/gnome/evince/default]
+continuous=true
+dual-page=false
+dual-page-odd-left=false
+enable-spellchecking=true
+fullscreen=false
+inverted-colors=false
+show-sidebar=true
+sidebar-page='thumbnails'
+sidebar-size=132
+sizing-mode='automatic'
+window-ratio=(1.0079290417954574, 0.71268217938210454)
 
 [org/gnome/evolution-data-server]
 migrated=true
