@@ -1,6 +1,0 @@
-[Unit]
-Description=Enable Powertop on Unplug
-
-[Service]
-User=root
-ExecStart=/home/maneesh/.config/scripts/enable_powertop

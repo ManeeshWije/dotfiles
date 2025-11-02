@@ -1,3 +1,0 @@
-set selection-clipboard clipboard
-set recolor true
-map <C-i> recolor

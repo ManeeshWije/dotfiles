@@ -1,34 +1,68 @@
 {
   "plugins": {
-    "auto-dark-mode.nvim": [],
-    "base16-nvim": [],
+    "auto-dark-mode.nvim": {
+      "rev": "e300259",
+      "src": "https://github.com/f-person/auto-dark-mode.nvim"
+    },
+    "base16-nvim": {
+      "rev": "a2907cc",
+      "src": "https://github.com/RRethy/base16-nvim"
+    },
     "conform.nvim": {
-      "rev": "9fd3d5e"
+      "rev": "9fd3d5e",
+      "src": "https://github.com/stevearc/conform.nvim"
     },
     "fzf-lua": {
-      "rev": "a8458b7"
+      "rev": "a8458b7",
+      "src": "https://github.com/ibhagwan/fzf-lua"
     },
-    "git_browse.nvim": [],
-    "markdown-preview.nvim": [],
+    "git_browse.nvim": {
+      "rev": "0008238",
+      "src": "https://github.com/ManeeshWije/git_browse.nvim"
+    },
+    "markdown-preview.nvim": {
+      "rev": "a923f5f",
+      "src": "https://github.com/iamcco/markdown-preview.nvim"
+    },
     "nvim-lspconfig": {
-      "rev": "a89bfcf"
+      "rev": "a89bfcf",
+      "src": "https://github.com/neovim/nvim-lspconfig"
     },
-    "nvim-treesitter": [],
+    "nvim-treesitter": {
+      "rev": "42fc28ba",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
     "nvim-treesitter-context": {
-      "rev": "ec308c7"
+      "rev": "ec308c7",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "5ca4aaa"
+      "rev": "5ca4aaa",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
-    "plenary.nvim": [],
+    "plenary.nvim": {
+      "rev": "b9fd522",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
     "sidekick.nvim": {
-      "rev": "c2bdf8c"
+      "rev": "c2bdf8c",
+      "src": "https://github.com/folke/sidekick.nvim"
     },
-    "tfm.nvim": [],
-    "vim-dadbod": [],
-    "vim-dadbod-completion": [],
+    "tfm.nvim": {
+      "rev": "26dac3e",
+      "src": "https://github.com/rolv-apneseth/tfm.nvim"
+    },
+    "vim-dadbod": {
+      "rev": "e95afed",
+      "src": "https://github.com/tpope/vim-dadbod"
+    },
+    "vim-dadbod-completion": {
+      "rev": "a8dac0b",
+      "src": "https://github.com/kristijanhusak/vim-dadbod-completion"
+    },
     "vim-dadbod-ui": {
-      "rev": "236179f"
+      "rev": "236179f",
+      "src": "https://github.com/kristijanhusak/vim-dadbod-ui"
     }
   }
 }

@@ -55,15 +55,15 @@ config.window_frame = {
 }
 
 config.keys = {
-    { key = "l",         mods = "SUPER", action = act.ShowLauncher },
-    { key = "[",         mods = "SUPER", action = act.ActivateCopyMode },
+    { key = "l",         mods = "CTRL|SHIFT", action = act.ShowLauncher },
+    { key = "[",         mods = "CTRL|SHIFT", action = act.ActivateCopyMode },
 
     { key = "UpArrow",   mods = "SHIFT", action = act.ScrollByLine(-1) },
     { key = "DownArrow", mods = "SHIFT", action = act.ScrollByLine(1) },
     { key = "PageUp",    mods = "NONE",  action = act.ScrollByPage(-1) },
     { key = "PageDown",  mods = "NONE",  action = act.ScrollByPage(1) },
 
-    { key = "s",         mods = "SUPER", action = sessionizer.switch_workspace() },
+    { key = "s",         mods = "CTRL|SHIFT", action = sessionizer.switch_workspace() },
 }
 
 sessionizer.set_projects(projects)

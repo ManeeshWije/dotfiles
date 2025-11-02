@@ -9,7 +9,6 @@ vim.o.wrap = false
 vim.o.swapfile = false
 vim.g.mapleader = ","
 vim.o.winborder = "single"
-vim.o.clipboard = "unnamedplus"
 vim.o.guicursor = ""
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -211,11 +210,12 @@ vim.keymap.set("n", "<leader>fh", fzf.help_tags, { noremap = true, silent = true
 vim.keymap.set("n", "<leader>df", fzf.diagnostics_document, { noremap = true, silent = true }) -- Document Diagnostics
 
 -- qol
+vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y')
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<S-l>", ":bnext<CR>")
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
-vim.keymap.set("n", "x", '"_x')
+vim.keymap.set({ 'n', 'x' }, 'x', '"_x')
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")

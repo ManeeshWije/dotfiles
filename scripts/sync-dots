@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+sudo cp -r ~/.config/nvim \
+    ~/.config/wezterm \
+    ~/.config/yazi \
+    ~/.config/ncspot \
+    ~/.config/scripts \
+    ~/.zshrc \
+    ~/.themes \
+    ~/.icons \
+    ~/dotfiles/

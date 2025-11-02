@@ -1,21 +1,16 @@
 # Dotfiles
 
 - Programs in my daily workflow:
-  - arch linux
+  - debian
+  - gnome
   - zsh
-  - sway
-  - waybar
   - wezterm
   - neovim
   - yazi
-  - tofi
-  - custom scripts
-
-- Theme: base-16-black-metal-gorgoroth
+  - custom install scripts
 
 # Screenshots
 
-![](./swappy-20250519-143853.png)
-![](./swappy-20250519-144123.png)
-![](./swappy-20250519-144135.png)
-![](./swappy-20250519-144153.png)
+![](./1.png)
+![](./2.png)
+![](./3.png)

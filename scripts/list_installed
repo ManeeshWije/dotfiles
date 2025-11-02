@@ -1,0 +1,9 @@
+!/bin/bash
+
+# Define the output file
+OUTPUT_FILE="installed_packages.md"
+
+# List all installed Debian packages
+dpkg --get-selections | awk '{print $1}' >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+echo "Package list saved to $OUTPUT_FILE"
