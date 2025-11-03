@@ -1,0 +1,20 @@
+1. archinstall and install common apps through installer (NOT WM/CODING STUFF THOUGH) continue the rest after logging in
+2. `sudo pacman -S --needed git base-devel alacritty tmux && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si`
+3. `yay -S hyprland-git hypridle-git hyprlock-git hyprpaper-git hyprshade-git hyprshot-git hyprpolkitagent-git selectdefaultapplication-fork-git brave-bin neovim-git localsend-bin pandoc-bin vesktop-git proton-authenticator-bin proton-vpn-gtk-app tofi && sudo pacman -Rns firefox kitty`
+4. `sudo pacman -S imv mpv nwg-look ueberzugpp ncspot syncthing power-profiles-daemon blueman cliphist starship gvfs glib2 gvfs-mtp gvfs-afc gvfs-google gvfs-gphoto2 gvfs-nfs gvfs-smb gvfs-afc gvfs-dnssd gvfs-goa gvfs-onedrive gvfs-wsdd brightnessctl`
+5. install languages and other utils
+   - ```bash
+       curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+       wget https://go.dev/dl/go1.25.3.linux-amd64.tar.gz && sudo tar -C /usr/local -xzf go1.25.3.linux-amd64.tar.gz
+       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+       \. "$HOME/.nvm/nvm.sh"
+       nvm install 24
+       npm install -g prettier vscode-langservers-extracted sql-formatter
+       curl -fsSL https://opencode.ai/install | bash
+     ```
+6. ```bash
+   systemctl enable --now --user wireplumber
+   systemctl enable --now --user pipewire
+   systemctl enable --now --user syncthing
+   ```
+7. if this is main machine, which it probably is, setup rsync in `/etc/rsyncd.conf` and enable/start the rsync service in order for nas to pull home dir `sudo systemctl enable --now rsyncd`
