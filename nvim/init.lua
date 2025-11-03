@@ -202,6 +202,8 @@ vim.keymap.set("n", "<leader>df", fzf.diagnostics_document, { noremap = true, si
 
 -- qol
 vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y')
+vim.keymap.set({ 'n', 'x' }, '<leader>yy', '"+yy')
+vim.keymap.set({ 'n', 'x' }, '<leader>p', '"+p')
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<S-l>", ":bnext<CR>")
@@ -220,7 +222,7 @@ vim.keymap.set("n", "<C-W>\\", ":vnew<CR>")
 vim.keymap.set("n", "<C-W>-", ":new<CR>")
 vim.keymap.set("n", "q", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
 vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close current buffer" })
-vim.keymap.set("n", "<leader>p", function() require("conform").format({ async = true, lsp_fallback = true }) end,
+vim.keymap.set("n", "<leader>c", function() require("conform").format({ async = true, lsp_fallback = true }) end,
     { desc = "Format Document" })
 
 -- file manager
