@@ -63,6 +63,10 @@
     "vim-dadbod-ui": {
       "rev": "236179f",
       "src": "https://github.com/kristijanhusak/vim-dadbod-ui"
+    },
+    "vim-tmux-navigator": {
+      "rev": "c45243d",
+      "src": "https://github.com/christoomey/vim-tmux-navigator"
     }
   }
 }

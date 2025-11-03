@@ -1,14 +1,25 @@
 #!/usr/bin/bash
 
-cd $HOME/dotfiles
-
-dconf dump / > dconf_backup.txt
+sudo cp -r /etc/udev/rules.d \
+    /etc/systemd/system/unplug.service \
+    ~/dotfiles/linux/
 
 sudo cp -r ~/.config/nvim \
-    ~/.config/wezterm \
+    ~/.config/alacritty \
     ~/.config/yazi \
-    ~/.config/scripts \
+    ~/.config/ncspot \
     ~/.zshrc \
+    ~/.tmux.conf \
+    ~/dotfiles/
+
+cp -r ~/.config/hypr \
+    ~/.config/waybar \
+    ~/.config/tofi \
+    ~/.config/swappy \
+    ~/.config/dolphinrc \
+    ~/.config/scripts \
+    ~/.config/zathura \
+    ~/.config/wireplumber \
     ~/.themes \
     ~/.icons \
-    ~/dotfiles/
+    ~/dotfiles/linux/

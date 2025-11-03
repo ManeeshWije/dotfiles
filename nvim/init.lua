@@ -47,13 +47,14 @@ vim.pack.add({
     { src = "https://github.com/tpope/vim-dadbod" },
     { src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
     { src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
-    { src = "https://github.com/f-person/auto-dark-mode.nvim" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
     { src = "https://github.com/folke/sidekick.nvim" },
-    { src = "https://github.com/neovim/nvim-lspconfig" }
+    { src = "https://github.com/neovim/nvim-lspconfig" },
+    { src = "https://github.com/christoomey/vim-tmux-navigator" }
 })
 vim.cmd(":hi statusline guibg=NONE")
 vim.cmd [[set completeopt+=menuone,noselect,popup]]
+vim.cmd [[colorscheme base16-black-metal-gorgoroth]]
 
 local all_levels = {
     vim.diagnostic.severity.ERROR,
@@ -80,16 +81,6 @@ vim.diagnostic.config({
 })
 
 -- Setup plugins via require
-require "auto-dark-mode".setup({
-    set_dark_mode = function()
-        vim.cmd('colorscheme base16-black-metal-gorgoroth')
-    end,
-    set_light_mode = function()
-        vim.cmd('colorscheme base16-ayu-light')
-    end,
-    update_interval = 3000,
-    fallback = "dark"
-})
 require "fzf-lua".setup({
     keymap = {
         builtin = {

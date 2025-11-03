@@ -1,0 +1,43 @@
+terminal = wezterm
+
+multi-instance = false
+
+width = 100%
+
+height = 100%
+
+border-width = 0
+
+outline-width = 0
+
+padding-left = 35% 
+
+padding-top = 35%
+
+result-spacing = 25
+
+num-results = 5
+
+font = IosevkaTerm Nerd Font
+
+background-color = #000000D9 
+
+text-color = #c1c1c1i0
+
+selection-color = #333333
+
+fuzzy-match = true
+
+drun-launch = false
+
+font-size = 16
+
+text-cursor = true
+
+history = true
+
+auto-accept-single = false
+
+prompt-text = "> "
+
+multi-instance = false

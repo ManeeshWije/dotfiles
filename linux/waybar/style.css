@@ -1,0 +1,140 @@
+/*
+*
+* Base16 Black Metal (Gorgoroth)
+* Author: metalelf0 (https://github.com/metalelf0)
+*
+*/
+
+@define-color base00 #000000;
+@define-color base01 #121212;
+@define-color base02 #222222;
+@define-color base03 #333333;
+@define-color base04 #999999;
+@define-color base05 #c1c1c1;
+@define-color base06 #999999;
+@define-color base07 #c1c1c1;
+@define-color base08 #5f8787;
+@define-color base09 #aaaaaa;
+@define-color base0A #8c7f70;
+@define-color base0B #9b8d7f;
+@define-color base0C #aaaaaa;
+@define-color base0D #888888;
+@define-color base0E #999999;
+@define-color base0F #444444;
+
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: IosevkaTerm Nerd Font;
+  font-weight: bold;
+  font-size: 15px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @base00;
+  color: @base05;
+}
+
+tooltip {
+  background: @base01;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @base02;
+}
+
+#workspaces button {
+  padding: 0 0.6em;
+  color: @base04;
+  border-radius: 6px;
+  margin: 2px;
+}
+
+#workspaces button.active {
+  color: @base07;
+  background: @base0D;
+}
+
+#workspaces button.focused {
+  color: @base07;
+  background: @base0D;
+}
+
+#workspaces button.urgent {
+  color: @base00;
+  background: @base08;
+}
+
+#workspaces button:hover {
+  background: @base0D;
+  color: @base07;
+}
+
+#date,
+#clock,
+#pulseaudio,
+#workspaces,
+#battery,
+#backlight,
+#power-profiles-daemon,
+#idle_inhibitor,
+#mpris,
+#mode,
+#custom-notification,
+#tray {
+  background: @base02;
+  padding: 0 0.6em;
+  margin: 4px;
+  border-radius: 6px;
+}
+
+#tray {
+  margin-right: 6px;
+}
+
+#network {
+  color: @base05;
+  margin-right: 6px;
+}
+
+#pulseaudio {
+  margin-right: 6px;
+  color: @base05;
+}
+
+#clock {
+  color: @base05;
+  margin-right: 6px;
+}
+
+#taskbar {
+  background: @base01;
+  padding: 0 0.6em;
+  margin: 4px;
+  border-radius: 6px;
+  color: @base05;
+}
+
+#taskbar button {
+  border-radius: 6px;
+  background: @base02;
+  color: @base04;
+  margin-right: 6px;
+}
+
+#taskbar button.minimized {
+  border-radius: 6px;
+  background: @base02;
+  color: @base04;
+}
+
+#taskbar button.active {
+  border-radius: 6px;
+  background: @base0D;
+  color: @base07;
+}
+
+#custom-notification {
+  font-family: "Iosevka Nerd Font";
+}

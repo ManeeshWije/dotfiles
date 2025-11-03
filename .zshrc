@@ -10,7 +10,7 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-   
+
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_all_dups
@@ -25,6 +25,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^H' backward-delete-char
 bindkey '^?' backward-delete-char
+bindkey -s ^f "tmux-sessionizer\n"
 
 # git
 alias addup='git add -u'
@@ -46,10 +47,11 @@ alias grep='grep --color=auto'
 alias st='syncthing'
 alias sd='cd "$(find "$HOME" -maxdepth 7 -type d | fzf || echo "$PWD")"'
 alias sf='file=$(find "$HOME" -maxdepth 7 -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
-alias aptupdate='sudo apt update && sudo apt upgrade && yazi-install && nvim-install'
-alias aptdelete='sudo apt autoremove'
-alias aptcache='sudo apt-get clean'
+alias pacupdate='sudo pacman -Syu && yay -Syu'
+alias paccache='sudo pacman -Scc && yay -Scc'
+alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
 alias o="xdg-open"
+alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
 alias k="kubectl"
@@ -63,14 +65,12 @@ fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export PATH="$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$HOME/.local/bin:$PATH:$HOME/go/bin"
-    export PATH=/home/maneesh/.opencode/bin:$PATH
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 source <(fzf --zsh)
 source <(kubectl completion zsh)
 
 eval "$(starship init zsh)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -1,16 +1,16 @@
 # Dotfiles
 
 - Programs in my daily workflow:
-  - debian
-  - gnome
+  - arch
+  - hyprland
   - zsh
-  - wezterm
+  - alacritty
+  - tmux
   - neovim
   - yazi
-  - custom install scripts
 
 # Screenshots
 
-![](./1.png)
-![](./2.png)
-![](./3.png)
+![](./swappy-20251102-230626.png)
+![](./swappy-20251102-230610.png)
+![](./swappy-20251102-230458.png)
