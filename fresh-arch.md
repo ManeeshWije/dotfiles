@@ -18,3 +18,4 @@
    systemctl enable --now --user syncthing
    ```
 7. if this is main machine, which it probably is, setup rsync in `/etc/rsyncd.conf` and enable/start the rsync service in order for nas to pull home dir `sudo systemctl enable --now rsyncd`
+8. `sudo pacman -S docker docker-compose docker-buildx && sudo systemctl enable --now docker && sudo groupadd docker && sudo usermod -aG docker $USER`
