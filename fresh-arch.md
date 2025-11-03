@@ -18,4 +18,26 @@
    systemctl enable --now --user syncthing
    ```
 7. if this is main machine, which it probably is, setup rsync in `/etc/rsyncd.conf` and enable/start the rsync service in order for nas to pull home dir `sudo systemctl enable --now rsyncd`
+   - ```
+       uid = nobody
+       gid = nobody
+       use chroot = no
+       max connections = 4
+       syslog facility = local5
+       pid file = /run/rsyncd.pid
+
+       [ftp]
+       path = /srv/ftp
+       comment = ftp area
+
+       [endurance]
+       path = /home/maneesh
+       comment = maneesh’s home directory
+       read only = yes
+       hosts allow = 192.168.40.46
+       hosts deny = *
+       uid = maneesh
+       gid = maneesh
+     ```
+
 8. `sudo pacman -S docker docker-compose docker-buildx && sudo systemctl enable --now docker && sudo groupadd docker && sudo usermod -aG docker $USER`
