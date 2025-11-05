@@ -28,187 +28,194 @@ vim.o.foldmethod = "indent"
 vim.o.foldenable = false
 vim.o.foldlevel = 99
 vim.o.list = false
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.g.markdown_folding = 1
 vim.o.splitright = true
 vim.o.splitbelow = true
+vim.opt.undofile = true
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undo"
+vim.opt.undolevels = 1000
+vim.opt.undoreload = 10000
 
 -- Plugins
 vim.pack.add({
-    { src = "https://github.com/nvim-lua/plenary.nvim" },
-    { src = "https://github.com/RRethy/base16-nvim" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
-    { src = "https://github.com/ibhagwan/fzf-lua" },
-    { src = "https://github.com/ManeeshWije/git_browse.nvim" },
-    { src = "https://github.com/rolv-apneseth/tfm.nvim" },
-    { src = "https://github.com/iamcco/markdown-preview.nvim" },
-    { src = "https://github.com/stevearc/conform.nvim" },
-    { src = "https://github.com/tpope/vim-dadbod" },
-    { src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
-    { src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
-    { src = "https://github.com/folke/sidekick.nvim" },
-    { src = "https://github.com/neovim/nvim-lspconfig" },
-    { src = "https://github.com/christoomey/vim-tmux-navigator" }
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/RRethy/base16-nvim" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
+	{ src = "https://github.com/ibhagwan/fzf-lua" },
+	{ src = "https://github.com/ManeeshWije/git_browse.nvim" },
+	{ src = "https://github.com/mikavilpas/yazi.nvim" },
+	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
+	{ src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/tpope/vim-dadbod" },
+	{ src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
+	{ src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
+	{ src = "https://github.com/folke/sidekick.nvim" },
+	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
 })
 vim.cmd(":hi statusline guibg=NONE")
-vim.cmd [[set completeopt+=menuone,noselect,popup]]
-vim.cmd [[colorscheme base16-black-metal-gorgoroth]]
+vim.cmd([[set completeopt+=menuone,noselect,popup]])
+vim.cmd([[colorscheme base16-black-metal-gorgoroth]])
 
 local all_levels = {
-    vim.diagnostic.severity.ERROR,
-    vim.diagnostic.severity.WARN,
-    vim.diagnostic.severity.HINT,
-    vim.diagnostic.severity.INFO,
+	vim.diagnostic.severity.ERROR,
+	vim.diagnostic.severity.WARN,
+	vim.diagnostic.severity.HINT,
+	vim.diagnostic.severity.INFO,
 }
 
 vim.diagnostic.config({
-    severity_sort = true,
-    virtual_lines = false,
-    signs = {
-        severity = all_levels,
-    },
-    underline = {
-        severity = all_levels,
-    },
-    virtual_text = {
-        severity = all_levels,
-    },
-    float = {
-        severity = all_levels,
-    },
+	severity_sort = true,
+	virtual_lines = false,
+	signs = {
+		severity = all_levels,
+	},
+	underline = {
+		severity = all_levels,
+	},
+	virtual_text = {
+		severity = all_levels,
+	},
+	float = {
+		severity = all_levels,
+	},
 })
 
 -- Setup plugins via require
-require "fzf-lua".setup({
-    keymap = {
-        builtin = {
-            ["<C-a>"] = "select-all+accept",
-            ["<C-d>"] = "half-page-down",
-            ["<C-u>"] = "half-page-up",
-            ["<C-f>"] = "preview-page-down",
-            ["<C-b>"] = "preview-page-up",
-            ["<C-n>"] = "down",
-            ["<C-p>"] = "up",
-        },
-        fzf = {
-            ["ctrl-a"] = "select-all+accept",
-            ["ctrl-d"] = "half-page-down",
-            ["ctrl-u"] = "half-page-up",
-            ["ctrl-f"] = "preview-page-down",
-            ["ctrl-b"] = "preview-page-up",
-            ["ctrl-n"] = "down",
-            ["ctrl-p"] = "up",
-        },
-    }
+require("fzf-lua").setup({
+	keymap = {
+		builtin = {
+			["<C-a>"] = "select-all+accept",
+			["<C-d>"] = "half-page-down",
+			["<C-u>"] = "half-page-up",
+			["<C-f>"] = "preview-page-down",
+			["<C-b>"] = "preview-page-up",
+			["<C-n>"] = "down",
+			["<C-p>"] = "up",
+		},
+		fzf = {
+			["ctrl-a"] = "select-all+accept",
+			["ctrl-d"] = "half-page-down",
+			["ctrl-u"] = "half-page-up",
+			["ctrl-f"] = "preview-page-down",
+			["ctrl-b"] = "preview-page-up",
+			["ctrl-n"] = "down",
+			["ctrl-p"] = "up",
+		},
+	},
 })
-require "nvim-treesitter.configs".setup({
-    ensure_installed = {
-        "bash",
-        "c",
-        "cpp",
-        "css",
-        "dockerfile",
-        "go",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "python",
-        "rust",
-        "sql",
-        "typescript",
-        "vim",
-        "yaml",
-        "java",
-        "php",
-    },
-    auto_install = true,
-    sync_install = false,
-    highlight = { enable = true },
-    indent = { enable = true }
+require("nvim-treesitter.configs").setup({
+	ensure_installed = {
+		"bash",
+		"c",
+		"cpp",
+		"css",
+		"dockerfile",
+		"go",
+		"html",
+		"javascript",
+		"json",
+		"lua",
+		"markdown",
+		"python",
+		"rust",
+		"sql",
+		"typescript",
+		"vim",
+		"yaml",
+		"java",
+		"php",
+	},
+	auto_install = true,
+	sync_install = false,
+	highlight = { enable = true },
+	indent = { enable = true },
 })
-require "treesitter-context".setup({
-    enable = true
+require("treesitter-context").setup({
+	enable = true,
 })
-require "conform".setup({
-    notify_on_error = true,
-    formatters_by_ft = {
-        lua = { "stylua" },
-        python = { "isort", "black" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
-        java = { "google-java-format" },
-        go = { "gofmt", "goimports" },
-        rust = { "rustfmt" },
-        php = { "php-cs-fixer" },
-        c = { "clang-format" },
-        markdown = { "prettier" },
-        sql = { "sql_formatter" },
-        html = { "prettier" },
-    },
-    formatters = {
-        sql_formatter = {
-            command = "sql-formatter",
-            args = { "--language", "postgresql" },
-        },
-    },
+require("conform").setup({
+	notify_on_error = true,
+	formatters_by_ft = {
+		lua = { "stylua" },
+		python = { "isort", "black" },
+		javascript = { "prettier" },
+		typescript = { "prettier" },
+		javascriptreact = { "prettier" },
+		typescriptreact = { "prettier" },
+		java = { "google-java-format" },
+		go = { "gofmt", "goimports" },
+		rust = { "rustfmt" },
+		php = { "php-cs-fixer" },
+		c = { "clang-format" },
+		markdown = { "prettier" },
+		sql = { "sql_formatter" },
+		html = { "prettier" },
+	},
+	formatters = {
+		sql_formatter = {
+			command = "sql-formatter",
+			args = { "--language", "postgresql" },
+		},
+	},
 })
 require("sidekick").setup({
-    nes = { enabled = false },
-    cli = {
-        win = {
-            keys = {
-                prompt = { "<c-r>", "prompt" },
-            },
-        },
-    },
+	nes = { enabled = false },
+	cli = {
+		win = {
+			keys = {
+				prompt = { "<c-r>", "prompt" },
+			},
+		},
+	},
+})
+require("yazi").setup({
+	open_for_directories = true,
 })
 
 vim.lsp.enable({
-    "gopls",
-    "lua_ls",
-    "ts_ls",
-    "pyright",
-    "clangd",
-    "html",
-    "cssls",
-    "jsonls",
-    "bashls",
-    "dockerls",
-    "yamlls",
-    "rust_analyzer",
-    "eslint",
-    "tailwindcss",
-    "jdtls",
-    "emmet_ls",
+	"gopls",
+	"lua_ls",
+	"ts_ls",
+	"pyright",
+	"clangd",
+	"html",
+	"cssls",
+	"jsonls",
+	"bashls",
+	"dockerls",
+	"yamlls",
+	"rust_analyzer",
+	"eslint",
+	"tailwindcss",
+	"jdtls",
+	"emmet_ls",
 })
 
 -- Keymaps
 -- fzf
 local fzf = require("fzf-lua")
-vim.keymap.set("n", "<leader>ff", fzf.files, { noremap = true, silent = true })                -- File find
-vim.keymap.set("n", "<leader>fg", fzf.git_files, { noremap = true, silent = true })            -- Git file find
-vim.keymap.set("n", "<leader>fb", fzf.buffers, { noremap = true, silent = true })              -- Find buffer
-vim.keymap.set("n", "<leader>sg", fzf.live_grep, { noremap = true, silent = true })            -- Grep string
-vim.keymap.set("n", "<leader>sm", fzf.spellcheck, { noremap = true, silent = true })           -- Misspelled words
-vim.keymap.set("n", "<leader>sp", fzf.spell_suggest, { noremap = true, silent = true })        -- Suggestions for word under cursor
-vim.keymap.set("n", "<leader>fh", fzf.help_tags, { noremap = true, silent = true })            -- Help tags
+vim.keymap.set("n", "<leader>ff", fzf.files, { noremap = true, silent = true }) -- File find
+vim.keymap.set("n", "<leader>fg", fzf.git_files, { noremap = true, silent = true }) -- Git file find
+vim.keymap.set("n", "<leader>fb", fzf.buffers, { noremap = true, silent = true }) -- Find buffer
+vim.keymap.set("n", "<leader>sg", fzf.live_grep, { noremap = true, silent = true }) -- Grep string
+vim.keymap.set("n", "<leader>sm", fzf.spellcheck, { noremap = true, silent = true }) -- Misspelled words
+vim.keymap.set("n", "<leader>sp", fzf.spell_suggest, { noremap = true, silent = true }) -- Suggestions for word under cursor
+vim.keymap.set("n", "<leader>fh", fzf.help_tags, { noremap = true, silent = true }) -- Help tags
 vim.keymap.set("n", "<leader>df", fzf.diagnostics_document, { noremap = true, silent = true }) -- Document Diagnostics
 
 -- qol
-vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y')
-vim.keymap.set({ 'n', 'x' }, '<leader>yy', '"+yy')
-vim.keymap.set({ 'n', 'x' }, '<leader>p', '"+p')
+vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')
+vim.keymap.set({ "n", "x" }, "<leader>yy", '"+yy')
+vim.keymap.set({ "n", "x" }, "<leader>p", '"+p')
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<S-l>", ":bnext<CR>")
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
-vim.keymap.set({ 'n', 'x' }, 'x', '"_x')
+vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
@@ -222,43 +229,41 @@ vim.keymap.set("n", "<C-W>\\", ":vnew<CR>")
 vim.keymap.set("n", "<C-W>-", ":new<CR>")
 vim.keymap.set("n", "q", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
 vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close current buffer" })
-vim.keymap.set("n", "<leader>c", function() require("conform").format({ async = true, lsp_fallback = true }) end,
-    { desc = "Format Document" })
-
--- file manager
-vim.keymap.set("n", "<leader>e", "", {
-    noremap = true,
-    callback = require("tfm").open,
-})
+vim.keymap.set("n", "<leader>c", function()
+	require("conform").format({ async = true, lsp_fallback = true })
+end, { desc = "Format Document" })
+vim.keymap.set("n", "<leader>e", function()
+	require("yazi").yazi()
+end)
 
 -- manual autocomplete
 vim.keymap.set("i", "<C-space>", function()
-    if vim.bo.omnifunc ~= "" then
-        -- If omnifunc is set (like in SQL files), use omni-completion
-        return "<C-x><C-o>"
-    else
-        -- Otherwise use LSP completion
-        return vim.lsp.completion.get()
-    end
+	if vim.bo.omnifunc ~= "" then
+		-- If omnifunc is set (like in SQL files), use omni-completion
+		return "<C-x><C-o>"
+	else
+		-- Otherwise use LSP completion
+		return vim.lsp.completion.get()
+	end
 end, { expr = true, desc = "Smart completion" })
 
 -- built in terminal
 vim.keymap.set({ "n", "t" }, "<leader>tt", function()
-    vim.cmd.term()
-    vim.cmd("startinsert")
+	vim.cmd.term()
+	vim.cmd("startinsert")
 end)
 vim.keymap.set("n", "<leader>st", function()
-    vim.cmd.vnew()
-    vim.cmd.term()
-    vim.cmd.wincmd("J")
-    vim.api.nvim_win_set_height(0, 20)
-    vim.cmd("startinsert")
+	vim.cmd.vnew()
+	vim.cmd.term()
+	vim.cmd.wincmd("J")
+	vim.api.nvim_win_set_height(0, 20)
+	vim.cmd("startinsert")
 end)
 vim.keymap.set("n", "<leader>vt", function()
-    vim.cmd.vnew()
-    vim.cmd.term()
-    vim.cmd.wincmd("L")
-    vim.cmd("startinsert")
+	vim.cmd.vnew()
+	vim.cmd.term()
+	vim.cmd.wincmd("L")
+	vim.cmd("startinsert")
 end)
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 vim.keymap.set("t", "<C-H>", "<C-\\><C-N><C-w>h")
@@ -268,54 +273,54 @@ vim.keymap.set("t", "<C-L>", "<C-\\><C-N><C-w>l")
 
 -- opencode
 vim.keymap.set({ "n", "x" }, "<leader>oc", function()
-    require("sidekick.cli").toggle({ focus = true, name = "opencode" })
+	require("sidekick.cli").toggle({ focus = true, name = "opencode" })
 end)
 vim.keymap.set("v", "<leader>ov", function()
-    require("sidekick.cli").send({ msg = "{selection}", name = "opencode" })
+	require("sidekick.cli").send({ msg = "{selection}", name = "opencode" })
 end)
 
 -- Autocommands
 -- remember last cursor position
 vim.api.nvim_create_augroup("vimStartup", { clear = true })
 vim.api.nvim_create_autocmd("BufReadPost", {
-    group = "vimStartup",
-    callback = function()
-        local last_position = vim.fn.line([['"]])
-        local last_line = vim.fn.line("$")
-        local filetype = vim.bo.filetype
+	group = "vimStartup",
+	callback = function()
+		local last_position = vim.fn.line([['"]])
+		local last_line = vim.fn.line("$")
+		local filetype = vim.bo.filetype
 
-        if last_position >= 1 and last_position <= last_line and not filetype:match("commit") then
-            vim.cmd('normal! g`"')
-        end
-    end,
+		if last_position >= 1 and last_position <= last_line and not filetype:match("commit") then
+			vim.cmd('normal! g`"')
+		end
+	end,
 })
 
 -- remember folds
 vim.api.nvim_create_augroup("remember_folds", { clear = true })
 vim.api.nvim_create_autocmd("BufWinLeave", {
-    group = "remember_folds",
-    pattern = "?*",
-    command = "mkview 1",
+	group = "remember_folds",
+	pattern = "?*",
+	command = "mkview 1",
 })
 vim.api.nvim_create_autocmd("BufWinEnter", {
-    group = "remember_folds",
-    pattern = "?*",
-    command = "silent! loadview 1",
+	group = "remember_folds",
+	pattern = "?*",
+	command = "silent! loadview 1",
 })
 
 -- enable autocompletion for LSP
-vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function(ev)
-        local client = vim.lsp.get_client_by_id(ev.data.client_id)
-        if client:supports_method('textDocument/completion') then
-            vim.lsp.completion.enable(true, client.id, ev.buf, {
-                autotrigger = true,
-                convert = function(item)
-                    return { abbr = item.label:gsub("%b()", "") }
-                end,
-            })
-        end
-    end,
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(ev)
+		local client = vim.lsp.get_client_by_id(ev.data.client_id)
+		if client:supports_method("textDocument/completion") then
+			vim.lsp.completion.enable(true, client.id, ev.buf, {
+				autotrigger = true,
+				convert = function(item)
+					return { abbr = item.label:gsub("%b()", "") }
+				end,
+			})
+		end
+	end,
 })
 
 -- vim dadbod config
@@ -324,69 +329,69 @@ vim.g.db_ui_connections_json = vim.fn.expand("~/.local/share/db_ui/connections.j
 vim.g.db_completion_enabled = 1
 vim.g.omni_sql_no_default_maps = 1
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "sql", "mysql", "plsql" },
-    callback = function()
-        vim.bo.omnifunc = "vim_dadbod_completion#omni"
-        vim.bo.completefunc = "vim_dadbod_completion#omni"
-        vim.bo.commentstring = "-- %s"
-    end,
+	pattern = { "sql", "mysql", "plsql" },
+	callback = function()
+		vim.bo.omnifunc = "vim_dadbod_completion#omni"
+		vim.bo.completefunc = "vim_dadbod_completion#omni"
+		vim.bo.commentstring = "-- %s"
+	end,
 })
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "dbui",
-    callback = function()
-        vim.bo.buflisted = false
-    end,
+	pattern = "dbui",
+	callback = function()
+		vim.bo.buflisted = false
+	end,
 })
 
 -- Set up compilers for all configured languages
 local compiler_configs = {
-    typescript = {
-        patterns = { "typescript", "typescriptreact" },
-        makeprg = "yarn run tsc --noEmit --pretty false",
-        errorformat = {
-            "%f(%l\\,%c): error TS%n: %m",
-            "%f(%l\\,%c): warning TS%n: %m",
-            "%-G%.%#"
-        }
-    },
-    rust = {
-        patterns = { "rust" },
-        makeprg = "cargo check --message-format=short",
-        errorformat = {
-            "%f:%l:%c: %t%*[^:]: %m",
-            "%f:%l:%c: %t%*[^:] %m",
-            "%-G%.%#"
-        }
-    },
+	typescript = {
+		patterns = { "typescript", "typescriptreact" },
+		makeprg = "yarn run tsc --noEmit --pretty false",
+		errorformat = {
+			"%f(%l\\,%c): error TS%n: %m",
+			"%f(%l\\,%c): warning TS%n: %m",
+			"%-G%.%#",
+		},
+	},
+	rust = {
+		patterns = { "rust" },
+		makeprg = "cargo check --message-format=short",
+		errorformat = {
+			"%f:%l:%c: %t%*[^:]: %m",
+			"%f:%l:%c: %t%*[^:] %m",
+			"%-G%.%#",
+		},
+	},
 }
 
 for _, config in pairs(compiler_configs) do
-    vim.api.nvim_create_autocmd("FileType", {
-        pattern = config.patterns,
-        callback = function()
-            vim.opt_local.makeprg = config.makeprg
-            vim.opt_local.errorformat = config.errorformat
-        end,
-        desc = "Set up compiler for " .. table.concat(config.patterns, ", ")
-    })
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = config.patterns,
+		callback = function()
+			vim.opt_local.makeprg = config.makeprg
+			vim.opt_local.errorformat = config.errorformat
+		end,
+		desc = "Set up compiler for " .. table.concat(config.patterns, ", "),
+	})
 end
 
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
-    pattern = "make",
-    callback = function()
-        if #vim.fn.getqflist() > 0 then
-            vim.cmd("copen")
-        end
-    end,
-    desc = "Auto-open quickfix list after make if there are errors"
+	pattern = "make",
+	callback = function()
+		if #vim.fn.getqflist() > 0 then
+			vim.cmd("copen")
+		end
+	end,
+	desc = "Auto-open quickfix list after make if there are errors",
 })
 
 -- when we switch back to a terminal window, start in insert mode
 vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = "*",
-    callback = function()
-        if vim.bo.buftype == "terminal" then
-            vim.cmd("startinsert")
-        end
-    end,
+	pattern = "*",
+	callback = function()
+		if vim.bo.buftype == "terminal" then
+			vim.cmd("startinsert")
+		end
+	end,
 })

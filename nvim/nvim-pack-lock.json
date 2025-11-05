@@ -9,7 +9,7 @@
       "src": "https://github.com/RRethy/base16-nvim"
     },
     "conform.nvim": {
-      "rev": "9fd3d5e",
+      "rev": "cde4da5",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fzf-lua": {
@@ -25,7 +25,7 @@
       "src": "https://github.com/iamcco/markdown-preview.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "a89bfcf",
+      "rev": "2010fc6",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
@@ -67,6 +67,10 @@
     "vim-tmux-navigator": {
       "rev": "c45243d",
       "src": "https://github.com/christoomey/vim-tmux-navigator"
+    },
+    "yazi.nvim": {
+      "rev": "4a4ca03",
+      "src": "https://github.com/mikavilpas/yazi.nvim"
     }
   }
 }
