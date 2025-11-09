@@ -74,3 +74,6 @@ source <(fzf --zsh)
 source <(kubectl completion zsh)
 
 eval "$(starship init zsh)"
+
+# opencode
+export PATH=/home/maneesh/.opencode/bin:$PATH
