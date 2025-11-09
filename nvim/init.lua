@@ -52,9 +52,9 @@ vim.pack.add({
 	{ src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
 	{ src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
-	{ src = "https://github.com/folke/sidekick.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
+	{ src = "https://github.com/github/copilot.vim" },
 })
 vim.cmd(":hi statusline guibg=NONE")
 vim.cmd([[set completeopt+=menuone,noselect,popup]])
@@ -162,16 +162,6 @@ require("conform").setup({
 		},
 	},
 })
-require("sidekick").setup({
-	nes = { enabled = false },
-	cli = {
-		win = {
-			keys = {
-				prompt = { "<c-r>", "prompt" },
-			},
-		},
-	},
-})
 require("yazi").setup({
 	open_for_directories = true,
 })
@@ -270,14 +260,6 @@ vim.keymap.set("t", "<C-H>", "<C-\\><C-N><C-w>h")
 vim.keymap.set("t", "<C-J>", "<C-\\><C-N><C-w>j")
 vim.keymap.set("t", "<C-K>", "<C-\\><C-N><C-w>k")
 vim.keymap.set("t", "<C-L>", "<C-\\><C-N><C-w>l")
-
--- opencode
-vim.keymap.set({ "n", "x" }, "<leader>oc", function()
-	require("sidekick.cli").toggle({ focus = true, name = "opencode" })
-end)
-vim.keymap.set("v", "<leader>ov", function()
-	require("sidekick.cli").send({ msg = "{selection}", name = "opencode" })
-end)
 
 -- Autocommands
 -- remember last cursor position
