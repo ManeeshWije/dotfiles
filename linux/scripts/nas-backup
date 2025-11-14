@@ -23,7 +23,6 @@ for folder in "${FOLDERS[@]}"; do
      --transfers=4 \
      --checkers=8 \
      --delete-after \
-     --links
 done
 
 echo "✅ All folders synced successfully!"
