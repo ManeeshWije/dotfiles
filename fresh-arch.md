@@ -42,3 +42,4 @@
 
 8. `sudo pacman -S docker docker-compose docker-buildx && sudo systemctl enable --now docker && sudo groupadd docker && sudo usermod -aG docker $USER`
 9. import any gpg keys
+10. enable multilib repo in `/etc/pacman.conf` to install steam
