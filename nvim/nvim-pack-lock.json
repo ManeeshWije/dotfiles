@@ -1,76 +1,36 @@
 {
   "plugins": {
-    "auto-dark-mode.nvim": {
-      "rev": "e300259",
-      "src": "https://github.com/f-person/auto-dark-mode.nvim"
-    },
     "base16-nvim": {
-      "rev": "a2907cc",
-      "src": "https://github.com/RRethy/base16-nvim"
+      "rev": "e05bcb9"
     },
     "conform.nvim": {
-      "rev": "cde4da5",
-      "src": "https://github.com/stevearc/conform.nvim"
+      "rev": "5420c4b"
+    },
+    "copilot.vim": {
+      "rev": "206011a"
     },
     "fzf-lua": {
-      "rev": "a8458b7",
-      "src": "https://github.com/ibhagwan/fzf-lua"
+      "rev": "b1d2b0d"
     },
-    "git_browse.nvim": {
-      "rev": "0008238",
-      "src": "https://github.com/ManeeshWije/git_browse.nvim"
-    },
-    "markdown-preview.nvim": {
-      "rev": "a923f5f",
-      "src": "https://github.com/iamcco/markdown-preview.nvim"
-    },
+    "git_browse.nvim": [],
+    "markdown-preview.nvim": [],
     "nvim-lspconfig": {
-      "rev": "2010fc6",
-      "src": "https://github.com/neovim/nvim-lspconfig"
+      "rev": "d696e36"
     },
-    "nvim-treesitter": {
-      "rev": "42fc28ba",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
-    },
+    "nvim-treesitter": [],
     "nvim-treesitter-context": {
-      "rev": "ec308c7",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
+      "rev": "64dd4cf"
     },
-    "nvim-treesitter-textobjects": {
-      "rev": "5ca4aaa",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
-    },
-    "plenary.nvim": {
-      "rev": "b9fd522",
-      "src": "https://github.com/nvim-lua/plenary.nvim"
-    },
-    "sidekick.nvim": {
-      "rev": "c2bdf8c",
-      "src": "https://github.com/folke/sidekick.nvim"
-    },
-    "tfm.nvim": {
-      "rev": "26dac3e",
-      "src": "https://github.com/rolv-apneseth/tfm.nvim"
-    },
-    "vim-dadbod": {
-      "rev": "e95afed",
-      "src": "https://github.com/tpope/vim-dadbod"
-    },
-    "vim-dadbod-completion": {
-      "rev": "a8dac0b",
-      "src": "https://github.com/kristijanhusak/vim-dadbod-completion"
-    },
+    "nvim-treesitter-textobjects": [],
+    "plenary.nvim": [],
+    "vim-dadbod": [],
+    "vim-dadbod-completion": [],
     "vim-dadbod-ui": {
-      "rev": "236179f",
-      "src": "https://github.com/kristijanhusak/vim-dadbod-ui"
+      "rev": "48c4f27"
     },
-    "vim-tmux-navigator": {
-      "rev": "c45243d",
-      "src": "https://github.com/christoomey/vim-tmux-navigator"
-    },
+    "vim-tmux-navigator": [],
     "yazi.nvim": {
-      "rev": "4a4ca03",
-      "src": "https://github.com/mikavilpas/yazi.nvim"
+      "rev": "5068ce0"
     }
   }
 }
