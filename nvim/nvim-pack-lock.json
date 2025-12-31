@@ -10,7 +10,7 @@
       "rev": "206011a"
     },
     "fzf-lua": {
-      "rev": "b1d2b0d"
+      "rev": "a899e3e"
     },
     "git_browse.nvim": [],
     "markdown-preview.nvim": [],
@@ -30,7 +30,7 @@
     },
     "vim-tmux-navigator": [],
     "yazi.nvim": {
-      "rev": "5068ce0"
+      "rev": "e1b6cb3"
     }
   }
 }
