@@ -6,6 +6,7 @@ sudo cp -r /etc/udev/rules.d \
 
 sudo cp -r ~/.config/nvim \
     ~/.config/alacritty \
+    ~/.config/ghostty \
     ~/.config/opencode \
     ~/.config/yazi \
     ~/.config/ncspot \
