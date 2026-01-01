@@ -4,18 +4,18 @@
       "rev": "e05bcb9"
     },
     "conform.nvim": {
-      "rev": "5420c4b"
+      "rev": "4b713b9"
     },
     "copilot.vim": {
       "rev": "206011a"
     },
     "fzf-lua": {
-      "rev": "a899e3e"
+      "rev": "19d7020"
     },
     "git_browse.nvim": [],
     "markdown-preview.nvim": [],
     "nvim-lspconfig": {
-      "rev": "d696e36"
+      "rev": "41ceb6b"
     },
     "nvim-treesitter": [],
     "nvim-treesitter-context": {
@@ -30,7 +30,7 @@
     },
     "vim-tmux-navigator": [],
     "yazi.nvim": {
-      "rev": "e1b6cb3"
+      "rev": "22717a0"
     }
   }
 }
