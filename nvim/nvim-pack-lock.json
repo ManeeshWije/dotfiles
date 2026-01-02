@@ -4,7 +4,7 @@
       "rev": "e05bcb9"
     },
     "conform.nvim": {
-      "rev": "4b713b9"
+      "rev": "8314f4c"
     },
     "copilot.vim": {
       "rev": "206011a"
@@ -30,7 +30,7 @@
     },
     "vim-tmux-navigator": [],
     "yazi.nvim": {
-      "rev": "22717a0"
+      "rev": "ff3c358"
     }
   }
 }
