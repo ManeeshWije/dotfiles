@@ -1,6 +1,6 @@
 1. archinstall and install common apps through installer (NOT WM/CODING STUFF THOUGH) continue the rest after logging in
-2. `sudo pacman -S --needed git base-devel alacritty tmux && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si`
-3. `yay -S ghostty hyprland hypridle hyprlock hyprpaper hyprshot hyprpolkitagent hyprgraphics hyprpicker jellyfin-media-player cloud-sql-proxy flux-bin lazygit lazydocker selectdefaultapplication-fork-git brave-bin neovim-git localsend-bin pandoc-bin vesktop-git proton-authenticator-bin proton-vpn-gtk-app tofi xorg-xhost && sudo pacman -Rns firefox kitty`
+2. `sudo pacman -S --needed git base-devel ghostty tmux && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si`
+3. `yay -S hyprland hypridle hyprlock hyprpaper hyprshot hyprpolkitagent hyprgraphics hyprpicker jellyfin-media-player cloud-sql-proxy flux-bin lazygit lazydocker selectdefaultapplication-fork-git brave-bin neovim-git localsend-bin pandoc-bin vesktop-git proton-authenticator-bin proton-vpn-gtk-app tofi xorg-xhost && sudo pacman -Rns firefox kitty`
 4. `sudo pacman -S less imv mpv wlsunset nwg-look ueberzugpp ncspot pavucontrol syncthing power-profiles-daemon blueman cliphist starship gvfs glib2 gvfs-mtp gvfs-afc gvfs-google gvfs-gphoto2 gvfs-nfs gvfs-smb gvfs-afc gvfs-dnssd gvfs-goa gvfs-onedrive gvfs-wsdd brightnessctl postgresql`
 5. install languages and other utils
    - ```bash

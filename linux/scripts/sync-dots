@@ -5,11 +5,9 @@ sudo cp -r /etc/udev/rules.d \
     ~/dotfiles/linux/
 
 sudo cp -r ~/.config/nvim \
-    ~/.config/alacritty \
     ~/.config/ghostty \
     ~/.config/opencode \
     ~/.config/yazi \
-    ~/.config/ncspot \
     ~/.zshrc \
     ~/.tmux.conf \
     ~/dotfiles/

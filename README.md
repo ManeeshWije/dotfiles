@@ -4,7 +4,7 @@
   - arch
   - hyprland
   - zsh
-  - alacritty
+  - ghostty
   - tmux
   - neovim
   - yazi
