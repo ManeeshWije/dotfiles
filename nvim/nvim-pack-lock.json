@@ -1,7 +1,7 @@
 {
   "plugins": {
     "base16-nvim": {
-      "rev": "e05bcb9"
+      "rev": "e6b3b10"
     },
     "conform.nvim": {
       "rev": "8314f4c"
@@ -10,12 +10,12 @@
       "rev": "206011a"
     },
     "fzf-lua": {
-      "rev": "19d7020"
+      "rev": "a03d68e"
     },
     "git_browse.nvim": [],
     "markdown-preview.nvim": [],
     "nvim-lspconfig": {
-      "rev": "41ceb6b"
+      "rev": "ac04ec3"
     },
     "nvim-treesitter": [],
     "nvim-treesitter-context": {
@@ -30,7 +30,7 @@
     },
     "vim-tmux-navigator": [],
     "yazi.nvim": {
-      "rev": "ff3c358"
+      "rev": "e039478"
     }
   }
 }
