@@ -2,7 +2,6 @@
 
 sudo cp -r /etc/udev/rules.d \
     /etc/systemd/system/unplug.service \
-    /etc/throttled.conf \
     ~/dotfiles/linux/
 
 sudo cp -r ~/.config/nvim \
