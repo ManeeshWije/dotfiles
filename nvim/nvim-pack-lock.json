@@ -1,16 +1,16 @@
 {
   "plugins": {
     "base16-nvim": {
-      "rev": "5378f80"
+      "rev": "5f140bd"
     },
     "conform.nvim": {
-      "rev": "238f542"
+      "rev": "5ac2bb5"
     },
     "copilot.vim": {
       "rev": "a12fd56"
     },
     "fzf-lua": {
-      "rev": "e7773d0"
+      "rev": "578a11f"
     },
     "git_browse.nvim": [],
     "markdown-preview.nvim": [],
@@ -32,7 +32,7 @@
     },
     "vim-tmux-navigator": [],
     "yazi.nvim": {
-      "rev": "94514e2"
+      "rev": "403a745"
     }
   }
 }
