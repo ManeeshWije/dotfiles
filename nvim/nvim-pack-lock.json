@@ -15,7 +15,7 @@
     "git_browse.nvim": [],
     "markdown-preview.nvim": [],
     "nvim-lspconfig": {
-      "rev": "54baa4b"
+      "rev": "ff9c0af"
     },
     "nvim-treesitter": [],
     "nvim-treesitter-context": {
@@ -23,6 +23,9 @@
     },
     "nvim-treesitter-textobjects": [],
     "plenary.nvim": [],
+    "tfm.nvim": {
+      "rev": "a74ac53"
+    },
     "vim-dadbod": {
       "rev": "6d1d41d"
     },
@@ -34,7 +37,7 @@
       "rev": "e41c431"
     },
     "yazi.nvim": {
-      "rev": "8992f08"
+      "rev": "9bbe1b1"
     }
   }
 }

@@ -1,4 +1,4 @@
---- @since 25.5.31
+--- @since 25.12.29
 
 local toggle_ui = ya.sync(function(self)
 	if self.children then
@@ -7,7 +7,7 @@ local toggle_ui = ya.sync(function(self)
 	else
 		self.children = Modal:children_add(self, 10)
 	end
-	ya.render()
+	ui.render()
 end)
 
 local subscribe = ya.sync(function(self)
@@ -18,7 +18,7 @@ end)
 local update_partitions = ya.sync(function(self, partitions)
 	self.partitions = partitions
 	self.cursor = math.max(0, math.min(self.cursor or 0, #self.partitions - 1))
-	ya.render()
+	ui.render()
 end)
 
 local active_partition = ya.sync(function(self) return self.partitions[self.cursor + 1] end)
@@ -29,12 +29,14 @@ local update_cursor = ya.sync(function(self, cursor)
 	else
 		self.cursor = ya.clamp(0, self.cursor + cursor, #self.partitions - 1)
 	end
-	ya.render()
+	ui.render()
 end)
 
 local M = {
 	keys = {
 		{ on = "q", run = "quit" },
+		{ on = "<Esc>", run = "quit" },
+		{ on = "<Enter>", run = { "enter", "quit" } },
 
 		{ on = "k", run = "up" },
 		{ on = "j", run = "down" },
@@ -209,6 +211,7 @@ function M.split(src)
 		{ "^/dev/nvme%d+n%d+", "p%d+$" }, -- /dev/nvme0n1p1
 		{ "^/dev/mmcblk%d+", "p%d+$" }, -- /dev/mmcblk0p1
 		{ "^/dev/disk%d+", ".+$" }, -- /dev/disk1s1
+		{ "^/dev/sr%d+", ".+$" }, -- /dev/sr0
 	}
 	for _, p in ipairs(pats) do
 		local main = src:match(p[1])
@@ -254,21 +257,33 @@ function M.operate(type)
 		return -- TODO: mount/unmount main disk
 	end
 
-	local output, err
+	local cmd
 	if ya.target_os() == "macos" then
-		output, err = Command("diskutil"):arg({ type, active.src }):output()
+		cmd = Command("diskutil"):arg { type, active.src }
 	end
 	if ya.target_os() == "linux" then
-		if type == "eject" then
+		if type == "eject" and active.src:match("^/dev/sr%d+") then
 			Command("udisksctl"):arg({ "unmount", "-b", active.src }):status()
-			output, err = Command("udisksctl"):arg({ "power-off", "-b", active.src }):output()
+			cmd = Command("eject"):arg { "--traytoggle", active.src }
+		elseif type == "eject" then
+			Command("udisksctl"):arg({ "unmount", "-b", active.src }):status()
+			cmd = Command("udisksctl"):arg { "power-off", "-b", active.src }
 		else
-			output, err = Command("udisksctl"):arg({ type, "-b", active.src }):output()
+			cmd = Command("udisksctl"):arg { type, "-b", active.src }
 		end
 	end
 
+	if not cmd then
+		return M.fail("mount.yazi is not currently supported on your platform")
+	end
+
+	local output, err = cmd:output()
 	if not output then
-		M.fail("Failed to %s `%s`: %s", type, active.src, err)
+		if cmd.program then
+			M.fail("Failed to spawn `%s`: %s", cmd.program, err)
+		else
+			M.fail("Failed to spawn `udisksctl`: %s", err) -- TODO: remove
+		end
 	elseif not output.status.success then
 		M.fail("Failed to %s `%s`: %s", type, active.src, output.stderr)
 	end

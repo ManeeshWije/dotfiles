@@ -1,17 +1,17 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "2ad42fa"
-hash = "e01006bfb38951ea89031bd918b20dbb"
+rev = "e07bf41"
+hash = "270915fa8282a19908449530ff66f7e2"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "2ad42fa"
-hash = "b3f1d6ec3721d4061aad5f69cddb0cf9"
+rev = "e07bf41"
+hash = "563e4068979d1466d3dfc2e70a296947"
 
 [[plugin.deps]]
 use = "boydaihungst/gvfs"
-rev = "e1e0df3"
-hash = "7e4fdb9b48b5e792af034142b5381714"
+rev = "30440c7"
+hash = "211b7d22478b907e5f6fd4fe27a923e"
 
 [flavor]
 deps = []

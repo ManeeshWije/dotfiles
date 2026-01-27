@@ -162,6 +162,7 @@ require("conform").setup({
 		},
 	},
 })
+
 require("yazi").setup({
 	open_for_directories = true,
 })
@@ -341,4 +342,21 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
 		end
 	end,
 	desc = "Auto-open quickfix list after make if there are errors",
+})
+
+local function set_os_project_indent()
+	local file = vim.fn.expand("%:p")
+	local home = vim.fn.expand("~")
+
+	-- match ~/projects/os*
+	if file:match("^" .. home .. "/projects/os[^/]+/") then
+		vim.opt_local.tabstop = 2
+		vim.opt_local.softtabstop = 2
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.expandtab = true
+	end
+end
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	callback = set_os_project_indent,
 })
