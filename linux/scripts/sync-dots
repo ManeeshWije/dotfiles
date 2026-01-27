@@ -20,6 +20,7 @@ cp -r ~/.config/hypr \
     ~/.config/scripts \
     ~/.config/zathura \
     ~/.config/wireplumber \
+    ~/.config/brave-flags.conf \
     ~/.themes \
     ~/.icons \
     ~/dotfiles/linux/
