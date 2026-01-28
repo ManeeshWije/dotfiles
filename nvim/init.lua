@@ -55,6 +55,8 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
 	{ src = "https://github.com/github/copilot.vim" },
+	{ src = "https://github.com/f-person/auto-dark-mode.nvim" },
+	{ src = "https://github.com/linrongbin16/gitlinker.nvim" },
 })
 vim.cmd(":hi statusline guibg=NONE")
 vim.cmd([[set completeopt+=menuone,noselect,popup]])
@@ -107,6 +109,7 @@ require("fzf-lua").setup({
 		},
 	},
 })
+
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"bash",
@@ -134,9 +137,11 @@ require("nvim-treesitter.configs").setup({
 	highlight = { enable = true },
 	indent = { enable = true },
 })
+
 require("treesitter-context").setup({
 	enable = true,
 })
+
 require("conform").setup({
 	notify_on_error = true,
 	formatters_by_ft = {
@@ -166,6 +171,21 @@ require("conform").setup({
 require("yazi").setup({
 	open_for_directories = true,
 })
+
+require("auto-dark-mode").setup({
+	set_dark_mode = function()
+        vim.cmd([[colorscheme base16-black-metal-gorgoroth]])
+		vim.opt.background = "dark"
+	end,
+	set_light_mode = function()
+        vim.cmd([[colorscheme base16-ayu-light]])
+		vim.opt.background = "light"
+	end,
+	update_interval = 3000,
+	fallback = "dark",
+})
+
+require("gitlinker").setup()
 
 vim.lsp.enable({
 	"gopls",
@@ -344,6 +364,7 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
 	desc = "Auto-open quickfix list after make if there are errors",
 })
 
+-- this is just so if im in os repos, the indent is 2 spaces
 local function set_os_project_indent()
 	local file = vim.fn.expand("%:p")
 	local home = vim.fn.expand("~")
