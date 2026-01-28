@@ -44,7 +44,6 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
-	{ src = "https://github.com/ManeeshWije/git_browse.nvim" },
 	{ src = "https://github.com/mikavilpas/yazi.nvim" },
 	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
 	{ src = "https://github.com/stevearc/conform.nvim" },

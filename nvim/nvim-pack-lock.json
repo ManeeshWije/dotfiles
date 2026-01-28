@@ -1,43 +1,23 @@
 {
   "plugins": {
-    "base16-nvim": {
-      "rev": "5f140bd"
+    "auto-dark-mode.nvim": [],
+    "base16-nvim": [],
+    "conform.nvim": [],
+    "copilot.vim": [],
+    "fzf-lua": [],
+    "gitlinker.nvim": {
+      "rev": "bbe2a12"
     },
-    "conform.nvim": {
-      "rev": "c2526f1"
-    },
-    "copilot.vim": {
-      "rev": "a12fd56"
-    },
-    "fzf-lua": {
-      "rev": "d59f857"
-    },
-    "git_browse.nvim": [],
     "markdown-preview.nvim": [],
-    "nvim-lspconfig": {
-      "rev": "ff9c0af"
-    },
+    "nvim-lspconfig": [],
     "nvim-treesitter": [],
-    "nvim-treesitter-context": {
-      "rev": "64dd4cf"
-    },
+    "nvim-treesitter-context": [],
     "nvim-treesitter-textobjects": [],
     "plenary.nvim": [],
-    "tfm.nvim": {
-      "rev": "a74ac53"
-    },
-    "vim-dadbod": {
-      "rev": "6d1d41d"
-    },
+    "vim-dadbod": [],
     "vim-dadbod-completion": [],
-    "vim-dadbod-ui": {
-      "rev": "48c4f27"
-    },
-    "vim-tmux-navigator": {
-      "rev": "e41c431"
-    },
-    "yazi.nvim": {
-      "rev": "9bbe1b1"
-    }
+    "vim-dadbod-ui": [],
+    "vim-tmux-navigator": [],
+    "yazi.nvim": []
   }
 }
