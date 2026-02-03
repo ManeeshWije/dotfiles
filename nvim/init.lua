@@ -173,11 +173,11 @@ require("yazi").setup({
 
 require("auto-dark-mode").setup({
 	set_dark_mode = function()
-        vim.cmd([[colorscheme base16-black-metal-gorgoroth]])
+		vim.cmd([[colorscheme base16-black-metal-gorgoroth]])
 		vim.opt.background = "dark"
 	end,
 	set_light_mode = function()
-        vim.cmd([[colorscheme base16-ayu-light]])
+		vim.cmd([[colorscheme base16-ayu-light]])
 		vim.opt.background = "light"
 	end,
 	update_interval = 3000,
