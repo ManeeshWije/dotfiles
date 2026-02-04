@@ -6,3 +6,4 @@ if [[ $(/usr/bin/id -u) -ne 0 ]]; then
 fi
 
 powertop --auto-tune
+echo 2-3 > /sys/bus/usb/drivers/usb/unbind
