@@ -12,7 +12,7 @@ vim.o.winborder = "single"
 vim.o.guicursor = ""
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.updatetime = 250
+vim.o.updatetime = 100
 vim.o.timeoutlen = 300
 vim.o.scrolloff = 10
 vim.o.sidescrolloff = 10
@@ -297,6 +297,30 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				end,
 			})
 		end
+
+		-- Trigger completion after typing keywords or identifiers
+		vim.api.nvim_create_autocmd("TextChangedI", {
+			buffer = ev.buf,
+			callback = function()
+				if vim.fn.pumvisible() == 0 then
+					local line = vim.api.nvim_get_current_line()
+					local col = vim.api.nvim_win_get_cursor(0)[2]
+					local before_cursor = line:sub(1, col)
+
+					-- Trigger if we just typed a word character, space after keyword, or dot
+					if before_cursor:match("[%w_]$") or before_cursor:match("%w%s$") or before_cursor:match("%.$") then
+						-- Schedule to avoid "textlock" errors
+						vim.schedule(function()
+							vim.api.nvim_feedkeys(
+								vim.api.nvim_replace_termcodes("<C-x><C-o>", true, false, true),
+								"n",
+								false
+							)
+						end)
+					end
+				end
+			end,
+		})
 	end,
 })
 
@@ -363,7 +387,7 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
 	desc = "Auto-open quickfix list after make if there are errors",
 })
 
--- this is just so if im in os repos, the indent is 2 spaces
+-- this is just so if im in os repos, the indent is 2 spaces (on personal laptop)
 local function set_os_project_indent()
 	local file = vim.fn.expand("%:p")
 	local home = vim.fn.expand("~")

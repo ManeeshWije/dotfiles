@@ -1,0 +1,31 @@
+{
+  "plugins": {
+    "auto-dark-mode.nvim": [],
+    "base16-nvim": {
+      "rev": "21f2946"
+    },
+    "conform.nvim": [],
+    "copilot.vim": [],
+    "fzf-lua": {
+      "rev": "fb8c50b"
+    },
+    "gitlinker.nvim": [],
+    "markdown-preview.nvim": [],
+    "nvim-lspconfig": {
+      "rev": "f4e9d36"
+    },
+    "nvim-treesitter": [],
+    "nvim-treesitter-context": [],
+    "nvim-treesitter-textobjects": [],
+    "plenary.nvim": [],
+    "vim-dadbod": [],
+    "vim-dadbod-completion": [],
+    "vim-dadbod-ui": {
+      "rev": "07e92e2"
+    },
+    "vim-tmux-navigator": [],
+    "yazi.nvim": {
+      "rev": "3d8e2e2"
+    }
+  }
+}
