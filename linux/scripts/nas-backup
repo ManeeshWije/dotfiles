@@ -6,7 +6,9 @@ set -euo pipefail
 RCLONE_REMOTE="aws-backups:gargantua-bucket"
 
 FOLDERS=(
-  "/gargantua/endurance"
+  "/gargantua/Documents"
+  "/gargantua/Media"
+  "/gargantua/screenshots"
   "/gargantua/books-library"
   "/gargantua/tars"
   "/gargantua/shows"
