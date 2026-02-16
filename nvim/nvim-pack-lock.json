@@ -10,6 +10,11 @@
       "rev": "739330f"
     },
     "gitlinker.nvim": [],
+    "harpoon": {
+      "rev": "87b1a35",
+      "src": "https://github.com/ThePrimeagen/harpoon",
+      "version": "'harpoon2'"
+    },
     "markdown-preview.nvim": [],
     "nvim-lspconfig": {
       "rev": "44acfe8"
