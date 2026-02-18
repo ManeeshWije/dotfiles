@@ -7,7 +7,7 @@
     "conform.nvim": [],
     "copilot.vim": [],
     "fzf-lua": {
-      "rev": "739330f"
+      "rev": "1749fed"
     },
     "gitlinker.nvim": [],
     "harpoon": {
@@ -30,7 +30,7 @@
     },
     "vim-tmux-navigator": [],
     "yazi.nvim": {
-      "rev": "e1d99b6"
+      "rev": "331cadf"
     }
   }
 }

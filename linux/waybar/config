@@ -1,139 +1,153 @@
 {
-  "layer": "top",
-  "position": "top", 
-  "height": 32,
-  "exclusive": true,
-  "passthrough": false,
-  "ipc": true,
-  
-  "modules-left":   ["hyprland/workspaces", "hyprland/mode", "mpris"],
-  "modules-center": ["hyprland/window"],
-  "modules-right":  ["tray", "idle_inhibitor", "power-profiles-daemon", "battery", "backlight", "pulseaudio", "clock#date", "clock#time"],
-
-  "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-          "default": "",
-          "performance": "",
-          "balanced": "",
-          "power-saver": ""
-      }
-  },
-
-  "mpris": {
-      "interval": 1,
-      "format": "{dynamic}",
-      "format-paused": " {dynamic} {status_icon} ",
-      "on-click": "playerctl play-pause",
-      "on-click-right": "playerctl next",
-      "scroll-step": 5.0,
-      "smooth-scrolling-threshold": 1,
-      "status-icons": {
-          "paused": "󰐎",
-          "playing": "🎶",
-          "stopped": ""
-      },
-      "max-length": 20
-  },
-
-  "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-          "activated": "",
-          "deactivated": ""
-      }
-  },
-
-  "backlight": {
-      "device": "intel_backlight",
-      "format": "{percent}% {icon}",
-      "format-icons": ["", ""]
-  },
-
-  "battery": {
-      "bat": "BAT0",
-      "interval": 60,
-      "states": {
-          "warning": 30,
-          "critical": 15
-      },
-      "format": "{capacity}% {icon}",
-      "format-icons": ["", "", "", "", ""],
-      "max-length": 25
-  },
-
-  "wlr/taskbar": {
-	"format": "{icon}",
-    "all-outputs": true,
-	"icon-size": 15,
-	"icon-theme": "Gruvbox-Plus-Dark",
-	"tooltip-format": "{title}",
-	"on-click": "activate",
-	"on-click-middle": "close",
-    "on-click-right": "minimize-raise",
-	"app_ids-mapping": {
-	}
-  },
-
-  "hyprland/window": {
-      "format": "{title}",
-      "max-length": 60
-  },
-
-  "hyprland/workspaces": {
-    // "disable-scroll": true,
-    "sort-by-number": true,
-    "all-outputs": true,
-    "on-click": "activate",
-    "format": "{icon}",
-    "format-icons": {
-      "1": "<span color=\"#EBDBB2\">1</span>",
-      "2": "<span color=\"#EBDBB2\">2</span>",
-      "3": "<span color=\"#EBDBB2\">3</span>",
-      "4": "<span color=\"#EBDBB2\">4</span>",
-      "5": "<span color=\"#EBDBB2\">5</span>",
-      "6": "<span color=\"#EBDBB2\">6</span>",
-      "7": "<span color=\"#EBDBB2\">7</span>",
-      "8": "<span color=\"#EBDBB2\">8</span>",
-      "9": "<span color=\"#EBDBB2\">󰣇</span>",
-      "urgent": "",
-      "default": ""
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "exclusive": true,
+    "passthrough": false,
+    "ipc": true,
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/mode",
+        "mpris"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "tray",
+        "idle_inhibitor",
+        "power-profiles-daemon",
+        "battery",
+        "backlight",
+        "pulseaudio",
+        "clock#date",
+        "clock#time"
+    ],
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "mpris": {
+        "interval": 1,
+        "format": "{dynamic}",
+        "format-paused": " {dynamic} {status_icon} ",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "scroll-step": 5.0,
+        "smooth-scrolling-threshold": 1,
+        "status-icons": {
+            "paused": "󰐎",
+            "playing": "🎶",
+            "stopped": ""
+        },
+        "max-length": 20
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "",
+            ""
+        ]
+    },
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "max-length": 25
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "all-outputs": true,
+        "icon-size": 15,
+        "icon-theme": "Gruvbox-Plus-Dark",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "on-click-right": "minimize-raise",
+        "app_ids-mapping": {}
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 60
+    },
+    "hyprland/workspaces": {
+        // "disable-scroll": true,
+        "sort-by-number": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "<span color=\"#EBDBB2\">1</span>",
+            "2": "<span color=\"#EBDBB2\">2</span>",
+            "3": "<span color=\"#EBDBB2\">3</span>",
+            "4": "<span color=\"#EBDBB2\">4</span>",
+            "5": "<span color=\"#EBDBB2\">5</span>",
+            "6": "<span color=\"#EBDBB2\">6</span>",
+            "7": "<span color=\"#EBDBB2\">7</span>",
+            "8": "<span color=\"#EBDBB2\">8</span>",
+            "9": "<span color=\"#EBDBB2\">󰣇</span>",
+            "urgent": "",
+            "default": ""
+        }
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
+    },
+    "clock#time": {
+        "interval": 1,
+        "format": "{:%H:%M:%S} ",
+        "tooltip": true
+    },
+    "clock#date": {
+        "interval": 10,
+        "format": "{:%e %b %y}", // icon: calendar-alt
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " muted",
+        "scroll-step": 5,
+        "on-click": "pactl set-sink-mute 0 toggle",
+        "on-click-middle": "pavucontrol",
+        "format-icons": {
+            "headphone": "  ",
+            "hands-free": "  ",
+            "headset": "  ",
+            "phone": "  ",
+            "portable": "  ",
+            "car": "  ",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
     }
-  },
-
-  "tray": {
-    "icon-size": 14,
-    "spacing": 10
-  },
-
-  "clock#time": {
-    "interval": 1,
-    "format": "{:%H:%M:%S} ",
-    "tooltip": true
-  },
-
-  "clock#date": {
-    "interval": 10,
-    "format": "{:%e %b %y}", // icon: calendar-alt
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-  },
-
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": " muted",
-    "scroll-step": 5,
-    "on-click": "pactl set-sink-mute 0 toggle",
-    "on-click-middle": "pavucontrol",
-    "format-icons": {
-      "headphone": "  ",
-      "hands-free": "  ",
-      "headset": "  ",
-      "phone": "  ",
-      "portable": "  ",
-      "car": "  ",
-      "default": ["", "", ""]
-    }
-  },
 }
