@@ -188,7 +188,8 @@ require("auto-dark-mode").setup({
 
 require("gitlinker").setup()
 
-require("harpoon").setup()
+local harpoon = require("harpoon")
+harpoon:setup()
 
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({
