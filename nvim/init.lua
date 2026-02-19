@@ -378,24 +378,25 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- Set up compilers for all configured languages
+-- Set up compilers for langs that neovim doesnt support by default
 local compiler_configs = {
 	typescript = {
 		patterns = { "typescript", "typescriptreact" },
-		makeprg = "yarn run tsc --noEmit --pretty false",
+		makeprg = "sh -c 'yarn run tsc -b --noEmit --pretty false ; yarn eslint --quiet --format unix .'",
 		errorformat = {
+			-- tsc
 			"%f(%l\\,%c): error TS%n: %m",
 			"%f(%l\\,%c): warning TS%n: %m",
-			"%-G%.%#",
-		},
-	},
-	rust = {
-		patterns = { "rust" },
-		makeprg = "cargo check --message-format=short",
-		errorformat = {
-			"%f:%l:%c: %t%*[^:]: %m",
-			"%f:%l:%c: %t%*[^:] %m",
-			"%-G%.%#",
+
+			-- eslint (unix)
+			"%f:%l:%c: %m",
+
+			-- ignore yarn / eslint noise
+			"%-Gerror Command failed%.%#",
+			"%-Ginfo Visit%.%#",
+			"%-Gyarn run v%.%#",
+			"%-G%\\d%\\+ problem%.%#",
+			"%-G$%.%#",
 		},
 	},
 }
@@ -414,11 +415,14 @@ end
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
 	pattern = "make",
 	callback = function()
-		if #vim.fn.getqflist() > 0 then
-			vim.cmd("copen")
+		local qf = vim.fn.getqflist()
+		for _, item in ipairs(qf) do
+			if item.valid == 1 then
+				vim.cmd("copen")
+				return
+			end
 		end
 	end,
-	desc = "Auto-open quickfix list after make if there are errors",
 })
 
 -- this is just so if im in os repos, the indent is 2 spaces (on personal laptop)
