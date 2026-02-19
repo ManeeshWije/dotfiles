@@ -11,7 +11,7 @@
        nvm install 24
        nvm install 22
        nvm alias default 22
-       npm install -g prettier vscode-langservers-extracted sql-formatter
+       npm install -g prettier vscode-langservers-extracted sql-formatter eslint-formatter-unix
        curl -fsSL https://opencode.ai/install | bash
      ```
 6. ```bash
