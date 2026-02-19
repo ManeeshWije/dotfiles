@@ -57,6 +57,7 @@ vim.pack.add({
 	{ src = "https://github.com/f-person/auto-dark-mode.nvim" },
 	{ src = "https://github.com/linrongbin16/gitlinker.nvim" },
 	{ src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
+	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 })
 vim.cmd(":hi statusline guibg=NONE")
 vim.cmd([[set completeopt+=menuone,noselect,popup]])
@@ -187,8 +188,25 @@ require("auto-dark-mode").setup({
 
 require("gitlinker").setup()
 
-local harpoon = require("harpoon")
-harpoon:setup()
+require("harpoon").setup()
+
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({
+	cmd = "lazygit",
+	hidden = true,
+	direction = "float",
+})
+local lazydocker = Terminal:new({
+	cmd = "lazydocker",
+	hidden = true,
+	direction = "float",
+})
+function _lazygit_toggle()
+	lazygit:toggle()
+end
+function _lazydocker_toggle()
+	lazydocker:toggle()
+end
 
 vim.lsp.enable({
 	"gopls",
@@ -251,6 +269,10 @@ end)
 vim.keymap.set("n", "<C-M-L>", function()
 	harpoon:list():next()
 end)
+
+-- terminal apps
+vim.api.nvim_set_keymap("n", "<leader>lz", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>lua _lazydocker_toggle()<CR>", { noremap = true, silent = true })
 
 -- qol
 vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')

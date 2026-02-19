@@ -1,36 +1,28 @@
 {
   "plugins": {
     "auto-dark-mode.nvim": [],
-    "base16-nvim": {
-      "rev": "21f2946"
-    },
+    "base16-nvim": [],
     "conform.nvim": [],
     "copilot.vim": [],
-    "fzf-lua": {
-      "rev": "1749fed"
-    },
+    "fzf-lua": [],
     "gitlinker.nvim": [],
     "harpoon": {
-      "rev": "87b1a35",
-      "src": "https://github.com/ThePrimeagen/harpoon",
       "version": "'harpoon2'"
     },
     "markdown-preview.nvim": [],
-    "nvim-lspconfig": {
-      "rev": "44acfe8"
-    },
+    "nvim-lspconfig": [],
     "nvim-treesitter": [],
     "nvim-treesitter-context": [],
     "nvim-treesitter-textobjects": [],
     "plenary.nvim": [],
+    "toggleterm.nvim": {
+      "rev": "9a88eae",
+      "src": "https://github.com/akinsho/toggleterm.nvim"
+    },
     "vim-dadbod": [],
     "vim-dadbod-completion": [],
-    "vim-dadbod-ui": {
-      "rev": "07e92e2"
-    },
+    "vim-dadbod-ui": [],
     "vim-tmux-navigator": [],
-    "yazi.nvim": {
-      "rev": "331cadf"
-    }
+    "yazi.nvim": []
   }
 }
