@@ -202,19 +202,11 @@ local lazydocker = Terminal:new({
 	hidden = true,
 	direction = "float",
 })
-local opencode = Terminal:new({
-	cmd = "opencode",
-	hidden = true,
-	direction = "float",
-})
 function _lazygit_toggle()
 	lazygit:toggle()
 end
 function _lazydocker_toggle()
 	lazydocker:toggle()
-end
-function _opencode_toggle()
-    opencode:toggle()
 end
 
 vim.lsp.enable({
@@ -282,7 +274,6 @@ end)
 -- terminal apps
 vim.api.nvim_set_keymap("n", "<leader>lz", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>lua _lazydocker_toggle()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>oc", "<cmd>lua _opencode_toggle()<CR>", { noremap = true, silent = true })
 
 -- qol
 vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')
@@ -389,7 +380,7 @@ vim.api.nvim_create_autocmd("FileType", {
 local compiler_configs = {
 	typescript = {
 		patterns = { "typescript", "typescriptreact" },
-		makeprg = "sh -c 'yarn run tsc -b --noEmit --pretty false ; yarn eslint --quiet --format unix .'",
+		makeprg = "sh -c 'yarn run tsc -b --noEmit --pretty false ; yarn eslint --quiet --ignore-pattern 'build' --ignore-patten 'dist' --format unix .'",
 		errorformat = {
 			-- tsc
 			"%f(%l\\,%c): error TS%n: %m",
