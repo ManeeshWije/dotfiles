@@ -380,7 +380,7 @@ vim.api.nvim_create_autocmd("FileType", {
 local compiler_configs = {
 	typescript = {
 		patterns = { "typescript", "typescriptreact" },
-		makeprg = "sh -c 'yarn run tsc -b --noEmit --pretty false ; yarn eslint --quiet --ignore-pattern 'build' --ignore-patten 'dist' --format unix .'",
+		makeprg = "sh -c 'yarn run tsc -b --noEmit --pretty false ; yarn eslint --quiet --ignore-pattern 'build' --ignore-pattern 'dist' --format unix .'",
 		errorformat = {
 			-- tsc
 			"%f(%l\\,%c): error TS%n: %m",
