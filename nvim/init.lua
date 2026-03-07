@@ -56,7 +56,6 @@ vim.pack.add({
 	{ src = "https://github.com/github/copilot.vim" },
 	{ src = "https://github.com/f-person/auto-dark-mode.nvim" },
 	{ src = "https://github.com/linrongbin16/gitlinker.nvim" },
-	{ src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
 	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 })
 vim.cmd(":hi statusline guibg=NONE")
@@ -111,7 +110,7 @@ require("fzf-lua").setup({
 	},
 })
 
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter.config").setup({
 	ensure_installed = {
 		"bash",
 		"c",
@@ -188,9 +187,6 @@ require("auto-dark-mode").setup({
 
 require("gitlinker").setup()
 
-local harpoon = require("harpoon")
-harpoon:setup()
-
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({
 	cmd = "lazygit",
@@ -239,37 +235,6 @@ vim.keymap.set("n", "<leader>sm", fzf.spellcheck, { noremap = true, silent = tru
 vim.keymap.set("n", "<leader>sp", fzf.spell_suggest, { noremap = true, silent = true }) -- Suggestions for word under cursor
 vim.keymap.set("n", "<leader>fh", fzf.help_tags, { noremap = true, silent = true }) -- Help tags
 vim.keymap.set("n", "<leader>df", fzf.diagnostics_document, { noremap = true, silent = true }) -- Document Diagnostics
-
--- harpoon
-vim.keymap.set("n", "<leader>a", function()
-	harpoon:list():add()
-end)
-vim.keymap.set("n", "<leader>h", function()
-	harpoon.ui:toggle_quick_menu(harpoon:list())
-end)
-
-vim.keymap.set("n", "<leader>1", function()
-	harpoon:list():select(1)
-end)
-vim.keymap.set("n", "<leader>2", function()
-	harpoon:list():select(2)
-end)
-vim.keymap.set("n", "<leader>3", function()
-	harpoon:list():select(3)
-end)
-vim.keymap.set("n", "<leader>4", function()
-	harpoon:list():select(4)
-end)
-vim.keymap.set("n", "<leader>5", function()
-	harpoon:list():select(5)
-end)
-
-vim.keymap.set("n", "<C-M-H>", function()
-	harpoon:list():prev()
-end)
-vim.keymap.set("n", "<C-M-L>", function()
-	harpoon:list():next()
-end)
 
 -- terminal apps
 vim.api.nvim_set_keymap("n", "<leader>lz", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
