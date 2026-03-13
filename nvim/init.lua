@@ -341,26 +341,52 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- Set up compilers for langs that neovim doesnt support by default
+local function eslint_git_modified()
+	-- get modified files from git
+	local files = vim.fn.systemlist("git diff --name-only --diff-filter=ACM")
+	if #files == 0 then
+		print("No modified files")
+		return
+	end
+
+	-- filter only ts/tsx/js files
+	local lint_files = {}
+	for _, f in ipairs(files) do
+		if f:match("%.ts$") or f:match("%.tsx$") or f:match("%.js$") then
+			table.insert(lint_files, f)
+		end
+	end
+
+	if #lint_files == 0 then
+		print("No lintable files")
+		return
+	end
+
+	-- save current compiler
+	local old_makeprg = vim.o.makeprg
+	local old_errorformat = vim.o.errorformat
+
+	-- switch compiler
+	vim.cmd("compiler eslint")
+
+	-- run make
+	vim.cmd("make " .. table.concat(lint_files, " "))
+
+	-- restore compiler
+	vim.o.makeprg = old_makeprg
+	vim.o.errorformat = old_errorformat
+end
+
+vim.api.nvim_create_user_command("Makelint", eslint_git_modified, {})
+
 local compiler_configs = {
 	typescript = {
 		patterns = { "typescript", "typescriptreact" },
-		makeprg = "sh -c 'yarn run tsc -b --noEmit --pretty false ; yarn eslint --quiet --ignore-pattern 'build' --ignore-pattern 'dist' --format unix .'",
-		errorformat = {
-			-- tsc
-			"%f(%l\\,%c): error TS%n: %m",
-			"%f(%l\\,%c): warning TS%n: %m",
-
-			-- eslint (unix)
-			"%f:%l:%c: %m",
-
-			-- ignore yarn / eslint noise
-			"%-Gerror Command failed%.%#",
-			"%-Ginfo Visit%.%#",
-			"%-Gyarn run v%.%#",
-			"%-G%\\d%\\+ problem%.%#",
-			"%-G$%.%#",
-		},
+		compiler = "tsc",
+	},
+	rust = {
+		patterns = { "rust" },
+		compiler = "cargo",
 	},
 }
 
@@ -368,8 +394,7 @@ for _, config in pairs(compiler_configs) do
 	vim.api.nvim_create_autocmd("FileType", {
 		pattern = config.patterns,
 		callback = function()
-			vim.opt_local.makeprg = config.makeprg
-			vim.opt_local.errorformat = config.errorformat
+			vim.cmd("compiler " .. config.compiler)
 		end,
 		desc = "Set up compiler for " .. table.concat(config.patterns, ", "),
 	})
