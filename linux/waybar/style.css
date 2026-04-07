@@ -81,7 +81,6 @@ tooltip {
 #idle_inhibitor,
 #mpris,
 #mode,
-#custom-notification,
 #tray {
   background: @base02;
   padding: 0 0.6em;
@@ -133,8 +132,4 @@ tooltip {
   border-radius: 6px;
   background: @base0D;
   color: @base07;
-}
-
-#custom-notification {
-  font-family: "Iosevka Nerd Font";
 }
