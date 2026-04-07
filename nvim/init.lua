@@ -36,6 +36,7 @@ vim.opt.undofile = true
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undo"
 vim.opt.undolevels = 1000
 vim.opt.undoreload = 10000
+vim.o.autoread = true
 
 -- Plugins
 vim.pack.add({
@@ -429,4 +430,8 @@ end
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	callback = set_os_project_indent,
+})
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+	command = "checktime",
 })

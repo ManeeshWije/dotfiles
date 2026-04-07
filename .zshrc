@@ -17,6 +17,8 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+setopt ignoreeof
+
 
 # Shortcuts
 bindkey -v
@@ -55,7 +57,7 @@ alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
 alias k="kubectl"
-alias todo='nvim "$HOME/Documents/personal-notes/todo.md"'
+alias todo='nvim "$HOME/syncthing/Documents/personal-notes/todo.md"'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     fpath+=("$(brew --prefix)/share/zsh/site-functions")
