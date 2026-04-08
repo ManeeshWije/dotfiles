@@ -6,13 +6,12 @@ set -euo pipefail
 RCLONE_REMOTE="aws-backups:gargantua-bucket"
 
 FOLDERS=(
-  "/gargantua/Documents"
-  "/gargantua/Media"
-  "/gargantua/screenshots"
+  "/gargantua/syncthing"
   "/gargantua/books-library"
   "/gargantua/tars"
   "/gargantua/shows"
   "/gargantua/movies"
+  "/gargantua/music"
 )
 
 for folder in "${FOLDERS[@]}"; do
