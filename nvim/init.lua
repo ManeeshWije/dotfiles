@@ -45,7 +45,6 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
-	{ src = "https://github.com/mikavilpas/yazi.nvim" },
 	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/tpope/vim-dadbod" },
@@ -169,9 +168,9 @@ require("conform").setup({
 	},
 })
 
-require("yazi").setup({
-	open_for_directories = true,
-})
+-- require("yazi").setup({
+-- 	open_for_directories = true,
+-- })
 
 require("auto-dark-mode").setup({
 	set_dark_mode = function()
@@ -199,11 +198,19 @@ local lazydocker = Terminal:new({
 	hidden = true,
 	direction = "float",
 })
+local yazi = Terminal:new({
+    cmd = "yazi",
+    hidden = true,
+    direction = "float",
+})
 function _lazygit_toggle()
 	lazygit:toggle()
 end
 function _lazydocker_toggle()
 	lazydocker:toggle()
+end
+function _yazi_toggle()
+    yazi:toggle()
 end
 
 vim.lsp.enable({
@@ -240,6 +247,7 @@ vim.keymap.set("n", "<leader>df", fzf.diagnostics_document, { noremap = true, si
 -- terminal apps
 vim.api.nvim_set_keymap("n", "<leader>lz", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>lua _lazydocker_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>lua _yazi_toggle()<CR>", { noremap = true, silent = true })
 
 -- qol
 vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')
@@ -263,9 +271,9 @@ vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close quickfix lis
 vim.keymap.set("n", "<leader>c", function()
 	require("conform").format({ async = true, lsp_fallback = true })
 end, { desc = "Format Document" })
-vim.keymap.set("n", "<leader>e", function()
-	require("yazi").yazi()
-end)
+-- vim.keymap.set("n", "<leader>e", function()
+--
+-- end)
 
 -- manual autocomplete
 vim.keymap.set("i", "<C-space>", function()

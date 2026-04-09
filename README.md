@@ -1,8 +1,8 @@
 # Dotfiles
 
 - Programs in my daily workflow:
-  - arch
-  - hyprland
+  - debian trixie
+  - gnome 48
   - zsh
   - ghostty
   - tmux
@@ -11,6 +11,5 @@
 
 # Screenshots
 
-![](./swappy-20251102-230626.png)
-![](./swappy-20251102-230610.png)
-![](./swappy-20251102-230458.png)
+![](./1.png)
+![](./2.png)

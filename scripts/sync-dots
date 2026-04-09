@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+sudo cp -r ~/.config/nvim \
+    ~/.config/ghostty \
+    ~/.config/opencode \
+    ~/.config/tmux-sessionizer \
+    ~/.config/yazi \
+    ~/.config/scripts \
+    ~/.zshrc \
+    ~/.tmux.conf \
+    ~/dotfiles/
