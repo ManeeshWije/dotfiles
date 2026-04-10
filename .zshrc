@@ -49,7 +49,7 @@ alias grep='grep --color=auto'
 alias st='syncthing'
 alias sd='cd "$(find "$HOME" -maxdepth 7 -type d | fzf || echo "$PWD")"'
 alias sf='file=$(find "$HOME" -maxdepth 7 -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
-alias aptupdate='sudo apt update && sudo apt upgrade && yazi_install'
+alias aptupdate='sudo apt update && sudo apt upgrade && yazi-install && ghostty-install && nvim-install'
 alias aptdelete='sudo apt autoremove'
 alias aptcache='sudo apt-get clean'
 alias o="xdg-open"

@@ -14,7 +14,7 @@
        nvm install 24
        nvm install 22
        nvm alias default 22
-       npm install -g prettier vscode-langservers-extracted sql-formatter eslint-formatter-unix
+       npm install -g prettier vscode-langservers-extracted sql-formatter eslint-formatter-unix typescript-language-server typescript
        curl -fsSL https://opencode.ai/install | bash
        curl -s https://fluxcd.io/install.sh | sudo bash
        bash <(wget -qO- https://raw.githubusercontent.com/daveprowse/scripts/refs/heads/main/dog-install.sh)

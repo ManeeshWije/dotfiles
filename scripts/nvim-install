@@ -1,0 +1,48 @@
+#!/bin/bash
+
+set -e
+
+# Install dependencies
+sudo apt update
+sudo apt install -y ninja-build gettext cmake unzip curl build-essential pkg-config
+
+# Clone or update Neovim repository
+if [ -d "$HOME/neovim" ]; then
+    echo "Updating Neovim repository..."
+    cd "$HOME/neovim"
+    git pull
+else
+    echo "Cloning Neovim repository..."
+    git clone https://github.com/neovim/neovim "$HOME/neovim"
+    cd "$HOME/neovim"
+fi
+
+# Clean previous builds (important for consistency)
+make distclean || true
+
+# Build Neovim
+echo "Building Neovim..."
+make -j$(nproc) CMAKE_BUILD_TYPE=RelWithDebInfo
+
+# Package as .deb
+echo "Packaging Neovim..."
+cd build
+cpack -G DEB
+
+# Install the generated .deb
+DEB_FILE=$(ls nvim-linux-*.deb | head -n 1)
+
+echo "Installing $DEB_FILE..."
+sudo dpkg -i "$DEB_FILE"
+
+# Fix missing dependencies if needed
+sudo apt install -f -y
+
+# Ensure ~/.local/bin is in PATH (optional, for consistency with your setup)
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.zshrc"
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+echo "Neovim installation complete!"
+nvim --version | head -n 1
