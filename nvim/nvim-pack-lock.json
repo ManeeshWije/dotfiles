@@ -1,7 +1,7 @@
 {
   "plugins": {
     "CopilotChat.nvim": {
-      "rev": "0b3133ffbb470b1616c47170b544d0b9a3bbcf5b",
+      "rev": "5378035c2eb4089de245473dec1768e0986543bd",
       "src": "https://github.com/CopilotC-Nvim/CopilotChat.nvim"
     },
     "auto-dark-mode.nvim": {
@@ -9,7 +9,7 @@
       "src": "https://github.com/f-person/auto-dark-mode.nvim"
     },
     "base16-nvim": {
-      "rev": "92ed568836ac8d4b1d319e19c96fa8327dce7dbe",
+      "rev": "17781884af64e4205f84dde41d6030a61d0eb0dc",
       "src": "https://github.com/RRethy/base16-nvim"
     },
     "conform.nvim": {
@@ -25,7 +25,7 @@
       "src": "https://github.com/sindrets/diffview.nvim"
     },
     "fzf-lua": {
-      "rev": "1e866cce085cc6df3d3e4fb59f00105fa84cef6c",
+      "rev": "beaa4e83e6be4174af291a464e4f49548c943963",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "git_browse.nvim": {
@@ -41,16 +41,24 @@
       "src": "https://github.com/ThePrimeagen/harpoon",
       "version": "'harpoon2'"
     },
+    "lazydocker.nvim": {
+      "rev": "b69ff84a6223de39d34a150b980d3b9ef19549fb",
+      "src": "https://github.com/crnvl96/lazydocker.nvim"
+    },
+    "lazygit.nvim": {
+      "rev": "a04ad0dbc725134edbee3a5eea29290976695357",
+      "src": "https://github.com/kdheepak/lazygit.nvim"
+    },
     "markdown-preview.nvim": {
       "rev": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee",
       "src": "https://github.com/iamcco/markdown-preview.nvim"
     },
     "neogit": {
-      "rev": "e06745228600a585b88726fc9fba44a373c15a47",
+      "rev": "d1cfc4986195239cac55700b675cea7a9578d430",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "nvim-lspconfig": {
-      "rev": "8a9378a822719346a0288fa004dab302ca3c0a8f",
+      "rev": "e146efacbafed3789ac568abcc5a981c5decaa58",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
@@ -103,7 +111,7 @@
       "src": "https://github.com/christoomey/vim-tmux-navigator"
     },
     "yazi.nvim": {
-      "rev": "a4c292e0cb2647773e91ae29eeb87dd26f33c6b9",
+      "rev": "49b3417e4bc2002ce8003f8fca275fea1d710d50",
       "src": "https://github.com/mikavilpas/yazi.nvim"
     }
   }

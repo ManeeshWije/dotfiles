@@ -55,7 +55,9 @@ vim.pack.add({
     { src = "https://github.com/github/copilot.vim" },
     { src = "https://github.com/f-person/auto-dark-mode.nvim" },
     { src = "https://github.com/ManeeshWije/git_browse.nvim" },
-    { src = "https://github.com/akinsho/toggleterm.nvim" },
+    { src = "https://github.com/kdheepak/lazygit.nvim" },
+    { src = "https://github.com/crnvl96/lazydocker.nvim" },
+    { src = "https://github.com/mikavilpas/yazi.nvim" },
 })
 vim.cmd(":hi statusline guibg=NONE")
 vim.cmd([[set completeopt+=menuone,noselect,popup]])
@@ -182,33 +184,16 @@ require("auto-dark-mode").setup({
     fallback = "dark",
 })
 
-local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new({
-    cmd = "lazygit",
-    hidden = true,
-    direction = "float",
+require('lazydocker').setup({
+    window = {
+        settings = {
+            width = 0.9,
+            height = 0.9,
+            border = 'single',
+            relative = 'editor',
+        },
+    },
 })
-local lazydocker = Terminal:new({
-    cmd = "lazydocker",
-    hidden = true,
-    direction = "float",
-})
-local yazi = Terminal:new({
-    cmd = "yazi",
-    hidden = true,
-    direction = "float",
-})
-function _lazygit_toggle()
-    lazygit:toggle()
-end
-
-function _lazydocker_toggle()
-    lazydocker:toggle()
-end
-
-function _yazi_toggle()
-    yazi:toggle()
-end
 
 vim.lsp.enable({
     "gopls",
@@ -240,9 +225,16 @@ vim.keymap.set("n", "<leader>fh", fzf.help_tags, { noremap = true, silent = true
 vim.keymap.set("n", "<leader>df", fzf.diagnostics_document, { noremap = true, silent = true }) -- Document Diagnostics
 
 -- terminal apps
-vim.api.nvim_set_keymap("n", "<leader>lz", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>lua _lazydocker_toggle()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>lua _yazi_toggle()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>lz", "<cmd>LazyGit<CR>", { noremap = true, silent = true })
+vim.keymap.set(
+    { 'n', 't' },
+    '<leader>ld',
+    "<Cmd>lua require('lazydocker').toggle({ engine = 'docker' })<CR>",
+    { desc = 'LazyDocker (docker)' }
+)
+vim.keymap.set("n", "<leader>e", function()
+    require("yazi").yazi()
+end)
 
 -- qol
 vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')
