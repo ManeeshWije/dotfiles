@@ -1,7 +1,7 @@
 1. archinstall and use minimal preset
 2. `sudo pacman -S --needed git base-devel linux-headers ghostty tmux pcmanfm && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si`
-3. `yay -S hyprland hypridle hyprlock hyprpaper hyprshot hyprpolkitagent hyprgraphics hyprpicker downgrade slack-desktop cloud-sql-proxy lazygit lazydocker selectdefaultapplication-fork-git brave-bin neovim-git localsend-bin pandoc-bin vesktop-git proton-authenticator-bin proton-vpn-gtk-app tofi xorg-xhost obs-studio onlyoffice-bin qt6ct-kde`
-4. `sudo pacman -S network-manager-applet zsh-syntax-highlighting cronie less imv mpv wlsunset nwg-look ueberzugpp pavucontrol syncthing power-profiles-daemon blueman cliphist starship gvfs glib2 gvfs-mtp gvfs-afc gvfs-gphoto2 gvfs-nfs gvfs-smb gvfs-dnssd gvfs-goa gvfs-onedrive gvfs-wsdd brightnessctl postgresql`
+3. `yay -S hyprland hypridle hyprlock hyprpaper hyprshot hyprpolkitagent hyprgraphics hyprpicker downgrade slack-desktop cloud-sql-proxy google-cloud-cli lazygit lazydocker selectdefaultapplication-fork-git brave-bin neovim-git localsend-bin pandoc-bin vesktop-git proton-authenticator-bin proton-vpn-gtk-app tofi xorg-xhost obs-studio onlyoffice-bin qt6ct-kde`
+4. `sudo pacman -S github-cli yarn network-manager-applet zsh-syntax-highlighting cronie less imv mpv wlsunset nwg-look ueberzugpp pavucontrol syncthing power-profiles-daemon blueman cliphist starship gvfs glib2 gvfs-mtp gvfs-afc gvfs-gphoto2 gvfs-nfs gvfs-smb gvfs-dnssd gvfs-goa gvfs-onedrive gvfs-wsdd brightnessctl postgresql`
 5. install languages and other utils
    - ```bash
        echo "source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
