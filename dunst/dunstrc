@@ -1,0 +1,51 @@
+[global]
+    monitor = 0
+    follow = mouse
+
+    width = 320
+    height = 300
+    offset = 10x10
+    origin = top-right
+
+    corner_radius = 10
+    frame_width = 2
+    separator_height = 2
+
+    font = IosevkaTerm Nerd Font 12
+
+    padding = 12
+    horizontal_padding = 12
+    text_icon_padding = 8
+
+    markup = yes
+    format = <b>%s</b>\n%b
+
+    idle_threshold = 120
+
+    transparency = 0
+
+    icon_position = left
+    min_icon_size = 24
+    max_icon_size = 48
+
+    background = "#000000"
+    foreground = "#C1C1C1"
+    frame_color = "#333333"
+
+[urgency_low]
+    timeout = 3
+    background = "#000000"
+    foreground = "#888888"
+    frame_color = "#333333"
+
+[urgency_normal]
+    timeout = 6
+    background = "#000000"
+    foreground = "#C1C1C1"
+    frame_color = "#FFFFFF"
+
+[urgency_critical]
+    timeout = 0
+    background = "#000000"
+    foreground = "#C1C1C1"
+    frame_color = "#5F8787"

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1"
+   id="svg28"
+   sodipodi:docname="godot.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g
+     id="g129"
+     style="fill:#ffffff">
+    <path
+       style="fill:#ffffff"
+       d="m21 30a3 3 0 1 1 -6 0 3 3 0 1 1 6 0z"
+       id="path10" />
+    <path
+       style="fill:#ffffff"
+       d="m49 30a3 3 0 1 1 -6 0 3 3 0 1 1 6 0z"
+       id="path20" />
+  </g>
+  <defs
+     id="defs32">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect123"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath119">
+      <path
+         id="path121"
+         style="display:none;opacity:0.85;fill:#ffffff"
+         d="m 18,24 c -3.3144,0 -6,2.6856 -6,6 0,3.3144 2.6856,6 6,6 3.3144,0 6,-2.6856 6,-6 0,-3.3144 -2.6856,-6 -6,-6 z m 28,0 c -3.3144,0 -6,2.6856 -6,6 0,3.3144 2.6856,6 6,6 3.3144,0 6,-2.6856 6,-6 0,-3.3144 -2.6856,-6 -6,-6 z m -14,4 c -1.108,0 -2,0.892 -2,2 v 4 c 0,1.108 0.892,2 2,2 1.108,0 2,-0.892 2,-2 v -4 c 0,-1.108 -0.892,-2 -2,-2 z M 8,40 v 2 h 8 v 3 a 1.0001,1.0001 0 0 0 1,1 h 10 a 1.0001,1.0001 0 0 0 1,-1 v -3 h 4 4 v 3 a 1.0001,1.0001 0 0 0 1,1 h 10 a 1.0001,1.0001 0 0 0 1,-1 v -3 h 8 v -2 h -9 a 1.0001,1.0001 0 0 0 -1,1 v 3 h -8 v -3 a 1.0001,1.0001 0 0 0 -1,-1 h -5 -5 a 1.0001,1.0001 0 0 0 -1,1 v 3 h -8 v -3 a 1.0001,1.0001 0 0 0 -1,-1 z" />
+      <path
+         id="lpe_path-effect123"
+         style="opacity:0.85;fill:#ffffff"
+         class="powerclip"
+         d="M -1,-1.0009922 H 65 V 61 H -1 Z M 18,24 c -3.3144,0 -6,2.6856 -6,6 0,3.3144 2.6856,6 6,6 3.3144,0 6,-2.6856 6,-6 0,-3.3144 -2.6856,-6 -6,-6 z m 28,0 c -3.3144,0 -6,2.6856 -6,6 0,3.3144 2.6856,6 6,6 3.3144,0 6,-2.6856 6,-6 0,-3.3144 -2.6856,-6 -6,-6 z m -14,4 c -1.108,0 -2,0.892 -2,2 v 4 c 0,1.108 0.892,2 2,2 1.108,0 2,-0.892 2,-2 v -4 c 0,-1.108 -0.892,-2 -2,-2 z M 8,40 v 2 h 8 v 3 a 1.0001,1.0001 0 0 0 1,1 h 10 a 1.0001,1.0001 0 0 0 1,-1 v -3 h 4 4 v 3 a 1.0001,1.0001 0 0 0 1,1 h 10 a 1.0001,1.0001 0 0 0 1,-1 v -3 h 8 v -2 h -9 a 1.0001,1.0001 0 0 0 -1,1 v 3 h -8 v -3 a 1.0001,1.0001 0 0 0 -1,-1 h -5 -5 a 1.0001,1.0001 0 0 0 -1,1 v 3 h -8 v -3 a 1.0001,1.0001 0 0 0 -1,-1 z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview30"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.859375"
+     inkscape:cx="32.077764"
+     inkscape:cy="32"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg28" />
+  <path
+     style="fill:#ffffff"
+     d="M 26.4,3.9990078 26.170314,4.1329922 19.4,7 20.8,14 14.355078,16.947657 11,14 4,21 8,25.333984 v 14.51133 -1.118362 4.66758 C 8,43.394532 12,56 32,56 52,56 56,43.394532 56,43.394532 v -4.66758 1.118362 -14.51133 L 60,21 53,14 49.644922,16.947657 43.2,14 44.6,7 37.6,3.9990078 35.204686,8 h -6.414842 z"
+     id="path4"
+     clip-path="url(#clipPath119)"
+     inkscape:path-effect="#path-effect123"
+     inkscape:original-d="M 26.4,3.9990078 26.170314,4.1329922 19.4,7 20.8,14 14.355078,16.947657 11,14 l -7,7 4,4.333984 0,14.51133 0,-1.118362 0,4.66758 C 8,43.394532 12,56 32,56 52,56 56,43.394532 56,43.394532 l 0,-4.66758 0,1.118362 0,-14.51133 L 60,21 53,14 49.644922,16.947657 43.2,14 44.6,7 37.6,3.9990078 35.204686,8 28.789844,8 Z" />
+</svg>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="com.github.AmatCoder.mednaffe.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs20">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect25"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath21">
+      <path
+         style="color:#000000;display:none;opacity:0.85;fill:#ffffff;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
+         d="m 24.289062,15.689453 a 2.8210371,2.8210371 0 0 0 -2.845703,2.103516 l -7.08789,27.101562 a 2.820755,2.820755 0 0 0 2.015625,3.44336 2.820755,2.820755 0 0 0 3.443359,-2.015625 l 3.806641,-14.556641 2.498047,14.328125 a 2.8210371,2.8210371 0 0 0 5.154296,1.035156 L 41.029297,31.865234 38.71875,45.125 a 2.820755,2.820755 0 0 0 2.292969,3.263672 2.820755,2.820755 0 0 0 3.263672,-2.294922 L 49,18.992187 A 2.8210371,2.8210371 0 0 0 43.845703,16.988281 L 30.429687,37.976562 26.951172,18.023437 a 2.8210371,2.8210371 0 0 0 -2.66211,-2.333984 z"
+         id="path23" />
+      <path
+         id="lpe_path-effect25"
+         style="color:#000000;opacity:0.85;fill:#ffffff;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
+         class="powerclip"
+         d="M -2.74967,-2.8594074 H 66.913816 V 67.077578 H -2.74967 Z M 24.289062,15.689453 a 2.8210371,2.8210371 0 0 0 -2.845703,2.103516 l -7.08789,27.101562 a 2.820755,2.820755 0 0 0 2.015625,3.44336 2.820755,2.820755 0 0 0 3.443359,-2.015625 l 3.806641,-14.556641 2.498047,14.328125 a 2.8210371,2.8210371 0 0 0 5.154296,1.035156 L 41.029297,31.865234 38.71875,45.125 a 2.820755,2.820755 0 0 0 2.292969,3.263672 2.820755,2.820755 0 0 0 3.263672,-2.294922 L 49,18.992187 A 2.8210371,2.8210371 0 0 0 43.845703,16.988281 L 30.429687,37.976562 26.951172,18.023437 a 2.8210371,2.8210371 0 0 0 -2.66211,-2.333984 z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview18"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.859375"
+     inkscape:cx="32.077764"
+     inkscape:cy="34.410693"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg16" />
+  <ellipse
+     style="fill:#ffffff;stroke-width:1.1283"
+     id="circle4"
+     clip-path="url(#clipPath21)"
+     inkscape:path-effect="#path-effect25"
+     sodipodi:type="arc"
+     sodipodi:cx="32.082073"
+     sodipodi:cy="32.109085"
+     sodipodi:rx="29.831743"
+     sodipodi:ry="29.968493"
+     d="M 61.913816,32.109085 A 29.831743,29.968493 0 0 1 32.082073,62.077578 29.831743,29.968493 0 0 1 2.25033,32.109085 29.831743,29.968493 0 0 1 32.082073,2.1405926 29.831743,29.968493 0 0 1 61.913816,32.109085 Z" />
+</svg>

@@ -49,14 +49,13 @@ alias grep='grep --color=auto'
 alias st='syncthing'
 alias sd='cd "$(find "$HOME" -maxdepth 7 -type d | fzf || echo "$PWD")"'
 alias sf='file=$(find "$HOME" -maxdepth 7 -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
-alias aptupdate='sudo apt update && sudo apt upgrade && yazi-install && ghostty-install && nvim-install'
-alias aptdelete='sudo apt autoremove'
-alias aptcache='sudo apt-get clean'
+alias pacupdate='sudo pacman -Syu && yay -Syu'
+alias paccache='sudo pacman -Scc && yay -Scc'
+alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
 alias o="xdg-open"
 alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
-alias k="kubectl"
 alias todo='nvim "$HOME/syncthing/Documents/personal-notes/todo.md"'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -73,11 +72,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 source <(fzf --zsh)
-source <(kubectl completion zsh)
 
 eval "$(starship init zsh)"
 
 # opencode
 export PATH=/home/maneesh/.opencode/bin:$PATH
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

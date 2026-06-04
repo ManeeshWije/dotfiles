@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1"
+   id="svg16"
+   sodipodi:docname="fr.free.Homebank.svg"
+   inkscape:version="1.1 (1:1.1+202106031931+af4d65493e)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g
+     id="g309"
+     transform="matrix(1.0677902,0,0,1.075407,-2.1203738,-2.415368)"
+     style="fill:#ffffff">
+    <path
+       style="fill:#ffffff"
+       d="m 31.9996,4.0008294 c -15.511778,0 -27.9995996,12.4878216 -27.9995996,27.9995996 0,15.511778 12.4878216,27.9996 27.9995996,27.9996 15.511778,0 27.9996,-12.487822 27.9996,-27.9996 0,-15.511778 -12.487822,-27.9995996 -27.9996,-27.9995996 z"
+       id="path4"
+       clip-path="url(#clipPath262)"
+       inkscape:path-effect="#path-effect266"
+       inkscape:original-d="m 31.9996,4.0008294 c -15.511778,0 -27.9995996,12.4878216 -27.9995996,27.9995996 0,15.511778 12.4878216,27.9996 27.9995996,27.9996 15.511778,0 27.9996,-12.487822 27.9996,-27.9996 0,-15.511778 -12.487822,-27.9995996 -27.9996,-27.9995996 z" />
+    <path
+       style="fill:#ffffff"
+       d="m 17.9998,32.000429 h 3.999943 v 13.9998 h 19.999714 v -13.9998 H 45.9994 l -13.9998,-14.0022 z"
+       id="path10" />
+    <rect
+       style="fill:#ffffff"
+       width="4"
+       height="14"
+       x="38"
+       y="20"
+       id="rect12" />
+  </g>
+  <defs
+     id="defs20">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect266"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath262">
+      <circle
+         style="display:none;fill:#ffffff"
+         cx="32"
+         cy="32"
+         r="22"
+         id="circle264"
+         d="M 54,32 A 22,22 0 0 1 32,54 22,22 0 0 1 10,32 22,22 0 0 1 32,10 22,22 0 0 1 54,32 Z" />
+      <path
+         id="lpe_path-effect266"
+         style="fill:#ffffff"
+         class="powerclip"
+         d="M -0.9999996,-0.9991706 H 64.9992 V 65.000029 H -0.9999996 Z M 54,32 A 22,22 0 0 0 32,10 22,22 0 0 0 10,32 22,22 0 0 0 32,54 22,22 0 0 0 54,32 Z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview18"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.859375"
+     inkscape:cx="32.077764"
+     inkscape:cy="25.778858"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg16" />
+</svg>

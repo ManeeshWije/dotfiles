@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1"
+   id="svg22"
+   sodipodi:docname="im.pidgin.Pidgin.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs26" />
+  <sodipodi:namedview
+     id="namedview24"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.859375"
+     inkscape:cx="32.038882"
+     inkscape:cy="32"
+     inkscape:window-width="1459"
+     inkscape:window-height="738"
+     inkscape:window-x="230"
+     inkscape:window-y="85"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg22" />
+  <path
+     style="fill:#ffffff"
+     d="m17.113122 21.561685c-7.3637916 0-13.113122 9.438315-13.113122 10.564533 0.066094 0.655165 2e-3 1.304068 0 1.885813 0.049427 7.841517 3.4452291 14.574084 11.497389 22.803551 2.250883 2.300442 4.399838 4.184418 4.778646 4.184418 0.378812 0 1.817057-1.069607 3.194443-2.372474l2.504339-2.368128c-2.793669-3.70437-5.070565-7.296809-6.566837-11.624725 6.47871-1.021664 8.586491-7.735315 8.592009-14.301326 0-7.37213-3.523075-8.771662-10.886867-8.771662z"
+     id="path6" />
+  <circle
+     style="fill:#ffffff"
+     cx="17.5"
+     cy="32.5"
+     r="13.5"
+     id="circle10" />
+  <path
+     style="fill:#ffffff"
+     d="M 47.886878,43.438315 C 55.25067,43.438315 61,34 61,32.873782 60.933906,32.218617 60.998,31.569714 61,30.987969 60.950573,23.146452 57.554771,16.413885 49.502611,8.184418 47.251728,5.883976 45.102773,4 44.723965,4 44.345153,4 42.906908,5.069607 41.529522,6.372474 l -2.504339,2.368128 c 2.793669,3.70437 5.070565,7.296809 6.566837,11.624725 -6.47871,1.021664 -8.586491,7.735315 -8.592009,14.301326 0,7.37213 3.523075,8.771662 10.886867,8.771662 z"
+     id="path12" />
+  <circle
+     style="fill:#ffffff"
+     cx="-47.5"
+     cy="-32.5"
+     r="13.5"
+     transform="scale(-1)"
+     id="circle16" />
+</svg>

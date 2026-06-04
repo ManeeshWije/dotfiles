@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1"
+   id="svg28"
+   sodipodi:docname="4kvideodownloader.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs32">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect328"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath324">
+      <path
+         id="path326"
+         style="display:none;opacity:1;fill:#e6e6e6"
+         d="m 20,27 v 3 5 3 6 3 h 6 12 6 V 44 27 Z m 6,3 h 12 v 5 H 26 Z m 0,8 h 12 v 6 H 26 Z" />
+      <path
+         id="lpe_path-effect328"
+         style="opacity:1;fill:#e6e6e6"
+         class="powerclip"
+         d="M -3,6 H 67.000002 V 58.003 H -3 Z m 23,21 v 3 5 3 6 3 h 6 12 6 V 44 27 Z m 6,3 v 5 h 12 v -5 z m 0,8 v 6 h 12 v -6 z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview30"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.859375"
+     inkscape:cx="32.077764"
+     inkscape:cy="32"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg28" />
+  <g
+     id="g222"
+     clip-path="url(#clipPath324)"
+     inkscape:path-effect="#path-effect328"
+     style="fill:#ffffff">
+    <circle
+       style="fill:#ffffff"
+       cx="-49.143002"
+       cy="40.143002"
+       transform="scale(-1,1)"
+       id="circle4"
+       r="12.857"
+       d="m -36.286001,40.143002 a 12.857,12.857 0 0 1 -12.857001,12.857 12.857,12.857 0 0 1 -12.857,-12.857 12.857,12.857 0 0 1 12.857,-12.857001 12.857,12.857 0 0 1 12.857001,12.857001 z" />
+    <circle
+       style="fill:#ffffff"
+       cx="-35"
+       cy="26"
+       r="15"
+       transform="scale(-1,1)"
+       id="circle6"
+       d="M -20,26 A 15,15 0 0 1 -35,41 15,15 0 0 1 -50,26 15,15 0 0 1 -35,11 15,15 0 0 1 -20,26 Z" />
+    <circle
+       style="fill:#ffffff"
+       cx="-23.429"
+       cy="28.714"
+       r="10"
+       transform="scale(-1,1)"
+       id="circle8"
+       d="m -13.429001,28.714001 a 10,10 0 0 1 -10,10 10,10 0 0 1 -10,-10 10,10 0 0 1 10,-10 10,10 0 0 1 10,10 z" />
+    <circle
+       style="fill:#ffffff"
+       cx="-14.857"
+       cy="40.143"
+       r="12.857"
+       transform="scale(-1,1)"
+       id="circle10"
+       d="m -2,40.143002 a 12.857,12.857 0 0 1 -12.857,12.857 12.857,12.857 0 0 1 -12.857001,-12.857 A 12.857,12.857 0 0 1 -14.857,27.286001 12.857,12.857 0 0 1 -2,40.143002 Z" />
+    <path
+       style="fill:#ffffff"
+       width="34.285999"
+       height="17.143"
+       x="-49.139999"
+       y="35.860001"
+       transform="scale(-1,1)"
+       id="rect12"
+       d="M -49.139999,35.860001 H -14.854 V 53.003 h -34.285999 z"
+       sodipodi:type="rect" />
+  </g>
+</svg>

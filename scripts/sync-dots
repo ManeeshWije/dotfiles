@@ -2,10 +2,17 @@
 
 sudo cp -r ~/.config/nvim \
     ~/.config/ghostty \
-    ~/.config/opencode \
     ~/.config/tmux-sessionizer \
     ~/.config/yazi \
+    ~/.config/hypr \
+    ~/.config/swappy \
+    ~/.config/tofi \
+    ~/.config/zathura \
+    ~/.config/wireplumber \
     ~/.config/scripts \
+    ~/.config/dunst \
     ~/.zshrc \
     ~/.tmux.conf \
+    ~/.icons \
+    ~/.themes \
     ~/dotfiles/
