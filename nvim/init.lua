@@ -162,6 +162,10 @@ require("conform").setup({
         php = { "php-cs-fixer" },
         c = { "clang-format" },
         sql = { "sql_formatter" },
+        typescript = { "oxfmt" },
+        typescriptreact = { "oxfmt" },
+        javascript = { "oxfmt" },
+        javascriptreact = { "oxfmt" },
     },
     formatters = {
         sql_formatter = {
@@ -255,6 +259,7 @@ vim.keymap.set("n", "<C-J>", "<C-W>j")
 vim.keymap.set("n", "<C-K>", "<C-W>k")
 vim.keymap.set("n", "<C-L>", "<C-W>l")
 vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
+vim.keymap.set("n", "<leader>c", function() require("conform").format({ async = true, lsp_fallback = true }) end)
 
 -- manual autocomplete
 vim.keymap.set("i", "<C-space>", function()
@@ -331,33 +336,40 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-if vim.fn.fnamemodify(vim.fn.getcwd(), ':t') == 'osbackendapi' then
+local projects = {
+    "osbackendapi",
+    "frontend"
+}
+
+if vim.list_contains(projects, vim.fn.fnamemodify(vim.fn.getcwd(), ":t")) then
     vim.g.tsc_makeprg = "yarn run tsgo"
     vim.lsp.enable("tsgo")
     vim.lsp.enable("oxlint")
     vim.lsp.enable("oxfmt")
 
-    vim.keymap.set("n", "<leader>c", function()
-        vim.lsp.buf.format({ name = "oxfmt", async = true })
-    end)
+    -- vim.keymap.set("n", "<leader>c", function()
+    --     vim.lsp.buf.format({ name = "oxfmt", async = true })
+    -- end)
 else
     vim.g.tsc_makeprg = "yarn run tsc"
     vim.lsp.enable("ts_ls")
-    vim.lsp.enable("eslint")
-    vim.lsp.enable("prettier")
+    vim.lsp.enable("oxlint")
+    vim.lsp.enable("oxfmt")
 
-    require("conform").setup({
-        notify_on_error = true,
-        formatters_by_ft = {
-            javascript = { "prettier" },
-            typescript = { "prettier" },
-            javascriptreact = { "prettier" },
-            typescriptreact = { "prettier" },
-            html = { "prettier" },
-        },
-    })
-
-    vim.keymap.set("n", "<leader>c", function() require("conform").format({ async = true, lsp_fallback = true }) end)
+    -- require("conform").setup({
+    --     notify_on_error = true,
+    --     formatters_by_ft = {
+    --         javascript = { "prettier" },
+    --         typescript = { "prettier" },
+    --         javascriptreact = { "prettier" },
+    --         typescriptreact = { "prettier" },
+    --         html = { "prettier" },
+    --     },
+    -- })
+    -- vim.keymap.set("n", "<leader>c", function() require("conform").format({ async = true, lsp_fallback = true }) end)
+    -- vim.keymap.set("n", "<leader>c", function()
+    --     vim.lsp.buf.format({ name = "oxfmt", async = true })
+    -- end)
 end
 
 local compiler_configs = {
