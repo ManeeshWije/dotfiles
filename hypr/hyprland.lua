@@ -156,6 +156,8 @@ hl.bind(mainMod .. " + E", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot --freeze --mode=window --raw --clipboard-only | swappy -f -"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot --freeze --mode=region --raw --clipboard-only | swappy -f -"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("pkill waybar && hyprctl eval 'hl.exec_cmd(\"waybar\")'"))
+hl.bind(mainMod .. " + C", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + Z", hl.dsp.workspace.toggle_special("magic"))
 
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))

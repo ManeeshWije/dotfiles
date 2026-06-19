@@ -39,13 +39,13 @@
     frame_color = "#333333"
 
 [urgency_normal]
-    timeout = 6
+    timeout = 3
     background = "#000000"
     foreground = "#C1C1C1"
     frame_color = "#FFFFFF"
 
 [urgency_critical]
-    timeout = 0
+    timeout = 3
     background = "#000000"
     foreground = "#C1C1C1"
     frame_color = "#5F8787"
