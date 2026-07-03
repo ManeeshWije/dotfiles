@@ -9,6 +9,7 @@ sudo cp -r ~/.config/nvim \
     ~/.config/tofi \
     ~/.config/zathura \
     ~/.config/wireplumber \
+    ~/.config/systemd \
     ~/.config/scripts \
     ~/.config/dunst \
     ~/.zshrc \
