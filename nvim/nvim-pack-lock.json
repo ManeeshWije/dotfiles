@@ -1,7 +1,7 @@
 {
   "plugins": {
     "CopilotChat.nvim": {
-      "rev": "2025f92022bef434de0511c5157a19974a9377a4",
+      "rev": "f0c2a23ab79dc295f5e0eef0d8b587a39020c852",
       "src": "https://github.com/CopilotC-Nvim/CopilotChat.nvim"
     },
     "auto-dark-mode.nvim": {
@@ -9,7 +9,7 @@
       "src": "https://github.com/f-person/auto-dark-mode.nvim"
     },
     "base16-nvim": {
-      "rev": "23e5128eb5f629c29532c24a1e733cbe019f05bb",
+      "rev": "21233d5fd574439ae1e2f5e4bfbc574214f4ab3d",
       "src": "https://github.com/RRethy/base16-nvim"
     },
     "conform.nvim": {
@@ -25,7 +25,7 @@
       "src": "https://github.com/sindrets/diffview.nvim"
     },
     "fzf-lua": {
-      "rev": "988416cc782dfe28bff3f0da9b8c943b236cd86a",
+      "rev": "39da6060d53659acf3ec118200bc48721b29b8fd",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "git_browse.nvim": {
@@ -54,11 +54,11 @@
       "src": "https://github.com/iamcco/markdown-preview.nvim"
     },
     "neogit": {
-      "rev": "99326a1310fb2d616b455d2fd16d01bf00682f06",
+      "rev": "43ea1a0854052e583f647e0b35879f0158a70a78",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "nvim-lspconfig": {
-      "rev": "ed19590a3a9792901553c388d1aadafce012f80d",
+      "rev": "292f44408498103c47996ff5c18fd366293840d8",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
@@ -99,7 +99,7 @@
       "src": "https://github.com/kristijanhusak/vim-dadbod-completion"
     },
     "vim-dadbod-ui": {
-      "rev": "07e92e22114cc5b1ba4938d99897d85b58e20475",
+      "rev": "afd07819d8efcefc3317205b855ad4e3513b0011",
       "src": "https://github.com/kristijanhusak/vim-dadbod-ui"
     },
     "vim-fugitive": {
@@ -111,7 +111,7 @@
       "src": "https://github.com/christoomey/vim-tmux-navigator"
     },
     "yazi.nvim": {
-      "rev": "f01985801601b48c50633cd7a6dbe6b5b09c0ca5",
+      "rev": "c03e622b773f4347577991bd4c4fb9a7a3f8be36",
       "src": "https://github.com/mikavilpas/yazi.nvim"
     }
   }

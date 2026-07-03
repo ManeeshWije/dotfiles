@@ -6,9 +6,8 @@ hl.monitor({
 })
 
 local terminal = "ghostty"
-local browser = "brave --enable-features=TouchpadOverscrollHistoryNavigation"
+local browser = "brave-origin"
 local fileManager = "pcmanfm"
-
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
