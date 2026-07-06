@@ -3,4 +3,4 @@ Description=Upload documents to Google Drive
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/rclone copy /home/maneesh/Documents gdrive: --verbose --create-empty-src-dirs
+ExecStart=/usr/bin/rclone copy /home/maneesh/Documents gdrive:Documents --verbose --create-empty-src-dirs
