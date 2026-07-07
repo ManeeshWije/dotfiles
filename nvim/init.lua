@@ -218,7 +218,7 @@ vim.lsp.enable({
 	"tailwindcss",
 	"jdtls",
 	"emmet_ls",
-	"nil",
+	"nil_ls",
 })
 
 -- Keymaps
