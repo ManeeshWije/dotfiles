@@ -40,205 +40,209 @@ vim.o.autoread = true
 
 -- Plugins
 vim.pack.add({
-    { src = "https://github.com/nvim-lua/plenary.nvim" },
-    { src = "https://github.com/RRethy/base16-nvim" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter",        version = 'main' },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
-    { src = "https://github.com/ibhagwan/fzf-lua" },
-    { src = "https://github.com/iamcco/markdown-preview.nvim" },
-    { src = "https://github.com/stevearc/conform.nvim" },
-    { src = "https://github.com/tpope/vim-dadbod" },
-    { src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
-    { src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
-    { src = "https://github.com/neovim/nvim-lspconfig" },
-    { src = "https://github.com/christoomey/vim-tmux-navigator" },
-    { src = "https://github.com/github/copilot.vim" },
-    { src = "https://github.com/f-person/auto-dark-mode.nvim" },
-    { src = "https://github.com/ManeeshWije/git_browse.nvim" },
-    { src = "https://github.com/kdheepak/lazygit.nvim" },
-    { src = "https://github.com/crnvl96/lazydocker.nvim" },
-    { src = "https://github.com/mikavilpas/yazi.nvim" },
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/RRethy/base16-nvim" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
+	{ src = "https://github.com/ibhagwan/fzf-lua" },
+	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
+	{ src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/tpope/vim-dadbod" },
+	{ src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
+	{ src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
+	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
+	{ src = "https://github.com/github/copilot.vim" },
+	{ src = "https://github.com/f-person/auto-dark-mode.nvim" },
+	{ src = "https://github.com/ManeeshWije/git_browse.nvim" },
+	{ src = "https://github.com/kdheepak/lazygit.nvim" },
+	{ src = "https://github.com/crnvl96/lazydocker.nvim" },
+	{ src = "https://github.com/mikavilpas/yazi.nvim" },
+	{ src = "https://github.com/mason-org/mason.nvim" },
 })
 vim.cmd(":hi statusline guibg=NONE")
 vim.cmd([[set completeopt+=menuone,noselect,popup]])
 vim.cmd([[colorscheme base16-black-metal-gorgoroth]])
 
 local all_levels = {
-    vim.diagnostic.severity.ERROR,
-    vim.diagnostic.severity.WARN,
-    vim.diagnostic.severity.HINT,
-    vim.diagnostic.severity.INFO,
+	vim.diagnostic.severity.ERROR,
+	vim.diagnostic.severity.WARN,
+	vim.diagnostic.severity.HINT,
+	vim.diagnostic.severity.INFO,
 }
 
 vim.diagnostic.config({
-    severity_sort = true,
-    virtual_lines = false,
-    signs = {
-        severity = all_levels,
-    },
-    underline = {
-        severity = all_levels,
-    },
-    virtual_text = {
-        severity = all_levels,
-    },
-    float = {
-        severity = all_levels,
-    },
+	severity_sort = true,
+	virtual_lines = false,
+	signs = {
+		severity = all_levels,
+	},
+	underline = {
+		severity = all_levels,
+	},
+	virtual_text = {
+		severity = all_levels,
+	},
+	float = {
+		severity = all_levels,
+	},
 })
+
+require("mason").setup()
 
 -- Setup plugins via require
 require("fzf-lua").setup({
-    keymap = {
-        builtin = {
-            ["<C-a>"] = "select-all+accept",
-            ["<C-d>"] = "half-page-down",
-            ["<C-u>"] = "half-page-up",
-            ["<C-f>"] = "preview-page-down",
-            ["<C-b>"] = "preview-page-up",
-            ["<C-n>"] = "down",
-            ["<C-p>"] = "up",
-        },
-        fzf = {
-            ["ctrl-a"] = "select-all+accept",
-            ["ctrl-d"] = "half-page-down",
-            ["ctrl-u"] = "half-page-up",
-            ["ctrl-f"] = "preview-page-down",
-            ["ctrl-b"] = "preview-page-up",
-            ["ctrl-n"] = "down",
-            ["ctrl-p"] = "up",
-        },
-    },
+	keymap = {
+		builtin = {
+			["<C-a>"] = "select-all+accept",
+			["<C-d>"] = "half-page-down",
+			["<C-u>"] = "half-page-up",
+			["<C-f>"] = "preview-page-down",
+			["<C-b>"] = "preview-page-up",
+			["<C-n>"] = "down",
+			["<C-p>"] = "up",
+		},
+		fzf = {
+			["ctrl-a"] = "select-all+accept",
+			["ctrl-d"] = "half-page-down",
+			["ctrl-u"] = "half-page-up",
+			["ctrl-f"] = "preview-page-down",
+			["ctrl-b"] = "preview-page-up",
+			["ctrl-n"] = "down",
+			["ctrl-p"] = "up",
+		},
+	},
 })
 
 local ensure_installed = {
-    "bash",
-    "c",
-    "cpp",
-    "css",
-    "dockerfile",
-    "go",
-    "html",
-    "javascript",
-    "json",
-    "lua",
-    "markdown",
-    "python",
-    "rust",
-    "sql",
-    "typescript",
-    "vim",
-    "yaml",
-    "java",
-    "php",
+	"bash",
+	"c",
+	"cpp",
+	"css",
+	"dockerfile",
+	"go",
+	"html",
+	"javascript",
+	"json",
+	"lua",
+	"markdown",
+	"python",
+	"rust",
+	"sql",
+	"typescript",
+	"vim",
+	"yaml",
+	"java",
+	"php",
 }
 
 local tree = require("nvim-treesitter")
-tree.setup {}
+tree.setup({})
 tree.install(ensure_installed)
 
 local grp = vim.api.nvim_create_augroup("TreeSitterConfig", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-    group = grp,
-    callback = function(event)
-        if vim.list_contains(tree.get_installed(), vim.treesitter.language.get_lang(event.match)) then
-            vim.treesitter.start(event.buf)
-        end
-    end,
+	group = grp,
+	callback = function(event)
+		if vim.list_contains(tree.get_installed(), vim.treesitter.language.get_lang(event.match)) then
+			vim.treesitter.start(event.buf)
+		end
+	end,
 })
 
 require("treesitter-context").setup({
-    enable = true,
+	enable = true,
 })
 
 require("conform").setup({
-    notify_on_error = true,
-    formatters_by_ft = {
-        lua = { "stylua" },
-        python = { "isort", "black" },
-        java = { "google-java-format" },
-        go = { "gofmt", "goimports" },
-        rust = { "rustfmt" },
-        php = { "php-cs-fixer" },
-        c = { "clang-format" },
-        sql = { "sql_formatter" },
-        typescript = { "oxfmt" },
-        typescriptreact = { "oxfmt" },
-        javascript = { "oxfmt" },
-        javascriptreact = { "oxfmt" },
-    },
-    formatters = {
-        sql_formatter = {
-            command = "sql-formatter",
-            args = { "--language", "postgresql" },
-        },
-    },
+	notify_on_error = true,
+	formatters_by_ft = {
+		lua = { "stylua" },
+		python = { "isort", "black" },
+		java = { "google-java-format" },
+		go = { "gofmt", "goimports" },
+		rust = { "rustfmt" },
+		php = { "php-cs-fixer" },
+		c = { "clang-format" },
+		sql = { "sql_formatter" },
+		typescript = { "oxfmt" },
+		typescriptreact = { "oxfmt" },
+		javascript = { "oxfmt" },
+		javascriptreact = { "oxfmt" },
+		nix = { "nixfmt" },
+	},
+	formatters = {
+		sql_formatter = {
+			command = "sql-formatter",
+			args = { "--language", "postgresql" },
+		},
+	},
 })
 
 require("auto-dark-mode").setup({
-    set_dark_mode = function()
-        vim.cmd([[colorscheme base16-black-metal-gorgoroth]])
-        vim.opt.background = "dark"
-    end,
-    set_light_mode = function()
-        vim.cmd([[colorscheme base16-ayu-light]])
-        vim.opt.background = "light"
-    end,
-    update_interval = 3000,
-    fallback = "dark",
+	set_dark_mode = function()
+		vim.cmd([[colorscheme base16-black-metal-gorgoroth]])
+		vim.opt.background = "dark"
+	end,
+	set_light_mode = function()
+		vim.cmd([[colorscheme base16-ayu-light]])
+		vim.opt.background = "light"
+	end,
+	update_interval = 3000,
+	fallback = "dark",
 })
 
-require('lazydocker').setup({
-    window = {
-        settings = {
-            width = 0.9,
-            height = 0.9,
-            border = 'single',
-            relative = 'editor',
-        },
-    },
+require("lazydocker").setup({
+	window = {
+		settings = {
+			width = 0.9,
+			height = 0.9,
+			border = "single",
+			relative = "editor",
+		},
+	},
 })
 
 vim.lsp.enable({
-    "gopls",
-    "lua_ls",
-    "pyright",
-    "clangd",
-    "html",
-    "cssls",
-    "jsonls",
-    "bashls",
-    "dockerls",
-    "yamlls",
-    "rust_analyzer",
-    "tailwindcss",
-    "jdtls",
-    "emmet_ls",
-    "nixd",
+	"gopls",
+	"lua_ls",
+	"pyright",
+	"clangd",
+	"html",
+	"cssls",
+	"jsonls",
+	"bashls",
+	"dockerls",
+	"yamlls",
+	"rust_analyzer",
+	"tailwindcss",
+	"jdtls",
+	"emmet_ls",
+	"nil",
 })
 
 -- Keymaps
 -- fzf
 local fzf = require("fzf-lua")
-vim.keymap.set("n", "<leader>ff", fzf.files, { noremap = true, silent = true })                -- File find
-vim.keymap.set("n", "<leader>fg", fzf.git_files, { noremap = true, silent = true })            -- Git file find
-vim.keymap.set("n", "<leader>fb", fzf.buffers, { noremap = true, silent = true })              -- Find buffer
-vim.keymap.set("n", "<leader>sg", fzf.live_grep, { noremap = true, silent = true })            -- Grep string
-vim.keymap.set("n", "<leader>sm", fzf.spellcheck, { noremap = true, silent = true })           -- Misspelled words
-vim.keymap.set("n", "<leader>sp", fzf.spell_suggest, { noremap = true, silent = true })        -- Suggestions for word under cursor
-vim.keymap.set("n", "<leader>fh", fzf.help_tags, { noremap = true, silent = true })            -- Help tags
+vim.keymap.set("n", "<leader>ff", fzf.files, { noremap = true, silent = true }) -- File find
+vim.keymap.set("n", "<leader>fg", fzf.git_files, { noremap = true, silent = true }) -- Git file find
+vim.keymap.set("n", "<leader>fb", fzf.buffers, { noremap = true, silent = true }) -- Find buffer
+vim.keymap.set("n", "<leader>sg", fzf.live_grep, { noremap = true, silent = true }) -- Grep string
+vim.keymap.set("n", "<leader>sm", fzf.spellcheck, { noremap = true, silent = true }) -- Misspelled words
+vim.keymap.set("n", "<leader>sp", fzf.spell_suggest, { noremap = true, silent = true }) -- Suggestions for word under cursor
+vim.keymap.set("n", "<leader>fh", fzf.help_tags, { noremap = true, silent = true }) -- Help tags
 vim.keymap.set("n", "<leader>df", fzf.diagnostics_document, { noremap = true, silent = true }) -- Document Diagnostics
 
 -- terminal apps
 vim.keymap.set("n", "<leader>lz", "<cmd>LazyGit<CR>", { noremap = true, silent = true })
 vim.keymap.set(
-    { 'n', 't' },
-    '<leader>ld',
-    "<Cmd>lua require('lazydocker').toggle({ engine = 'docker' })<CR>",
-    { desc = 'LazyDocker (docker)' }
+	{ "n", "t" },
+	"<leader>ld",
+	"<Cmd>lua require('lazydocker').toggle({ engine = 'docker' })<CR>",
+	{ desc = "LazyDocker (docker)" }
 )
 vim.keymap.set("n", "<leader>e", function()
-    require("yazi").yazi()
+	require("yazi").yazi()
 end)
 
 -- qol
@@ -260,61 +264,63 @@ vim.keymap.set("n", "<C-J>", "<C-W>j")
 vim.keymap.set("n", "<C-K>", "<C-W>k")
 vim.keymap.set("n", "<C-L>", "<C-W>l")
 vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
-vim.keymap.set("n", "<leader>c", function() require("conform").format({ async = true, lsp_fallback = true }) end)
+vim.keymap.set("n", "<leader>c", function()
+	require("conform").format({ async = true, lsp_fallback = true })
+end)
 
 -- manual autocomplete
 vim.keymap.set("i", "<C-space>", function()
-    if vim.bo.omnifunc ~= "" then
-        -- If omnifunc is set (like in SQL files), use omni-completion
-        return "<C-x><C-o>"
-    else
-        -- Otherwise use LSP completion
-        return vim.lsp.completion.get()
-    end
+	if vim.bo.omnifunc ~= "" then
+		-- If omnifunc is set (like in SQL files), use omni-completion
+		return "<C-x><C-o>"
+	else
+		-- Otherwise use LSP completion
+		return vim.lsp.completion.get()
+	end
 end, { expr = true, desc = "Smart completion" })
 
 -- Autocommands
 -- remember last cursor position
 vim.api.nvim_create_augroup("vimStartup", { clear = true })
 vim.api.nvim_create_autocmd("BufReadPost", {
-    group = "vimStartup",
-    callback = function()
-        local last_position = vim.fn.line([['"]])
-        local last_line = vim.fn.line("$")
-        local filetype = vim.bo.filetype
+	group = "vimStartup",
+	callback = function()
+		local last_position = vim.fn.line([['"]])
+		local last_line = vim.fn.line("$")
+		local filetype = vim.bo.filetype
 
-        if last_position >= 1 and last_position <= last_line and not filetype:match("commit") then
-            vim.cmd('normal! g`"')
-        end
-    end,
+		if last_position >= 1 and last_position <= last_line and not filetype:match("commit") then
+			vim.cmd('normal! g`"')
+		end
+	end,
 })
 
 -- remember folds
 vim.api.nvim_create_augroup("remember_folds", { clear = true })
 vim.api.nvim_create_autocmd("BufWinLeave", {
-    group = "remember_folds",
-    pattern = "?*",
-    command = "mkview 1",
+	group = "remember_folds",
+	pattern = "?*",
+	command = "mkview 1",
 })
 vim.api.nvim_create_autocmd("BufWinEnter", {
-    group = "remember_folds",
-    pattern = "?*",
-    command = "silent! loadview 1",
+	group = "remember_folds",
+	pattern = "?*",
+	command = "silent! loadview 1",
 })
 
 -- enable autocompletion for LSP
 vim.api.nvim_create_autocmd("LspAttach", {
-    callback = function(ev)
-        local client = vim.lsp.get_client_by_id(ev.data.client_id)
-        if client:supports_method("textDocument/completion") then
-            vim.lsp.completion.enable(true, client.id, ev.buf, {
-                autotrigger = true,
-                convert = function(item)
-                    return { abbr = item.label:gsub("%b()", "") }
-                end,
-            })
-        end
-    end,
+	callback = function(ev)
+		local client = vim.lsp.get_client_by_id(ev.data.client_id)
+		if client:supports_method("textDocument/completion") then
+			vim.lsp.completion.enable(true, client.id, ev.buf, {
+				autotrigger = true,
+				convert = function(item)
+					return { abbr = item.label:gsub("%b()", "") }
+				end,
+			})
+		end
+	end,
 })
 
 -- vim dadbod config
@@ -323,107 +329,107 @@ vim.g.db_ui_connections_json = vim.fn.expand("~/.local/share/db_ui/connections.j
 vim.g.db_completion_enabled = 1
 vim.g.omni_sql_no_default_maps = 1
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "sql", "mysql", "plsql" },
-    callback = function()
-        vim.bo.omnifunc = "vim_dadbod_completion#omni"
-        vim.bo.completefunc = "vim_dadbod_completion#omni"
-        vim.bo.commentstring = "-- %s"
-    end,
+	pattern = { "sql", "mysql", "plsql" },
+	callback = function()
+		vim.bo.omnifunc = "vim_dadbod_completion#omni"
+		vim.bo.completefunc = "vim_dadbod_completion#omni"
+		vim.bo.commentstring = "-- %s"
+	end,
 })
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "dbui",
-    callback = function()
-        vim.bo.buflisted = false
-    end,
+	pattern = "dbui",
+	callback = function()
+		vim.bo.buflisted = false
+	end,
 })
 
 local projects = {
-    "osbackendapi",
-    "frontend",
-    "backend",
+	"osbackendapi",
+	"frontend",
+	"backend",
 }
 
 if vim.list_contains(projects, vim.fn.fnamemodify(vim.fn.getcwd(), ":t")) then
-    vim.g.tsc_makeprg = "yarn run tsgo"
-    vim.lsp.enable("tsgo")
-    vim.lsp.enable("oxlint")
-    vim.lsp.enable("oxfmt")
+	vim.g.tsc_makeprg = "yarn run tsgo"
+	vim.lsp.enable("tsgo")
+	vim.lsp.enable("oxlint")
+	vim.lsp.enable("oxfmt")
 
-    -- vim.keymap.set("n", "<leader>c", function()
-    --     vim.lsp.buf.format({ name = "oxfmt", async = true })
-    -- end)
+	-- vim.keymap.set("n", "<leader>c", function()
+	--     vim.lsp.buf.format({ name = "oxfmt", async = true })
+	-- end)
 else
-    vim.g.tsc_makeprg = "yarn run tsc"
-    vim.lsp.enable("ts_ls")
-    vim.lsp.enable("oxlint")
-    vim.lsp.enable("oxfmt")
+	vim.g.tsc_makeprg = "yarn run tsc"
+	vim.lsp.enable("ts_ls")
+	vim.lsp.enable("oxlint")
+	vim.lsp.enable("oxfmt")
 
-    -- require("conform").setup({
-    --     notify_on_error = true,
-    --     formatters_by_ft = {
-    --         javascript = { "prettier" },
-    --         typescript = { "prettier" },
-    --         javascriptreact = { "prettier" },
-    --         typescriptreact = { "prettier" },
-    --         html = { "prettier" },
-    --     },
-    -- })
-    -- vim.keymap.set("n", "<leader>c", function() require("conform").format({ async = true, lsp_fallback = true }) end)
-    -- vim.keymap.set("n", "<leader>c", function()
-    --     vim.lsp.buf.format({ name = "oxfmt", async = true })
-    -- end)
+	-- require("conform").setup({
+	--     notify_on_error = true,
+	--     formatters_by_ft = {
+	--         javascript = { "prettier" },
+	--         typescript = { "prettier" },
+	--         javascriptreact = { "prettier" },
+	--         typescriptreact = { "prettier" },
+	--         html = { "prettier" },
+	--     },
+	-- })
+	-- vim.keymap.set("n", "<leader>c", function() require("conform").format({ async = true, lsp_fallback = true }) end)
+	-- vim.keymap.set("n", "<leader>c", function()
+	--     vim.lsp.buf.format({ name = "oxfmt", async = true })
+	-- end)
 end
 
 local compiler_configs = {
-    typescript = {
-        patterns = { "typescript", "typescriptreact" },
-        compiler = "tsc",
-    },
-    rust = {
-        patterns = { "rust" },
-        compiler = "cargo",
-    },
+	typescript = {
+		patterns = { "typescript", "typescriptreact" },
+		compiler = "tsc",
+	},
+	rust = {
+		patterns = { "rust" },
+		compiler = "cargo",
+	},
 }
 
 for _, config in pairs(compiler_configs) do
-    vim.api.nvim_create_autocmd("FileType", {
-        pattern = config.patterns,
-        callback = function()
-            vim.cmd("compiler " .. config.compiler)
-        end,
-        desc = "Set up compiler for " .. table.concat(config.patterns, ", "),
-    })
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = config.patterns,
+		callback = function()
+			vim.cmd("compiler " .. config.compiler)
+		end,
+		desc = "Set up compiler for " .. table.concat(config.patterns, ", "),
+	})
 end
 
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
-    pattern = "make",
-    callback = function()
-        local qf = vim.fn.getqflist()
-        for _, item in ipairs(qf) do
-            if item.valid == 1 then
-                vim.cmd("copen")
-                return
-            end
-        end
-    end,
+	pattern = "make",
+	callback = function()
+		local qf = vim.fn.getqflist()
+		for _, item in ipairs(qf) do
+			if item.valid == 1 then
+				vim.cmd("copen")
+				return
+			end
+		end
+	end,
 })
 
 local function set_os_project_indent()
-    local file = vim.fn.expand("%:p")
-    local workspace = vim.fn.expand("~/workspace")
+	local file = vim.fn.expand("%:p")
+	local workspace = vim.fn.expand("~/workspace")
 
-    if file:match("^" .. workspace .. "/") then
-        vim.opt_local.tabstop = 2
-        vim.opt_local.softtabstop = 2
-        vim.opt_local.shiftwidth = 2
-        vim.opt_local.expandtab = true
-    end
+	if file:match("^" .. workspace .. "/") then
+		vim.opt_local.tabstop = 2
+		vim.opt_local.softtabstop = 2
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.expandtab = true
+	end
 end
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-    callback = set_os_project_indent,
+	callback = set_os_project_indent,
 })
 
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
-    command = "checktime"
+	command = "checktime",
 })
