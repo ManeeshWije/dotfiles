@@ -79,3 +79,4 @@ eval "$(starship init zsh)"
 export PATH=/home/maneesh/.opencode/bin:$PATH
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(direnv hook zsh)"
