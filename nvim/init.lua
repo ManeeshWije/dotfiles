@@ -214,6 +214,7 @@ vim.lsp.enable({
     "tailwindcss",
     "jdtls",
     "emmet_ls",
+    "nixd",
 })
 
 -- Keymaps
@@ -338,7 +339,8 @@ vim.api.nvim_create_autocmd("FileType", {
 
 local projects = {
     "osbackendapi",
-    "frontend"
+    "frontend",
+    "backend",
 }
 
 if vim.list_contains(projects, vim.fn.fnamemodify(vim.fn.getcwd(), ":t")) then
