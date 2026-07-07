@@ -56,7 +56,7 @@ alias o="xdg-open"
 alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
-alias todo='nvim "$HOME/syncthing/Documents/personal-notes/todo.md"'
+alias todo='nvim "$HOME/Documents/obsidian-vault/personal-notes/todo.md"'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     fpath+=("$(brew --prefix)/share/zsh/site-functions")
