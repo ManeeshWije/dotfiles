@@ -30,13 +30,14 @@ vim.o.foldlevel = 99
 vim.o.list = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.g.markdown_folding = 1
-vim.o.splitright = true
-vim.o.splitbelow = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 vim.opt.undofile = true
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undo"
 vim.opt.undolevels = 1000
 vim.opt.undoreload = 10000
 vim.o.autoread = true
+vim.g.tsc_makeprg = "yarn run tsc"
 
 -- Plugins
 vim.pack.add({
@@ -72,7 +73,7 @@ local all_levels = {
 }
 
 vim.diagnostic.config({
-	severity_sort = true,
+    severity_sort = true,
 	virtual_lines = false,
 	signs = {
 		severity = all_levels,
@@ -170,6 +171,7 @@ require("conform").setup({
 		javascript = { "oxfmt" },
 		javascriptreact = { "oxfmt" },
 		nix = { "nixfmt" },
+		markdown = { "oxfmt" },
 	},
 	formatters = {
 		sql_formatter = {
@@ -267,6 +269,24 @@ vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close quickfix lis
 vim.keymap.set("n", "<leader>c", function()
 	require("conform").format({ async = true, lsp_fallback = true })
 end)
+-- Terminal window navigation
+vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { silent = true })
+vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { silent = true })
+vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { silent = true })
+vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { silent = true })
+vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Terminal normal mode" })
+vim.keymap.set("n", "<leader>t", ":term<CR>", { desc = "Open terminal as new buffer" })
+vim.keymap.set("n", "<leader>tv", ":botright vsplit | term<CR>", { desc = "Open terminal vertically" })
+vim.keymap.set("n", "<leader>th", ":botright split | term<CR>", { desc = "Open terminal horizontally" })
+
+-- Re-enter insert mode when focusing a terminal
+vim.api.nvim_create_autocmd("WinEnter", {
+	callback = function()
+		if vim.bo.buftype == "terminal" then
+			vim.cmd.startinsert()
+		end
+	end,
+})
 
 -- manual autocomplete
 vim.keymap.set("i", "<C-space>", function()
@@ -293,19 +313,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 			vim.cmd('normal! g`"')
 		end
 	end,
-})
-
--- remember folds
-vim.api.nvim_create_augroup("remember_folds", { clear = true })
-vim.api.nvim_create_autocmd("BufWinLeave", {
-	group = "remember_folds",
-	pattern = "?*",
-	command = "mkview 1",
-})
-vim.api.nvim_create_autocmd("BufWinEnter", {
-	group = "remember_folds",
-	pattern = "?*",
-	command = "silent! loadview 1",
 })
 
 -- enable autocompletion for LSP
@@ -350,34 +357,20 @@ local projects = {
 }
 
 if vim.list_contains(projects, vim.fn.fnamemodify(vim.fn.getcwd(), ":t")) then
-	vim.g.tsc_makeprg = "yarn run tsgo"
 	vim.lsp.enable("tsgo")
-	vim.lsp.enable("oxlint")
-	vim.lsp.enable("oxfmt")
-
-	-- vim.keymap.set("n", "<leader>c", function()
-	--     vim.lsp.buf.format({ name = "oxfmt", async = true })
-	-- end)
 else
-	vim.g.tsc_makeprg = "yarn run tsc"
 	vim.lsp.enable("ts_ls")
-	vim.lsp.enable("oxlint")
-	vim.lsp.enable("oxfmt")
 
-	-- require("conform").setup({
-	--     notify_on_error = true,
-	--     formatters_by_ft = {
-	--         javascript = { "prettier" },
-	--         typescript = { "prettier" },
-	--         javascriptreact = { "prettier" },
-	--         typescriptreact = { "prettier" },
-	--         html = { "prettier" },
-	--     },
-	-- })
-	-- vim.keymap.set("n", "<leader>c", function() require("conform").format({ async = true, lsp_fallback = true }) end)
-	-- vim.keymap.set("n", "<leader>c", function()
-	--     vim.lsp.buf.format({ name = "oxfmt", async = true })
-	-- end)
+	require("conform").setup({
+		notify_on_error = true,
+		formatters_by_ft = {
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			javascriptreact = { "prettier" },
+			typescriptreact = { "prettier" },
+			html = { "prettier" },
+		},
+	})
 end
 
 local compiler_configs = {
@@ -428,8 +421,4 @@ end
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	callback = set_os_project_indent,
-})
-
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
-	command = "checktime",
 })
