@@ -26,6 +26,12 @@
                                         "repeat": true
                                     }
                                 ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape",
+                                        "repeat": true
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -45,6 +51,12 @@
                                 "to": [
                                     {
                                         "key_code": "left_control",
+                                        "repeat": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape",
                                         "repeat": true
                                     }
                                 ],
