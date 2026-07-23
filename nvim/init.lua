@@ -229,7 +229,7 @@ local fzf = require("fzf-lua")
 vim.keymap.set("n", "<leader>ff", fzf.files, { noremap = true, silent = true }) -- File find
 vim.keymap.set("n", "<leader>fg", fzf.git_files, { noremap = true, silent = true }) -- Git file find
 vim.keymap.set("n", "<leader>fb", fzf.buffers, { noremap = true, silent = true }) -- Find buffer
-vim.keymap.set("n", "<leader>sg", fzf.live_grep, { noremap = true, silent = true }) -- Grep string
+vim.keymap.set("n", "<leader>sg", fzf.grep_project, { noremap = true, silent = true }) -- Grep string
 vim.keymap.set("n", "<leader>sm", fzf.spellcheck, { noremap = true, silent = true }) -- Misspelled words
 vim.keymap.set("n", "<leader>sp", fzf.spell_suggest, { noremap = true, silent = true }) -- Suggestions for word under cursor
 vim.keymap.set("n", "<leader>fh", fzf.help_tags, { noremap = true, silent = true }) -- Help tags
