@@ -269,6 +269,7 @@ vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close quickfix lis
 vim.keymap.set("n", "<leader>c", function()
 	require("conform").format({ async = true, lsp_fallback = true })
 end)
+vim.keymap.set("n", "<leader>db", ":DBUIToggle<CR>", { desc = "Open DBUI Drawer" })
 -- Terminal window navigation
 vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { silent = true })
 vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { silent = true })
@@ -422,3 +423,26 @@ end
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	callback = set_os_project_indent,
 })
+
+vim.api.nvim_create_user_command("LspHardRestart", function()
+  local clients = vim.lsp.get_clients()
+
+  for _, client in ipairs(clients) do
+    client:stop(true)
+  end
+
+  vim.defer_fn(function()
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+      if vim.api.nvim_buf_is_loaded(buf)
+        and vim.bo[buf].buflisted
+        and vim.bo[buf].buftype == ""
+        and vim.bo[buf].filetype ~= ""
+      then
+        vim.api.nvim_exec_autocmds("FileType", {
+          buffer = buf,
+          modeline = false,
+        })
+      end
+    end
+  end, 500)
+end, {})
