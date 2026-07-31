@@ -170,7 +170,7 @@ require("conform").setup({
 		typescriptreact = { "oxfmt" },
 		javascript = { "oxfmt" },
 		javascriptreact = { "oxfmt" },
-		nix = { "nixfmt" },
+		nix = { "alejandra" },
 		markdown = { "oxfmt" },
 	},
 	formatters = {
