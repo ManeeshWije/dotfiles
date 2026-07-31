@@ -63,9 +63,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export PATH="$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$HOME/.local/bin:$PATH:$HOME/go/bin"
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 source <(fzf --zsh)
 
 eval "$(starship init zsh)"
