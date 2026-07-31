@@ -27,7 +27,6 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^H' backward-delete-char
 bindkey '^?' backward-delete-char
-bindkey -s ^f "tmux-sessionizer\n"
 
 # git
 alias addup='git add -u'
@@ -49,14 +48,10 @@ alias grep='grep --color=auto'
 alias st='syncthing'
 alias sd='cd "$(find "$HOME" -maxdepth 7 -type d | fzf || echo "$PWD")"'
 alias sf='file=$(find "$HOME" -maxdepth 7 -type f | fzf) && [ -n "$file" ] && xdg-open "$file"'
-alias pacupdate='sudo pacman -Syu && yay -Syu'
-alias paccache='sudo pacman -Scc && yay -Scc'
-alias pacdelete='pacman -Qtdq | sudo pacman -Rns -'
 alias o="xdg-open"
 alias z="zathura"
 alias air='$(go env GOPATH)/bin/air'
 alias y="yazi"
-alias todo='nvim "$HOME/Documents/obsidian-vault/personal-notes/todo.md"'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     fpath+=("$(brew --prefix)/share/zsh/site-functions")
@@ -75,8 +70,4 @@ source <(fzf --zsh)
 
 eval "$(starship init zsh)"
 
-# opencode
-export PATH=/home/maneesh/.opencode/bin:$PATH
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(direnv hook zsh)"
