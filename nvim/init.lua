@@ -72,7 +72,7 @@ local all_levels = {
 }
 
 vim.diagnostic.config({
-    severity_sort = true,
+	severity_sort = true,
 	virtual_lines = false,
 	signs = {
 		severity = all_levels,
@@ -424,24 +424,25 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 })
 
 vim.api.nvim_create_user_command("LspHardRestart", function()
-  local clients = vim.lsp.get_clients()
+	local clients = vim.lsp.get_clients()
 
-  for _, client in ipairs(clients) do
-    client:stop(true)
-  end
+	for _, client in ipairs(clients) do
+		client:stop(true)
+	end
 
-  vim.defer_fn(function()
-    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-      if vim.api.nvim_buf_is_loaded(buf)
-        and vim.bo[buf].buflisted
-        and vim.bo[buf].buftype == ""
-        and vim.bo[buf].filetype ~= ""
-      then
-        vim.api.nvim_exec_autocmds("FileType", {
-          buffer = buf,
-          modeline = false,
-        })
-      end
-    end
-  end, 500)
+	vim.defer_fn(function()
+		for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+			if
+				vim.api.nvim_buf_is_loaded(buf)
+				and vim.bo[buf].buflisted
+				and vim.bo[buf].buftype == ""
+				and vim.bo[buf].filetype ~= ""
+			then
+				vim.api.nvim_exec_autocmds("FileType", {
+					buffer = buf,
+					modeline = false,
+				})
+			end
+		end
+	end, 500)
 end, {})
