@@ -8,6 +8,6 @@
   - ghostty
   - neovim
   - yazi
-  - brave browser
+  - firefox
 
 # Screenshots

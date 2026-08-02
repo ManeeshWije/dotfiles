@@ -52,7 +52,6 @@ vim.pack.add({
 	{ src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
 	{ src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
-	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
 	{ src = "https://github.com/github/copilot.vim" },
 	{ src = "https://github.com/f-person/auto-dark-mode.nvim" },
 	{ src = "https://github.com/ManeeshWije/git_browse.nvim" },
