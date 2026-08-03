@@ -359,6 +359,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 local projects = {
 	"osbackendapi",
+    "personal-site",
 	"frontend",
 	"backend",
 }
