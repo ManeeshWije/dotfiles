@@ -220,6 +220,7 @@ vim.lsp.enable({
 	"jdtls",
 	"emmet_ls",
 	"nil_ls",
+	"marksman",
 })
 
 -- Keymaps
