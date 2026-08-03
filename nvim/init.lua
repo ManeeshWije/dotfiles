@@ -204,6 +204,12 @@ require("lazydocker").setup({
 	},
 })
 
+vim.lsp.config("marksman", {
+	cmd = { "marksman", "server" },
+	filetypes = { "markdown", "mdx" },
+	root_markers = { ".marksman.toml", ".git" },
+})
+
 vim.lsp.enable({
 	"gopls",
 	"lua_ls",
