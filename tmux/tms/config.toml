@@ -1,0 +1,23 @@
+display_full_path = true
+
+# Non-Git directories that should appear directly in the picker.
+# These are not scanned recursively.
+bookmarks = [
+  "~/syncthing/Documents",
+  "~/syncthing/Documents/notes",
+  "~/syncthing/Documents/notes/personal-notes",
+  "~/syncthing/Documents/notes/opensports",
+]
+
+# Directories scanned recursively for Git repositories.
+[[search_dirs]]
+path = "~"
+depth = 2
+
+[[search_dirs]]
+path = "~/projects"
+depth = 3
+
+[[search_dirs]]
+path = "~/workspace"
+depth = 2
