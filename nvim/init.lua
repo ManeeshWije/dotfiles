@@ -59,6 +59,7 @@ vim.pack.add({
 	{ src = "https://github.com/crnvl96/lazydocker.nvim" },
 	{ src = "https://github.com/mikavilpas/yazi.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
+	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
 })
 vim.cmd(":hi statusline guibg=NONE")
 vim.cmd([[set completeopt+=menuone,noselect,popup]])
@@ -226,6 +227,7 @@ vim.lsp.enable({
 	"jdtls",
 	"emmet_ls",
 	"nil_ls",
+	"nixd",
 	"marksman",
 })
 
@@ -275,25 +277,6 @@ vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close quickfix lis
 vim.keymap.set("n", "<leader>c", function()
 	require("conform").format({ async = true, lsp_fallback = true })
 end)
-vim.keymap.set("n", "<leader>db", ":DBUIToggle<CR>", { desc = "Open DBUI Drawer" })
--- Terminal window navigation
-vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { silent = true })
-vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { silent = true })
-vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { silent = true })
-vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { silent = true })
-vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Terminal normal mode" })
-vim.keymap.set("n", "<leader>t", ":term<CR>", { desc = "Open terminal as new buffer" })
-vim.keymap.set("n", "<leader>tv", ":botright vsplit | term<CR>", { desc = "Open terminal vertically" })
-vim.keymap.set("n", "<leader>th", ":botright split | term<CR>", { desc = "Open terminal horizontally" })
-
--- Re-enter insert mode when focusing a terminal
-vim.api.nvim_create_autocmd("WinEnter", {
-	callback = function()
-		if vim.bo.buftype == "terminal" then
-			vim.cmd.startinsert()
-		end
-	end,
-})
 
 -- manual autocomplete
 vim.keymap.set("i", "<C-space>", function()
@@ -359,7 +342,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 local projects = {
 	"osbackendapi",
-    "personal-site",
+	"personal-site",
 	"frontend",
 	"backend",
 }
