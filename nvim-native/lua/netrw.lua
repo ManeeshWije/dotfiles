@@ -1,11 +1,23 @@
--- vim.g.netrw_liststyle = 3 -- tree view
+vim.g.netrw_liststyle = 3 -- tree view
 vim.g.netrw_banner = 0 -- hide the top banner
 vim.g.netrw_winsize = 25 -- fix the left split width
 vim.g.netrw_browse_split = 0 -- open files in the previous window
 vim.g.netrw_altfile = 1 -- keep the alternate file correct
 vim.g.netrw_keepdir = 0 -- update cwd
 
-vim.keymap.set("n", "<leader>e", ":Lexplore<cr>", { silent = true })
+vim.keymap.set("n", "<leader>e", function()
+	local dir = vim.fn.expand("%:p:h")
+
+	-- fallback for unnamed buffers
+	if dir == "" then
+		dir = vim.fn.getcwd()
+	end
+
+	vim.cmd("Lexplore " .. vim.fn.fnameescape(dir))
+end, {
+	silent = true,
+	desc = "Open netrw at current file",
+})
 
 -- netrw's built-in `%` opens new files in the netrw window instead of
 -- respecting `netrw_browse_split`. Override it to open in the previous window.
