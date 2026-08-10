@@ -31,3 +31,22 @@ vim.api.nvim_create_autocmd("WinEnter", {
 		end
 	end,
 })
+
+local term_group = vim.api.nvim_create_augroup("terminal_names", { clear = true })
+
+vim.api.nvim_create_autocmd("TermRequest", {
+	group = term_group,
+	callback = function(ev)
+		local title = vim.b[ev.buf].term_title
+
+		if title and title ~= "" then
+			-- Examples:
+			-- "codex"
+			-- "npm run dev"
+			-- "zsh"
+			title = vim.fn.fnamemodify(title, ":t")
+
+			pcall(vim.api.nvim_buf_set_name, ev.buf, "term://" .. title)
+		end
+	end,
+})
