@@ -1,5 +1,5 @@
-vim.g.tsc_makeprg = "yarn run tsc"
-
+-- vim.g.tsc_makeprg = "yarn run tsc"
+--
 local compiler_configs = {
 	typescript = {
 		patterns = { "typescript", "typescriptreact" },
