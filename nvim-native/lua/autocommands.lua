@@ -31,17 +31,3 @@ vim.api.nvim_create_autocmd("WinEnter", {
 		end
 	end,
 })
-
--- open qflist after make to go through errors
-vim.api.nvim_create_autocmd("QuickFixCmdPost", {
-	pattern = "make",
-	callback = function()
-		local qf = vim.fn.getqflist()
-		for _, item in ipairs(qf) do
-			if item.valid == 1 then
-				vim.cmd("copen")
-				return
-			end
-		end
-	end,
-})
