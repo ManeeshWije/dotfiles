@@ -93,6 +93,8 @@ local function update_theme()
 		vim.o.background = "light"
 		vim.cmd.colorscheme("shine")
 	end
+	vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })
+	vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE" })
 end
 
 update_theme()

@@ -19,6 +19,29 @@ vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close quickfix lis
 vim.keymap.set("c", "<C-d>", "<PageDown>", { remap = false })
 vim.keymap.set("c", "<C-u>", "<PageUp>", { remap = false })
 vim.keymap.set("n", "<leader>fb", ":buffer ", { silent = false })
+-- close buffer in wildmenu
+vim.keymap.set("c", "<C-x>", function()
+	if vim.fn.getcmdtype() ~= ":" then
+		return "<C-x>"
+	end
+
+	local cmdline = vim.fn.getcmdline()
+	local name = cmdline:match("^buffer%s+(.+)$")
+
+	if not name or name == "" then
+		return "<C-x>"
+	end
+
+	vim.schedule(function()
+		local bufnr = vim.fn.bufnr(name)
+
+		if bufnr ~= -1 then
+			vim.api.nvim_buf_delete(bufnr, { force = false })
+		end
+	end)
+
+	return "<C-c>"
+end, { expr = true })
 -- Terminal window navigation
 vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { silent = true })
 vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { silent = true })
