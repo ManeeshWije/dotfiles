@@ -5,7 +5,7 @@ vim.g.netrw_browse_split = 0 -- open files in the previous window
 vim.g.netrw_altfile = 1 -- keep the alternate file correct
 vim.g.netrw_keepdir = 0 -- update cwd
 
-vim.keymap.set("n", "<leader>e", function()
+vim.keymap.set("n", "<leader>b", function()
 	local dir = vim.fn.expand("%:p:h")
 
 	-- fallback for unnamed buffers
