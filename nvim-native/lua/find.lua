@@ -1,27 +1,21 @@
-local ignore_patterns = {
-	"node_modules",
-	".git",
-	".cache",
-	"dist",
-	"build",
-	"target",
-}
-
 local cached_files
 
 local function build_file_list()
-	local files = vim.fn.glob("**/*", true, true)
+	local root = vim.fs.root(0, ".git")
 
-	return vim.tbl_filter(function(f)
-		-- Fast Lua-side filtering first
-		for _, dir in ipairs(ignore_patterns) do
-			if f:find(dir, 1, true) then
-				return false
-			end
-		end
+	if root then
+		return vim.fn.systemlist({
+			"git",
+			"-C",
+			root,
+			"ls-files",
+			"--cached",
+			"--others",
+			"--exclude-standard",
+		})
+	end
 
-		return vim.fn.isdirectory(f) == 0
-	end, files)
+	return vim.fn.glob("**/*", true, true)
 end
 
 function _G.native_find(text, _)
