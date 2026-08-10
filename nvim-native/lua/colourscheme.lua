@@ -60,8 +60,7 @@ local function system_is_dark()
 			"AppleInterfaceStyle",
 		}, { text = true }):wait()
 
-		return result.code == 0
-			and result.stdout:match("Dark") ~= nil
+		return result.code == 0 and result.stdout:match("Dark") ~= nil
 	end
 
 	if vim.fn.has("unix") == 1 then
@@ -71,8 +70,7 @@ local function system_is_dark()
 			"/org/gnome/desktop/interface/color-scheme",
 		}, { text = true }):wait()
 
-		return result.code == 0
-			and result.stdout:match("prefer%-dark") ~= nil
+		return result.code == 0 and result.stdout:match("prefer%-dark") ~= nil
 	end
 
 	return true

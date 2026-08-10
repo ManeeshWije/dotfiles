@@ -9,7 +9,7 @@ M.formatters = {
 	typescript = "oxfmt --stdin-filepath %",
 	typescriptreact = "oxfmt --stdin-filepath %",
 	rust = "rustfmt",
-	sql = "sql-formatter"
+	sql = "sql-formatter",
 }
 
 function M.format(bufnr)
