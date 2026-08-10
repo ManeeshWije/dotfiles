@@ -60,24 +60,21 @@ local function system_is_dark()
 			"AppleInterfaceStyle",
 		}, { text = true }):wait()
 
-		return result.code == 0 and result.stdout:match("Dark") ~= nil
+		return result.code == 0
+			and result.stdout:match("Dark") ~= nil
 	end
 
 	if vim.fn.has("unix") == 1 then
-		-- Freedesktop/GNOME appearance setting.
 		local result = vim.system({
-			"gsettings",
-			"get",
-			"org.gnome.desktop.interface",
-			"color-scheme",
+			"dconf",
+			"read",
+			"/org/gnome/desktop/interface/color-scheme",
 		}, { text = true }):wait()
 
-		if result.code == 0 then
-			return result.stdout:match("prefer%-dark") ~= nil
-		end
+		return result.code == 0
+			and result.stdout:match("prefer%-dark") ~= nil
 	end
 
-	-- Fallback.
 	return true
 end
 
