@@ -26,3 +26,5 @@ vim.keymap.set("n", "<leader>t", ":term<CR>", { desc = "Open terminal as new buf
 vim.keymap.set("n", "<leader>tv", ":botright vsplit | term<CR>", { desc = "Open terminal vertically" })
 vim.keymap.set("n", "<leader>th", ":botright split | term<CR>", { desc = "Open terminal horizontally" })
 
+vim.keymap.set("c", "<C-d>", "<PageDown>", { remap = false })
+vim.keymap.set("c", "<C-u>", "<PageUp>", { remap = false })
