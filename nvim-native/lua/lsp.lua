@@ -16,7 +16,32 @@ vim.lsp.enable({
 	"tailwindcss",
 	"yamlls",
 })
-vim.diagnostic.config({ virtual_text = true })
+
+vim.g.tsc_makeprg = "yarn run tsc"
+
+local all_levels = {
+	vim.diagnostic.severity.ERROR,
+	vim.diagnostic.severity.WARN,
+	vim.diagnostic.severity.HINT,
+	vim.diagnostic.severity.INFO,
+}
+
+vim.diagnostic.config({
+	severity_sort = true,
+	virtual_lines = false,
+	signs = {
+		severity = all_levels,
+	},
+	underline = {
+		severity = all_levels,
+	},
+	virtual_text = {
+		severity = all_levels,
+	},
+	float = {
+		severity = all_levels,
+	},
+})
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
