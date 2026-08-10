@@ -16,6 +16,9 @@ vim.keymap.set("n", "<C-J>", "<C-W>j")
 vim.keymap.set("n", "<C-K>", "<C-W>k")
 vim.keymap.set("n", "<C-L>", "<C-W>l")
 vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
+vim.keymap.set("c", "<C-d>", "<PageDown>", { remap = false })
+vim.keymap.set("c", "<C-u>", "<PageUp>", { remap = false })
+vim.keymap.set("n", "<leader>fb", ":buffer ", { silent = false })
 -- Terminal window navigation
 vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { silent = true })
 vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { silent = true })
@@ -25,6 +28,3 @@ vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Terminal normal mode
 vim.keymap.set("n", "<leader>t", ":term<CR>", { desc = "Open terminal as new buffer" })
 vim.keymap.set("n", "<leader>tv", ":botright vsplit | term<CR>", { desc = "Open terminal vertically" })
 vim.keymap.set("n", "<leader>th", ":botright split | term<CR>", { desc = "Open terminal horizontally" })
-
-vim.keymap.set("c", "<C-d>", "<PageDown>", { remap = false })
-vim.keymap.set("c", "<C-u>", "<PageUp>", { remap = false })
