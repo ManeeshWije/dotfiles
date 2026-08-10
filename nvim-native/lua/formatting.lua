@@ -3,11 +3,11 @@ local M = {}
 -- filetype -> shell command
 -- `%` gets replaced with the current buffer path.
 M.formatters = {
-	lua = "stylua %",
-	javascript = "oxfmt %",
-	javascriptreact = "oxfmt %",
-	typescript = "oxfmt %",
-	typescriptreact = "oxfmt %",
+	lua = "stylua -",
+	javascript = "oxfmt --stdin-filepath %",
+	javascriptreact = "oxfmt --stdin-filepath %",
+	typescript = "oxfmt --stdin-filepath %",
+	typescriptreact = "oxfmt --stdin-filepath %",
 	rust = "rustfmt",
 	sql = "sql-formatter",
 	nix = "alejandra --quiet",
