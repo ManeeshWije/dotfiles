@@ -2,7 +2,7 @@ vim.g.mapleader = ","
 
 require("options")
 require("lsp")
-require("colourscheme")
+--require("colourscheme")
 require("netrw")
 require("find")
 require("grep")
