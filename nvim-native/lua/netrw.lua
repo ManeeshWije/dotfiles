@@ -1,26 +1,24 @@
 vim.g.netrw_winsize = 25
 
 vim.keymap.set("n", "<leader>e", function()
-	-- close existing netrw window
-	for _, win in ipairs(vim.api.nvim_list_wins()) do
-		local buf = vim.api.nvim_win_get_buf(win)
-		if vim.bo[buf].filetype == "netrw" then
-			vim.api.nvim_win_close(win, true)
-			return
-		end
-	end
+    local current_buf = vim.api.nvim_get_current_buf()
 
-	-- open netrw at current file's directory
-	local dir = vim.fn.expand("%:p:h")
+    -- If this window is already netrw, go back
+    if vim.bo[current_buf].filetype == "netrw" then
+        vim.cmd("buffer #")
+        return
+    end
 
-	if dir == "" then
-		dir = vim.fn.getcwd()
-	end
+    local dir = vim.fn.expand("%:p:h")
 
-	vim.cmd("Lexplore " .. vim.fn.fnameescape(dir))
+    if dir == "" then
+        dir = vim.fn.getcwd()
+    end
+
+    vim.cmd("edit " .. vim.fn.fnameescape(dir))
 end, {
-	silent = true,
-	desc = "Toggle netrw",
+    silent = true,
+    desc = "Toggle netrw in current window",
 })
 
 -- netrw's built-in `%` opens new files in the netrw window instead of

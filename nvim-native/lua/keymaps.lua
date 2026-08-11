@@ -42,6 +42,16 @@ vim.keymap.set("c", "<C-x>", function()
 
 	return "<C-c>"
 end, { expr = true })
+-- manual autocomplete
+vim.keymap.set("i", "<C-space>", function()
+	if vim.bo.omnifunc ~= "" then
+		-- If omnifunc is set (like in SQL files), use omni-completion
+		return "<C-x><C-o>"
+	else
+		-- Otherwise use LSP completion
+		return vim.lsp.completion.get()
+	end
+end, { expr = true, desc = "Smart completion" })
 -- Terminal window navigation
 vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { silent = true })
 vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { silent = true })
