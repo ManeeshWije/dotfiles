@@ -1,14 +1,55 @@
+-- vim.keymap.set("n", "<leader>e", function()
+-- 	-- close existing netrw window
+-- 	for _, win in ipairs(vim.api.nvim_list_wins()) do
+-- 		local buf = vim.api.nvim_win_get_buf(win)
+-- 		if vim.bo[buf].filetype == "netrw" then
+-- 			vim.api.nvim_win_close(win, true)
+-- 			return
+-- 		end
+-- 	end
+--
+-- 	-- open netrw at current file's directory
+-- 	local dir = vim.fn.expand("%:p:h")
+--
+-- 	if dir == "" then
+-- 		dir = vim.fn.getcwd()
+-- 	end
+--
+-- 	vim.cmd("Ex " .. vim.fn.fnameescape(dir))
+-- end, {
+-- 	silent = true,
+-- 	desc = "Toggle netrw",
+-- })
 vim.keymap.set("n", "<leader>e", function()
-	-- close existing netrw window
-	for _, win in ipairs(vim.api.nvim_list_wins()) do
+	local current_win = vim.api.nvim_get_current_win()
+	local current_buf = vim.api.nvim_win_get_buf(current_win)
+
+	-- If we're currently inside netrw, toggle back out.
+	if vim.bo[current_buf].filetype == "netrw" then
+		local wins = vim.api.nvim_tabpage_list_wins(0)
+
+		if #wins > 1 then
+			vim.api.nvim_win_close(current_win, true)
+		elseif vim.fn.bufnr("#") ~= -1 then
+			vim.cmd("buffer #")
+		else
+			vim.cmd("enew")
+		end
+
+		return
+	end
+
+	-- If netrw is already open in another window, close it.
+	for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
 		local buf = vim.api.nvim_win_get_buf(win)
+
 		if vim.bo[buf].filetype == "netrw" then
 			vim.api.nvim_win_close(win, true)
 			return
 		end
 	end
 
-	-- open netrw at current file's directory
+	-- Open netrw at current file's directory.
 	local dir = vim.fn.expand("%:p:h")
 
 	if dir == "" then
