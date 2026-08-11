@@ -19,6 +19,7 @@ vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close quickfix lis
 vim.keymap.set("c", "<C-d>", "<PageDown>", { remap = false })
 vim.keymap.set("c", "<C-u>", "<PageUp>", { remap = false })
 vim.keymap.set("n", "<leader>fb", ":buffer ", { silent = false })
+vim.kewmap.set("n", "<C-x>", ":bd", { desc = "normal mode buffer delete" })
 -- close buffer in wildmenu
 vim.keymap.set("c", "<C-x>", function()
 	if vim.fn.getcmdtype() ~= ":" then
@@ -59,5 +60,5 @@ vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { silent = true })
 vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { silent = true })
 vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Terminal normal mode" })
 vim.keymap.set("n", "<leader>t", ":term<CR>", { desc = "Open terminal as new buffer" })
-vim.keymap.set("n", "<leader>tv", ":botright vsplit | term<CR>", { desc = "Open terminal vertically" })
-vim.keymap.set("n", "<leader>th", ":botright split | term<CR>", { desc = "Open terminal horizontally" })
+vim.keymap.set("n", "<leader>vt", ":botright vsplit | term<CR>", { desc = "Open terminal vertically" })
+vim.keymap.set("n", "<leader>vh", ":botright split | term<CR>", { desc = "Open terminal horizontally" })
