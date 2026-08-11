@@ -5,7 +5,6 @@
   - niri
   - noctalia
   - zsh
-  - tmux
   - ghostty
   - neovim
   - yazi
