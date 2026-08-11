@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close quickfix lis
 vim.keymap.set("c", "<C-d>", "<PageDown>", { remap = false })
 vim.keymap.set("c", "<C-u>", "<PageUp>", { remap = false })
 vim.keymap.set("n", "<leader>fb", ":buffer ", { silent = false })
-vim.keymap.set("n", "<leader>v>", ":vs<CR>", { desc = "vsplit" })
+vim.keymap.set("n", "<leader>vs", ":vs<CR>", { desc = "vsplit" })
 vim.keymap.set("n", "<C-x>", ":bd<CR>", { desc = "normal mode buffer delete" })
 -- close buffer in wildmenu
 vim.keymap.set("c", "<C-x>", function()
