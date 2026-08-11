@@ -24,13 +24,13 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- Re-enter insert mode when focusing a terminal
-vim.api.nvim_create_autocmd("WinEnter", {
-	callback = function()
-		if vim.bo.buftype == "terminal" then
-			vim.cmd.startinsert()
-		end
-	end,
-})
+-- vim.api.nvim_create_autocmd("WinEnter", {
+-- 	callback = function()
+-- 		if vim.bo.buftype == "terminal" then
+-- 			vim.cmd.startinsert()
+-- 		end
+-- 	end,
+-- })
 
 local term_group = vim.api.nvim_create_augroup("terminal_names", { clear = true })
 
