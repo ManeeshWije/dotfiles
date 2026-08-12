@@ -54,6 +54,10 @@ vim.keymap.set("i", "<C-space>", function()
 		return vim.lsp.completion.get()
 	end
 end, { expr = true, desc = "Smart completion" })
+vim.keymap.set("n", "<leader>sd", function()
+	vim.diagnostic.setqflist()
+	vim.cmd("copen")
+end, { silent = true })
 -- Terminal window navigation
 vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { silent = true })
 vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { silent = true })

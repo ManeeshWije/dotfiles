@@ -1,7 +1,7 @@
 -- lsp
 vim.lsp.enable({
 	"lua_ls",
-	"tsgo",
+	"tsc",
 	"oxlint",
 	"oxfmt",
 	"rust_analyzer",
