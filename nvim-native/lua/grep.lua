@@ -3,9 +3,9 @@ vim.opt.grepformat = "%f:%l:%c:%m"
 
 vim.keymap.set("n", "<leader>sg", function()
 	vim.ui.input({ prompt = "Grep: " }, function(pattern)
-		if pattern then
-			vim.cmd("silent grep! " .. vim.fn.fnameescape(pattern))
-			vim.cmd("copen")
+		if pattern and pattern ~= "" then
+			vim.cmd.grep({ pattern, bang = true })
+			vim.cmd.copen()
 		end
 	end)
 end, { silent = true })
