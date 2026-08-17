@@ -1,25 +1,34 @@
-vim.opt.grepprg = "rg --vimgrep --smart-case --hidden"
 vim.opt.grepformat = "%f:%l:%c:%m"
 
-local function grep_complete(arglead, cmdline, _)
-	local pattern = cmdline:match("^Grep%s+(.*)$") or arglead
-
-	if pattern == "" then
+local function grep_complete(arglead, _, _)
+	if arglead == "" then
 		return {}
 	end
 
-	local results = vim.fn.systemlist({
+	local lines = vim.fn.systemlist({
 		"rg",
 		"--no-heading",
+		"--no-filename",
 		"--color=never",
 		"--smart-case",
 		"--hidden",
 		"--glob",
 		"!.git",
-		pattern,
+		"--",
+		arglead,
 	})
 
-	return vim.list_slice(results, 1, 50)
+	local words = {}
+
+	for _, line in ipairs(lines) do
+		for word in line:gmatch("[%w_%.%-]+") do
+			if word:lower():find(arglead:lower(), 1, true) then
+				words[word] = true
+			end
+		end
+	end
+
+	return vim.tbl_keys(words)
 end
 
 vim.api.nvim_create_user_command("Grep", function(opts)
