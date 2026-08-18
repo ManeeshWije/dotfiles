@@ -13,15 +13,33 @@ M.formatters = {
 	nix = "alejandra --quiet",
 }
 
+local prettier_filetypes = {
+	javascript = true,
+	javascriptreact = true,
+	typescript = true,
+	typescriptreact = true,
+}
+
+local function get_formatter(ft, bufname)
+	if prettier_filetypes[ft] then
+		local git_root = vim.fs.root(bufname, ".git")
+
+		if git_root and vim.fs.basename(git_root) == "oswebsite" then
+			return "prettier --stdin-filepath %"
+		end
+	end
+
+	return M.formatters[ft]
+end
+
 function M.format(bufnr)
 	bufnr = bufnr or vim.api.nvim_get_current_buf()
 
 	local ft = vim.bo[bufnr].filetype
-	local cmd = M.formatters[ft]
+	local bufname = vim.api.nvim_buf_get_name(bufnr)
+	local cmd = get_formatter(ft, bufname)
 
 	if cmd then
-		local bufname = vim.api.nvim_buf_get_name(bufnr)
-
 		-- Replace % with shell-escaped buffer path.
 		local resolved = cmd:gsub("%%", vim.fn.shellescape(bufname))
 
