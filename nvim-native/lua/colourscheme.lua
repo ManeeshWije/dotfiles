@@ -64,6 +64,10 @@ local function system_is_dark()
 	end
 
 	if vim.fn.has("unix") == 1 then
+		if vim.fn.executable("dconf") ~= 1 then
+			return true
+		end
+
 		local result = vim.system({
 			"dconf",
 			"read",
