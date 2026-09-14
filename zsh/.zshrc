@@ -66,3 +66,5 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 source <(fzf --zsh)
 
 eval "$(starship init zsh)"
+
+eval "$(direnv hook zsh)"

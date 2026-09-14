@@ -1,0 +1,22 @@
+[user]
+	email = m.mwije1@proton.me
+	name = ManeeshWije
+[push]
+	default = simple
+[github]
+	user = ManeeshWije
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+[merge]
+	conflictStyle = zdiff3
+# Using nvim as diff tool
+[difftool]
+    prompt = true
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$REMOTE\" \"$LOCAL\""
