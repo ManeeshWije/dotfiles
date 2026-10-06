@@ -68,3 +68,48 @@ vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Terminal normal mode
 vim.keymap.set("n", "<leader>t", ":term<CR>", { desc = "Open terminal as new buffer" })
 vim.keymap.set("n", "<leader>vt", ":botright vsplit | term<CR>", { desc = "Open terminal vertically" })
 vim.keymap.set("n", "<leader>vh", ":botright split | term<CR>", { desc = "Open terminal horizontally" })
+vim.keymap.set("n", "<leader>gb", function()
+	local file = vim.fn.expand("%:.")
+	local line = vim.fn.line(".")
+	local url = vim.fn
+		.system({
+			"gh",
+			"browse",
+			file .. ":" .. line,
+			"--no-browser",
+		})
+		:gsub("%s+$", "")
+
+	vim.fn.system({
+		"open",
+		"-a",
+		"Firefox Developer Edition",
+		"--args",
+		"-new-tab",
+		url,
+	})
+end, { desc = "GitHub browse current line" })
+
+vim.keymap.set("n", "<leader>gB", function()
+	local file = vim.fn.expand("%:.")
+	local line = vim.fn.line(".")
+	local url = vim.fn
+		.system({
+			"gh",
+			"browse",
+			file .. ":" .. line,
+			"--no-browser",
+		})
+		:gsub("%s+$", "")
+
+	url = url:gsub("/blob/", "/blame/")
+
+	vim.fn.system({
+		"open",
+		"-a",
+		"Firefox Developer Edition",
+		"--args",
+		"-new-tab",
+		url,
+	})
+end, { desc = "GitHub blame current line" })
