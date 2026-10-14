@@ -17,9 +17,9 @@ vim.o.timeoutlen = 300
 vim.o.scrolloff = 10
 vim.o.sidescrolloff = 10
 vim.o.hlsearch = true
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftwidth = 4
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.smartindent = true
 vim.o.previewheight = 25
@@ -48,15 +48,9 @@ vim.pack.add({
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
-	{ src = "https://github.com/tpope/vim-dadbod" },
-	{ src = "https://github.com/kristijanhusak/vim-dadbod-ui" },
-	{ src = "https://github.com/kristijanhusak/vim-dadbod-completion" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
-	{ src = "https://github.com/github/copilot.vim" },
 	{ src = "https://github.com/f-person/auto-dark-mode.nvim" },
 	{ src = "https://github.com/ManeeshWije/git_browse.nvim" },
-	{ src = "https://github.com/kdheepak/lazygit.nvim" },
-	{ src = "https://github.com/crnvl96/lazydocker.nvim" },
 	{ src = "https://github.com/mikavilpas/yazi.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
@@ -89,7 +83,34 @@ vim.diagnostic.config({
 	},
 })
 
+local lsp_servers = {
+	"gopls",
+	"lua_ls",
+	"pyright",
+	"clangd",
+	"html",
+	"cssls",
+	"jsonls",
+	"bashls",
+	"dockerls",
+	"yamlls",
+	"rust_analyzer",
+	"tailwindcss",
+	"jdtls",
+	"emmet_ls",
+	"nil_ls",
+	"nixd",
+	"marksman",
+}
+
 require("mason").setup()
+
+require("mason-lspconfig").setup({
+	ensure_installed = lsp_servers,
+	automatic_enable = false,
+})
+
+vim.lsp.enable(lsp_servers)
 
 -- Setup plugins via require
 require("fzf-lua").setup({
@@ -118,7 +139,6 @@ require("fzf-lua").setup({
 local ensure_installed = {
 	"bash",
 	"c",
-	"cpp",
 	"css",
 	"dockerfile",
 	"go",
@@ -133,8 +153,6 @@ local ensure_installed = {
 	"typescript",
 	"vim",
 	"yaml",
-	"java",
-	"php",
 }
 
 local tree = require("nvim-treesitter")
@@ -160,10 +178,8 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		python = { "isort", "black" },
-		java = { "google-java-format" },
 		go = { "gofmt", "goimports" },
 		rust = { "rustfmt" },
-		php = { "php-cs-fixer" },
 		c = { "clang-format" },
 		sql = { "sql_formatter" },
 		typescript = { "oxfmt" },
@@ -194,41 +210,10 @@ require("auto-dark-mode").setup({
 	fallback = "dark",
 })
 
-require("lazydocker").setup({
-	window = {
-		settings = {
-			width = 0.9,
-			height = 0.9,
-			border = "single",
-			relative = "editor",
-		},
-	},
-})
-
 vim.lsp.config("marksman", {
 	cmd = { "marksman", "server" },
 	filetypes = { "markdown", "mdx" },
 	root_markers = { ".marksman.toml", ".git" },
-})
-
-vim.lsp.enable({
-	"gopls",
-	"lua_ls",
-	"pyright",
-	"clangd",
-	"html",
-	"cssls",
-	"jsonls",
-	"bashls",
-	"dockerls",
-	"yamlls",
-	"rust_analyzer",
-	"tailwindcss",
-	"jdtls",
-	"emmet_ls",
-	"nil_ls",
-	"nixd",
-	"marksman",
 })
 
 -- Keymaps
@@ -243,14 +228,6 @@ vim.keymap.set("n", "<leader>sp", fzf.spell_suggest, { noremap = true, silent = 
 vim.keymap.set("n", "<leader>fh", fzf.help_tags, { noremap = true, silent = true }) -- Help tags
 vim.keymap.set("n", "<leader>df", fzf.diagnostics_document, { noremap = true, silent = true }) -- Document Diagnostics
 
--- terminal apps
-vim.keymap.set("n", "<leader>lz", "<cmd>LazyGit<CR>", { noremap = true, silent = true })
-vim.keymap.set(
-	{ "n", "t" },
-	"<leader>ld",
-	"<Cmd>lua require('lazydocker').toggle({ engine = 'docker' })<CR>",
-	{ desc = "LazyDocker (docker)" }
-)
 vim.keymap.set("n", "<leader>e", function()
 	require("yazi").yazi()
 end)
@@ -320,36 +297,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
--- vim dadbod config
-vim.g.db_ui_use_omni = 1
-vim.g.db_ui_connections_json = vim.fn.expand("~/.local/share/db_ui/connections.json")
-vim.g.db_completion_enabled = 1
-vim.g.omni_sql_no_default_maps = 1
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "sql", "mysql", "plsql" },
-	callback = function()
-		vim.bo.omnifunc = "vim_dadbod_completion#omni"
-		vim.bo.completefunc = "vim_dadbod_completion#omni"
-		vim.bo.commentstring = "-- %s"
-	end,
-})
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "dbui",
-	callback = function()
-		vim.bo.buflisted = false
-	end,
-})
-
 local projects = {
-	"osbackendapi",
-	"personal-site",
-	"frontend",
-	"backend",
+	"oswebsite",
+	"osnativereact",
 }
 
 if vim.list_contains(projects, vim.fn.fnamemodify(vim.fn.getcwd(), ":t")) then
-	vim.lsp.enable("tsgo")
-else
 	vim.lsp.enable("ts_ls")
 
 	require("conform").setup({
@@ -362,6 +315,8 @@ else
 			html = { "prettier" },
 		},
 	})
+else
+	vim.lsp.enable("tsc")
 end
 
 local compiler_configs = {
@@ -396,22 +351,6 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
 			end
 		end
 	end,
-})
-
-local function set_os_project_indent()
-	local file = vim.fn.expand("%:p")
-	local workspace = vim.fn.expand("~/workspace")
-
-	if file:match("^" .. workspace .. "/") then
-		vim.opt_local.tabstop = 2
-		vim.opt_local.softtabstop = 2
-		vim.opt_local.shiftwidth = 2
-		vim.opt_local.expandtab = true
-	end
-end
-
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	callback = set_os_project_indent,
 })
 
 vim.api.nvim_create_user_command("LspHardRestart", function()
