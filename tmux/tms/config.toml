@@ -1,3 +1,4 @@
+excluded = ["Library"]
 # Non-Git directories that should appear directly in the picker.
 # These are not scanned recursively.
 bookmarks = [
