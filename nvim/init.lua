@@ -47,6 +47,8 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
+	{ src = "https://github.com/selimacerbas/mdkite.nvim" },
+	{ src = "https://github.com/selimacerbas/kitehost.nvim" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/f-person/auto-dark-mode.nvim" },
@@ -142,6 +144,8 @@ vim.api.nvim_create_autocmd("FileType", {
 require("treesitter-context").setup({
 	enable = true,
 })
+
+require("mdkite").setup({})
 
 require("conform").setup({
 	notify_on_error = true,
