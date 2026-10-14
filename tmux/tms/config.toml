@@ -10,7 +10,7 @@ bookmarks = [
 # Directories scanned recursively for Git repositories.
 [[search_dirs]]
 path = "~"
-depth = 2
+depth = 3
 
 [[search_dirs]]
 path = "~/projects"
@@ -18,4 +18,4 @@ depth = 3
 
 [[search_dirs]]
 path = "~/workspace"
-depth = 2
+depth = 3
