@@ -52,7 +52,6 @@ vim.pack.add({
 	{ src = "https://github.com/f-person/auto-dark-mode.nvim" },
 	{ src = "https://github.com/ManeeshWije/git_browse.nvim" },
 	{ src = "https://github.com/mikavilpas/yazi.nvim" },
-	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
 })
 vim.cmd(":hi statusline guibg=NONE")
@@ -82,35 +81,6 @@ vim.diagnostic.config({
 		severity = all_levels,
 	},
 })
-
-local lsp_servers = {
-	"gopls",
-	"lua_ls",
-	"pyright",
-	"clangd",
-	"html",
-	"cssls",
-	"jsonls",
-	"bashls",
-	"dockerls",
-	"yamlls",
-	"rust_analyzer",
-	"tailwindcss",
-	"jdtls",
-	"emmet_ls",
-	"nil_ls",
-	"nixd",
-	"marksman",
-}
-
-require("mason").setup()
-
-require("mason-lspconfig").setup({
-	ensure_installed = lsp_servers,
-	automatic_enable = false,
-})
-
-vim.lsp.enable(lsp_servers)
 
 -- Setup plugins via require
 require("fzf-lua").setup({
@@ -209,6 +179,28 @@ require("auto-dark-mode").setup({
 	update_interval = 3000,
 	fallback = "dark",
 })
+
+local lsp_servers = {
+	"gopls",
+	"lua_ls",
+	"pyright",
+	"clangd",
+	"html",
+	"cssls",
+	"jsonls",
+	"bashls",
+	"dockerls",
+	"yamlls",
+	"rust_analyzer",
+	"tailwindcss",
+	"jdtls",
+	"emmet_ls",
+	"nil_ls",
+	"nixd",
+	"marksman",
+}
+
+vim.lsp.enable(lsp_servers)
 
 vim.lsp.config("marksman", {
 	cmd = { "marksman", "server" },
