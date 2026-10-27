@@ -62,7 +62,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export PATH="$HOME/.config/scripts:$HOME/.cargo/env:$HOME/.dotnet/tools:/usr/local/go/bin:$HOME/.local/bin:$PATH:$HOME/go/bin"
 fi
 
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+path=("${(@)path:#${ASDF_DATA_DIR:-$HOME/.asdf}/shims}" "${ASDF_DATA_DIR:-$HOME/.asdf}/shims")
 
 source <(fzf --zsh)
 
