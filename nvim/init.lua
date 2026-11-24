@@ -309,6 +309,7 @@ if vim.list_contains(projects, vim.fn.fnamemodify(vim.fn.getcwd(), ":t")) then
 	})
 else
 	vim.lsp.enable("tsc")
+	vim.lsp.enable("oxlint")
 end
 
 local compiler_configs = {
